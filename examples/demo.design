@@ -1,0 +1,33 @@
+# designsystem: ant design
+
+# defined vars
+COLOR_BLUE   = #333333
+COLOR_GREEN  = #999999
+
+Component {
+
+}
+
+Template canvas ```
+<canvas></canvas>
+```
+
+Design Headline {
+    style -> HeadLineStyle
+    title -> Phodal
+    class -> .head .h1, .headline     // use class
+
+    color: COLOR_BLUE                 // set value
+    background: COLOR_GREEN           // set value
+}
+
+Design SlideImage {
+
+}
+
+Template Home {
+    Layer Headline;
+    Layer SlideImage;
+}
+
+Flex basicFlex = flex.direction(.column).paddingLeft(12).grow(1)
