@@ -1,9 +1,12 @@
 grammar Design;
 
-designIt: comment* declaration? EOF;
+designIt
+    : (comment | comment declaration)* (NewLine | EOF)
+    ;
 
 declaration
-    : designSystemDeclaration
+    :
+    | designSystemDeclaration
     | commentBlockDeclaration
     | designBlockDeclaration
     ;
@@ -36,9 +39,7 @@ comment: '#' Space* .*? NewLine;
 // Design Keywords
 
 DesignSystem: 'DesignSystem';
-
 Design: 'design';
-
 Project: 'project';
 
 
@@ -65,16 +66,20 @@ Behavior: 'behavior';
 
 // Fragment
 
-Space : [ \t];
-NewLine : '\r\n' | '\n';
+WS:                 [ \t\r\n\u000C]+ -> channel(HIDDEN);
+COMMENT:            '/*' .*? '*/'    -> channel(HIDDEN);
+LINE_COMMENT:       '//' ~[\r\n]*    -> channel(HIDDEN);
+
+EmptyLine:          NewLine Space+ NewLine -> skip;
+Space :             [ \t];
+NewLine :           '\r\n' | '\n';
 
 LBRACE:             '{';
 RBRACE:             '}';
 
 
 IDENTIFIER:         Letter LetterOrDigit*;
-
-Code:         Letter LetterOrDigit*;
+Code:               Letter LetterOrDigit*;
 
 fragment Digits
     : [0-9] ([0-9_]* [0-9])?
