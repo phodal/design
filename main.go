@@ -1,7 +1,11 @@
 package main
 
-import "github.com/phodal/design/cmd"
+import (
+	"github.com/phodal/design/parser"
+)
 
 func main()  {
-	cmd.Execute()
+	//cmd.Execute()
+	app := NewDesignApp()
+	commentStruct := app.Start("examples/demo.design")
 }

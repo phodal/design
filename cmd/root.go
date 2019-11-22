@@ -17,6 +17,9 @@ var (
 	rootCmd = &cobra.Command{
 		Use:   "design",
 		Short: "Design of Code",
+		Run: func(cmd *cobra.Command, args []string) {
+
+		},
 	}
 )
 
