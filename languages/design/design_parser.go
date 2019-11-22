@@ -16,75 +16,78 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 32, 170,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 32, 178,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
 	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23,
-	3, 2, 7, 2, 48, 10, 2, 12, 2, 14, 2, 51, 11, 2, 3, 2, 3, 2, 7, 2, 55, 10,
-	2, 12, 2, 14, 2, 58, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 5, 3, 69, 10, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 5, 5, 76, 10, 5,
-	3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
-	3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9,
-	3, 10, 3, 10, 7, 10, 104, 10, 10, 12, 10, 14, 10, 107, 11, 10, 3, 10, 3,
-	10, 3, 11, 7, 11, 112, 10, 11, 12, 11, 14, 11, 115, 11, 11, 3, 12, 7, 12,
-	118, 10, 12, 12, 12, 14, 12, 121, 11, 12, 3, 13, 7, 13, 124, 10, 13, 12,
-	13, 14, 13, 127, 11, 13, 3, 14, 7, 14, 130, 10, 14, 12, 14, 14, 14, 133,
-	11, 14, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16, 3, 16, 5, 16, 142, 10,
-	16, 3, 17, 3, 17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 18, 3, 18, 3, 19, 3, 19,
-	3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3, 21, 3, 21, 3, 21, 3, 22, 3, 22, 3,
-	23, 3, 23, 5, 23, 166, 10, 23, 3, 23, 3, 23, 3, 23, 2, 2, 24, 2, 4, 6,
-	8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42,
-	44, 2, 2, 2, 166, 2, 49, 3, 2, 2, 2, 4, 68, 3, 2, 2, 2, 6, 70, 3, 2, 2,
-	2, 8, 75, 3, 2, 2, 2, 10, 77, 3, 2, 2, 2, 12, 83, 3, 2, 2, 2, 14, 89, 3,
-	2, 2, 2, 16, 95, 3, 2, 2, 2, 18, 101, 3, 2, 2, 2, 20, 113, 3, 2, 2, 2,
-	22, 119, 3, 2, 2, 2, 24, 125, 3, 2, 2, 2, 26, 131, 3, 2, 2, 2, 28, 134,
-	3, 2, 2, 2, 30, 141, 3, 2, 2, 2, 32, 143, 3, 2, 2, 2, 34, 147, 3, 2, 2,
-	2, 36, 151, 3, 2, 2, 2, 38, 155, 3, 2, 2, 2, 40, 158, 3, 2, 2, 2, 42, 161,
-	3, 2, 2, 2, 44, 163, 3, 2, 2, 2, 46, 48, 5, 44, 23, 2, 47, 46, 3, 2, 2,
-	2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2, 49, 50, 3, 2, 2, 2, 50, 52,
-	3, 2, 2, 2, 51, 49, 3, 2, 2, 2, 52, 56, 5, 4, 3, 2, 53, 55, 5, 4, 3, 2,
-	54, 53, 3, 2, 2, 2, 55, 58, 3, 2, 2, 2, 56, 54, 3, 2, 2, 2, 56, 57, 3,
-	2, 2, 2, 57, 59, 3, 2, 2, 2, 58, 56, 3, 2, 2, 2, 59, 60, 7, 2, 2, 3, 60,
-	3, 3, 2, 2, 2, 61, 69, 5, 6, 4, 2, 62, 69, 5, 10, 6, 2, 63, 69, 5, 28,
-	15, 2, 64, 69, 5, 12, 7, 2, 65, 69, 5, 14, 8, 2, 66, 69, 5, 16, 9, 2, 67,
-	69, 5, 18, 10, 2, 68, 61, 3, 2, 2, 2, 68, 62, 3, 2, 2, 2, 68, 63, 3, 2,
-	2, 2, 68, 64, 3, 2, 2, 2, 68, 65, 3, 2, 2, 2, 68, 66, 3, 2, 2, 2, 68, 67,
-	3, 2, 2, 2, 69, 5, 3, 2, 2, 2, 70, 71, 7, 8, 2, 2, 71, 72, 7, 3, 2, 2,
-	72, 73, 7, 30, 2, 2, 73, 7, 3, 2, 2, 2, 74, 76, 5, 44, 23, 2, 75, 74, 3,
-	2, 2, 2, 75, 76, 3, 2, 2, 2, 76, 9, 3, 2, 2, 2, 77, 78, 7, 9, 2, 2, 78,
-	79, 7, 30, 2, 2, 79, 80, 7, 27, 2, 2, 80, 81, 5, 20, 11, 2, 81, 82, 7,
-	28, 2, 2, 82, 11, 3, 2, 2, 2, 83, 84, 7, 16, 2, 2, 84, 85, 7, 30, 2, 2,
-	85, 86, 7, 27, 2, 2, 86, 87, 5, 22, 12, 2, 87, 88, 7, 28, 2, 2, 88, 13,
-	3, 2, 2, 2, 89, 90, 7, 17, 2, 2, 90, 91, 7, 30, 2, 2, 91, 92, 7, 27, 2,
-	2, 92, 93, 5, 24, 13, 2, 93, 94, 7, 28, 2, 2, 94, 15, 3, 2, 2, 2, 95, 96,
-	7, 12, 2, 2, 96, 97, 7, 30, 2, 2, 97, 98, 7, 27, 2, 2, 98, 99, 5, 26, 14,
-	2, 99, 100, 7, 28, 2, 2, 100, 17, 3, 2, 2, 2, 101, 105, 7, 4, 2, 2, 102,
-	104, 7, 32, 2, 2, 103, 102, 3, 2, 2, 2, 104, 107, 3, 2, 2, 2, 105, 103,
-	3, 2, 2, 2, 105, 106, 3, 2, 2, 2, 106, 108, 3, 2, 2, 2, 107, 105, 3, 2,
-	2, 2, 108, 109, 7, 4, 2, 2, 109, 19, 3, 2, 2, 2, 110, 112, 5, 30, 16, 2,
-	111, 110, 3, 2, 2, 2, 112, 115, 3, 2, 2, 2, 113, 111, 3, 2, 2, 2, 113,
-	114, 3, 2, 2, 2, 114, 21, 3, 2, 2, 2, 115, 113, 3, 2, 2, 2, 116, 118, 5,
-	30, 16, 2, 117, 116, 3, 2, 2, 2, 118, 121, 3, 2, 2, 2, 119, 117, 3, 2,
-	2, 2, 119, 120, 3, 2, 2, 2, 120, 23, 3, 2, 2, 2, 121, 119, 3, 2, 2, 2,
-	122, 124, 5, 30, 16, 2, 123, 122, 3, 2, 2, 2, 124, 127, 3, 2, 2, 2, 125,
-	123, 3, 2, 2, 2, 125, 126, 3, 2, 2, 2, 126, 25, 3, 2, 2, 2, 127, 125, 3,
-	2, 2, 2, 128, 130, 5, 30, 16, 2, 129, 128, 3, 2, 2, 2, 130, 133, 3, 2,
-	2, 2, 131, 129, 3, 2, 2, 2, 131, 132, 3, 2, 2, 2, 132, 27, 3, 2, 2, 2,
-	133, 131, 3, 2, 2, 2, 134, 135, 5, 30, 16, 2, 135, 29, 3, 2, 2, 2, 136,
-	142, 5, 32, 17, 2, 137, 142, 5, 34, 18, 2, 138, 142, 5, 36, 19, 2, 139,
-	142, 5, 40, 21, 2, 140, 142, 5, 38, 20, 2, 141, 136, 3, 2, 2, 2, 141, 137,
-	3, 2, 2, 2, 141, 138, 3, 2, 2, 2, 141, 139, 3, 2, 2, 2, 141, 140, 3, 2,
-	2, 2, 142, 31, 3, 2, 2, 2, 143, 144, 7, 30, 2, 2, 144, 145, 7, 5, 2, 2,
-	145, 146, 7, 30, 2, 2, 146, 33, 3, 2, 2, 2, 147, 148, 7, 30, 2, 2, 148,
-	149, 7, 6, 2, 2, 149, 150, 7, 30, 2, 2, 150, 35, 3, 2, 2, 2, 151, 152,
-	7, 30, 2, 2, 152, 153, 7, 3, 2, 2, 153, 154, 7, 30, 2, 2, 154, 37, 3, 2,
-	2, 2, 155, 156, 7, 12, 2, 2, 156, 157, 7, 30, 2, 2, 157, 39, 3, 2, 2, 2,
-	158, 159, 7, 16, 2, 2, 159, 160, 7, 30, 2, 2, 160, 41, 3, 2, 2, 2, 161,
-	162, 7, 12, 2, 2, 162, 43, 3, 2, 2, 2, 163, 165, 7, 7, 2, 2, 164, 166,
-	7, 25, 2, 2, 165, 164, 3, 2, 2, 2, 165, 166, 3, 2, 2, 2, 166, 167, 3, 2,
-	2, 2, 167, 168, 7, 30, 2, 2, 168, 45, 3, 2, 2, 2, 13, 49, 56, 68, 75, 105,
-	113, 119, 125, 131, 141, 165,
+	4, 24, 9, 24, 4, 25, 9, 25, 3, 2, 7, 2, 52, 10, 2, 12, 2, 14, 2, 55, 11,
+	2, 3, 2, 3, 2, 7, 2, 59, 10, 2, 12, 2, 14, 2, 62, 11, 2, 3, 2, 3, 2, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 73, 10, 3, 3, 4, 3, 4, 3,
+	4, 3, 4, 3, 5, 5, 5, 80, 10, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3,
+	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3,
+	9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 10, 3, 10, 7, 10, 108, 10, 10, 12,
+	10, 14, 10, 111, 11, 10, 3, 10, 3, 10, 3, 11, 7, 11, 116, 10, 11, 12, 11,
+	14, 11, 119, 11, 11, 3, 12, 7, 12, 122, 10, 12, 12, 12, 14, 12, 125, 11,
+	12, 3, 13, 7, 13, 128, 10, 13, 12, 13, 14, 13, 131, 11, 13, 3, 14, 7, 14,
+	134, 10, 14, 12, 14, 14, 14, 137, 11, 14, 3, 15, 3, 15, 3, 16, 3, 16, 3,
+	16, 3, 16, 3, 16, 5, 16, 146, 10, 16, 3, 17, 3, 17, 3, 17, 3, 17, 3, 18,
+	3, 18, 3, 18, 3, 18, 3, 19, 3, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3,
+	21, 3, 21, 3, 21, 3, 22, 3, 22, 3, 23, 3, 23, 3, 24, 3, 24, 3, 25, 3, 25,
+	5, 25, 174, 10, 25, 3, 25, 3, 25, 3, 25, 2, 2, 26, 2, 4, 6, 8, 10, 12,
+	14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48,
+	2, 2, 2, 172, 2, 53, 3, 2, 2, 2, 4, 72, 3, 2, 2, 2, 6, 74, 3, 2, 2, 2,
+	8, 79, 3, 2, 2, 2, 10, 81, 3, 2, 2, 2, 12, 87, 3, 2, 2, 2, 14, 93, 3, 2,
+	2, 2, 16, 99, 3, 2, 2, 2, 18, 105, 3, 2, 2, 2, 20, 117, 3, 2, 2, 2, 22,
+	123, 3, 2, 2, 2, 24, 129, 3, 2, 2, 2, 26, 135, 3, 2, 2, 2, 28, 138, 3,
+	2, 2, 2, 30, 145, 3, 2, 2, 2, 32, 147, 3, 2, 2, 2, 34, 151, 3, 2, 2, 2,
+	36, 155, 3, 2, 2, 2, 38, 159, 3, 2, 2, 2, 40, 162, 3, 2, 2, 2, 42, 165,
+	3, 2, 2, 2, 44, 167, 3, 2, 2, 2, 46, 169, 3, 2, 2, 2, 48, 171, 3, 2, 2,
+	2, 50, 52, 5, 48, 25, 2, 51, 50, 3, 2, 2, 2, 52, 55, 3, 2, 2, 2, 53, 51,
+	3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 56, 3, 2, 2, 2, 55, 53, 3, 2, 2, 2,
+	56, 60, 5, 4, 3, 2, 57, 59, 5, 4, 3, 2, 58, 57, 3, 2, 2, 2, 59, 62, 3,
+	2, 2, 2, 60, 58, 3, 2, 2, 2, 60, 61, 3, 2, 2, 2, 61, 63, 3, 2, 2, 2, 62,
+	60, 3, 2, 2, 2, 63, 64, 7, 2, 2, 3, 64, 3, 3, 2, 2, 2, 65, 73, 5, 6, 4,
+	2, 66, 73, 5, 10, 6, 2, 67, 73, 5, 28, 15, 2, 68, 73, 5, 12, 7, 2, 69,
+	73, 5, 14, 8, 2, 70, 73, 5, 16, 9, 2, 71, 73, 5, 18, 10, 2, 72, 65, 3,
+	2, 2, 2, 72, 66, 3, 2, 2, 2, 72, 67, 3, 2, 2, 2, 72, 68, 3, 2, 2, 2, 72,
+	69, 3, 2, 2, 2, 72, 70, 3, 2, 2, 2, 72, 71, 3, 2, 2, 2, 73, 5, 3, 2, 2,
+	2, 74, 75, 7, 8, 2, 2, 75, 76, 7, 3, 2, 2, 76, 77, 7, 30, 2, 2, 77, 7,
+	3, 2, 2, 2, 78, 80, 5, 48, 25, 2, 79, 78, 3, 2, 2, 2, 79, 80, 3, 2, 2,
+	2, 80, 9, 3, 2, 2, 2, 81, 82, 7, 9, 2, 2, 82, 83, 7, 30, 2, 2, 83, 84,
+	7, 27, 2, 2, 84, 85, 5, 20, 11, 2, 85, 86, 7, 28, 2, 2, 86, 11, 3, 2, 2,
+	2, 87, 88, 7, 16, 2, 2, 88, 89, 7, 30, 2, 2, 89, 90, 7, 27, 2, 2, 90, 91,
+	5, 22, 12, 2, 91, 92, 7, 28, 2, 2, 92, 13, 3, 2, 2, 2, 93, 94, 7, 17, 2,
+	2, 94, 95, 7, 30, 2, 2, 95, 96, 7, 27, 2, 2, 96, 97, 5, 24, 13, 2, 97,
+	98, 7, 28, 2, 2, 98, 15, 3, 2, 2, 2, 99, 100, 7, 12, 2, 2, 100, 101, 7,
+	30, 2, 2, 101, 102, 7, 27, 2, 2, 102, 103, 5, 26, 14, 2, 103, 104, 7, 28,
+	2, 2, 104, 17, 3, 2, 2, 2, 105, 109, 7, 4, 2, 2, 106, 108, 7, 32, 2, 2,
+	107, 106, 3, 2, 2, 2, 108, 111, 3, 2, 2, 2, 109, 107, 3, 2, 2, 2, 109,
+	110, 3, 2, 2, 2, 110, 112, 3, 2, 2, 2, 111, 109, 3, 2, 2, 2, 112, 113,
+	7, 4, 2, 2, 113, 19, 3, 2, 2, 2, 114, 116, 5, 30, 16, 2, 115, 114, 3, 2,
+	2, 2, 116, 119, 3, 2, 2, 2, 117, 115, 3, 2, 2, 2, 117, 118, 3, 2, 2, 2,
+	118, 21, 3, 2, 2, 2, 119, 117, 3, 2, 2, 2, 120, 122, 5, 30, 16, 2, 121,
+	120, 3, 2, 2, 2, 122, 125, 3, 2, 2, 2, 123, 121, 3, 2, 2, 2, 123, 124,
+	3, 2, 2, 2, 124, 23, 3, 2, 2, 2, 125, 123, 3, 2, 2, 2, 126, 128, 5, 30,
+	16, 2, 127, 126, 3, 2, 2, 2, 128, 131, 3, 2, 2, 2, 129, 127, 3, 2, 2, 2,
+	129, 130, 3, 2, 2, 2, 130, 25, 3, 2, 2, 2, 131, 129, 3, 2, 2, 2, 132, 134,
+	5, 30, 16, 2, 133, 132, 3, 2, 2, 2, 134, 137, 3, 2, 2, 2, 135, 133, 3,
+	2, 2, 2, 135, 136, 3, 2, 2, 2, 136, 27, 3, 2, 2, 2, 137, 135, 3, 2, 2,
+	2, 138, 139, 5, 30, 16, 2, 139, 29, 3, 2, 2, 2, 140, 146, 5, 32, 17, 2,
+	141, 146, 5, 34, 18, 2, 142, 146, 5, 36, 19, 2, 143, 146, 5, 40, 21, 2,
+	144, 146, 5, 38, 20, 2, 145, 140, 3, 2, 2, 2, 145, 141, 3, 2, 2, 2, 145,
+	142, 3, 2, 2, 2, 145, 143, 3, 2, 2, 2, 145, 144, 3, 2, 2, 2, 146, 31, 3,
+	2, 2, 2, 147, 148, 5, 42, 22, 2, 148, 149, 7, 5, 2, 2, 149, 150, 5, 44,
+	23, 2, 150, 33, 3, 2, 2, 2, 151, 152, 5, 42, 22, 2, 152, 153, 7, 6, 2,
+	2, 153, 154, 5, 44, 23, 2, 154, 35, 3, 2, 2, 2, 155, 156, 5, 42, 22, 2,
+	156, 157, 7, 3, 2, 2, 157, 158, 5, 44, 23, 2, 158, 37, 3, 2, 2, 2, 159,
+	160, 7, 12, 2, 2, 160, 161, 7, 30, 2, 2, 161, 39, 3, 2, 2, 2, 162, 163,
+	7, 16, 2, 2, 163, 164, 7, 30, 2, 2, 164, 41, 3, 2, 2, 2, 165, 166, 7, 30,
+	2, 2, 166, 43, 3, 2, 2, 2, 167, 168, 7, 30, 2, 2, 168, 45, 3, 2, 2, 2,
+	169, 170, 7, 12, 2, 2, 170, 47, 3, 2, 2, 2, 171, 173, 7, 7, 2, 2, 172,
+	174, 7, 25, 2, 2, 173, 172, 3, 2, 2, 2, 173, 174, 3, 2, 2, 2, 174, 175,
+	3, 2, 2, 2, 175, 176, 7, 30, 2, 2, 176, 49, 3, 2, 2, 2, 13, 53, 60, 72,
+	79, 109, 117, 123, 129, 135, 145, 173,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
@@ -108,7 +111,8 @@ var ruleNames = []string{
 	"layerBlockDeclaration", "codeBlockDeclaration", "designBodyDeclaration",
 	"templateBodyDeclaration", "componentBodyDeclaration", "layerBodyDeclaration",
 	"expressDeclaration", "express", "equalExpress", "useExpress", "valueExpress",
-	"layerExpress", "templateExpress", "layer", "commentDeclaration",
+	"layerExpress", "templateExpress", "expressKey", "expressValue", "layer",
+	"commentDeclaration",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -193,8 +197,10 @@ const (
 	DesignParserRULE_valueExpress              = 17
 	DesignParserRULE_layerExpress              = 18
 	DesignParserRULE_templateExpress           = 19
-	DesignParserRULE_layer                     = 20
-	DesignParserRULE_commentDeclaration        = 21
+	DesignParserRULE_expressKey                = 20
+	DesignParserRULE_expressValue              = 21
+	DesignParserRULE_layer                     = 22
+	DesignParserRULE_commentDeclaration        = 23
 )
 
 // IDesignItContext is an interface to support dynamic dispatch.
@@ -337,40 +343,40 @@ func (p *DesignParser) DesignIt() (localctx IDesignItContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(47)
+	p.SetState(51)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserT__4 {
 		{
-			p.SetState(44)
+			p.SetState(48)
 			p.CommentDeclaration()
 		}
 
-		p.SetState(49)
+		p.SetState(53)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(50)
+		p.SetState(54)
 		p.Declaration()
 	}
-	p.SetState(54)
+	p.SetState(58)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__1)|(1<<DesignParserDESIGN_SYSTEM)|(1<<DesignParserDESIGN)|(1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserCOMPONENT)|(1<<DesignParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(51)
+			p.SetState(55)
 			p.Declaration()
 		}
 
-		p.SetState(56)
+		p.SetState(60)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(57)
+		p.SetState(61)
 		p.Match(DesignParserEOF)
 	}
 
@@ -535,55 +541,55 @@ func (p *DesignParser) Declaration() (localctx IDeclarationContext) {
 		}
 	}()
 
-	p.SetState(66)
+	p.SetState(70)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(59)
+			p.SetState(63)
 			p.DesignSystemDeclaration()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(60)
+			p.SetState(64)
 			p.DesignBlockDeclaration()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(61)
+			p.SetState(65)
 			p.ExpressDeclaration()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(62)
+			p.SetState(66)
 			p.TemplateBlockDeclaration()
 		}
 
 	case 5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(63)
+			p.SetState(67)
 			p.ComponentBlockDeclaration()
 		}
 
 	case 6:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(64)
+			p.SetState(68)
 			p.LayerBlockDeclaration()
 		}
 
 	case 7:
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(65)
+			p.SetState(69)
 			p.CodeBlockDeclaration()
 		}
 
@@ -690,15 +696,15 @@ func (p *DesignParser) DesignSystemDeclaration() (localctx IDesignSystemDeclarat
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(68)
+		p.SetState(72)
 		p.Match(DesignParserDESIGN_SYSTEM)
 	}
 	{
-		p.SetState(69)
+		p.SetState(73)
 		p.Match(DesignParserT__0)
 	}
 	{
-		p.SetState(70)
+		p.SetState(74)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -805,13 +811,13 @@ func (p *DesignParser) CommentBlockDeclaration() (localctx ICommentBlockDeclarat
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(73)
+	p.SetState(77)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == DesignParserT__4 {
 		{
-			p.SetState(72)
+			p.SetState(76)
 			p.CommentDeclaration()
 		}
 
@@ -936,23 +942,23 @@ func (p *DesignParser) DesignBlockDeclaration() (localctx IDesignBlockDeclaratio
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(75)
+		p.SetState(79)
 		p.Match(DesignParserDESIGN)
 	}
 	{
-		p.SetState(76)
+		p.SetState(80)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(77)
+		p.SetState(81)
 		p.Match(DesignParserLBRACE)
 	}
 	{
-		p.SetState(78)
+		p.SetState(82)
 		p.DesignBodyDeclaration()
 	}
 	{
-		p.SetState(79)
+		p.SetState(83)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -1075,23 +1081,23 @@ func (p *DesignParser) TemplateBlockDeclaration() (localctx ITemplateBlockDeclar
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(81)
+		p.SetState(85)
 		p.Match(DesignParserTEMPLATE)
 	}
 	{
-		p.SetState(82)
+		p.SetState(86)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(83)
+		p.SetState(87)
 		p.Match(DesignParserLBRACE)
 	}
 	{
-		p.SetState(84)
+		p.SetState(88)
 		p.TemplateBodyDeclaration()
 	}
 	{
-		p.SetState(85)
+		p.SetState(89)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -1214,23 +1220,23 @@ func (p *DesignParser) ComponentBlockDeclaration() (localctx IComponentBlockDecl
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(87)
+		p.SetState(91)
 		p.Match(DesignParserCOMPONENT)
 	}
 	{
-		p.SetState(88)
+		p.SetState(92)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(89)
+		p.SetState(93)
 		p.Match(DesignParserLBRACE)
 	}
 	{
-		p.SetState(90)
+		p.SetState(94)
 		p.ComponentBodyDeclaration()
 	}
 	{
-		p.SetState(91)
+		p.SetState(95)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -1353,23 +1359,23 @@ func (p *DesignParser) LayerBlockDeclaration() (localctx ILayerBlockDeclarationC
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(93)
+		p.SetState(97)
 		p.Match(DesignParserLAYER)
 	}
 	{
-		p.SetState(94)
+		p.SetState(98)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(95)
+		p.SetState(99)
 		p.Match(DesignParserLBRACE)
 	}
 	{
-		p.SetState(96)
+		p.SetState(100)
 		p.LayerBodyDeclaration()
 	}
 	{
-		p.SetState(97)
+		p.SetState(101)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -1475,25 +1481,25 @@ func (p *DesignParser) CodeBlockDeclaration() (localctx ICodeBlockDeclarationCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(99)
+		p.SetState(103)
 		p.Match(DesignParserT__1)
 	}
-	p.SetState(103)
+	p.SetState(107)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserHTML_STRING {
 		{
-			p.SetState(100)
+			p.SetState(104)
 			p.Match(DesignParserHTML_STRING)
 		}
 
-		p.SetState(105)
+		p.SetState(109)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(106)
+		p.SetState(110)
 		p.Match(DesignParserT__1)
 	}
 
@@ -1613,17 +1619,17 @@ func (p *DesignParser) DesignBodyDeclaration() (localctx IDesignBodyDeclarationC
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(111)
+	p.SetState(115)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(108)
+			p.SetState(112)
 			p.Express()
 		}
 
-		p.SetState(113)
+		p.SetState(117)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -1744,17 +1750,17 @@ func (p *DesignParser) TemplateBodyDeclaration() (localctx ITemplateBodyDeclarat
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(117)
+	p.SetState(121)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(114)
+			p.SetState(118)
 			p.Express()
 		}
 
-		p.SetState(119)
+		p.SetState(123)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -1875,17 +1881,17 @@ func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclar
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(123)
+	p.SetState(127)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(120)
+			p.SetState(124)
 			p.Express()
 		}
 
-		p.SetState(125)
+		p.SetState(129)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -2006,17 +2012,17 @@ func (p *DesignParser) LayerBodyDeclaration() (localctx ILayerBodyDeclarationCon
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(129)
+	p.SetState(133)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(126)
+			p.SetState(130)
 			p.Express()
 		}
 
-		p.SetState(131)
+		p.SetState(135)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -2124,7 +2130,7 @@ func (p *DesignParser) ExpressDeclaration() (localctx IExpressDeclarationContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(132)
+		p.SetState(136)
 		p.Express()
 	}
 
@@ -2269,41 +2275,41 @@ func (p *DesignParser) Express() (localctx IExpressContext) {
 		}
 	}()
 
-	p.SetState(139)
+	p.SetState(143)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(134)
+			p.SetState(138)
 			p.EqualExpress()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(135)
+			p.SetState(139)
 			p.UseExpress()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(136)
+			p.SetState(140)
 			p.ValueExpress()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(137)
+			p.SetState(141)
 			p.TemplateExpress()
 		}
 
 	case 5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(138)
+			p.SetState(142)
 			p.LayerExpress()
 		}
 
@@ -2350,12 +2356,24 @@ func NewEqualExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 
 func (s *EqualExpressContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *EqualExpressContext) AllIDENTIFIER() []antlr.TerminalNode {
-	return s.GetTokens(DesignParserIDENTIFIER)
+func (s *EqualExpressContext) ExpressKey() IExpressKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressKeyContext)
 }
 
-func (s *EqualExpressContext) IDENTIFIER(i int) antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, i)
+func (s *EqualExpressContext) ExpressValue() IExpressValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressValueContext)
 }
 
 func (s *EqualExpressContext) GetRuleContext() antlr.RuleContext {
@@ -2410,16 +2428,16 @@ func (p *DesignParser) EqualExpress() (localctx IEqualExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(141)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(145)
+		p.ExpressKey()
 	}
 	{
-		p.SetState(142)
+		p.SetState(146)
 		p.Match(DesignParserT__2)
 	}
 	{
-		p.SetState(143)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(147)
+		p.ExpressValue()
 	}
 
 	return localctx
@@ -2463,12 +2481,24 @@ func NewUseExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *UseExpressContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *UseExpressContext) AllIDENTIFIER() []antlr.TerminalNode {
-	return s.GetTokens(DesignParserIDENTIFIER)
+func (s *UseExpressContext) ExpressKey() IExpressKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressKeyContext)
 }
 
-func (s *UseExpressContext) IDENTIFIER(i int) antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, i)
+func (s *UseExpressContext) ExpressValue() IExpressValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressValueContext)
 }
 
 func (s *UseExpressContext) GetRuleContext() antlr.RuleContext {
@@ -2523,16 +2553,16 @@ func (p *DesignParser) UseExpress() (localctx IUseExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(145)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(149)
+		p.ExpressKey()
 	}
 	{
-		p.SetState(146)
+		p.SetState(150)
 		p.Match(DesignParserT__3)
 	}
 	{
-		p.SetState(147)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(151)
+		p.ExpressValue()
 	}
 
 	return localctx
@@ -2576,12 +2606,24 @@ func NewValueExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 
 func (s *ValueExpressContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ValueExpressContext) AllIDENTIFIER() []antlr.TerminalNode {
-	return s.GetTokens(DesignParserIDENTIFIER)
+func (s *ValueExpressContext) ExpressKey() IExpressKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressKeyContext)
 }
 
-func (s *ValueExpressContext) IDENTIFIER(i int) antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, i)
+func (s *ValueExpressContext) ExpressValue() IExpressValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressValueContext)
 }
 
 func (s *ValueExpressContext) GetRuleContext() antlr.RuleContext {
@@ -2636,16 +2678,16 @@ func (p *DesignParser) ValueExpress() (localctx IValueExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(149)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(153)
+		p.ExpressKey()
 	}
 	{
-		p.SetState(150)
+		p.SetState(154)
 		p.Match(DesignParserT__0)
 	}
 	{
-		p.SetState(151)
-		p.Match(DesignParserIDENTIFIER)
+		p.SetState(155)
+		p.ExpressValue()
 	}
 
 	return localctx
@@ -2749,11 +2791,11 @@ func (p *DesignParser) LayerExpress() (localctx ILayerExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(153)
+		p.SetState(157)
 		p.Match(DesignParserLAYER)
 	}
 	{
-		p.SetState(154)
+		p.SetState(158)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -2858,11 +2900,213 @@ func (p *DesignParser) TemplateExpress() (localctx ITemplateExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(156)
+		p.SetState(160)
 		p.Match(DesignParserTEMPLATE)
 	}
 	{
-		p.SetState(157)
+		p.SetState(161)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IExpressKeyContext is an interface to support dynamic dispatch.
+type IExpressKeyContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsExpressKeyContext differentiates from other interfaces.
+	IsExpressKeyContext()
+}
+
+type ExpressKeyContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyExpressKeyContext() *ExpressKeyContext {
+	var p = new(ExpressKeyContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_expressKey
+	return p
+}
+
+func (*ExpressKeyContext) IsExpressKeyContext() {}
+
+func NewExpressKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressKeyContext {
+	var p = new(ExpressKeyContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_expressKey
+
+	return p
+}
+
+func (s *ExpressKeyContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ExpressKeyContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ExpressKeyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ExpressKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ExpressKeyContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterExpressKey(s)
+	}
+}
+
+func (s *ExpressKeyContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitExpressKey(s)
+	}
+}
+
+func (s *ExpressKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitExpressKey(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ExpressKey() (localctx IExpressKeyContext) {
+	localctx = NewExpressKeyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 40, DesignParserRULE_expressKey)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(163)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IExpressValueContext is an interface to support dynamic dispatch.
+type IExpressValueContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsExpressValueContext differentiates from other interfaces.
+	IsExpressValueContext()
+}
+
+type ExpressValueContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyExpressValueContext() *ExpressValueContext {
+	var p = new(ExpressValueContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_expressValue
+	return p
+}
+
+func (*ExpressValueContext) IsExpressValueContext() {}
+
+func NewExpressValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressValueContext {
+	var p = new(ExpressValueContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_expressValue
+
+	return p
+}
+
+func (s *ExpressValueContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ExpressValueContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ExpressValueContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ExpressValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ExpressValueContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterExpressValue(s)
+	}
+}
+
+func (s *ExpressValueContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitExpressValue(s)
+	}
+}
+
+func (s *ExpressValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitExpressValue(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ExpressValue() (localctx IExpressValueContext) {
+	localctx = NewExpressValueContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 42, DesignParserRULE_expressValue)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(165)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -2943,7 +3187,7 @@ func (s *LayerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *DesignParser) Layer() (localctx ILayerContext) {
 	localctx = NewLayerContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, DesignParserRULE_layer)
+	p.EnterRule(localctx, 44, DesignParserRULE_layer)
 
 	defer func() {
 		p.ExitRule()
@@ -2963,7 +3207,7 @@ func (p *DesignParser) Layer() (localctx ILayerContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(159)
+		p.SetState(167)
 		p.Match(DesignParserLAYER)
 	}
 
@@ -3048,7 +3292,7 @@ func (s *CommentDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) inter
 
 func (p *DesignParser) CommentDeclaration() (localctx ICommentDeclarationContext) {
 	localctx = NewCommentDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, DesignParserRULE_commentDeclaration)
+	p.EnterRule(localctx, 46, DesignParserRULE_commentDeclaration)
 	var _la int
 
 	defer func() {
@@ -3069,22 +3313,22 @@ func (p *DesignParser) CommentDeclaration() (localctx ICommentDeclarationContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(161)
+		p.SetState(169)
 		p.Match(DesignParserT__4)
 	}
-	p.SetState(163)
+	p.SetState(171)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == DesignParserSpace {
 		{
-			p.SetState(162)
+			p.SetState(170)
 			p.Match(DesignParserSpace)
 		}
 
 	}
 	{
-		p.SetState(165)
+		p.SetState(173)
 		p.Match(DesignParserIDENTIFIER)
 	}
 

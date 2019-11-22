@@ -68,6 +68,12 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#templateExpress.
 	VisitTemplateExpress(ctx *TemplateExpressContext) interface{}
 
+	// Visit a parse tree produced by DesignParser#expressKey.
+	VisitExpressKey(ctx *ExpressKeyContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#expressValue.
+	VisitExpressValue(ctx *ExpressValueContext) interface{}
+
 	// Visit a parse tree produced by DesignParser#layer.
 	VisitLayer(ctx *LayerContext) interface{}
 

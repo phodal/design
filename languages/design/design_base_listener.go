@@ -141,6 +141,18 @@ func (s *BaseDesignListener) EnterTemplateExpress(ctx *TemplateExpressContext) {
 // ExitTemplateExpress is called when production templateExpress is exited.
 func (s *BaseDesignListener) ExitTemplateExpress(ctx *TemplateExpressContext) {}
 
+// EnterExpressKey is called when production expressKey is entered.
+func (s *BaseDesignListener) EnterExpressKey(ctx *ExpressKeyContext) {}
+
+// ExitExpressKey is called when production expressKey is exited.
+func (s *BaseDesignListener) ExitExpressKey(ctx *ExpressKeyContext) {}
+
+// EnterExpressValue is called when production expressValue is entered.
+func (s *BaseDesignListener) EnterExpressValue(ctx *ExpressValueContext) {}
+
+// ExitExpressValue is called when production expressValue is exited.
+func (s *BaseDesignListener) ExitExpressValue(ctx *ExpressValueContext) {}
+
 // EnterLayer is called when production layer is entered.
 func (s *BaseDesignListener) EnterLayer(ctx *LayerContext) {}
 

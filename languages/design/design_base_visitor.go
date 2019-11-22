@@ -88,6 +88,14 @@ func (v *BaseDesignVisitor) VisitTemplateExpress(ctx *TemplateExpressContext) in
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseDesignVisitor) VisitExpressKey(ctx *ExpressKeyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitExpressValue(ctx *ExpressValueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseDesignVisitor) VisitLayer(ctx *LayerContext) interface{} {
 	return v.VisitChildren(ctx)
 }

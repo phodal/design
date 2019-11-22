@@ -68,6 +68,12 @@ type DesignListener interface {
 	// EnterTemplateExpress is called when entering the templateExpress production.
 	EnterTemplateExpress(c *TemplateExpressContext)
 
+	// EnterExpressKey is called when entering the expressKey production.
+	EnterExpressKey(c *ExpressKeyContext)
+
+	// EnterExpressValue is called when entering the expressValue production.
+	EnterExpressValue(c *ExpressValueContext)
+
 	// EnterLayer is called when entering the layer production.
 	EnterLayer(c *LayerContext)
 
@@ -133,6 +139,12 @@ type DesignListener interface {
 
 	// ExitTemplateExpress is called when exiting the templateExpress production.
 	ExitTemplateExpress(c *TemplateExpressContext)
+
+	// ExitExpressKey is called when exiting the expressKey production.
+	ExitExpressKey(c *ExpressKeyContext)
+
+	// ExitExpressValue is called when exiting the expressValue production.
+	ExitExpressValue(c *ExpressValueContext)
 
 	// ExitLayer is called when exiting the layer production.
 	ExitLayer(c *LayerContext)

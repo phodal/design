@@ -39,11 +39,14 @@ express: equalExpress
     | layerExpress
     ;
 
-equalExpress:    IDENTIFIER '='  IDENTIFIER;
-useExpress:      IDENTIFIER '->' IDENTIFIER;
-valueExpress:    IDENTIFIER ':'  IDENTIFIER;
+equalExpress:    expressKey '='  expressValue;
+useExpress:      expressKey '->' expressValue;
+valueExpress:    expressKey ':'  expressValue;
 layerExpress:    LAYER IDENTIFIER ;
 templateExpress: TEMPLATE IDENTIFIER;
+
+expressKey: IDENTIFIER;
+expressValue: IDENTIFIER;
 
 layer: LAYER;
 
