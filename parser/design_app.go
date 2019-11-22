@@ -1,8 +1,8 @@
 package parser
 
 import (
+	. "../languages/design"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	. "github.com/phodal/design/languages/design"
 )
 
 func NewDesignApp() *DesignApp {

@@ -51,11 +51,59 @@ func (s *BaseDesignListener) EnterDesignBlockDeclaration(ctx *DesignBlockDeclara
 // ExitDesignBlockDeclaration is called when production designBlockDeclaration is exited.
 func (s *BaseDesignListener) ExitDesignBlockDeclaration(ctx *DesignBlockDeclarationContext) {}
 
+// EnterTemplateBlockDeclaration is called when production templateBlockDeclaration is entered.
+func (s *BaseDesignListener) EnterTemplateBlockDeclaration(ctx *TemplateBlockDeclarationContext) {}
+
+// ExitTemplateBlockDeclaration is called when production templateBlockDeclaration is exited.
+func (s *BaseDesignListener) ExitTemplateBlockDeclaration(ctx *TemplateBlockDeclarationContext) {}
+
+// EnterComponentBlockDeclaration is called when production componentBlockDeclaration is entered.
+func (s *BaseDesignListener) EnterComponentBlockDeclaration(ctx *ComponentBlockDeclarationContext) {}
+
+// ExitComponentBlockDeclaration is called when production componentBlockDeclaration is exited.
+func (s *BaseDesignListener) ExitComponentBlockDeclaration(ctx *ComponentBlockDeclarationContext) {}
+
+// EnterLayerBlockDeclaration is called when production layerBlockDeclaration is entered.
+func (s *BaseDesignListener) EnterLayerBlockDeclaration(ctx *LayerBlockDeclarationContext) {}
+
+// ExitLayerBlockDeclaration is called when production layerBlockDeclaration is exited.
+func (s *BaseDesignListener) ExitLayerBlockDeclaration(ctx *LayerBlockDeclarationContext) {}
+
+// EnterCodeBlockDeclaration is called when production codeBlockDeclaration is entered.
+func (s *BaseDesignListener) EnterCodeBlockDeclaration(ctx *CodeBlockDeclarationContext) {}
+
+// ExitCodeBlockDeclaration is called when production codeBlockDeclaration is exited.
+func (s *BaseDesignListener) ExitCodeBlockDeclaration(ctx *CodeBlockDeclarationContext) {}
+
 // EnterDesignBodyDeclaration is called when production designBodyDeclaration is entered.
 func (s *BaseDesignListener) EnterDesignBodyDeclaration(ctx *DesignBodyDeclarationContext) {}
 
 // ExitDesignBodyDeclaration is called when production designBodyDeclaration is exited.
 func (s *BaseDesignListener) ExitDesignBodyDeclaration(ctx *DesignBodyDeclarationContext) {}
+
+// EnterTemplateBodyDeclaration is called when production templateBodyDeclaration is entered.
+func (s *BaseDesignListener) EnterTemplateBodyDeclaration(ctx *TemplateBodyDeclarationContext) {}
+
+// ExitTemplateBodyDeclaration is called when production templateBodyDeclaration is exited.
+func (s *BaseDesignListener) ExitTemplateBodyDeclaration(ctx *TemplateBodyDeclarationContext) {}
+
+// EnterComponentBodyDeclaration is called when production componentBodyDeclaration is entered.
+func (s *BaseDesignListener) EnterComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) {}
+
+// ExitComponentBodyDeclaration is called when production componentBodyDeclaration is exited.
+func (s *BaseDesignListener) ExitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) {}
+
+// EnterLayerBodyDeclaration is called when production layerBodyDeclaration is entered.
+func (s *BaseDesignListener) EnterLayerBodyDeclaration(ctx *LayerBodyDeclarationContext) {}
+
+// ExitLayerBodyDeclaration is called when production layerBodyDeclaration is exited.
+func (s *BaseDesignListener) ExitLayerBodyDeclaration(ctx *LayerBodyDeclarationContext) {}
+
+// EnterExpressDeclaration is called when production expressDeclaration is entered.
+func (s *BaseDesignListener) EnterExpressDeclaration(ctx *ExpressDeclarationContext) {}
+
+// ExitExpressDeclaration is called when production expressDeclaration is exited.
+func (s *BaseDesignListener) ExitExpressDeclaration(ctx *ExpressDeclarationContext) {}
 
 // EnterExpress is called when production express is entered.
 func (s *BaseDesignListener) EnterExpress(ctx *ExpressContext) {}
@@ -81,6 +129,12 @@ func (s *BaseDesignListener) EnterValueExpress(ctx *ValueExpressContext) {}
 // ExitValueExpress is called when production valueExpress is exited.
 func (s *BaseDesignListener) ExitValueExpress(ctx *ValueExpressContext) {}
 
+// EnterLayerExpress is called when production layerExpress is entered.
+func (s *BaseDesignListener) EnterLayerExpress(ctx *LayerExpressContext) {}
+
+// ExitLayerExpress is called when production layerExpress is exited.
+func (s *BaseDesignListener) ExitLayerExpress(ctx *LayerExpressContext) {}
+
 // EnterTemplateExpress is called when production templateExpress is entered.
 func (s *BaseDesignListener) EnterTemplateExpress(ctx *TemplateExpressContext) {}
 
@@ -93,8 +147,8 @@ func (s *BaseDesignListener) EnterLayer(ctx *LayerContext) {}
 // ExitLayer is called when production layer is exited.
 func (s *BaseDesignListener) ExitLayer(ctx *LayerContext) {}
 
-// EnterComment is called when production comment is entered.
-func (s *BaseDesignListener) EnterComment(ctx *CommentContext) {}
+// EnterCommentDeclaration is called when production commentDeclaration is entered.
+func (s *BaseDesignListener) EnterCommentDeclaration(ctx *CommentDeclarationContext) {}
 
-// ExitComment is called when production comment is exited.
-func (s *BaseDesignListener) ExitComment(ctx *CommentContext) {}
+// ExitCommentDeclaration is called when production commentDeclaration is exited.
+func (s *BaseDesignListener) ExitCommentDeclaration(ctx *CommentDeclarationContext) {}

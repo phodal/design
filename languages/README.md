@@ -1,5 +1,6 @@
 # DSL
 
+Flex basicFlex = flex.direction(.column).paddingLeft(12).grow(1)
 
 ## resources
 

@@ -28,7 +28,39 @@ func (v *BaseDesignVisitor) VisitDesignBlockDeclaration(ctx *DesignBlockDeclarat
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseDesignVisitor) VisitTemplateBlockDeclaration(ctx *TemplateBlockDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitComponentBlockDeclaration(ctx *ComponentBlockDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitLayerBlockDeclaration(ctx *LayerBlockDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitCodeBlockDeclaration(ctx *CodeBlockDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseDesignVisitor) VisitDesignBodyDeclaration(ctx *DesignBodyDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitTemplateBodyDeclaration(ctx *TemplateBodyDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitLayerBodyDeclaration(ctx *LayerBodyDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitExpressDeclaration(ctx *ExpressDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -48,6 +80,10 @@ func (v *BaseDesignVisitor) VisitValueExpress(ctx *ValueExpressContext) interfac
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseDesignVisitor) VisitLayerExpress(ctx *LayerExpressContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseDesignVisitor) VisitTemplateExpress(ctx *TemplateExpressContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -56,6 +92,6 @@ func (v *BaseDesignVisitor) VisitLayer(ctx *LayerContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitComment(ctx *CommentContext) interface{} {
+func (v *BaseDesignVisitor) VisitCommentDeclaration(ctx *CommentDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }

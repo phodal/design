@@ -1,7 +1,8 @@
 package parser
 
 import (
-	. "github.com/phodal/design/languages/design"
+	. "../languages/design"
+	"fmt"
 )
 
 func NewDesignAppListener() *DesignAppListener {
@@ -10,4 +11,8 @@ func NewDesignAppListener() *DesignAppListener {
 
 type DesignAppListener struct {
 	BaseDesignListener
+}
+
+func (s *DesignAppListener) EnterExpress(ctx *ExpressContext) {
+	fmt.Println(ctx.GetText())
 }
