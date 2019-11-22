@@ -1,6 +1,5 @@
-# designsystem: ant design
+DesignSystem: ant design
 
-# defined vars
 COLOR_BLUE   = #333333
 COLOR_GREEN  = #999999
 
@@ -26,8 +25,8 @@ Design SlideImage {
 }
 
 Template Home {
-    Layer Headline;
-    Layer SlideImage;
+    Layer Headline
+    Layer SlideImage
 }
 
-Flex basicFlex = flex.direction(.column).paddingLeft(12).grow(1)
+// Flex basicFlex = flex.direction(.column).paddingLeft(12).grow(1)
