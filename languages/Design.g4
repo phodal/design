@@ -55,22 +55,22 @@ commentDeclaration: '#' Space? IDENTIFIER;
 // Design Keywords
 
 DESIGN_SYSTEM: 'DesignSystem';
-DESIGN: 'Design';
-PROJECT: 'Project';
+DESIGN: 'Design' | 'design';
+PROJECT: 'Project' | 'project' | '项目';
 
 
 // Atomic Keywords
 
-Page: 'Page';           // 页面, Pages
-LAYER: 'Layer';         // 模板, Templates
-Function: 'Function';   // 组织, Organisms
-Library: 'Library';     // 份子, Molecules
-Unit: 'Unit';           // 原子, Atoms
+Page: 'Page' | 'page' | '页面' ;              // 页面, Pages
+LAYER: 'Layer' | 'layer' | '层';              // 模板, Templates
+Function: 'Function' | 'function' | '功能' ;   // 组织, Organisms
+Library: 'Library' | 'library' |  '库';        // 份子, Molecules
+Unit: 'Unit' | 'unit' | '单元';           // 原子, Atoms
 
 // Layout
 
-TEMPLATE:  'Template';
-COMPONENT: 'Component';
+TEMPLATE:  'Template' | 'template' | '模板';
+COMPONENT: 'Component' | 'component' | '组件';
 
 Position: 'position';
 

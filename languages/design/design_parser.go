@@ -93,10 +93,9 @@ var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "':'", "'```'", "'='", "'->'", "'#'", "'DesignSystem'", "'Design'",
-	"'Project'", "'Page'", "'Layer'", "'Function'", "'Library'", "'Unit'",
-	"'Template'", "'Component'", "'position'", "'Flow'", "'behavior'", "",
-	"", "", "", "", "", "'{'", "'}'", "'\"'",
+	"", "':'", "'```'", "'='", "'->'", "'#'", "'DesignSystem'", "", "", "",
+	"", "", "", "", "", "", "'position'", "'Flow'", "'behavior'", "", "", "",
+	"", "", "", "'{'", "'}'", "'\"'",
 }
 var symbolicNames = []string{
 	"", "", "", "", "", "", "DESIGN_SYSTEM", "DESIGN", "PROJECT", "Page", "LAYER",
