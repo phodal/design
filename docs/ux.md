@@ -13,6 +13,11 @@ Userflows
 
 Wireflows
 
+ - Entries and Exits
+ - Steps. Ex: user action, system action, alternative path
+ - Connections: Indicate the desired path and different possible flows
+ - Decision Points: a point where a user must choose from 2 or more options
+
 ![Wireflows](./images/wireflows.png)
 
 Task flows
