@@ -8,147 +8,189 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 type DesignListener interface {
 	antlr.ParseTreeListener
 
-	// EnterDesignIt is called when entering the designIt production.
-	EnterDesignIt(c *DesignItContext)
+	// EnterStart is called when entering the start production.
+	EnterStart(c *StartContext)
 
-	// EnterDeclaration is called when entering the declaration production.
-	EnterDeclaration(c *DeclarationContext)
+	// EnterComment is called when entering the comment production.
+	EnterComment(c *CommentContext)
 
-	// EnterDesignSystemDeclaration is called when entering the designSystemDeclaration production.
-	EnterDesignSystemDeclaration(c *DesignSystemDeclarationContext)
+	// EnterConfigDecalartion is called when entering the configDecalartion production.
+	EnterConfigDecalartion(c *ConfigDecalartionContext)
 
-	// EnterCommentBlockDeclaration is called when entering the commentBlockDeclaration production.
-	EnterCommentBlockDeclaration(c *CommentBlockDeclarationContext)
+	// EnterConfigKey is called when entering the configKey production.
+	EnterConfigKey(c *ConfigKeyContext)
 
-	// EnterDesignBlockDeclaration is called when entering the designBlockDeclaration production.
-	EnterDesignBlockDeclaration(c *DesignBlockDeclarationContext)
+	// EnterConfigValue is called when entering the configValue production.
+	EnterConfigValue(c *ConfigValueContext)
 
-	// EnterTemplateBlockDeclaration is called when entering the templateBlockDeclaration production.
-	EnterTemplateBlockDeclaration(c *TemplateBlockDeclarationContext)
+	// EnterDecalartions is called when entering the decalartions production.
+	EnterDecalartions(c *DecalartionsContext)
 
-	// EnterComponentBlockDeclaration is called when entering the componentBlockDeclaration production.
-	EnterComponentBlockDeclaration(c *ComponentBlockDeclarationContext)
+	// EnterFlowDecalartion is called when entering the flowDecalartion production.
+	EnterFlowDecalartion(c *FlowDecalartionContext)
 
-	// EnterLayerBlockDeclaration is called when entering the layerBlockDeclaration production.
-	EnterLayerBlockDeclaration(c *LayerBlockDeclarationContext)
+	// EnterFlowBodyDecalartion is called when entering the flowBodyDecalartion production.
+	EnterFlowBodyDecalartion(c *FlowBodyDecalartionContext)
 
-	// EnterCodeBlockDeclaration is called when entering the codeBlockDeclaration production.
-	EnterCodeBlockDeclaration(c *CodeBlockDeclarationContext)
+	// EnterSeeDecalartion is called when entering the seeDecalartion production.
+	EnterSeeDecalartion(c *SeeDecalartionContext)
 
-	// EnterDesignBodyDeclaration is called when entering the designBodyDeclaration production.
-	EnterDesignBodyDeclaration(c *DesignBodyDeclarationContext)
+	// EnterDoDecalartion is called when entering the doDecalartion production.
+	EnterDoDecalartion(c *DoDecalartionContext)
 
-	// EnterTemplateBodyDeclaration is called when entering the templateBodyDeclaration production.
-	EnterTemplateBodyDeclaration(c *TemplateBodyDeclarationContext)
+	// EnterReactDecalartion is called when entering the reactDecalartion production.
+	EnterReactDecalartion(c *ReactDecalartionContext)
 
-	// EnterComponentBodyDeclaration is called when entering the componentBodyDeclaration production.
-	EnterComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
+	// EnterAnimateDecalartion is called when entering the animateDecalartion production.
+	EnterAnimateDecalartion(c *AnimateDecalartionContext)
 
-	// EnterLayerBodyDeclaration is called when entering the layerBodyDeclaration production.
-	EnterLayerBodyDeclaration(c *LayerBodyDeclarationContext)
+	// EnterActionKey is called when entering the actionKey production.
+	EnterActionKey(c *ActionKeyContext)
 
-	// EnterExpressDeclaration is called when entering the expressDeclaration production.
-	EnterExpressDeclaration(c *ExpressDeclarationContext)
+	// EnterActionName is called when entering the actionName production.
+	EnterActionName(c *ActionNameContext)
 
-	// EnterExpress is called when entering the express production.
-	EnterExpress(c *ExpressContext)
+	// EnterComponentValue is called when entering the componentValue production.
+	EnterComponentValue(c *ComponentValueContext)
 
-	// EnterEqualExpress is called when entering the equalExpress production.
-	EnterEqualExpress(c *EqualExpressContext)
+	// EnterComponentName is called when entering the componentName production.
+	EnterComponentName(c *ComponentNameContext)
 
-	// EnterUseExpress is called when entering the useExpress production.
-	EnterUseExpress(c *UseExpressContext)
+	// EnterSceneName is called when entering the sceneName production.
+	EnterSceneName(c *SceneNameContext)
 
-	// EnterValueExpress is called when entering the valueExpress production.
-	EnterValueExpress(c *ValueExpressContext)
+	// EnterAnimateName is called when entering the animateName production.
+	EnterAnimateName(c *AnimateNameContext)
 
-	// EnterLayerExpress is called when entering the layerExpress production.
-	EnterLayerExpress(c *LayerExpressContext)
+	// EnterPageDecalartion is called when entering the pageDecalartion production.
+	EnterPageDecalartion(c *PageDecalartionContext)
 
-	// EnterTemplateExpress is called when entering the templateExpress production.
-	EnterTemplateExpress(c *TemplateExpressContext)
+	// EnterComponentDecalartion is called when entering the componentDecalartion production.
+	EnterComponentDecalartion(c *ComponentDecalartionContext)
 
-	// EnterExpressKey is called when entering the expressKey production.
-	EnterExpressKey(c *ExpressKeyContext)
+	// EnterComponentBodyDecalartion is called when entering the componentBodyDecalartion production.
+	EnterComponentBodyDecalartion(c *ComponentBodyDecalartionContext)
 
-	// EnterExpressValue is called when entering the expressValue production.
-	EnterExpressValue(c *ExpressValueContext)
+	// EnterLayoutDecalaration is called when entering the layoutDecalaration production.
+	EnterLayoutDecalaration(c *LayoutDecalarationContext)
 
-	// EnterLayer is called when entering the layer production.
-	EnterLayer(c *LayerContext)
+	// EnterLayoutBodyDecalartion is called when entering the layoutBodyDecalartion production.
+	EnterLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
 
-	// EnterCommentDeclaration is called when entering the commentDeclaration production.
-	EnterCommentDeclaration(c *CommentDeclarationContext)
+	// EnterEmptyLine is called when entering the emptyLine production.
+	EnterEmptyLine(c *EmptyLineContext)
 
-	// ExitDesignIt is called when exiting the designIt production.
-	ExitDesignIt(c *DesignItContext)
+	// EnterLayoutLine is called when entering the layoutLine production.
+	EnterLayoutLine(c *LayoutLineContext)
 
-	// ExitDeclaration is called when exiting the declaration production.
-	ExitDeclaration(c *DeclarationContext)
+	// EnterComponentUseDeclaration is called when entering the componentUseDeclaration production.
+	EnterComponentUseDeclaration(c *ComponentUseDeclarationContext)
 
-	// ExitDesignSystemDeclaration is called when exiting the designSystemDeclaration production.
-	ExitDesignSystemDeclaration(c *DesignSystemDeclarationContext)
+	// EnterStyleDecalartion is called when entering the styleDecalartion production.
+	EnterStyleDecalartion(c *StyleDecalartionContext)
 
-	// ExitCommentBlockDeclaration is called when exiting the commentBlockDeclaration production.
-	ExitCommentBlockDeclaration(c *CommentBlockDeclarationContext)
+	// EnterStyleName is called when entering the styleName production.
+	EnterStyleName(c *StyleNameContext)
 
-	// ExitDesignBlockDeclaration is called when exiting the designBlockDeclaration production.
-	ExitDesignBlockDeclaration(c *DesignBlockDeclarationContext)
+	// EnterStyleBody is called when entering the styleBody production.
+	EnterStyleBody(c *StyleBodyContext)
 
-	// ExitTemplateBlockDeclaration is called when exiting the templateBlockDeclaration production.
-	ExitTemplateBlockDeclaration(c *TemplateBlockDeclarationContext)
+	// EnterLibraryDecalartion is called when entering the libraryDecalartion production.
+	EnterLibraryDecalartion(c *LibraryDecalartionContext)
 
-	// ExitComponentBlockDeclaration is called when exiting the componentBlockDeclaration production.
-	ExitComponentBlockDeclaration(c *ComponentBlockDeclarationContext)
+	// EnterLibraryBody is called when entering the libraryBody production.
+	EnterLibraryBody(c *LibraryBodyContext)
 
-	// ExitLayerBlockDeclaration is called when exiting the layerBlockDeclaration production.
-	ExitLayerBlockDeclaration(c *LayerBlockDeclarationContext)
+	// ExitStart is called when exiting the start production.
+	ExitStart(c *StartContext)
 
-	// ExitCodeBlockDeclaration is called when exiting the codeBlockDeclaration production.
-	ExitCodeBlockDeclaration(c *CodeBlockDeclarationContext)
+	// ExitComment is called when exiting the comment production.
+	ExitComment(c *CommentContext)
 
-	// ExitDesignBodyDeclaration is called when exiting the designBodyDeclaration production.
-	ExitDesignBodyDeclaration(c *DesignBodyDeclarationContext)
+	// ExitConfigDecalartion is called when exiting the configDecalartion production.
+	ExitConfigDecalartion(c *ConfigDecalartionContext)
 
-	// ExitTemplateBodyDeclaration is called when exiting the templateBodyDeclaration production.
-	ExitTemplateBodyDeclaration(c *TemplateBodyDeclarationContext)
+	// ExitConfigKey is called when exiting the configKey production.
+	ExitConfigKey(c *ConfigKeyContext)
 
-	// ExitComponentBodyDeclaration is called when exiting the componentBodyDeclaration production.
-	ExitComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
+	// ExitConfigValue is called when exiting the configValue production.
+	ExitConfigValue(c *ConfigValueContext)
 
-	// ExitLayerBodyDeclaration is called when exiting the layerBodyDeclaration production.
-	ExitLayerBodyDeclaration(c *LayerBodyDeclarationContext)
+	// ExitDecalartions is called when exiting the decalartions production.
+	ExitDecalartions(c *DecalartionsContext)
 
-	// ExitExpressDeclaration is called when exiting the expressDeclaration production.
-	ExitExpressDeclaration(c *ExpressDeclarationContext)
+	// ExitFlowDecalartion is called when exiting the flowDecalartion production.
+	ExitFlowDecalartion(c *FlowDecalartionContext)
 
-	// ExitExpress is called when exiting the express production.
-	ExitExpress(c *ExpressContext)
+	// ExitFlowBodyDecalartion is called when exiting the flowBodyDecalartion production.
+	ExitFlowBodyDecalartion(c *FlowBodyDecalartionContext)
 
-	// ExitEqualExpress is called when exiting the equalExpress production.
-	ExitEqualExpress(c *EqualExpressContext)
+	// ExitSeeDecalartion is called when exiting the seeDecalartion production.
+	ExitSeeDecalartion(c *SeeDecalartionContext)
 
-	// ExitUseExpress is called when exiting the useExpress production.
-	ExitUseExpress(c *UseExpressContext)
+	// ExitDoDecalartion is called when exiting the doDecalartion production.
+	ExitDoDecalartion(c *DoDecalartionContext)
 
-	// ExitValueExpress is called when exiting the valueExpress production.
-	ExitValueExpress(c *ValueExpressContext)
+	// ExitReactDecalartion is called when exiting the reactDecalartion production.
+	ExitReactDecalartion(c *ReactDecalartionContext)
 
-	// ExitLayerExpress is called when exiting the layerExpress production.
-	ExitLayerExpress(c *LayerExpressContext)
+	// ExitAnimateDecalartion is called when exiting the animateDecalartion production.
+	ExitAnimateDecalartion(c *AnimateDecalartionContext)
 
-	// ExitTemplateExpress is called when exiting the templateExpress production.
-	ExitTemplateExpress(c *TemplateExpressContext)
+	// ExitActionKey is called when exiting the actionKey production.
+	ExitActionKey(c *ActionKeyContext)
 
-	// ExitExpressKey is called when exiting the expressKey production.
-	ExitExpressKey(c *ExpressKeyContext)
+	// ExitActionName is called when exiting the actionName production.
+	ExitActionName(c *ActionNameContext)
 
-	// ExitExpressValue is called when exiting the expressValue production.
-	ExitExpressValue(c *ExpressValueContext)
+	// ExitComponentValue is called when exiting the componentValue production.
+	ExitComponentValue(c *ComponentValueContext)
 
-	// ExitLayer is called when exiting the layer production.
-	ExitLayer(c *LayerContext)
+	// ExitComponentName is called when exiting the componentName production.
+	ExitComponentName(c *ComponentNameContext)
 
-	// ExitCommentDeclaration is called when exiting the commentDeclaration production.
-	ExitCommentDeclaration(c *CommentDeclarationContext)
+	// ExitSceneName is called when exiting the sceneName production.
+	ExitSceneName(c *SceneNameContext)
+
+	// ExitAnimateName is called when exiting the animateName production.
+	ExitAnimateName(c *AnimateNameContext)
+
+	// ExitPageDecalartion is called when exiting the pageDecalartion production.
+	ExitPageDecalartion(c *PageDecalartionContext)
+
+	// ExitComponentDecalartion is called when exiting the componentDecalartion production.
+	ExitComponentDecalartion(c *ComponentDecalartionContext)
+
+	// ExitComponentBodyDecalartion is called when exiting the componentBodyDecalartion production.
+	ExitComponentBodyDecalartion(c *ComponentBodyDecalartionContext)
+
+	// ExitLayoutDecalaration is called when exiting the layoutDecalaration production.
+	ExitLayoutDecalaration(c *LayoutDecalarationContext)
+
+	// ExitLayoutBodyDecalartion is called when exiting the layoutBodyDecalartion production.
+	ExitLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
+
+	// ExitEmptyLine is called when exiting the emptyLine production.
+	ExitEmptyLine(c *EmptyLineContext)
+
+	// ExitLayoutLine is called when exiting the layoutLine production.
+	ExitLayoutLine(c *LayoutLineContext)
+
+	// ExitComponentUseDeclaration is called when exiting the componentUseDeclaration production.
+	ExitComponentUseDeclaration(c *ComponentUseDeclarationContext)
+
+	// ExitStyleDecalartion is called when exiting the styleDecalartion production.
+	ExitStyleDecalartion(c *StyleDecalartionContext)
+
+	// ExitStyleName is called when exiting the styleName production.
+	ExitStyleName(c *StyleNameContext)
+
+	// ExitStyleBody is called when exiting the styleBody production.
+	ExitStyleBody(c *StyleBodyContext)
+
+	// ExitLibraryDecalartion is called when exiting the libraryDecalartion production.
+	ExitLibraryDecalartion(c *LibraryDecalartionContext)
+
+	// ExitLibraryBody is called when exiting the libraryBody production.
+	ExitLibraryBody(c *LibraryBodyContext)
 }

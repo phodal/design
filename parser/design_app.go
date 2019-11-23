@@ -13,7 +13,7 @@ type DesignApp struct {
 }
 
 func (j *DesignApp) Start(path string)  {
-	context := (*DesignApp)(nil).ProcessFile(path).DesignIt()
+	context := (*DesignApp)(nil).ProcessFile(path).Start()
 	listener := NewDesignAppListener()
 
 	antlr.NewParseTreeWalker().Walk(listener, context)

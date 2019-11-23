@@ -16,102 +16,137 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 32, 178,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 43, 252,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
 	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23,
-	4, 24, 9, 24, 4, 25, 9, 25, 3, 2, 7, 2, 52, 10, 2, 12, 2, 14, 2, 55, 11,
-	2, 3, 2, 3, 2, 7, 2, 59, 10, 2, 12, 2, 14, 2, 62, 11, 2, 3, 2, 3, 2, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 73, 10, 3, 3, 4, 3, 4, 3,
-	4, 3, 4, 3, 5, 5, 5, 80, 10, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3,
-	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3,
-	9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 10, 3, 10, 7, 10, 108, 10, 10, 12,
-	10, 14, 10, 111, 11, 10, 3, 10, 3, 10, 3, 11, 7, 11, 116, 10, 11, 12, 11,
-	14, 11, 119, 11, 11, 3, 12, 7, 12, 122, 10, 12, 12, 12, 14, 12, 125, 11,
-	12, 3, 13, 7, 13, 128, 10, 13, 12, 13, 14, 13, 131, 11, 13, 3, 14, 7, 14,
-	134, 10, 14, 12, 14, 14, 14, 137, 11, 14, 3, 15, 3, 15, 3, 16, 3, 16, 3,
-	16, 3, 16, 3, 16, 5, 16, 146, 10, 16, 3, 17, 3, 17, 3, 17, 3, 17, 3, 18,
-	3, 18, 3, 18, 3, 18, 3, 19, 3, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3,
-	21, 3, 21, 3, 21, 3, 22, 3, 22, 3, 23, 3, 23, 3, 24, 3, 24, 3, 25, 3, 25,
-	5, 25, 174, 10, 25, 3, 25, 3, 25, 3, 25, 2, 2, 26, 2, 4, 6, 8, 10, 12,
-	14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48,
-	2, 2, 2, 172, 2, 53, 3, 2, 2, 2, 4, 72, 3, 2, 2, 2, 6, 74, 3, 2, 2, 2,
-	8, 79, 3, 2, 2, 2, 10, 81, 3, 2, 2, 2, 12, 87, 3, 2, 2, 2, 14, 93, 3, 2,
-	2, 2, 16, 99, 3, 2, 2, 2, 18, 105, 3, 2, 2, 2, 20, 117, 3, 2, 2, 2, 22,
-	123, 3, 2, 2, 2, 24, 129, 3, 2, 2, 2, 26, 135, 3, 2, 2, 2, 28, 138, 3,
-	2, 2, 2, 30, 145, 3, 2, 2, 2, 32, 147, 3, 2, 2, 2, 34, 151, 3, 2, 2, 2,
-	36, 155, 3, 2, 2, 2, 38, 159, 3, 2, 2, 2, 40, 162, 3, 2, 2, 2, 42, 165,
-	3, 2, 2, 2, 44, 167, 3, 2, 2, 2, 46, 169, 3, 2, 2, 2, 48, 171, 3, 2, 2,
-	2, 50, 52, 5, 48, 25, 2, 51, 50, 3, 2, 2, 2, 52, 55, 3, 2, 2, 2, 53, 51,
-	3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 56, 3, 2, 2, 2, 55, 53, 3, 2, 2, 2,
-	56, 60, 5, 4, 3, 2, 57, 59, 5, 4, 3, 2, 58, 57, 3, 2, 2, 2, 59, 62, 3,
-	2, 2, 2, 60, 58, 3, 2, 2, 2, 60, 61, 3, 2, 2, 2, 61, 63, 3, 2, 2, 2, 62,
-	60, 3, 2, 2, 2, 63, 64, 7, 2, 2, 3, 64, 3, 3, 2, 2, 2, 65, 73, 5, 6, 4,
-	2, 66, 73, 5, 10, 6, 2, 67, 73, 5, 28, 15, 2, 68, 73, 5, 12, 7, 2, 69,
-	73, 5, 14, 8, 2, 70, 73, 5, 16, 9, 2, 71, 73, 5, 18, 10, 2, 72, 65, 3,
-	2, 2, 2, 72, 66, 3, 2, 2, 2, 72, 67, 3, 2, 2, 2, 72, 68, 3, 2, 2, 2, 72,
-	69, 3, 2, 2, 2, 72, 70, 3, 2, 2, 2, 72, 71, 3, 2, 2, 2, 73, 5, 3, 2, 2,
-	2, 74, 75, 7, 8, 2, 2, 75, 76, 7, 3, 2, 2, 76, 77, 7, 30, 2, 2, 77, 7,
-	3, 2, 2, 2, 78, 80, 5, 48, 25, 2, 79, 78, 3, 2, 2, 2, 79, 80, 3, 2, 2,
-	2, 80, 9, 3, 2, 2, 2, 81, 82, 7, 9, 2, 2, 82, 83, 7, 30, 2, 2, 83, 84,
-	7, 27, 2, 2, 84, 85, 5, 20, 11, 2, 85, 86, 7, 28, 2, 2, 86, 11, 3, 2, 2,
-	2, 87, 88, 7, 16, 2, 2, 88, 89, 7, 30, 2, 2, 89, 90, 7, 27, 2, 2, 90, 91,
-	5, 22, 12, 2, 91, 92, 7, 28, 2, 2, 92, 13, 3, 2, 2, 2, 93, 94, 7, 17, 2,
-	2, 94, 95, 7, 30, 2, 2, 95, 96, 7, 27, 2, 2, 96, 97, 5, 24, 13, 2, 97,
-	98, 7, 28, 2, 2, 98, 15, 3, 2, 2, 2, 99, 100, 7, 12, 2, 2, 100, 101, 7,
-	30, 2, 2, 101, 102, 7, 27, 2, 2, 102, 103, 5, 26, 14, 2, 103, 104, 7, 28,
-	2, 2, 104, 17, 3, 2, 2, 2, 105, 109, 7, 4, 2, 2, 106, 108, 7, 32, 2, 2,
-	107, 106, 3, 2, 2, 2, 108, 111, 3, 2, 2, 2, 109, 107, 3, 2, 2, 2, 109,
-	110, 3, 2, 2, 2, 110, 112, 3, 2, 2, 2, 111, 109, 3, 2, 2, 2, 112, 113,
-	7, 4, 2, 2, 113, 19, 3, 2, 2, 2, 114, 116, 5, 30, 16, 2, 115, 114, 3, 2,
-	2, 2, 116, 119, 3, 2, 2, 2, 117, 115, 3, 2, 2, 2, 117, 118, 3, 2, 2, 2,
-	118, 21, 3, 2, 2, 2, 119, 117, 3, 2, 2, 2, 120, 122, 5, 30, 16, 2, 121,
-	120, 3, 2, 2, 2, 122, 125, 3, 2, 2, 2, 123, 121, 3, 2, 2, 2, 123, 124,
-	3, 2, 2, 2, 124, 23, 3, 2, 2, 2, 125, 123, 3, 2, 2, 2, 126, 128, 5, 30,
-	16, 2, 127, 126, 3, 2, 2, 2, 128, 131, 3, 2, 2, 2, 129, 127, 3, 2, 2, 2,
-	129, 130, 3, 2, 2, 2, 130, 25, 3, 2, 2, 2, 131, 129, 3, 2, 2, 2, 132, 134,
-	5, 30, 16, 2, 133, 132, 3, 2, 2, 2, 134, 137, 3, 2, 2, 2, 135, 133, 3,
-	2, 2, 2, 135, 136, 3, 2, 2, 2, 136, 27, 3, 2, 2, 2, 137, 135, 3, 2, 2,
-	2, 138, 139, 5, 30, 16, 2, 139, 29, 3, 2, 2, 2, 140, 146, 5, 32, 17, 2,
-	141, 146, 5, 34, 18, 2, 142, 146, 5, 36, 19, 2, 143, 146, 5, 40, 21, 2,
-	144, 146, 5, 38, 20, 2, 145, 140, 3, 2, 2, 2, 145, 141, 3, 2, 2, 2, 145,
-	142, 3, 2, 2, 2, 145, 143, 3, 2, 2, 2, 145, 144, 3, 2, 2, 2, 146, 31, 3,
-	2, 2, 2, 147, 148, 5, 42, 22, 2, 148, 149, 7, 5, 2, 2, 149, 150, 5, 44,
-	23, 2, 150, 33, 3, 2, 2, 2, 151, 152, 5, 42, 22, 2, 152, 153, 7, 6, 2,
-	2, 153, 154, 5, 44, 23, 2, 154, 35, 3, 2, 2, 2, 155, 156, 5, 42, 22, 2,
-	156, 157, 7, 3, 2, 2, 157, 158, 5, 44, 23, 2, 158, 37, 3, 2, 2, 2, 159,
-	160, 7, 12, 2, 2, 160, 161, 7, 30, 2, 2, 161, 39, 3, 2, 2, 2, 162, 163,
-	7, 16, 2, 2, 163, 164, 7, 30, 2, 2, 164, 41, 3, 2, 2, 2, 165, 166, 7, 30,
-	2, 2, 166, 43, 3, 2, 2, 2, 167, 168, 7, 30, 2, 2, 168, 45, 3, 2, 2, 2,
-	169, 170, 7, 12, 2, 2, 170, 47, 3, 2, 2, 2, 171, 173, 7, 7, 2, 2, 172,
-	174, 7, 25, 2, 2, 173, 172, 3, 2, 2, 2, 173, 174, 3, 2, 2, 2, 174, 175,
-	3, 2, 2, 2, 175, 176, 7, 30, 2, 2, 176, 49, 3, 2, 2, 2, 13, 53, 60, 72,
-	79, 109, 117, 123, 129, 135, 145, 173,
+	4, 24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 4, 27, 9, 27, 4, 28, 9, 28, 4,
+	29, 9, 29, 4, 30, 9, 30, 4, 31, 9, 31, 4, 32, 9, 32, 3, 2, 3, 2, 3, 2,
+	7, 2, 68, 10, 2, 12, 2, 14, 2, 71, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 4,
+	3, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3, 6, 3, 6, 3, 6, 3, 6, 5, 6, 87, 10, 6,
+	5, 6, 89, 10, 6, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 97, 10, 7, 3,
+	8, 3, 8, 3, 8, 3, 8, 7, 8, 103, 10, 8, 12, 8, 14, 8, 106, 11, 8, 3, 8,
+	3, 8, 3, 9, 3, 9, 3, 9, 5, 9, 113, 10, 9, 3, 10, 3, 10, 3, 10, 3, 10, 3,
+	10, 5, 10, 120, 10, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11,
+	3, 11, 3, 12, 3, 12, 5, 12, 132, 10, 12, 3, 12, 3, 12, 3, 12, 5, 12, 137,
+	10, 12, 3, 13, 3, 13, 3, 13, 3, 13, 3, 13, 3, 13, 3, 14, 3, 14, 3, 14,
+	3, 14, 3, 14, 3, 14, 5, 14, 151, 10, 14, 3, 15, 3, 15, 3, 16, 3, 16, 3,
+	17, 3, 17, 3, 18, 3, 18, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3, 20, 7, 20,
+	167, 10, 20, 12, 20, 14, 20, 170, 11, 20, 3, 20, 3, 20, 3, 21, 3, 21, 3,
+	21, 3, 21, 7, 21, 178, 10, 21, 12, 21, 14, 21, 181, 11, 21, 3, 21, 3, 21,
+	3, 22, 3, 22, 3, 22, 3, 22, 5, 22, 189, 10, 22, 3, 23, 3, 23, 7, 23, 193,
+	10, 23, 12, 23, 14, 23, 196, 11, 23, 3, 23, 3, 23, 3, 24, 3, 24, 3, 24,
+	5, 24, 203, 10, 24, 3, 25, 3, 25, 7, 25, 207, 10, 25, 12, 25, 14, 25, 210,
+	11, 25, 3, 26, 3, 26, 7, 26, 214, 10, 26, 12, 26, 14, 26, 217, 11, 26,
+	3, 27, 3, 27, 3, 27, 3, 27, 3, 27, 5, 27, 224, 10, 27, 3, 27, 5, 27, 227,
+	10, 27, 3, 28, 3, 28, 3, 28, 3, 28, 3, 28, 3, 28, 3, 29, 3, 29, 3, 30,
+	3, 30, 3, 30, 7, 30, 240, 10, 30, 12, 30, 14, 30, 243, 11, 30, 3, 31, 3,
+	31, 3, 31, 3, 31, 3, 31, 3, 32, 3, 32, 3, 32, 2, 2, 33, 2, 4, 6, 8, 10,
+	12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46,
+	48, 50, 52, 54, 56, 58, 60, 62, 2, 4, 3, 2, 3, 4, 4, 2, 14, 14, 20, 20,
+	2, 249, 2, 69, 3, 2, 2, 2, 4, 74, 3, 2, 2, 2, 6, 76, 3, 2, 2, 2, 8, 80,
+	3, 2, 2, 2, 10, 88, 3, 2, 2, 2, 12, 96, 3, 2, 2, 2, 14, 98, 3, 2, 2, 2,
+	16, 112, 3, 2, 2, 2, 18, 114, 3, 2, 2, 2, 20, 121, 3, 2, 2, 2, 22, 129,
+	3, 2, 2, 2, 24, 138, 3, 2, 2, 2, 26, 150, 3, 2, 2, 2, 28, 152, 3, 2, 2,
+	2, 30, 154, 3, 2, 2, 2, 32, 156, 3, 2, 2, 2, 34, 158, 3, 2, 2, 2, 36, 160,
+	3, 2, 2, 2, 38, 162, 3, 2, 2, 2, 40, 173, 3, 2, 2, 2, 42, 184, 3, 2, 2,
+	2, 44, 190, 3, 2, 2, 2, 46, 199, 3, 2, 2, 2, 48, 204, 3, 2, 2, 2, 50, 215,
+	3, 2, 2, 2, 52, 226, 3, 2, 2, 2, 54, 228, 3, 2, 2, 2, 56, 234, 3, 2, 2,
+	2, 58, 241, 3, 2, 2, 2, 60, 244, 3, 2, 2, 2, 62, 249, 3, 2, 2, 2, 64, 68,
+	5, 4, 3, 2, 65, 68, 5, 6, 4, 2, 66, 68, 5, 12, 7, 2, 67, 64, 3, 2, 2, 2,
+	67, 65, 3, 2, 2, 2, 67, 66, 3, 2, 2, 2, 68, 71, 3, 2, 2, 2, 69, 67, 3,
+	2, 2, 2, 69, 70, 3, 2, 2, 2, 70, 72, 3, 2, 2, 2, 71, 69, 3, 2, 2, 2, 72,
+	73, 7, 2, 2, 3, 73, 3, 3, 2, 2, 2, 74, 75, 7, 40, 2, 2, 75, 5, 3, 2, 2,
+	2, 76, 77, 5, 8, 5, 2, 77, 78, 7, 35, 2, 2, 78, 79, 5, 10, 6, 2, 79, 7,
+	3, 2, 2, 2, 80, 81, 7, 40, 2, 2, 81, 9, 3, 2, 2, 2, 82, 89, 7, 40, 2, 2,
+	83, 86, 7, 40, 2, 2, 84, 85, 7, 37, 2, 2, 85, 87, 7, 40, 2, 2, 86, 84,
+	3, 2, 2, 2, 86, 87, 3, 2, 2, 2, 87, 89, 3, 2, 2, 2, 88, 82, 3, 2, 2, 2,
+	88, 83, 3, 2, 2, 2, 89, 11, 3, 2, 2, 2, 90, 97, 5, 6, 4, 2, 91, 97, 5,
+	14, 8, 2, 92, 97, 5, 38, 20, 2, 93, 97, 5, 54, 28, 2, 94, 97, 5, 40, 21,
+	2, 95, 97, 5, 60, 31, 2, 96, 90, 3, 2, 2, 2, 96, 91, 3, 2, 2, 2, 96, 92,
+	3, 2, 2, 2, 96, 93, 3, 2, 2, 2, 96, 94, 3, 2, 2, 2, 96, 95, 3, 2, 2, 2,
+	97, 13, 3, 2, 2, 2, 98, 99, 7, 8, 2, 2, 99, 100, 7, 40, 2, 2, 100, 104,
+	7, 29, 2, 2, 101, 103, 5, 16, 9, 2, 102, 101, 3, 2, 2, 2, 103, 106, 3,
+	2, 2, 2, 104, 102, 3, 2, 2, 2, 104, 105, 3, 2, 2, 2, 105, 107, 3, 2, 2,
+	2, 106, 104, 3, 2, 2, 2, 107, 108, 7, 30, 2, 2, 108, 15, 3, 2, 2, 2, 109,
+	113, 5, 18, 10, 2, 110, 113, 5, 20, 11, 2, 111, 113, 5, 22, 12, 2, 112,
+	109, 3, 2, 2, 2, 112, 110, 3, 2, 2, 2, 112, 111, 3, 2, 2, 2, 113, 17, 3,
+	2, 2, 2, 114, 119, 7, 9, 2, 2, 115, 120, 7, 40, 2, 2, 116, 117, 7, 20,
+	2, 2, 117, 118, 7, 36, 2, 2, 118, 120, 5, 32, 17, 2, 119, 115, 3, 2, 2,
+	2, 119, 116, 3, 2, 2, 2, 120, 19, 3, 2, 2, 2, 121, 122, 7, 10, 2, 2, 122,
+	123, 7, 31, 2, 2, 123, 124, 5, 28, 15, 2, 124, 125, 7, 32, 2, 2, 125, 126,
+	7, 20, 2, 2, 126, 127, 7, 36, 2, 2, 127, 128, 5, 32, 17, 2, 128, 21, 3,
+	2, 2, 2, 129, 131, 7, 11, 2, 2, 130, 132, 5, 34, 18, 2, 131, 130, 3, 2,
+	2, 2, 131, 132, 3, 2, 2, 2, 132, 133, 3, 2, 2, 2, 133, 134, 7, 35, 2, 2,
+	134, 136, 5, 26, 14, 2, 135, 137, 5, 24, 13, 2, 136, 135, 3, 2, 2, 2, 136,
+	137, 3, 2, 2, 2, 137, 23, 3, 2, 2, 2, 138, 139, 7, 12, 2, 2, 139, 140,
+	7, 13, 2, 2, 140, 141, 7, 27, 2, 2, 141, 142, 5, 36, 19, 2, 142, 143, 7,
+	28, 2, 2, 143, 25, 3, 2, 2, 2, 144, 145, 7, 6, 2, 2, 145, 151, 5, 32, 17,
+	2, 146, 147, 7, 7, 2, 2, 147, 148, 7, 20, 2, 2, 148, 149, 7, 36, 2, 2,
+	149, 151, 5, 32, 17, 2, 150, 144, 3, 2, 2, 2, 150, 146, 3, 2, 2, 2, 151,
+	27, 3, 2, 2, 2, 152, 153, 7, 40, 2, 2, 153, 29, 3, 2, 2, 2, 154, 155, 7,
+	40, 2, 2, 155, 31, 3, 2, 2, 2, 156, 157, 7, 40, 2, 2, 157, 33, 3, 2, 2,
+	2, 158, 159, 7, 40, 2, 2, 159, 35, 3, 2, 2, 2, 160, 161, 7, 40, 2, 2, 161,
+	37, 3, 2, 2, 2, 162, 163, 7, 16, 2, 2, 163, 164, 7, 40, 2, 2, 164, 168,
+	7, 29, 2, 2, 165, 167, 5, 42, 22, 2, 166, 165, 3, 2, 2, 2, 167, 170, 3,
+	2, 2, 2, 168, 166, 3, 2, 2, 2, 168, 169, 3, 2, 2, 2, 169, 171, 3, 2, 2,
+	2, 170, 168, 3, 2, 2, 2, 171, 172, 7, 30, 2, 2, 172, 39, 3, 2, 2, 2, 173,
+	174, 7, 17, 2, 2, 174, 175, 7, 40, 2, 2, 175, 179, 7, 29, 2, 2, 176, 178,
+	5, 42, 22, 2, 177, 176, 3, 2, 2, 2, 178, 181, 3, 2, 2, 2, 179, 177, 3,
+	2, 2, 2, 179, 180, 3, 2, 2, 2, 180, 182, 3, 2, 2, 2, 181, 179, 3, 2, 2,
+	2, 182, 183, 7, 30, 2, 2, 183, 41, 3, 2, 2, 2, 184, 188, 7, 40, 2, 2, 185,
+	186, 7, 35, 2, 2, 186, 189, 5, 10, 6, 2, 187, 189, 5, 44, 23, 2, 188, 185,
+	3, 2, 2, 2, 188, 187, 3, 2, 2, 2, 189, 43, 3, 2, 2, 2, 190, 194, 7, 29,
+	2, 2, 191, 193, 5, 46, 24, 2, 192, 191, 3, 2, 2, 2, 193, 196, 3, 2, 2,
+	2, 194, 192, 3, 2, 2, 2, 194, 195, 3, 2, 2, 2, 195, 197, 3, 2, 2, 2, 196,
+	194, 3, 2, 2, 2, 197, 198, 7, 30, 2, 2, 198, 45, 3, 2, 2, 2, 199, 202,
+	7, 3, 2, 2, 200, 203, 5, 48, 25, 2, 201, 203, 5, 50, 26, 2, 202, 200, 3,
+	2, 2, 2, 202, 201, 3, 2, 2, 2, 203, 47, 3, 2, 2, 2, 204, 208, 7, 4, 2,
+	2, 205, 207, 9, 2, 2, 2, 206, 205, 3, 2, 2, 2, 207, 210, 3, 2, 2, 2, 208,
+	206, 3, 2, 2, 2, 208, 209, 3, 2, 2, 2, 209, 49, 3, 2, 2, 2, 210, 208, 3,
+	2, 2, 2, 211, 214, 7, 3, 2, 2, 212, 214, 5, 52, 27, 2, 213, 211, 3, 2,
+	2, 2, 213, 212, 3, 2, 2, 2, 214, 217, 3, 2, 2, 2, 215, 213, 3, 2, 2, 2,
+	215, 216, 3, 2, 2, 2, 216, 51, 3, 2, 2, 2, 217, 215, 3, 2, 2, 2, 218, 227,
+	7, 14, 2, 2, 219, 223, 5, 32, 17, 2, 220, 221, 7, 27, 2, 2, 221, 222, 9,
+	3, 2, 2, 222, 224, 7, 28, 2, 2, 223, 220, 3, 2, 2, 2, 223, 224, 3, 2, 2,
+	2, 224, 227, 3, 2, 2, 2, 225, 227, 7, 20, 2, 2, 226, 218, 3, 2, 2, 2, 226,
+	219, 3, 2, 2, 2, 226, 225, 3, 2, 2, 2, 227, 53, 3, 2, 2, 2, 228, 229, 7,
+	18, 2, 2, 229, 230, 5, 56, 29, 2, 230, 231, 7, 29, 2, 2, 231, 232, 5, 58,
+	30, 2, 232, 233, 7, 30, 2, 2, 233, 55, 3, 2, 2, 2, 234, 235, 7, 40, 2,
+	2, 235, 57, 3, 2, 2, 2, 236, 237, 5, 6, 4, 2, 237, 238, 7, 5, 2, 2, 238,
+	240, 3, 2, 2, 2, 239, 236, 3, 2, 2, 2, 240, 243, 3, 2, 2, 2, 241, 239,
+	3, 2, 2, 2, 241, 242, 3, 2, 2, 2, 242, 59, 3, 2, 2, 2, 243, 241, 3, 2,
+	2, 2, 244, 245, 7, 19, 2, 2, 245, 246, 7, 29, 2, 2, 246, 247, 5, 62, 32,
+	2, 247, 248, 7, 30, 2, 2, 248, 61, 3, 2, 2, 2, 249, 250, 7, 20, 2, 2, 250,
+	63, 3, 2, 2, 2, 24, 67, 69, 86, 88, 96, 104, 112, 119, 131, 136, 150, 168,
+	179, 188, 194, 202, 208, 213, 215, 223, 226, 241,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "':'", "'```'", "'='", "'->'", "'#'", "'DesignSystem'", "", "", "",
-	"", "", "", "", "", "", "'position'", "'Flow'", "'behavior'", "", "", "",
-	"", "", "", "'{'", "'}'", "'\"'",
+	"", "'|'", "'-'", "';'", "", "", "", "", "", "", "", "", "", "", "", "",
+	"", "", "", "", "", "", "", "", "", "'('", "')'", "'{'", "'}'", "'['",
+	"']'", "'\"'", "'''", "':'", "'.'", "','",
 }
 var symbolicNames = []string{
-	"", "", "", "", "", "", "DESIGN_SYSTEM", "DESIGN", "PROJECT", "Page", "LAYER",
-	"Function", "Library", "Unit", "TEMPLATE", "COMPONENT", "Position", "Flow",
-	"Behavior", "WS", "COMMENT", "LINE_COMMENT", "EmptyLine", "Space", "NewLine",
-	"LBRACE", "RBRACE", "Quote", "IDENTIFIER", "STRING_LITERAL", "HTML_STRING",
+	"", "", "", "", "GOTO_KEY", "SHOW_KEY", "FLOW", "SEE", "DO", "REACT", "WITHTEXT",
+	"ANIMATE", "GridSize", "POSITION", "PAGE", "COMPONENT", "STYLE", "LIBRARAY",
+	"STRING_LITERAL", "WS", "COMMENT", "LINE_COMMENT", "EmptyLine", "Space",
+	"NewLine", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK",
+	"Quote", "SingleQuote", "COLON", "DOT", "COMMA", "LETTER", "DIGITS", "IDENTIFIER",
+	"DIGITS_IDENTIFIER", "CONFIG_VALUE", "DECIMAL_LITERAL",
 }
 
 var ruleNames = []string{
-	"designIt", "declaration", "designSystemDeclaration", "commentBlockDeclaration",
-	"designBlockDeclaration", "templateBlockDeclaration", "componentBlockDeclaration",
-	"layerBlockDeclaration", "codeBlockDeclaration", "designBodyDeclaration",
-	"templateBodyDeclaration", "componentBodyDeclaration", "layerBodyDeclaration",
-	"expressDeclaration", "express", "equalExpress", "useExpress", "valueExpress",
-	"layerExpress", "templateExpress", "expressKey", "expressValue", "layer",
-	"commentDeclaration",
+	"start", "comment", "configDecalartion", "configKey", "configValue", "decalartions",
+	"flowDecalartion", "flowBodyDecalartion", "seeDecalartion", "doDecalartion",
+	"reactDecalartion", "animateDecalartion", "actionKey", "actionName", "componentValue",
+	"componentName", "sceneName", "animateName", "pageDecalartion", "componentDecalartion",
+	"componentBodyDecalartion", "layoutDecalaration", "layoutBodyDecalartion",
+	"emptyLine", "layoutLine", "componentUseDeclaration", "styleDecalartion",
+	"styleName", "styleBody", "libraryDecalartion", "libraryBody",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -141,188 +176,229 @@ func NewDesignParser(input antlr.TokenStream) *DesignParser {
 
 // DesignParser tokens.
 const (
-	DesignParserEOF            = antlr.TokenEOF
-	DesignParserT__0           = 1
-	DesignParserT__1           = 2
-	DesignParserT__2           = 3
-	DesignParserT__3           = 4
-	DesignParserT__4           = 5
-	DesignParserDESIGN_SYSTEM  = 6
-	DesignParserDESIGN         = 7
-	DesignParserPROJECT        = 8
-	DesignParserPage           = 9
-	DesignParserLAYER          = 10
-	DesignParserFunction       = 11
-	DesignParserLibrary        = 12
-	DesignParserUnit           = 13
-	DesignParserTEMPLATE       = 14
-	DesignParserCOMPONENT      = 15
-	DesignParserPosition       = 16
-	DesignParserFlow           = 17
-	DesignParserBehavior       = 18
-	DesignParserWS             = 19
-	DesignParserCOMMENT        = 20
-	DesignParserLINE_COMMENT   = 21
-	DesignParserEmptyLine      = 22
-	DesignParserSpace          = 23
-	DesignParserNewLine        = 24
-	DesignParserLBRACE         = 25
-	DesignParserRBRACE         = 26
-	DesignParserQuote          = 27
-	DesignParserIDENTIFIER     = 28
-	DesignParserSTRING_LITERAL = 29
-	DesignParserHTML_STRING    = 30
+	DesignParserEOF               = antlr.TokenEOF
+	DesignParserT__0              = 1
+	DesignParserT__1              = 2
+	DesignParserT__2              = 3
+	DesignParserGOTO_KEY          = 4
+	DesignParserSHOW_KEY          = 5
+	DesignParserFLOW              = 6
+	DesignParserSEE               = 7
+	DesignParserDO                = 8
+	DesignParserREACT             = 9
+	DesignParserWITHTEXT          = 10
+	DesignParserANIMATE           = 11
+	DesignParserGridSize          = 12
+	DesignParserPOSITION          = 13
+	DesignParserPAGE              = 14
+	DesignParserCOMPONENT         = 15
+	DesignParserSTYLE             = 16
+	DesignParserLIBRARAY          = 17
+	DesignParserSTRING_LITERAL    = 18
+	DesignParserWS                = 19
+	DesignParserCOMMENT           = 20
+	DesignParserLINE_COMMENT      = 21
+	DesignParserEmptyLine         = 22
+	DesignParserSpace             = 23
+	DesignParserNewLine           = 24
+	DesignParserLPAREN            = 25
+	DesignParserRPAREN            = 26
+	DesignParserLBRACE            = 27
+	DesignParserRBRACE            = 28
+	DesignParserLBRACK            = 29
+	DesignParserRBRACK            = 30
+	DesignParserQuote             = 31
+	DesignParserSingleQuote       = 32
+	DesignParserCOLON             = 33
+	DesignParserDOT               = 34
+	DesignParserCOMMA             = 35
+	DesignParserLETTER            = 36
+	DesignParserDIGITS            = 37
+	DesignParserIDENTIFIER        = 38
+	DesignParserDIGITS_IDENTIFIER = 39
+	DesignParserCONFIG_VALUE      = 40
+	DesignParserDECIMAL_LITERAL   = 41
 )
 
 // DesignParser rules.
 const (
-	DesignParserRULE_designIt                  = 0
-	DesignParserRULE_declaration               = 1
-	DesignParserRULE_designSystemDeclaration   = 2
-	DesignParserRULE_commentBlockDeclaration   = 3
-	DesignParserRULE_designBlockDeclaration    = 4
-	DesignParserRULE_templateBlockDeclaration  = 5
-	DesignParserRULE_componentBlockDeclaration = 6
-	DesignParserRULE_layerBlockDeclaration     = 7
-	DesignParserRULE_codeBlockDeclaration      = 8
-	DesignParserRULE_designBodyDeclaration     = 9
-	DesignParserRULE_templateBodyDeclaration   = 10
-	DesignParserRULE_componentBodyDeclaration  = 11
-	DesignParserRULE_layerBodyDeclaration      = 12
-	DesignParserRULE_expressDeclaration        = 13
-	DesignParserRULE_express                   = 14
-	DesignParserRULE_equalExpress              = 15
-	DesignParserRULE_useExpress                = 16
-	DesignParserRULE_valueExpress              = 17
-	DesignParserRULE_layerExpress              = 18
-	DesignParserRULE_templateExpress           = 19
-	DesignParserRULE_expressKey                = 20
-	DesignParserRULE_expressValue              = 21
-	DesignParserRULE_layer                     = 22
-	DesignParserRULE_commentDeclaration        = 23
+	DesignParserRULE_start                    = 0
+	DesignParserRULE_comment                  = 1
+	DesignParserRULE_configDecalartion        = 2
+	DesignParserRULE_configKey                = 3
+	DesignParserRULE_configValue              = 4
+	DesignParserRULE_decalartions             = 5
+	DesignParserRULE_flowDecalartion          = 6
+	DesignParserRULE_flowBodyDecalartion      = 7
+	DesignParserRULE_seeDecalartion           = 8
+	DesignParserRULE_doDecalartion            = 9
+	DesignParserRULE_reactDecalartion         = 10
+	DesignParserRULE_animateDecalartion       = 11
+	DesignParserRULE_actionKey                = 12
+	DesignParserRULE_actionName               = 13
+	DesignParserRULE_componentValue           = 14
+	DesignParserRULE_componentName            = 15
+	DesignParserRULE_sceneName                = 16
+	DesignParserRULE_animateName              = 17
+	DesignParserRULE_pageDecalartion          = 18
+	DesignParserRULE_componentDecalartion     = 19
+	DesignParserRULE_componentBodyDecalartion = 20
+	DesignParserRULE_layoutDecalaration       = 21
+	DesignParserRULE_layoutBodyDecalartion    = 22
+	DesignParserRULE_emptyLine                = 23
+	DesignParserRULE_layoutLine               = 24
+	DesignParserRULE_componentUseDeclaration  = 25
+	DesignParserRULE_styleDecalartion         = 26
+	DesignParserRULE_styleName                = 27
+	DesignParserRULE_styleBody                = 28
+	DesignParserRULE_libraryDecalartion       = 29
+	DesignParserRULE_libraryBody              = 30
 )
 
-// IDesignItContext is an interface to support dynamic dispatch.
-type IDesignItContext interface {
+// IStartContext is an interface to support dynamic dispatch.
+type IStartContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsDesignItContext differentiates from other interfaces.
-	IsDesignItContext()
+	// IsStartContext differentiates from other interfaces.
+	IsStartContext()
 }
 
-type DesignItContext struct {
+type StartContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyDesignItContext() *DesignItContext {
-	var p = new(DesignItContext)
+func NewEmptyStartContext() *StartContext {
+	var p = new(StartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_designIt
+	p.RuleIndex = DesignParserRULE_start
 	return p
 }
 
-func (*DesignItContext) IsDesignItContext() {}
+func (*StartContext) IsStartContext() {}
 
-func NewDesignItContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DesignItContext {
-	var p = new(DesignItContext)
+func NewStartContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StartContext {
+	var p = new(StartContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_designIt
+	p.RuleIndex = DesignParserRULE_start
 
 	return p
 }
 
-func (s *DesignItContext) GetParser() antlr.Parser { return s.parser }
+func (s *StartContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *DesignItContext) AllDeclaration() []IDeclarationContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IDeclarationContext)(nil)).Elem())
-	var tst = make([]IDeclarationContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IDeclarationContext)
-		}
-	}
-
-	return tst
-}
-
-func (s *DesignItContext) Declaration(i int) IDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDeclarationContext)(nil)).Elem(), i)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IDeclarationContext)
-}
-
-func (s *DesignItContext) EOF() antlr.TerminalNode {
+func (s *StartContext) EOF() antlr.TerminalNode {
 	return s.GetToken(DesignParserEOF, 0)
 }
 
-func (s *DesignItContext) AllCommentDeclaration() []ICommentDeclarationContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICommentDeclarationContext)(nil)).Elem())
-	var tst = make([]ICommentDeclarationContext, len(ts))
+func (s *StartContext) AllComment() []ICommentContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICommentContext)(nil)).Elem())
+	var tst = make([]ICommentContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ICommentDeclarationContext)
+			tst[i] = t.(ICommentContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *DesignItContext) CommentDeclaration(i int) ICommentDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommentDeclarationContext)(nil)).Elem(), i)
+func (s *StartContext) Comment(i int) ICommentContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommentContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ICommentDeclarationContext)
+	return t.(ICommentContext)
 }
 
-func (s *DesignItContext) GetRuleContext() antlr.RuleContext {
+func (s *StartContext) AllConfigDecalartion() []IConfigDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem())
+	var tst = make([]IConfigDecalartionContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IConfigDecalartionContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *StartContext) ConfigDecalartion(i int) IConfigDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigDecalartionContext)
+}
+
+func (s *StartContext) AllDecalartions() []IDecalartionsContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IDecalartionsContext)(nil)).Elem())
+	var tst = make([]IDecalartionsContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IDecalartionsContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *StartContext) Decalartions(i int) IDecalartionsContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDecalartionsContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IDecalartionsContext)
+}
+
+func (s *StartContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *DesignItContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *StartContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *DesignItContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *StartContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDesignIt(s)
+		listenerT.EnterStart(s)
 	}
 }
 
-func (s *DesignItContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *StartContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDesignIt(s)
+		listenerT.ExitStart(s)
 	}
 }
 
-func (s *DesignItContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *StartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitDesignIt(s)
+		return t.VisitStart(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) DesignIt() (localctx IDesignItContext) {
-	localctx = NewDesignItContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, DesignParserRULE_designIt)
+func (p *DesignParser) Start() (localctx IStartContext) {
+	localctx = NewStartContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, DesignParserRULE_start)
 	var _la int
 
 	defer func() {
@@ -342,340 +418,121 @@ func (p *DesignParser) DesignIt() (localctx IDesignItContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(51)
+	p.SetState(67)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == DesignParserT__4 {
-		{
-			p.SetState(48)
-			p.CommentDeclaration()
+	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserFLOW)|(1<<DesignParserPAGE)|(1<<DesignParserCOMPONENT)|(1<<DesignParserSTYLE)|(1<<DesignParserLIBRARAY))) != 0) || _la == DesignParserIDENTIFIER {
+		p.SetState(65)
+		p.GetErrorHandler().Sync(p)
+		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext()) {
+		case 1:
+			{
+				p.SetState(62)
+				p.Comment()
+			}
+
+		case 2:
+			{
+				p.SetState(63)
+				p.ConfigDecalartion()
+			}
+
+		case 3:
+			{
+				p.SetState(64)
+				p.Decalartions()
+			}
+
 		}
 
-		p.SetState(53)
+		p.SetState(69)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(54)
-		p.Declaration()
-	}
-	p.SetState(58)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__1)|(1<<DesignParserDESIGN_SYSTEM)|(1<<DesignParserDESIGN)|(1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserCOMPONENT)|(1<<DesignParserIDENTIFIER))) != 0 {
-		{
-			p.SetState(55)
-			p.Declaration()
-		}
-
-		p.SetState(60)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-	}
-	{
-		p.SetState(61)
+		p.SetState(70)
 		p.Match(DesignParserEOF)
 	}
 
 	return localctx
 }
 
-// IDeclarationContext is an interface to support dynamic dispatch.
-type IDeclarationContext interface {
+// ICommentContext is an interface to support dynamic dispatch.
+type ICommentContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsDeclarationContext differentiates from other interfaces.
-	IsDeclarationContext()
+	// IsCommentContext differentiates from other interfaces.
+	IsCommentContext()
 }
 
-type DeclarationContext struct {
+type CommentContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyDeclarationContext() *DeclarationContext {
-	var p = new(DeclarationContext)
+func NewEmptyCommentContext() *CommentContext {
+	var p = new(CommentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_declaration
+	p.RuleIndex = DesignParserRULE_comment
 	return p
 }
 
-func (*DeclarationContext) IsDeclarationContext() {}
+func (*CommentContext) IsCommentContext() {}
 
-func NewDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DeclarationContext {
-	var p = new(DeclarationContext)
+func NewCommentContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *CommentContext {
+	var p = new(CommentContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_declaration
+	p.RuleIndex = DesignParserRULE_comment
 
 	return p
 }
 
-func (s *DeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *CommentContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *DeclarationContext) DesignSystemDeclaration() IDesignSystemDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDesignSystemDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IDesignSystemDeclarationContext)
-}
-
-func (s *DeclarationContext) DesignBlockDeclaration() IDesignBlockDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDesignBlockDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IDesignBlockDeclarationContext)
-}
-
-func (s *DeclarationContext) ExpressDeclaration() IExpressDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressDeclarationContext)
-}
-
-func (s *DeclarationContext) TemplateBlockDeclaration() ITemplateBlockDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITemplateBlockDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ITemplateBlockDeclarationContext)
-}
-
-func (s *DeclarationContext) ComponentBlockDeclaration() IComponentBlockDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBlockDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IComponentBlockDeclarationContext)
-}
-
-func (s *DeclarationContext) LayerBlockDeclaration() ILayerBlockDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayerBlockDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ILayerBlockDeclarationContext)
-}
-
-func (s *DeclarationContext) CodeBlockDeclaration() ICodeBlockDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICodeBlockDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ICodeBlockDeclarationContext)
-}
-
-func (s *DeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *DeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *DeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDeclaration(s)
-	}
-}
-
-func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDeclaration(s)
-	}
-}
-
-func (s *DeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) Declaration() (localctx IDeclarationContext) {
-	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, DesignParserRULE_declaration)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.SetState(70)
-	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext()) {
-	case 1:
-		p.EnterOuterAlt(localctx, 1)
-		{
-			p.SetState(63)
-			p.DesignSystemDeclaration()
-		}
-
-	case 2:
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(64)
-			p.DesignBlockDeclaration()
-		}
-
-	case 3:
-		p.EnterOuterAlt(localctx, 3)
-		{
-			p.SetState(65)
-			p.ExpressDeclaration()
-		}
-
-	case 4:
-		p.EnterOuterAlt(localctx, 4)
-		{
-			p.SetState(66)
-			p.TemplateBlockDeclaration()
-		}
-
-	case 5:
-		p.EnterOuterAlt(localctx, 5)
-		{
-			p.SetState(67)
-			p.ComponentBlockDeclaration()
-		}
-
-	case 6:
-		p.EnterOuterAlt(localctx, 6)
-		{
-			p.SetState(68)
-			p.LayerBlockDeclaration()
-		}
-
-	case 7:
-		p.EnterOuterAlt(localctx, 7)
-		{
-			p.SetState(69)
-			p.CodeBlockDeclaration()
-		}
-
-	}
-
-	return localctx
-}
-
-// IDesignSystemDeclarationContext is an interface to support dynamic dispatch.
-type IDesignSystemDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsDesignSystemDeclarationContext differentiates from other interfaces.
-	IsDesignSystemDeclarationContext()
-}
-
-type DesignSystemDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyDesignSystemDeclarationContext() *DesignSystemDeclarationContext {
-	var p = new(DesignSystemDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_designSystemDeclaration
-	return p
-}
-
-func (*DesignSystemDeclarationContext) IsDesignSystemDeclarationContext() {}
-
-func NewDesignSystemDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DesignSystemDeclarationContext {
-	var p = new(DesignSystemDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_designSystemDeclaration
-
-	return p
-}
-
-func (s *DesignSystemDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *DesignSystemDeclarationContext) DESIGN_SYSTEM() antlr.TerminalNode {
-	return s.GetToken(DesignParserDESIGN_SYSTEM, 0)
-}
-
-func (s *DesignSystemDeclarationContext) IDENTIFIER() antlr.TerminalNode {
+func (s *CommentContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *DesignSystemDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *CommentContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *DesignSystemDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *CommentContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *DesignSystemDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDesignSystemDeclaration(s)
+		listenerT.EnterComment(s)
 	}
 }
 
-func (s *DesignSystemDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDesignSystemDeclaration(s)
+		listenerT.ExitComment(s)
 	}
 }
 
-func (s *DesignSystemDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitDesignSystemDeclaration(s)
+		return t.VisitComment(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) DesignSystemDeclaration() (localctx IDesignSystemDeclarationContext) {
-	localctx = NewDesignSystemDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, DesignParserRULE_designSystemDeclaration)
+func (p *DesignParser) Comment() (localctx ICommentContext) {
+	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, DesignParserRULE_comment)
 
 	defer func() {
 		p.ExitRule()
@@ -696,101 +553,691 @@ func (p *DesignParser) DesignSystemDeclaration() (localctx IDesignSystemDeclarat
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(72)
-		p.Match(DesignParserDESIGN_SYSTEM)
-	}
-	{
-		p.SetState(73)
-		p.Match(DesignParserT__0)
-	}
-	{
-		p.SetState(74)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
 	return localctx
 }
 
-// ICommentBlockDeclarationContext is an interface to support dynamic dispatch.
-type ICommentBlockDeclarationContext interface {
+// IConfigDecalartionContext is an interface to support dynamic dispatch.
+type IConfigDecalartionContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsCommentBlockDeclarationContext differentiates from other interfaces.
-	IsCommentBlockDeclarationContext()
+	// IsConfigDecalartionContext differentiates from other interfaces.
+	IsConfigDecalartionContext()
 }
 
-type CommentBlockDeclarationContext struct {
+type ConfigDecalartionContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyCommentBlockDeclarationContext() *CommentBlockDeclarationContext {
-	var p = new(CommentBlockDeclarationContext)
+func NewEmptyConfigDecalartionContext() *ConfigDecalartionContext {
+	var p = new(ConfigDecalartionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_commentBlockDeclaration
+	p.RuleIndex = DesignParserRULE_configDecalartion
 	return p
 }
 
-func (*CommentBlockDeclarationContext) IsCommentBlockDeclarationContext() {}
+func (*ConfigDecalartionContext) IsConfigDecalartionContext() {}
 
-func NewCommentBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *CommentBlockDeclarationContext {
-	var p = new(CommentBlockDeclarationContext)
+func NewConfigDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigDecalartionContext {
+	var p = new(ConfigDecalartionContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_commentBlockDeclaration
+	p.RuleIndex = DesignParserRULE_configDecalartion
 
 	return p
 }
 
-func (s *CommentBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *ConfigDecalartionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *CommentBlockDeclarationContext) CommentDeclaration() ICommentDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommentDeclarationContext)(nil)).Elem(), 0)
+func (s *ConfigDecalartionContext) ConfigKey() IConfigKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigKeyContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ICommentDeclarationContext)
+	return t.(IConfigKeyContext)
 }
 
-func (s *CommentBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *ConfigDecalartionContext) COLON() antlr.TerminalNode {
+	return s.GetToken(DesignParserCOLON, 0)
+}
+
+func (s *ConfigDecalartionContext) ConfigValue() IConfigValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigValueContext)
+}
+
+func (s *ConfigDecalartionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *CommentBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ConfigDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *CommentBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ConfigDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterCommentBlockDeclaration(s)
+		listenerT.EnterConfigDecalartion(s)
 	}
 }
 
-func (s *CommentBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ConfigDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitCommentBlockDeclaration(s)
+		listenerT.ExitConfigDecalartion(s)
 	}
 }
 
-func (s *CommentBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ConfigDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitCommentBlockDeclaration(s)
+		return t.VisitConfigDecalartion(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) CommentBlockDeclaration() (localctx ICommentBlockDeclarationContext) {
-	localctx = NewCommentBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, DesignParserRULE_commentBlockDeclaration)
+func (p *DesignParser) ConfigDecalartion() (localctx IConfigDecalartionContext) {
+	localctx = NewConfigDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, DesignParserRULE_configDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(74)
+		p.ConfigKey()
+	}
+	{
+		p.SetState(75)
+		p.Match(DesignParserCOLON)
+	}
+	{
+		p.SetState(76)
+		p.ConfigValue()
+	}
+
+	return localctx
+}
+
+// IConfigKeyContext is an interface to support dynamic dispatch.
+type IConfigKeyContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsConfigKeyContext differentiates from other interfaces.
+	IsConfigKeyContext()
+}
+
+type ConfigKeyContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyConfigKeyContext() *ConfigKeyContext {
+	var p = new(ConfigKeyContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_configKey
+	return p
+}
+
+func (*ConfigKeyContext) IsConfigKeyContext() {}
+
+func NewConfigKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigKeyContext {
+	var p = new(ConfigKeyContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_configKey
+
+	return p
+}
+
+func (s *ConfigKeyContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ConfigKeyContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ConfigKeyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ConfigKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ConfigKeyContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterConfigKey(s)
+	}
+}
+
+func (s *ConfigKeyContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitConfigKey(s)
+	}
+}
+
+func (s *ConfigKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitConfigKey(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ConfigKey() (localctx IConfigKeyContext) {
+	localctx = NewConfigKeyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, DesignParserRULE_configKey)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(78)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IConfigValueContext is an interface to support dynamic dispatch.
+type IConfigValueContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsConfigValueContext differentiates from other interfaces.
+	IsConfigValueContext()
+}
+
+type ConfigValueContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyConfigValueContext() *ConfigValueContext {
+	var p = new(ConfigValueContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_configValue
+	return p
+}
+
+func (*ConfigValueContext) IsConfigValueContext() {}
+
+func NewConfigValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigValueContext {
+	var p = new(ConfigValueContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_configValue
+
+	return p
+}
+
+func (s *ConfigValueContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ConfigValueContext) AllIDENTIFIER() []antlr.TerminalNode {
+	return s.GetTokens(DesignParserIDENTIFIER)
+}
+
+func (s *ConfigValueContext) IDENTIFIER(i int) antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, i)
+}
+
+func (s *ConfigValueContext) COMMA() antlr.TerminalNode {
+	return s.GetToken(DesignParserCOMMA, 0)
+}
+
+func (s *ConfigValueContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ConfigValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ConfigValueContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterConfigValue(s)
+	}
+}
+
+func (s *ConfigValueContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitConfigValue(s)
+	}
+}
+
+func (s *ConfigValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitConfigValue(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
+	localctx = NewConfigValueContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, DesignParserRULE_configValue)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.SetState(86)
+	p.GetErrorHandler().Sync(p)
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext()) {
+	case 1:
+		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(80)
+			p.Match(DesignParserIDENTIFIER)
+		}
+
+	case 2:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(81)
+			p.Match(DesignParserIDENTIFIER)
+		}
+		p.SetState(84)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == DesignParserCOMMA {
+			{
+				p.SetState(82)
+				p.Match(DesignParserCOMMA)
+			}
+			{
+				p.SetState(83)
+				p.Match(DesignParserIDENTIFIER)
+			}
+
+		}
+
+	}
+
+	return localctx
+}
+
+// IDecalartionsContext is an interface to support dynamic dispatch.
+type IDecalartionsContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsDecalartionsContext differentiates from other interfaces.
+	IsDecalartionsContext()
+}
+
+type DecalartionsContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyDecalartionsContext() *DecalartionsContext {
+	var p = new(DecalartionsContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_decalartions
+	return p
+}
+
+func (*DecalartionsContext) IsDecalartionsContext() {}
+
+func NewDecalartionsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DecalartionsContext {
+	var p = new(DecalartionsContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_decalartions
+
+	return p
+}
+
+func (s *DecalartionsContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *DecalartionsContext) ConfigDecalartion() IConfigDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigDecalartionContext)
+}
+
+func (s *DecalartionsContext) FlowDecalartion() IFlowDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFlowDecalartionContext)
+}
+
+func (s *DecalartionsContext) PageDecalartion() IPageDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPageDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IPageDecalartionContext)
+}
+
+func (s *DecalartionsContext) StyleDecalartion() IStyleDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IStyleDecalartionContext)
+}
+
+func (s *DecalartionsContext) ComponentDecalartion() IComponentDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentDecalartionContext)
+}
+
+func (s *DecalartionsContext) LibraryDecalartion() ILibraryDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILibraryDecalartionContext)
+}
+
+func (s *DecalartionsContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *DecalartionsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *DecalartionsContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterDecalartions(s)
+	}
+}
+
+func (s *DecalartionsContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitDecalartions(s)
+	}
+}
+
+func (s *DecalartionsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitDecalartions(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) Decalartions() (localctx IDecalartionsContext) {
+	localctx = NewDecalartionsContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, DesignParserRULE_decalartions)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.SetState(94)
+	p.GetErrorHandler().Sync(p)
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserIDENTIFIER:
+		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(88)
+			p.ConfigDecalartion()
+		}
+
+	case DesignParserFLOW:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(89)
+			p.FlowDecalartion()
+		}
+
+	case DesignParserPAGE:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(90)
+			p.PageDecalartion()
+		}
+
+	case DesignParserSTYLE:
+		p.EnterOuterAlt(localctx, 4)
+		{
+			p.SetState(91)
+			p.StyleDecalartion()
+		}
+
+	case DesignParserCOMPONENT:
+		p.EnterOuterAlt(localctx, 5)
+		{
+			p.SetState(92)
+			p.ComponentDecalartion()
+		}
+
+	case DesignParserLIBRARAY:
+		p.EnterOuterAlt(localctx, 6)
+		{
+			p.SetState(93)
+			p.LibraryDecalartion()
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// IFlowDecalartionContext is an interface to support dynamic dispatch.
+type IFlowDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsFlowDecalartionContext differentiates from other interfaces.
+	IsFlowDecalartionContext()
+}
+
+type FlowDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyFlowDecalartionContext() *FlowDecalartionContext {
+	var p = new(FlowDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_flowDecalartion
+	return p
+}
+
+func (*FlowDecalartionContext) IsFlowDecalartionContext() {}
+
+func NewFlowDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowDecalartionContext {
+	var p = new(FlowDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_flowDecalartion
+
+	return p
+}
+
+func (s *FlowDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *FlowDecalartionContext) FLOW() antlr.TerminalNode {
+	return s.GetToken(DesignParserFLOW, 0)
+}
+
+func (s *FlowDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *FlowDecalartionContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *FlowDecalartionContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *FlowDecalartionContext) AllFlowBodyDecalartion() []IFlowBodyDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFlowBodyDecalartionContext)(nil)).Elem())
+	var tst = make([]IFlowBodyDecalartionContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IFlowBodyDecalartionContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *FlowDecalartionContext) FlowBodyDecalartion(i int) IFlowBodyDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowBodyDecalartionContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFlowBodyDecalartionContext)
+}
+
+func (s *FlowDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *FlowDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *FlowDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterFlowDecalartion(s)
+	}
+}
+
+func (s *FlowDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitFlowDecalartion(s)
+	}
+}
+
+func (s *FlowDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitFlowDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) FlowDecalartion() (localctx IFlowDecalartionContext) {
+	localctx = NewFlowDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 12, DesignParserRULE_flowDecalartion)
 	var _la int
 
 	defer func() {
@@ -810,657 +1257,287 @@ func (p *DesignParser) CommentBlockDeclaration() (localctx ICommentBlockDeclarat
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(77)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == DesignParserT__4 {
-		{
-			p.SetState(76)
-			p.CommentDeclaration()
-		}
-
-	}
-
-	return localctx
-}
-
-// IDesignBlockDeclarationContext is an interface to support dynamic dispatch.
-type IDesignBlockDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsDesignBlockDeclarationContext differentiates from other interfaces.
-	IsDesignBlockDeclarationContext()
-}
-
-type DesignBlockDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyDesignBlockDeclarationContext() *DesignBlockDeclarationContext {
-	var p = new(DesignBlockDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_designBlockDeclaration
-	return p
-}
-
-func (*DesignBlockDeclarationContext) IsDesignBlockDeclarationContext() {}
-
-func NewDesignBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DesignBlockDeclarationContext {
-	var p = new(DesignBlockDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_designBlockDeclaration
-
-	return p
-}
-
-func (s *DesignBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *DesignBlockDeclarationContext) DESIGN() antlr.TerminalNode {
-	return s.GetToken(DesignParserDESIGN, 0)
-}
-
-func (s *DesignBlockDeclarationContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *DesignBlockDeclarationContext) LBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserLBRACE, 0)
-}
-
-func (s *DesignBlockDeclarationContext) DesignBodyDeclaration() IDesignBodyDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDesignBodyDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IDesignBodyDeclarationContext)
-}
-
-func (s *DesignBlockDeclarationContext) RBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserRBRACE, 0)
-}
-
-func (s *DesignBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *DesignBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *DesignBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDesignBlockDeclaration(s)
-	}
-}
-
-func (s *DesignBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDesignBlockDeclaration(s)
-	}
-}
-
-func (s *DesignBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitDesignBlockDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) DesignBlockDeclaration() (localctx IDesignBlockDeclarationContext) {
-	localctx = NewDesignBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, DesignParserRULE_designBlockDeclaration)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(79)
-		p.Match(DesignParserDESIGN)
+		p.SetState(96)
+		p.Match(DesignParserFLOW)
 	}
-	{
-		p.SetState(80)
-		p.Match(DesignParserIDENTIFIER)
-	}
-	{
-		p.SetState(81)
-		p.Match(DesignParserLBRACE)
-	}
-	{
-		p.SetState(82)
-		p.DesignBodyDeclaration()
-	}
-	{
-		p.SetState(83)
-		p.Match(DesignParserRBRACE)
-	}
-
-	return localctx
-}
-
-// ITemplateBlockDeclarationContext is an interface to support dynamic dispatch.
-type ITemplateBlockDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsTemplateBlockDeclarationContext differentiates from other interfaces.
-	IsTemplateBlockDeclarationContext()
-}
-
-type TemplateBlockDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyTemplateBlockDeclarationContext() *TemplateBlockDeclarationContext {
-	var p = new(TemplateBlockDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_templateBlockDeclaration
-	return p
-}
-
-func (*TemplateBlockDeclarationContext) IsTemplateBlockDeclarationContext() {}
-
-func NewTemplateBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TemplateBlockDeclarationContext {
-	var p = new(TemplateBlockDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_templateBlockDeclaration
-
-	return p
-}
-
-func (s *TemplateBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *TemplateBlockDeclarationContext) TEMPLATE() antlr.TerminalNode {
-	return s.GetToken(DesignParserTEMPLATE, 0)
-}
-
-func (s *TemplateBlockDeclarationContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *TemplateBlockDeclarationContext) LBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserLBRACE, 0)
-}
-
-func (s *TemplateBlockDeclarationContext) TemplateBodyDeclaration() ITemplateBodyDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITemplateBodyDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ITemplateBodyDeclarationContext)
-}
-
-func (s *TemplateBlockDeclarationContext) RBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserRBRACE, 0)
-}
-
-func (s *TemplateBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *TemplateBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *TemplateBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterTemplateBlockDeclaration(s)
-	}
-}
-
-func (s *TemplateBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitTemplateBlockDeclaration(s)
-	}
-}
-
-func (s *TemplateBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitTemplateBlockDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) TemplateBlockDeclaration() (localctx ITemplateBlockDeclarationContext) {
-	localctx = NewTemplateBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, DesignParserRULE_templateBlockDeclaration)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(85)
-		p.Match(DesignParserTEMPLATE)
-	}
-	{
-		p.SetState(86)
-		p.Match(DesignParserIDENTIFIER)
-	}
-	{
-		p.SetState(87)
-		p.Match(DesignParserLBRACE)
-	}
-	{
-		p.SetState(88)
-		p.TemplateBodyDeclaration()
-	}
-	{
-		p.SetState(89)
-		p.Match(DesignParserRBRACE)
-	}
-
-	return localctx
-}
-
-// IComponentBlockDeclarationContext is an interface to support dynamic dispatch.
-type IComponentBlockDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsComponentBlockDeclarationContext differentiates from other interfaces.
-	IsComponentBlockDeclarationContext()
-}
-
-type ComponentBlockDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyComponentBlockDeclarationContext() *ComponentBlockDeclarationContext {
-	var p = new(ComponentBlockDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_componentBlockDeclaration
-	return p
-}
-
-func (*ComponentBlockDeclarationContext) IsComponentBlockDeclarationContext() {}
-
-func NewComponentBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentBlockDeclarationContext {
-	var p = new(ComponentBlockDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_componentBlockDeclaration
-
-	return p
-}
-
-func (s *ComponentBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ComponentBlockDeclarationContext) COMPONENT() antlr.TerminalNode {
-	return s.GetToken(DesignParserCOMPONENT, 0)
-}
-
-func (s *ComponentBlockDeclarationContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *ComponentBlockDeclarationContext) LBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserLBRACE, 0)
-}
-
-func (s *ComponentBlockDeclarationContext) ComponentBodyDeclaration() IComponentBodyDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IComponentBodyDeclarationContext)
-}
-
-func (s *ComponentBlockDeclarationContext) RBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserRBRACE, 0)
-}
-
-func (s *ComponentBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ComponentBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ComponentBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterComponentBlockDeclaration(s)
-	}
-}
-
-func (s *ComponentBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitComponentBlockDeclaration(s)
-	}
-}
-
-func (s *ComponentBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitComponentBlockDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) ComponentBlockDeclaration() (localctx IComponentBlockDeclarationContext) {
-	localctx = NewComponentBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, DesignParserRULE_componentBlockDeclaration)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(91)
-		p.Match(DesignParserCOMPONENT)
-	}
-	{
-		p.SetState(92)
-		p.Match(DesignParserIDENTIFIER)
-	}
-	{
-		p.SetState(93)
-		p.Match(DesignParserLBRACE)
-	}
-	{
-		p.SetState(94)
-		p.ComponentBodyDeclaration()
-	}
-	{
-		p.SetState(95)
-		p.Match(DesignParserRBRACE)
-	}
-
-	return localctx
-}
-
-// ILayerBlockDeclarationContext is an interface to support dynamic dispatch.
-type ILayerBlockDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsLayerBlockDeclarationContext differentiates from other interfaces.
-	IsLayerBlockDeclarationContext()
-}
-
-type LayerBlockDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyLayerBlockDeclarationContext() *LayerBlockDeclarationContext {
-	var p = new(LayerBlockDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layerBlockDeclaration
-	return p
-}
-
-func (*LayerBlockDeclarationContext) IsLayerBlockDeclarationContext() {}
-
-func NewLayerBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayerBlockDeclarationContext {
-	var p = new(LayerBlockDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layerBlockDeclaration
-
-	return p
-}
-
-func (s *LayerBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *LayerBlockDeclarationContext) LAYER() antlr.TerminalNode {
-	return s.GetToken(DesignParserLAYER, 0)
-}
-
-func (s *LayerBlockDeclarationContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *LayerBlockDeclarationContext) LBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserLBRACE, 0)
-}
-
-func (s *LayerBlockDeclarationContext) LayerBodyDeclaration() ILayerBodyDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayerBodyDeclarationContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ILayerBodyDeclarationContext)
-}
-
-func (s *LayerBlockDeclarationContext) RBRACE() antlr.TerminalNode {
-	return s.GetToken(DesignParserRBRACE, 0)
-}
-
-func (s *LayerBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *LayerBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *LayerBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayerBlockDeclaration(s)
-	}
-}
-
-func (s *LayerBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayerBlockDeclaration(s)
-	}
-}
-
-func (s *LayerBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitLayerBlockDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) LayerBlockDeclaration() (localctx ILayerBlockDeclarationContext) {
-	localctx = NewLayerBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, DesignParserRULE_layerBlockDeclaration)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(97)
-		p.Match(DesignParserLAYER)
+		p.Match(DesignParserIDENTIFIER)
 	}
 	{
 		p.SetState(98)
-		p.Match(DesignParserIDENTIFIER)
-	}
-	{
-		p.SetState(99)
 		p.Match(DesignParserLBRACE)
 	}
-	{
-		p.SetState(100)
-		p.LayerBodyDeclaration()
+	p.SetState(102)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserSEE)|(1<<DesignParserDO)|(1<<DesignParserREACT))) != 0 {
+		{
+			p.SetState(99)
+			p.FlowBodyDecalartion()
+		}
+
+		p.SetState(104)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(101)
+		p.SetState(105)
 		p.Match(DesignParserRBRACE)
 	}
 
 	return localctx
 }
 
-// ICodeBlockDeclarationContext is an interface to support dynamic dispatch.
-type ICodeBlockDeclarationContext interface {
+// IFlowBodyDecalartionContext is an interface to support dynamic dispatch.
+type IFlowBodyDecalartionContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsCodeBlockDeclarationContext differentiates from other interfaces.
-	IsCodeBlockDeclarationContext()
+	// IsFlowBodyDecalartionContext differentiates from other interfaces.
+	IsFlowBodyDecalartionContext()
 }
 
-type CodeBlockDeclarationContext struct {
+type FlowBodyDecalartionContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyCodeBlockDeclarationContext() *CodeBlockDeclarationContext {
-	var p = new(CodeBlockDeclarationContext)
+func NewEmptyFlowBodyDecalartionContext() *FlowBodyDecalartionContext {
+	var p = new(FlowBodyDecalartionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_codeBlockDeclaration
+	p.RuleIndex = DesignParserRULE_flowBodyDecalartion
 	return p
 }
 
-func (*CodeBlockDeclarationContext) IsCodeBlockDeclarationContext() {}
+func (*FlowBodyDecalartionContext) IsFlowBodyDecalartionContext() {}
 
-func NewCodeBlockDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *CodeBlockDeclarationContext {
-	var p = new(CodeBlockDeclarationContext)
+func NewFlowBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowBodyDecalartionContext {
+	var p = new(FlowBodyDecalartionContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_codeBlockDeclaration
+	p.RuleIndex = DesignParserRULE_flowBodyDecalartion
 
 	return p
 }
 
-func (s *CodeBlockDeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *FlowBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *CodeBlockDeclarationContext) AllHTML_STRING() []antlr.TerminalNode {
-	return s.GetTokens(DesignParserHTML_STRING)
+func (s *FlowBodyDecalartionContext) SeeDecalartion() ISeeDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISeeDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISeeDecalartionContext)
 }
 
-func (s *CodeBlockDeclarationContext) HTML_STRING(i int) antlr.TerminalNode {
-	return s.GetToken(DesignParserHTML_STRING, i)
+func (s *FlowBodyDecalartionContext) DoDecalartion() IDoDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDoDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IDoDecalartionContext)
 }
 
-func (s *CodeBlockDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *FlowBodyDecalartionContext) ReactDecalartion() IReactDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReactDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IReactDecalartionContext)
+}
+
+func (s *FlowBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *CodeBlockDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *FlowBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *CodeBlockDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *FlowBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterCodeBlockDeclaration(s)
+		listenerT.EnterFlowBodyDecalartion(s)
 	}
 }
 
-func (s *CodeBlockDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *FlowBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitCodeBlockDeclaration(s)
+		listenerT.ExitFlowBodyDecalartion(s)
 	}
 }
 
-func (s *CodeBlockDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *FlowBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitCodeBlockDeclaration(s)
+		return t.VisitFlowBodyDecalartion(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) CodeBlockDeclaration() (localctx ICodeBlockDeclarationContext) {
-	localctx = NewCodeBlockDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, DesignParserRULE_codeBlockDeclaration)
-	var _la int
+func (p *DesignParser) FlowBodyDecalartion() (localctx IFlowBodyDecalartionContext) {
+	localctx = NewFlowBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 14, DesignParserRULE_flowBodyDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.SetState(110)
+	p.GetErrorHandler().Sync(p)
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserSEE:
+		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(107)
+			p.SeeDecalartion()
+		}
+
+	case DesignParserDO:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(108)
+			p.DoDecalartion()
+		}
+
+	case DesignParserREACT:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(109)
+			p.ReactDecalartion()
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// ISeeDecalartionContext is an interface to support dynamic dispatch.
+type ISeeDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsSeeDecalartionContext differentiates from other interfaces.
+	IsSeeDecalartionContext()
+}
+
+type SeeDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptySeeDecalartionContext() *SeeDecalartionContext {
+	var p = new(SeeDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_seeDecalartion
+	return p
+}
+
+func (*SeeDecalartionContext) IsSeeDecalartionContext() {}
+
+func NewSeeDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SeeDecalartionContext {
+	var p = new(SeeDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_seeDecalartion
+
+	return p
+}
+
+func (s *SeeDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *SeeDecalartionContext) SEE() antlr.TerminalNode {
+	return s.GetToken(DesignParserSEE, 0)
+}
+
+func (s *SeeDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *SeeDecalartionContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
+}
+
+func (s *SeeDecalartionContext) DOT() antlr.TerminalNode {
+	return s.GetToken(DesignParserDOT, 0)
+}
+
+func (s *SeeDecalartionContext) ComponentName() IComponentNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentNameContext)
+}
+
+func (s *SeeDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SeeDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *SeeDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterSeeDecalartion(s)
+	}
+}
+
+func (s *SeeDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitSeeDecalartion(s)
+	}
+}
+
+func (s *SeeDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitSeeDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) SeeDecalartion() (localctx ISeeDecalartionContext) {
+	localctx = NewSeeDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 16, DesignParserRULE_seeDecalartion)
 
 	defer func() {
 		p.ExitRule()
@@ -1480,387 +1557,310 @@ func (p *DesignParser) CodeBlockDeclaration() (localctx ICodeBlockDeclarationCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(103)
-		p.Match(DesignParserT__1)
+		p.SetState(112)
+		p.Match(DesignParserSEE)
 	}
-	p.SetState(107)
+	p.SetState(117)
 	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
 
-	for _la == DesignParserHTML_STRING {
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserIDENTIFIER:
 		{
-			p.SetState(104)
-			p.Match(DesignParserHTML_STRING)
+			p.SetState(113)
+			p.Match(DesignParserIDENTIFIER)
 		}
 
-		p.SetState(109)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+	case DesignParserSTRING_LITERAL:
+		{
+			p.SetState(114)
+			p.Match(DesignParserSTRING_LITERAL)
+		}
+		{
+			p.SetState(115)
+			p.Match(DesignParserDOT)
+		}
+		{
+			p.SetState(116)
+			p.ComponentName()
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// IDoDecalartionContext is an interface to support dynamic dispatch.
+type IDoDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsDoDecalartionContext differentiates from other interfaces.
+	IsDoDecalartionContext()
+}
+
+type DoDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyDoDecalartionContext() *DoDecalartionContext {
+	var p = new(DoDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_doDecalartion
+	return p
+}
+
+func (*DoDecalartionContext) IsDoDecalartionContext() {}
+
+func NewDoDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DoDecalartionContext {
+	var p = new(DoDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_doDecalartion
+
+	return p
+}
+
+func (s *DoDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *DoDecalartionContext) DO() antlr.TerminalNode {
+	return s.GetToken(DesignParserDO, 0)
+}
+
+func (s *DoDecalartionContext) LBRACK() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACK, 0)
+}
+
+func (s *DoDecalartionContext) ActionName() IActionNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IActionNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IActionNameContext)
+}
+
+func (s *DoDecalartionContext) RBRACK() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACK, 0)
+}
+
+func (s *DoDecalartionContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
+}
+
+func (s *DoDecalartionContext) DOT() antlr.TerminalNode {
+	return s.GetToken(DesignParserDOT, 0)
+}
+
+func (s *DoDecalartionContext) ComponentName() IComponentNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentNameContext)
+}
+
+func (s *DoDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *DoDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *DoDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterDoDecalartion(s)
+	}
+}
+
+func (s *DoDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitDoDecalartion(s)
+	}
+}
+
+func (s *DoDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitDoDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) DoDecalartion() (localctx IDoDecalartionContext) {
+	localctx = NewDoDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 18, DesignParserRULE_doDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(119)
+		p.Match(DesignParserDO)
 	}
 	{
-		p.SetState(110)
-		p.Match(DesignParserT__1)
+		p.SetState(120)
+		p.Match(DesignParserLBRACK)
 	}
-
-	return localctx
-}
-
-// IDesignBodyDeclarationContext is an interface to support dynamic dispatch.
-type IDesignBodyDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsDesignBodyDeclarationContext differentiates from other interfaces.
-	IsDesignBodyDeclarationContext()
-}
-
-type DesignBodyDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyDesignBodyDeclarationContext() *DesignBodyDeclarationContext {
-	var p = new(DesignBodyDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_designBodyDeclaration
-	return p
-}
-
-func (*DesignBodyDeclarationContext) IsDesignBodyDeclarationContext() {}
-
-func NewDesignBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DesignBodyDeclarationContext {
-	var p = new(DesignBodyDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_designBodyDeclaration
-
-	return p
-}
-
-func (s *DesignBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *DesignBodyDeclarationContext) AllExpress() []IExpressContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressContext)(nil)).Elem())
-	var tst = make([]IExpressContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IExpressContext)
-		}
+	{
+		p.SetState(121)
+		p.ActionName()
 	}
-
-	return tst
-}
-
-func (s *DesignBodyDeclarationContext) Express(i int) IExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressContext)(nil)).Elem(), i)
-
-	if t == nil {
-		return nil
+	{
+		p.SetState(122)
+		p.Match(DesignParserRBRACK)
 	}
-
-	return t.(IExpressContext)
-}
-
-func (s *DesignBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *DesignBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *DesignBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDesignBodyDeclaration(s)
-	}
-}
-
-func (s *DesignBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDesignBodyDeclaration(s)
-	}
-}
-
-func (s *DesignBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitDesignBodyDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) DesignBodyDeclaration() (localctx IDesignBodyDeclarationContext) {
-	localctx = NewDesignBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, DesignParserRULE_designBodyDeclaration)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	p.SetState(115)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
-		{
-			p.SetState(112)
-			p.Express()
-		}
-
-		p.SetState(117)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-	}
-
-	return localctx
-}
-
-// ITemplateBodyDeclarationContext is an interface to support dynamic dispatch.
-type ITemplateBodyDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsTemplateBodyDeclarationContext differentiates from other interfaces.
-	IsTemplateBodyDeclarationContext()
-}
-
-type TemplateBodyDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyTemplateBodyDeclarationContext() *TemplateBodyDeclarationContext {
-	var p = new(TemplateBodyDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_templateBodyDeclaration
-	return p
-}
-
-func (*TemplateBodyDeclarationContext) IsTemplateBodyDeclarationContext() {}
-
-func NewTemplateBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TemplateBodyDeclarationContext {
-	var p = new(TemplateBodyDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_templateBodyDeclaration
-
-	return p
-}
-
-func (s *TemplateBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *TemplateBodyDeclarationContext) AllExpress() []IExpressContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressContext)(nil)).Elem())
-	var tst = make([]IExpressContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IExpressContext)
-		}
-	}
-
-	return tst
-}
-
-func (s *TemplateBodyDeclarationContext) Express(i int) IExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressContext)(nil)).Elem(), i)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressContext)
-}
-
-func (s *TemplateBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *TemplateBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *TemplateBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterTemplateBodyDeclaration(s)
-	}
-}
-
-func (s *TemplateBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitTemplateBodyDeclaration(s)
-	}
-}
-
-func (s *TemplateBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitTemplateBodyDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) TemplateBodyDeclaration() (localctx ITemplateBodyDeclarationContext) {
-	localctx = NewTemplateBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, DesignParserRULE_templateBodyDeclaration)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	p.SetState(121)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
-		{
-			p.SetState(118)
-			p.Express()
-		}
-
+	{
 		p.SetState(123)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+		p.Match(DesignParserSTRING_LITERAL)
+	}
+	{
+		p.SetState(124)
+		p.Match(DesignParserDOT)
+	}
+	{
+		p.SetState(125)
+		p.ComponentName()
 	}
 
 	return localctx
 }
 
-// IComponentBodyDeclarationContext is an interface to support dynamic dispatch.
-type IComponentBodyDeclarationContext interface {
+// IReactDecalartionContext is an interface to support dynamic dispatch.
+type IReactDecalartionContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsComponentBodyDeclarationContext differentiates from other interfaces.
-	IsComponentBodyDeclarationContext()
+	// IsReactDecalartionContext differentiates from other interfaces.
+	IsReactDecalartionContext()
 }
 
-type ComponentBodyDeclarationContext struct {
+type ReactDecalartionContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyComponentBodyDeclarationContext() *ComponentBodyDeclarationContext {
-	var p = new(ComponentBodyDeclarationContext)
+func NewEmptyReactDecalartionContext() *ReactDecalartionContext {
+	var p = new(ReactDecalartionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_componentBodyDeclaration
+	p.RuleIndex = DesignParserRULE_reactDecalartion
 	return p
 }
 
-func (*ComponentBodyDeclarationContext) IsComponentBodyDeclarationContext() {}
+func (*ReactDecalartionContext) IsReactDecalartionContext() {}
 
-func NewComponentBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentBodyDeclarationContext {
-	var p = new(ComponentBodyDeclarationContext)
+func NewReactDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ReactDecalartionContext {
+	var p = new(ReactDecalartionContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_componentBodyDeclaration
+	p.RuleIndex = DesignParserRULE_reactDecalartion
 
 	return p
 }
 
-func (s *ComponentBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *ReactDecalartionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ComponentBodyDeclarationContext) AllExpress() []IExpressContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressContext)(nil)).Elem())
-	var tst = make([]IExpressContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IExpressContext)
-		}
-	}
-
-	return tst
+func (s *ReactDecalartionContext) REACT() antlr.TerminalNode {
+	return s.GetToken(DesignParserREACT, 0)
 }
 
-func (s *ComponentBodyDeclarationContext) Express(i int) IExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressContext)(nil)).Elem(), i)
+func (s *ReactDecalartionContext) COLON() antlr.TerminalNode {
+	return s.GetToken(DesignParserCOLON, 0)
+}
+
+func (s *ReactDecalartionContext) ActionKey() IActionKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IActionKeyContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IExpressContext)
+	return t.(IActionKeyContext)
 }
 
-func (s *ComponentBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *ReactDecalartionContext) SceneName() ISceneNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISceneNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISceneNameContext)
+}
+
+func (s *ReactDecalartionContext) AnimateDecalartion() IAnimateDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAnimateDecalartionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAnimateDecalartionContext)
+}
+
+func (s *ReactDecalartionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ComponentBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ReactDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ComponentBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ReactDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterComponentBodyDeclaration(s)
+		listenerT.EnterReactDecalartion(s)
 	}
 }
 
-func (s *ComponentBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ReactDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitComponentBodyDeclaration(s)
+		listenerT.ExitReactDecalartion(s)
 	}
 }
 
-func (s *ComponentBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ReactDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitComponentBodyDeclaration(s)
+		return t.VisitReactDecalartion(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclarationContext) {
-	localctx = NewComponentBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, DesignParserRULE_componentBodyDeclaration)
+func (p *DesignParser) ReactDecalartion() (localctx IReactDecalartionContext) {
+	localctx = NewReactDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 20, DesignParserRULE_reactDecalartion)
 	var _la int
 
 	defer func() {
@@ -1880,236 +1880,141 @@ func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclar
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(127)
+	{
+		p.SetState(127)
+		p.Match(DesignParserREACT)
+	}
+	p.SetState(129)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
+	if _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(124)
-			p.Express()
+			p.SetState(128)
+			p.SceneName()
 		}
 
-		p.SetState(129)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+	}
+	{
+		p.SetState(131)
+		p.Match(DesignParserCOLON)
+	}
+	{
+		p.SetState(132)
+		p.ActionKey()
+	}
+	p.SetState(134)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == DesignParserWITHTEXT {
+		{
+			p.SetState(133)
+			p.AnimateDecalartion()
+		}
+
 	}
 
 	return localctx
 }
 
-// ILayerBodyDeclarationContext is an interface to support dynamic dispatch.
-type ILayerBodyDeclarationContext interface {
+// IAnimateDecalartionContext is an interface to support dynamic dispatch.
+type IAnimateDecalartionContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsLayerBodyDeclarationContext differentiates from other interfaces.
-	IsLayerBodyDeclarationContext()
+	// IsAnimateDecalartionContext differentiates from other interfaces.
+	IsAnimateDecalartionContext()
 }
 
-type LayerBodyDeclarationContext struct {
+type AnimateDecalartionContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyLayerBodyDeclarationContext() *LayerBodyDeclarationContext {
-	var p = new(LayerBodyDeclarationContext)
+func NewEmptyAnimateDecalartionContext() *AnimateDecalartionContext {
+	var p = new(AnimateDecalartionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layerBodyDeclaration
+	p.RuleIndex = DesignParserRULE_animateDecalartion
 	return p
 }
 
-func (*LayerBodyDeclarationContext) IsLayerBodyDeclarationContext() {}
+func (*AnimateDecalartionContext) IsAnimateDecalartionContext() {}
 
-func NewLayerBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayerBodyDeclarationContext {
-	var p = new(LayerBodyDeclarationContext)
+func NewAnimateDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AnimateDecalartionContext {
+	var p = new(AnimateDecalartionContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layerBodyDeclaration
+	p.RuleIndex = DesignParserRULE_animateDecalartion
 
 	return p
 }
 
-func (s *LayerBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *AnimateDecalartionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LayerBodyDeclarationContext) AllExpress() []IExpressContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressContext)(nil)).Elem())
-	var tst = make([]IExpressContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IExpressContext)
-		}
-	}
-
-	return tst
+func (s *AnimateDecalartionContext) WITHTEXT() antlr.TerminalNode {
+	return s.GetToken(DesignParserWITHTEXT, 0)
 }
 
-func (s *LayerBodyDeclarationContext) Express(i int) IExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressContext)(nil)).Elem(), i)
+func (s *AnimateDecalartionContext) ANIMATE() antlr.TerminalNode {
+	return s.GetToken(DesignParserANIMATE, 0)
+}
+
+func (s *AnimateDecalartionContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(DesignParserLPAREN, 0)
+}
+
+func (s *AnimateDecalartionContext) AnimateName() IAnimateNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAnimateNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IExpressContext)
+	return t.(IAnimateNameContext)
 }
 
-func (s *LayerBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *AnimateDecalartionContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(DesignParserRPAREN, 0)
+}
+
+func (s *AnimateDecalartionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LayerBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *AnimateDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LayerBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *AnimateDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayerBodyDeclaration(s)
+		listenerT.EnterAnimateDecalartion(s)
 	}
 }
 
-func (s *LayerBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *AnimateDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayerBodyDeclaration(s)
+		listenerT.ExitAnimateDecalartion(s)
 	}
 }
 
-func (s *LayerBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *AnimateDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitLayerBodyDeclaration(s)
+		return t.VisitAnimateDecalartion(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) LayerBodyDeclaration() (localctx ILayerBodyDeclarationContext) {
-	localctx = NewLayerBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, DesignParserRULE_layerBodyDeclaration)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	p.SetState(133)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserLAYER)|(1<<DesignParserTEMPLATE)|(1<<DesignParserIDENTIFIER))) != 0 {
-		{
-			p.SetState(130)
-			p.Express()
-		}
-
-		p.SetState(135)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-	}
-
-	return localctx
-}
-
-// IExpressDeclarationContext is an interface to support dynamic dispatch.
-type IExpressDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsExpressDeclarationContext differentiates from other interfaces.
-	IsExpressDeclarationContext()
-}
-
-type ExpressDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyExpressDeclarationContext() *ExpressDeclarationContext {
-	var p = new(ExpressDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_expressDeclaration
-	return p
-}
-
-func (*ExpressDeclarationContext) IsExpressDeclarationContext() {}
-
-func NewExpressDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressDeclarationContext {
-	var p = new(ExpressDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_expressDeclaration
-
-	return p
-}
-
-func (s *ExpressDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ExpressDeclarationContext) Express() IExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressContext)
-}
-
-func (s *ExpressDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ExpressDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ExpressDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterExpressDeclaration(s)
-	}
-}
-
-func (s *ExpressDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitExpressDeclaration(s)
-	}
-}
-
-func (s *ExpressDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitExpressDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) ExpressDeclaration() (localctx IExpressDeclarationContext) {
-	localctx = NewExpressDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, DesignParserRULE_expressDeclaration)
+func (p *DesignParser) AnimateDecalartion() (localctx IAnimateDecalartionContext) {
+	localctx = NewAnimateDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 22, DesignParserRULE_animateDecalartion)
 
 	defer func() {
 		p.ExitRule()
@@ -2130,133 +2035,125 @@ func (p *DesignParser) ExpressDeclaration() (localctx IExpressDeclarationContext
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(136)
-		p.Express()
+		p.Match(DesignParserWITHTEXT)
+	}
+	{
+		p.SetState(137)
+		p.Match(DesignParserANIMATE)
+	}
+	{
+		p.SetState(138)
+		p.Match(DesignParserLPAREN)
+	}
+	{
+		p.SetState(139)
+		p.AnimateName()
+	}
+	{
+		p.SetState(140)
+		p.Match(DesignParserRPAREN)
 	}
 
 	return localctx
 }
 
-// IExpressContext is an interface to support dynamic dispatch.
-type IExpressContext interface {
+// IActionKeyContext is an interface to support dynamic dispatch.
+type IActionKeyContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsExpressContext differentiates from other interfaces.
-	IsExpressContext()
+	// IsActionKeyContext differentiates from other interfaces.
+	IsActionKeyContext()
 }
 
-type ExpressContext struct {
+type ActionKeyContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyExpressContext() *ExpressContext {
-	var p = new(ExpressContext)
+func NewEmptyActionKeyContext() *ActionKeyContext {
+	var p = new(ActionKeyContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_express
+	p.RuleIndex = DesignParserRULE_actionKey
 	return p
 }
 
-func (*ExpressContext) IsExpressContext() {}
+func (*ActionKeyContext) IsActionKeyContext() {}
 
-func NewExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressContext {
-	var p = new(ExpressContext)
+func NewActionKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ActionKeyContext {
+	var p = new(ActionKeyContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_express
+	p.RuleIndex = DesignParserRULE_actionKey
 
 	return p
 }
 
-func (s *ExpressContext) GetParser() antlr.Parser { return s.parser }
+func (s *ActionKeyContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ExpressContext) EqualExpress() IEqualExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IEqualExpressContext)(nil)).Elem(), 0)
+func (s *ActionKeyContext) GOTO_KEY() antlr.TerminalNode {
+	return s.GetToken(DesignParserGOTO_KEY, 0)
+}
+
+func (s *ActionKeyContext) ComponentName() IComponentNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IEqualExpressContext)
+	return t.(IComponentNameContext)
 }
 
-func (s *ExpressContext) UseExpress() IUseExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IUseExpressContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IUseExpressContext)
+func (s *ActionKeyContext) SHOW_KEY() antlr.TerminalNode {
+	return s.GetToken(DesignParserSHOW_KEY, 0)
 }
 
-func (s *ExpressContext) ValueExpress() IValueExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueExpressContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IValueExpressContext)
+func (s *ActionKeyContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
 }
 
-func (s *ExpressContext) TemplateExpress() ITemplateExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITemplateExpressContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ITemplateExpressContext)
+func (s *ActionKeyContext) DOT() antlr.TerminalNode {
+	return s.GetToken(DesignParserDOT, 0)
 }
 
-func (s *ExpressContext) LayerExpress() ILayerExpressContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayerExpressContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ILayerExpressContext)
-}
-
-func (s *ExpressContext) GetRuleContext() antlr.RuleContext {
+func (s *ActionKeyContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ActionKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ExpressContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ActionKeyContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterExpress(s)
+		listenerT.EnterActionKey(s)
 	}
 }
 
-func (s *ExpressContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ActionKeyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitExpress(s)
+		listenerT.ExitActionKey(s)
 	}
 }
 
-func (s *ExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ActionKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitExpress(s)
+		return t.VisitActionKey(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) Express() (localctx IExpressContext) {
-	localctx = NewExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, DesignParserRULE_express)
+func (p *DesignParser) ActionKey() (localctx IActionKeyContext) {
+	localctx = NewActionKeyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 24, DesignParserRULE_actionKey)
 
 	defer func() {
 		p.ExitRule()
@@ -2274,503 +2171,122 @@ func (p *DesignParser) Express() (localctx IExpressContext) {
 		}
 	}()
 
-	p.SetState(143)
+	p.SetState(148)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext()) {
-	case 1:
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserGOTO_KEY:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(138)
-			p.EqualExpress()
+			p.SetState(142)
+			p.Match(DesignParserGOTO_KEY)
+		}
+		{
+			p.SetState(143)
+			p.ComponentName()
 		}
 
-	case 2:
+	case DesignParserSHOW_KEY:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(139)
-			p.UseExpress()
+			p.SetState(144)
+			p.Match(DesignParserSHOW_KEY)
 		}
-
-	case 3:
-		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(140)
-			p.ValueExpress()
+			p.SetState(145)
+			p.Match(DesignParserSTRING_LITERAL)
 		}
-
-	case 4:
-		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(141)
-			p.TemplateExpress()
+			p.SetState(146)
+			p.Match(DesignParserDOT)
 		}
-
-	case 5:
-		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(142)
-			p.LayerExpress()
+			p.SetState(147)
+			p.ComponentName()
 		}
-
-	}
-
-	return localctx
-}
-
-// IEqualExpressContext is an interface to support dynamic dispatch.
-type IEqualExpressContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsEqualExpressContext differentiates from other interfaces.
-	IsEqualExpressContext()
-}
-
-type EqualExpressContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyEqualExpressContext() *EqualExpressContext {
-	var p = new(EqualExpressContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_equalExpress
-	return p
-}
-
-func (*EqualExpressContext) IsEqualExpressContext() {}
-
-func NewEqualExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *EqualExpressContext {
-	var p = new(EqualExpressContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_equalExpress
-
-	return p
-}
-
-func (s *EqualExpressContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *EqualExpressContext) ExpressKey() IExpressKeyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressKeyContext)
-}
-
-func (s *EqualExpressContext) ExpressValue() IExpressValueContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressValueContext)
-}
-
-func (s *EqualExpressContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *EqualExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *EqualExpressContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterEqualExpress(s)
-	}
-}
-
-func (s *EqualExpressContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitEqualExpress(s)
-	}
-}
-
-func (s *EqualExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitEqualExpress(s)
 
 	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) EqualExpress() (localctx IEqualExpressContext) {
-	localctx = NewEqualExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, DesignParserRULE_equalExpress)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(145)
-		p.ExpressKey()
-	}
-	{
-		p.SetState(146)
-		p.Match(DesignParserT__2)
-	}
-	{
-		p.SetState(147)
-		p.ExpressValue()
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
 
 	return localctx
 }
 
-// IUseExpressContext is an interface to support dynamic dispatch.
-type IUseExpressContext interface {
+// IActionNameContext is an interface to support dynamic dispatch.
+type IActionNameContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsUseExpressContext differentiates from other interfaces.
-	IsUseExpressContext()
+	// IsActionNameContext differentiates from other interfaces.
+	IsActionNameContext()
 }
 
-type UseExpressContext struct {
+type ActionNameContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyUseExpressContext() *UseExpressContext {
-	var p = new(UseExpressContext)
+func NewEmptyActionNameContext() *ActionNameContext {
+	var p = new(ActionNameContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_useExpress
+	p.RuleIndex = DesignParserRULE_actionName
 	return p
 }
 
-func (*UseExpressContext) IsUseExpressContext() {}
+func (*ActionNameContext) IsActionNameContext() {}
 
-func NewUseExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *UseExpressContext {
-	var p = new(UseExpressContext)
+func NewActionNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ActionNameContext {
+	var p = new(ActionNameContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_useExpress
+	p.RuleIndex = DesignParserRULE_actionName
 
 	return p
 }
 
-func (s *UseExpressContext) GetParser() antlr.Parser { return s.parser }
+func (s *ActionNameContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *UseExpressContext) ExpressKey() IExpressKeyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressKeyContext)
-}
-
-func (s *UseExpressContext) ExpressValue() IExpressValueContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressValueContext)
-}
-
-func (s *UseExpressContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *UseExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *UseExpressContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterUseExpress(s)
-	}
-}
-
-func (s *UseExpressContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitUseExpress(s)
-	}
-}
-
-func (s *UseExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitUseExpress(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) UseExpress() (localctx IUseExpressContext) {
-	localctx = NewUseExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, DesignParserRULE_useExpress)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(149)
-		p.ExpressKey()
-	}
-	{
-		p.SetState(150)
-		p.Match(DesignParserT__3)
-	}
-	{
-		p.SetState(151)
-		p.ExpressValue()
-	}
-
-	return localctx
-}
-
-// IValueExpressContext is an interface to support dynamic dispatch.
-type IValueExpressContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsValueExpressContext differentiates from other interfaces.
-	IsValueExpressContext()
-}
-
-type ValueExpressContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyValueExpressContext() *ValueExpressContext {
-	var p = new(ValueExpressContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_valueExpress
-	return p
-}
-
-func (*ValueExpressContext) IsValueExpressContext() {}
-
-func NewValueExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ValueExpressContext {
-	var p = new(ValueExpressContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_valueExpress
-
-	return p
-}
-
-func (s *ValueExpressContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ValueExpressContext) ExpressKey() IExpressKeyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressKeyContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressKeyContext)
-}
-
-func (s *ValueExpressContext) ExpressValue() IExpressValueContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressValueContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IExpressValueContext)
-}
-
-func (s *ValueExpressContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ValueExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ValueExpressContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterValueExpress(s)
-	}
-}
-
-func (s *ValueExpressContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitValueExpress(s)
-	}
-}
-
-func (s *ValueExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitValueExpress(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) ValueExpress() (localctx IValueExpressContext) {
-	localctx = NewValueExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, DesignParserRULE_valueExpress)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(153)
-		p.ExpressKey()
-	}
-	{
-		p.SetState(154)
-		p.Match(DesignParserT__0)
-	}
-	{
-		p.SetState(155)
-		p.ExpressValue()
-	}
-
-	return localctx
-}
-
-// ILayerExpressContext is an interface to support dynamic dispatch.
-type ILayerExpressContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsLayerExpressContext differentiates from other interfaces.
-	IsLayerExpressContext()
-}
-
-type LayerExpressContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyLayerExpressContext() *LayerExpressContext {
-	var p = new(LayerExpressContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layerExpress
-	return p
-}
-
-func (*LayerExpressContext) IsLayerExpressContext() {}
-
-func NewLayerExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayerExpressContext {
-	var p = new(LayerExpressContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layerExpress
-
-	return p
-}
-
-func (s *LayerExpressContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *LayerExpressContext) LAYER() antlr.TerminalNode {
-	return s.GetToken(DesignParserLAYER, 0)
-}
-
-func (s *LayerExpressContext) IDENTIFIER() antlr.TerminalNode {
+func (s *ActionNameContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *LayerExpressContext) GetRuleContext() antlr.RuleContext {
+func (s *ActionNameContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LayerExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ActionNameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LayerExpressContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ActionNameContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayerExpress(s)
+		listenerT.EnterActionName(s)
 	}
 }
 
-func (s *LayerExpressContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ActionNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayerExpress(s)
+		listenerT.ExitActionName(s)
 	}
 }
 
-func (s *LayerExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ActionNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitLayerExpress(s)
+		return t.VisitActionName(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) LayerExpress() (localctx ILayerExpressContext) {
-	localctx = NewLayerExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, DesignParserRULE_layerExpress)
+func (p *DesignParser) ActionName() (localctx IActionNameContext) {
+	localctx = NewActionNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 26, DesignParserRULE_actionName)
 
 	defer func() {
 		p.ExitRule()
@@ -2790,9 +2306,409 @@ func (p *DesignParser) LayerExpress() (localctx ILayerExpressContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(157)
-		p.Match(DesignParserLAYER)
+		p.SetState(150)
+		p.Match(DesignParserIDENTIFIER)
 	}
+
+	return localctx
+}
+
+// IComponentValueContext is an interface to support dynamic dispatch.
+type IComponentValueContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsComponentValueContext differentiates from other interfaces.
+	IsComponentValueContext()
+}
+
+type ComponentValueContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyComponentValueContext() *ComponentValueContext {
+	var p = new(ComponentValueContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_componentValue
+	return p
+}
+
+func (*ComponentValueContext) IsComponentValueContext() {}
+
+func NewComponentValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentValueContext {
+	var p = new(ComponentValueContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_componentValue
+
+	return p
+}
+
+func (s *ComponentValueContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ComponentValueContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ComponentValueContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ComponentValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ComponentValueContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterComponentValue(s)
+	}
+}
+
+func (s *ComponentValueContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitComponentValue(s)
+	}
+}
+
+func (s *ComponentValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitComponentValue(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ComponentValue() (localctx IComponentValueContext) {
+	localctx = NewComponentValueContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 28, DesignParserRULE_componentValue)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(152)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IComponentNameContext is an interface to support dynamic dispatch.
+type IComponentNameContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsComponentNameContext differentiates from other interfaces.
+	IsComponentNameContext()
+}
+
+type ComponentNameContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyComponentNameContext() *ComponentNameContext {
+	var p = new(ComponentNameContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_componentName
+	return p
+}
+
+func (*ComponentNameContext) IsComponentNameContext() {}
+
+func NewComponentNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentNameContext {
+	var p = new(ComponentNameContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_componentName
+
+	return p
+}
+
+func (s *ComponentNameContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ComponentNameContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ComponentNameContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ComponentNameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ComponentNameContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterComponentName(s)
+	}
+}
+
+func (s *ComponentNameContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitComponentName(s)
+	}
+}
+
+func (s *ComponentNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitComponentName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ComponentName() (localctx IComponentNameContext) {
+	localctx = NewComponentNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 30, DesignParserRULE_componentName)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(154)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// ISceneNameContext is an interface to support dynamic dispatch.
+type ISceneNameContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsSceneNameContext differentiates from other interfaces.
+	IsSceneNameContext()
+}
+
+type SceneNameContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptySceneNameContext() *SceneNameContext {
+	var p = new(SceneNameContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_sceneName
+	return p
+}
+
+func (*SceneNameContext) IsSceneNameContext() {}
+
+func NewSceneNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SceneNameContext {
+	var p = new(SceneNameContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_sceneName
+
+	return p
+}
+
+func (s *SceneNameContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *SceneNameContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *SceneNameContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SceneNameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *SceneNameContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterSceneName(s)
+	}
+}
+
+func (s *SceneNameContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitSceneName(s)
+	}
+}
+
+func (s *SceneNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitSceneName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) SceneName() (localctx ISceneNameContext) {
+	localctx = NewSceneNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, DesignParserRULE_sceneName)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(156)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IAnimateNameContext is an interface to support dynamic dispatch.
+type IAnimateNameContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsAnimateNameContext differentiates from other interfaces.
+	IsAnimateNameContext()
+}
+
+type AnimateNameContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyAnimateNameContext() *AnimateNameContext {
+	var p = new(AnimateNameContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_animateName
+	return p
+}
+
+func (*AnimateNameContext) IsAnimateNameContext() {}
+
+func NewAnimateNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AnimateNameContext {
+	var p = new(AnimateNameContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_animateName
+
+	return p
+}
+
+func (s *AnimateNameContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AnimateNameContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *AnimateNameContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *AnimateNameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *AnimateNameContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterAnimateName(s)
+	}
+}
+
+func (s *AnimateNameContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitAnimateName(s)
+	}
+}
+
+func (s *AnimateNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitAnimateName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) AnimateName() (localctx IAnimateNameContext) {
+	localctx = NewAnimateNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 34, DesignParserRULE_animateName)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(158)
 		p.Match(DesignParserIDENTIFIER)
@@ -2801,497 +2717,116 @@ func (p *DesignParser) LayerExpress() (localctx ILayerExpressContext) {
 	return localctx
 }
 
-// ITemplateExpressContext is an interface to support dynamic dispatch.
-type ITemplateExpressContext interface {
+// IPageDecalartionContext is an interface to support dynamic dispatch.
+type IPageDecalartionContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsTemplateExpressContext differentiates from other interfaces.
-	IsTemplateExpressContext()
+	// IsPageDecalartionContext differentiates from other interfaces.
+	IsPageDecalartionContext()
 }
 
-type TemplateExpressContext struct {
+type PageDecalartionContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyTemplateExpressContext() *TemplateExpressContext {
-	var p = new(TemplateExpressContext)
+func NewEmptyPageDecalartionContext() *PageDecalartionContext {
+	var p = new(PageDecalartionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_templateExpress
+	p.RuleIndex = DesignParserRULE_pageDecalartion
 	return p
 }
 
-func (*TemplateExpressContext) IsTemplateExpressContext() {}
+func (*PageDecalartionContext) IsPageDecalartionContext() {}
 
-func NewTemplateExpressContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TemplateExpressContext {
-	var p = new(TemplateExpressContext)
+func NewPageDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PageDecalartionContext {
+	var p = new(PageDecalartionContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_templateExpress
+	p.RuleIndex = DesignParserRULE_pageDecalartion
 
 	return p
 }
 
-func (s *TemplateExpressContext) GetParser() antlr.Parser { return s.parser }
+func (s *PageDecalartionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *TemplateExpressContext) TEMPLATE() antlr.TerminalNode {
-	return s.GetToken(DesignParserTEMPLATE, 0)
+func (s *PageDecalartionContext) PAGE() antlr.TerminalNode {
+	return s.GetToken(DesignParserPAGE, 0)
 }
 
-func (s *TemplateExpressContext) IDENTIFIER() antlr.TerminalNode {
+func (s *PageDecalartionContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *TemplateExpressContext) GetRuleContext() antlr.RuleContext {
-	return s
+func (s *PageDecalartionContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *TemplateExpressContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
+func (s *PageDecalartionContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *TemplateExpressContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterTemplateExpress(s)
-	}
-}
+func (s *PageDecalartionContext) AllComponentBodyDecalartion() []IComponentBodyDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem())
+	var tst = make([]IComponentBodyDecalartionContext, len(ts))
 
-func (s *TemplateExpressContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitTemplateExpress(s)
-	}
-}
-
-func (s *TemplateExpressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitTemplateExpress(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) TemplateExpress() (localctx ITemplateExpressContext) {
-	localctx = NewTemplateExpressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, DesignParserRULE_templateExpress)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IComponentBodyDecalartionContext)
 		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(160)
-		p.Match(DesignParserTEMPLATE)
-	}
-	{
-		p.SetState(161)
-		p.Match(DesignParserIDENTIFIER)
 	}
 
-	return localctx
+	return tst
 }
 
-// IExpressKeyContext is an interface to support dynamic dispatch.
-type IExpressKeyContext interface {
-	antlr.ParserRuleContext
+func (s *PageDecalartionContext) ComponentBodyDecalartion(i int) IComponentBodyDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem(), i)
 
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
+	if t == nil {
+		return nil
+	}
 
-	// IsExpressKeyContext differentiates from other interfaces.
-	IsExpressKeyContext()
+	return t.(IComponentBodyDecalartionContext)
 }
 
-type ExpressKeyContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyExpressKeyContext() *ExpressKeyContext {
-	var p = new(ExpressKeyContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_expressKey
-	return p
-}
-
-func (*ExpressKeyContext) IsExpressKeyContext() {}
-
-func NewExpressKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressKeyContext {
-	var p = new(ExpressKeyContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_expressKey
-
-	return p
-}
-
-func (s *ExpressKeyContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ExpressKeyContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *ExpressKeyContext) GetRuleContext() antlr.RuleContext {
+func (s *PageDecalartionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ExpressKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *PageDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ExpressKeyContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *PageDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterExpressKey(s)
+		listenerT.EnterPageDecalartion(s)
 	}
 }
 
-func (s *ExpressKeyContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *PageDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitExpressKey(s)
+		listenerT.ExitPageDecalartion(s)
 	}
 }
 
-func (s *ExpressKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *PageDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitExpressKey(s)
+		return t.VisitPageDecalartion(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ExpressKey() (localctx IExpressKeyContext) {
-	localctx = NewExpressKeyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, DesignParserRULE_expressKey)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(163)
-		p.Match(DesignParserIDENTIFIER)
-	}
-
-	return localctx
-}
-
-// IExpressValueContext is an interface to support dynamic dispatch.
-type IExpressValueContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsExpressValueContext differentiates from other interfaces.
-	IsExpressValueContext()
-}
-
-type ExpressValueContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyExpressValueContext() *ExpressValueContext {
-	var p = new(ExpressValueContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_expressValue
-	return p
-}
-
-func (*ExpressValueContext) IsExpressValueContext() {}
-
-func NewExpressValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ExpressValueContext {
-	var p = new(ExpressValueContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_expressValue
-
-	return p
-}
-
-func (s *ExpressValueContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ExpressValueContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *ExpressValueContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ExpressValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ExpressValueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterExpressValue(s)
-	}
-}
-
-func (s *ExpressValueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitExpressValue(s)
-	}
-}
-
-func (s *ExpressValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitExpressValue(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) ExpressValue() (localctx IExpressValueContext) {
-	localctx = NewExpressValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, DesignParserRULE_expressValue)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(165)
-		p.Match(DesignParserIDENTIFIER)
-	}
-
-	return localctx
-}
-
-// ILayerContext is an interface to support dynamic dispatch.
-type ILayerContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsLayerContext differentiates from other interfaces.
-	IsLayerContext()
-}
-
-type LayerContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyLayerContext() *LayerContext {
-	var p = new(LayerContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layer
-	return p
-}
-
-func (*LayerContext) IsLayerContext() {}
-
-func NewLayerContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayerContext {
-	var p = new(LayerContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layer
-
-	return p
-}
-
-func (s *LayerContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *LayerContext) LAYER() antlr.TerminalNode {
-	return s.GetToken(DesignParserLAYER, 0)
-}
-
-func (s *LayerContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *LayerContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *LayerContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayer(s)
-	}
-}
-
-func (s *LayerContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayer(s)
-	}
-}
-
-func (s *LayerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitLayer(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) Layer() (localctx ILayerContext) {
-	localctx = NewLayerContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, DesignParserRULE_layer)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(167)
-		p.Match(DesignParserLAYER)
-	}
-
-	return localctx
-}
-
-// ICommentDeclarationContext is an interface to support dynamic dispatch.
-type ICommentDeclarationContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsCommentDeclarationContext differentiates from other interfaces.
-	IsCommentDeclarationContext()
-}
-
-type CommentDeclarationContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyCommentDeclarationContext() *CommentDeclarationContext {
-	var p = new(CommentDeclarationContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_commentDeclaration
-	return p
-}
-
-func (*CommentDeclarationContext) IsCommentDeclarationContext() {}
-
-func NewCommentDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *CommentDeclarationContext {
-	var p = new(CommentDeclarationContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = DesignParserRULE_commentDeclaration
-
-	return p
-}
-
-func (s *CommentDeclarationContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *CommentDeclarationContext) IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserIDENTIFIER, 0)
-}
-
-func (s *CommentDeclarationContext) Space() antlr.TerminalNode {
-	return s.GetToken(DesignParserSpace, 0)
-}
-
-func (s *CommentDeclarationContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *CommentDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *CommentDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterCommentDeclaration(s)
-	}
-}
-
-func (s *CommentDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitCommentDeclaration(s)
-	}
-}
-
-func (s *CommentDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DesignVisitor:
-		return t.VisitCommentDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *DesignParser) CommentDeclaration() (localctx ICommentDeclarationContext) {
-	localctx = NewCommentDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, DesignParserRULE_commentDeclaration)
+func (p *DesignParser) PageDecalartion() (localctx IPageDecalartionContext) {
+	localctx = NewPageDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 36, DesignParserRULE_pageDecalartion)
 	var _la int
 
 	defer func() {
@@ -3312,23 +2847,1685 @@ func (p *DesignParser) CommentDeclaration() (localctx ICommentDeclarationContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(169)
-		p.Match(DesignParserT__4)
+		p.SetState(160)
+		p.Match(DesignParserPAGE)
 	}
-	p.SetState(171)
+	{
+		p.SetState(161)
+		p.Match(DesignParserIDENTIFIER)
+	}
+	{
+		p.SetState(162)
+		p.Match(DesignParserLBRACE)
+	}
+	p.SetState(166)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == DesignParserSpace {
+	for _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(170)
-			p.Match(DesignParserSpace)
+			p.SetState(163)
+			p.ComponentBodyDecalartion()
 		}
 
+		p.SetState(168)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+	{
+		p.SetState(169)
+		p.Match(DesignParserRBRACE)
+	}
+
+	return localctx
+}
+
+// IComponentDecalartionContext is an interface to support dynamic dispatch.
+type IComponentDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsComponentDecalartionContext differentiates from other interfaces.
+	IsComponentDecalartionContext()
+}
+
+type ComponentDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyComponentDecalartionContext() *ComponentDecalartionContext {
+	var p = new(ComponentDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_componentDecalartion
+	return p
+}
+
+func (*ComponentDecalartionContext) IsComponentDecalartionContext() {}
+
+func NewComponentDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentDecalartionContext {
+	var p = new(ComponentDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_componentDecalartion
+
+	return p
+}
+
+func (s *ComponentDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ComponentDecalartionContext) COMPONENT() antlr.TerminalNode {
+	return s.GetToken(DesignParserCOMPONENT, 0)
+}
+
+func (s *ComponentDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ComponentDecalartionContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *ComponentDecalartionContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *ComponentDecalartionContext) AllComponentBodyDecalartion() []IComponentBodyDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem())
+	var tst = make([]IComponentBodyDecalartionContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IComponentBodyDecalartionContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *ComponentDecalartionContext) ComponentBodyDecalartion(i int) IComponentBodyDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentBodyDecalartionContext)
+}
+
+func (s *ComponentDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ComponentDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ComponentDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterComponentDecalartion(s)
+	}
+}
+
+func (s *ComponentDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitComponentDecalartion(s)
+	}
+}
+
+func (s *ComponentDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitComponentDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ComponentDecalartion() (localctx IComponentDecalartionContext) {
+	localctx = NewComponentDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, DesignParserRULE_componentDecalartion)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(171)
+		p.Match(DesignParserCOMPONENT)
+	}
+	{
+		p.SetState(172)
+		p.Match(DesignParserIDENTIFIER)
 	}
 	{
 		p.SetState(173)
+		p.Match(DesignParserLBRACE)
+	}
+	p.SetState(177)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for _la == DesignParserIDENTIFIER {
+		{
+			p.SetState(174)
+			p.ComponentBodyDecalartion()
+		}
+
+		p.SetState(179)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+	{
+		p.SetState(180)
+		p.Match(DesignParserRBRACE)
+	}
+
+	return localctx
+}
+
+// IComponentBodyDecalartionContext is an interface to support dynamic dispatch.
+type IComponentBodyDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsComponentBodyDecalartionContext differentiates from other interfaces.
+	IsComponentBodyDecalartionContext()
+}
+
+type ComponentBodyDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyComponentBodyDecalartionContext() *ComponentBodyDecalartionContext {
+	var p = new(ComponentBodyDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_componentBodyDecalartion
+	return p
+}
+
+func (*ComponentBodyDecalartionContext) IsComponentBodyDecalartionContext() {}
+
+func NewComponentBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentBodyDecalartionContext {
+	var p = new(ComponentBodyDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_componentBodyDecalartion
+
+	return p
+}
+
+func (s *ComponentBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ComponentBodyDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ComponentBodyDecalartionContext) COLON() antlr.TerminalNode {
+	return s.GetToken(DesignParserCOLON, 0)
+}
+
+func (s *ComponentBodyDecalartionContext) ConfigValue() IConfigValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigValueContext)
+}
+
+func (s *ComponentBodyDecalartionContext) LayoutDecalaration() ILayoutDecalarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutDecalarationContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILayoutDecalarationContext)
+}
+
+func (s *ComponentBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ComponentBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ComponentBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterComponentBodyDecalartion(s)
+	}
+}
+
+func (s *ComponentBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitComponentBodyDecalartion(s)
+	}
+}
+
+func (s *ComponentBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitComponentBodyDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ComponentBodyDecalartion() (localctx IComponentBodyDecalartionContext) {
+	localctx = NewComponentBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 40, DesignParserRULE_componentBodyDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(182)
 		p.Match(DesignParserIDENTIFIER)
+	}
+	p.SetState(186)
+	p.GetErrorHandler().Sync(p)
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserCOLON:
+		{
+			p.SetState(183)
+			p.Match(DesignParserCOLON)
+		}
+		{
+			p.SetState(184)
+			p.ConfigValue()
+		}
+
+	case DesignParserLBRACE:
+		{
+			p.SetState(185)
+			p.LayoutDecalaration()
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// ILayoutDecalarationContext is an interface to support dynamic dispatch.
+type ILayoutDecalarationContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsLayoutDecalarationContext differentiates from other interfaces.
+	IsLayoutDecalarationContext()
+}
+
+type LayoutDecalarationContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLayoutDecalarationContext() *LayoutDecalarationContext {
+	var p = new(LayoutDecalarationContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_layoutDecalaration
+	return p
+}
+
+func (*LayoutDecalarationContext) IsLayoutDecalarationContext() {}
+
+func NewLayoutDecalarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutDecalarationContext {
+	var p = new(LayoutDecalarationContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_layoutDecalaration
+
+	return p
+}
+
+func (s *LayoutDecalarationContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LayoutDecalarationContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *LayoutDecalarationContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *LayoutDecalarationContext) AllLayoutBodyDecalartion() []ILayoutBodyDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ILayoutBodyDecalartionContext)(nil)).Elem())
+	var tst = make([]ILayoutBodyDecalartionContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(ILayoutBodyDecalartionContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *LayoutDecalarationContext) LayoutBodyDecalartion(i int) ILayoutBodyDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutBodyDecalartionContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILayoutBodyDecalartionContext)
+}
+
+func (s *LayoutDecalarationContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LayoutDecalarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LayoutDecalarationContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterLayoutDecalaration(s)
+	}
+}
+
+func (s *LayoutDecalarationContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitLayoutDecalaration(s)
+	}
+}
+
+func (s *LayoutDecalarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitLayoutDecalaration(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) LayoutDecalaration() (localctx ILayoutDecalarationContext) {
+	localctx = NewLayoutDecalarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 42, DesignParserRULE_layoutDecalaration)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(188)
+		p.Match(DesignParserLBRACE)
+	}
+	p.SetState(192)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for _la == DesignParserT__0 {
+		{
+			p.SetState(189)
+			p.LayoutBodyDecalartion()
+		}
+
+		p.SetState(194)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+	{
+		p.SetState(195)
+		p.Match(DesignParserRBRACE)
+	}
+
+	return localctx
+}
+
+// ILayoutBodyDecalartionContext is an interface to support dynamic dispatch.
+type ILayoutBodyDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsLayoutBodyDecalartionContext differentiates from other interfaces.
+	IsLayoutBodyDecalartionContext()
+}
+
+type LayoutBodyDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLayoutBodyDecalartionContext() *LayoutBodyDecalartionContext {
+	var p = new(LayoutBodyDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_layoutBodyDecalartion
+	return p
+}
+
+func (*LayoutBodyDecalartionContext) IsLayoutBodyDecalartionContext() {}
+
+func NewLayoutBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutBodyDecalartionContext {
+	var p = new(LayoutBodyDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_layoutBodyDecalartion
+
+	return p
+}
+
+func (s *LayoutBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LayoutBodyDecalartionContext) EmptyLine() IEmptyLineContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IEmptyLineContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IEmptyLineContext)
+}
+
+func (s *LayoutBodyDecalartionContext) LayoutLine() ILayoutLineContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutLineContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILayoutLineContext)
+}
+
+func (s *LayoutBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LayoutBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LayoutBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterLayoutBodyDecalartion(s)
+	}
+}
+
+func (s *LayoutBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitLayoutBodyDecalartion(s)
+	}
+}
+
+func (s *LayoutBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitLayoutBodyDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) LayoutBodyDecalartion() (localctx ILayoutBodyDecalartionContext) {
+	localctx = NewLayoutBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 44, DesignParserRULE_layoutBodyDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(197)
+		p.Match(DesignParserT__0)
+	}
+	p.SetState(200)
+	p.GetErrorHandler().Sync(p)
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserT__1:
+		{
+			p.SetState(198)
+			p.EmptyLine()
+		}
+
+	case DesignParserT__0, DesignParserGridSize, DesignParserSTRING_LITERAL, DesignParserRBRACE, DesignParserIDENTIFIER:
+		{
+			p.SetState(199)
+			p.LayoutLine()
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// IEmptyLineContext is an interface to support dynamic dispatch.
+type IEmptyLineContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsEmptyLineContext differentiates from other interfaces.
+	IsEmptyLineContext()
+}
+
+type EmptyLineContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyEmptyLineContext() *EmptyLineContext {
+	var p = new(EmptyLineContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_emptyLine
+	return p
+}
+
+func (*EmptyLineContext) IsEmptyLineContext() {}
+
+func NewEmptyLineContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *EmptyLineContext {
+	var p = new(EmptyLineContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_emptyLine
+
+	return p
+}
+
+func (s *EmptyLineContext) GetParser() antlr.Parser { return s.parser }
+func (s *EmptyLineContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *EmptyLineContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *EmptyLineContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterEmptyLine(s)
+	}
+}
+
+func (s *EmptyLineContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitEmptyLine(s)
+	}
+}
+
+func (s *EmptyLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitEmptyLine(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) EmptyLine() (localctx IEmptyLineContext) {
+	localctx = NewEmptyLineContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 46, DesignParserRULE_emptyLine)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	var _alt int
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(202)
+		p.Match(DesignParserT__1)
+	}
+	p.SetState(206)
+	p.GetErrorHandler().Sync(p)
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 16, p.GetParserRuleContext())
+
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			{
+				p.SetState(203)
+				_la = p.GetTokenStream().LA(1)
+
+				if !(_la == DesignParserT__0 || _la == DesignParserT__1) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
+			}
+
+		}
+		p.SetState(208)
+		p.GetErrorHandler().Sync(p)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 16, p.GetParserRuleContext())
+	}
+
+	return localctx
+}
+
+// ILayoutLineContext is an interface to support dynamic dispatch.
+type ILayoutLineContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsLayoutLineContext differentiates from other interfaces.
+	IsLayoutLineContext()
+}
+
+type LayoutLineContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLayoutLineContext() *LayoutLineContext {
+	var p = new(LayoutLineContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_layoutLine
+	return p
+}
+
+func (*LayoutLineContext) IsLayoutLineContext() {}
+
+func NewLayoutLineContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutLineContext {
+	var p = new(LayoutLineContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_layoutLine
+
+	return p
+}
+
+func (s *LayoutLineContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LayoutLineContext) AllComponentUseDeclaration() []IComponentUseDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentUseDeclarationContext)(nil)).Elem())
+	var tst = make([]IComponentUseDeclarationContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IComponentUseDeclarationContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *LayoutLineContext) ComponentUseDeclaration(i int) IComponentUseDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentUseDeclarationContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentUseDeclarationContext)
+}
+
+func (s *LayoutLineContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LayoutLineContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LayoutLineContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterLayoutLine(s)
+	}
+}
+
+func (s *LayoutLineContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitLayoutLine(s)
+	}
+}
+
+func (s *LayoutLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitLayoutLine(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) LayoutLine() (localctx ILayoutLineContext) {
+	localctx = NewLayoutLineContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 48, DesignParserRULE_layoutLine)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	var _alt int
+
+	p.EnterOuterAlt(localctx, 1)
+	p.SetState(213)
+	p.GetErrorHandler().Sync(p)
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext())
+
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			p.SetState(211)
+			p.GetErrorHandler().Sync(p)
+
+			switch p.GetTokenStream().LA(1) {
+			case DesignParserT__0:
+				{
+					p.SetState(209)
+					p.Match(DesignParserT__0)
+				}
+
+			case DesignParserGridSize, DesignParserSTRING_LITERAL, DesignParserIDENTIFIER:
+				{
+					p.SetState(210)
+					p.ComponentUseDeclaration()
+				}
+
+			default:
+				panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+			}
+
+		}
+		p.SetState(215)
+		p.GetErrorHandler().Sync(p)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext())
+	}
+
+	return localctx
+}
+
+// IComponentUseDeclarationContext is an interface to support dynamic dispatch.
+type IComponentUseDeclarationContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsComponentUseDeclarationContext differentiates from other interfaces.
+	IsComponentUseDeclarationContext()
+}
+
+type ComponentUseDeclarationContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyComponentUseDeclarationContext() *ComponentUseDeclarationContext {
+	var p = new(ComponentUseDeclarationContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_componentUseDeclaration
+	return p
+}
+
+func (*ComponentUseDeclarationContext) IsComponentUseDeclarationContext() {}
+
+func NewComponentUseDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentUseDeclarationContext {
+	var p = new(ComponentUseDeclarationContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_componentUseDeclaration
+
+	return p
+}
+
+func (s *ComponentUseDeclarationContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ComponentUseDeclarationContext) GridSize() antlr.TerminalNode {
+	return s.GetToken(DesignParserGridSize, 0)
+}
+
+func (s *ComponentUseDeclarationContext) ComponentName() IComponentNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IComponentNameContext)
+}
+
+func (s *ComponentUseDeclarationContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(DesignParserLPAREN, 0)
+}
+
+func (s *ComponentUseDeclarationContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(DesignParserRPAREN, 0)
+}
+
+func (s *ComponentUseDeclarationContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
+}
+
+func (s *ComponentUseDeclarationContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ComponentUseDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ComponentUseDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterComponentUseDeclaration(s)
+	}
+}
+
+func (s *ComponentUseDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitComponentUseDeclaration(s)
+	}
+}
+
+func (s *ComponentUseDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitComponentUseDeclaration(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarationContext) {
+	localctx = NewComponentUseDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 50, DesignParserRULE_componentUseDeclaration)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.SetState(224)
+	p.GetErrorHandler().Sync(p)
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserGridSize:
+		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(216)
+			p.Match(DesignParserGridSize)
+		}
+
+	case DesignParserIDENTIFIER:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(217)
+			p.ComponentName()
+		}
+		p.SetState(221)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == DesignParserLPAREN {
+			{
+				p.SetState(218)
+				p.Match(DesignParserLPAREN)
+			}
+			{
+				p.SetState(219)
+				_la = p.GetTokenStream().LA(1)
+
+				if !(_la == DesignParserGridSize || _la == DesignParserSTRING_LITERAL) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
+			}
+			{
+				p.SetState(220)
+				p.Match(DesignParserRPAREN)
+			}
+
+		}
+
+	case DesignParserSTRING_LITERAL:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(223)
+			p.Match(DesignParserSTRING_LITERAL)
+		}
+
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	}
+
+	return localctx
+}
+
+// IStyleDecalartionContext is an interface to support dynamic dispatch.
+type IStyleDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsStyleDecalartionContext differentiates from other interfaces.
+	IsStyleDecalartionContext()
+}
+
+type StyleDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyStyleDecalartionContext() *StyleDecalartionContext {
+	var p = new(StyleDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_styleDecalartion
+	return p
+}
+
+func (*StyleDecalartionContext) IsStyleDecalartionContext() {}
+
+func NewStyleDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StyleDecalartionContext {
+	var p = new(StyleDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_styleDecalartion
+
+	return p
+}
+
+func (s *StyleDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *StyleDecalartionContext) STYLE() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTYLE, 0)
+}
+
+func (s *StyleDecalartionContext) StyleName() IStyleNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleNameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IStyleNameContext)
+}
+
+func (s *StyleDecalartionContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *StyleDecalartionContext) StyleBody() IStyleBodyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleBodyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IStyleBodyContext)
+}
+
+func (s *StyleDecalartionContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *StyleDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *StyleDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *StyleDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterStyleDecalartion(s)
+	}
+}
+
+func (s *StyleDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitStyleDecalartion(s)
+	}
+}
+
+func (s *StyleDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitStyleDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) StyleDecalartion() (localctx IStyleDecalartionContext) {
+	localctx = NewStyleDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 52, DesignParserRULE_styleDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(226)
+		p.Match(DesignParserSTYLE)
+	}
+	{
+		p.SetState(227)
+		p.StyleName()
+	}
+	{
+		p.SetState(228)
+		p.Match(DesignParserLBRACE)
+	}
+	{
+		p.SetState(229)
+		p.StyleBody()
+	}
+	{
+		p.SetState(230)
+		p.Match(DesignParserRBRACE)
+	}
+
+	return localctx
+}
+
+// IStyleNameContext is an interface to support dynamic dispatch.
+type IStyleNameContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsStyleNameContext differentiates from other interfaces.
+	IsStyleNameContext()
+}
+
+type StyleNameContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyStyleNameContext() *StyleNameContext {
+	var p = new(StyleNameContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_styleName
+	return p
+}
+
+func (*StyleNameContext) IsStyleNameContext() {}
+
+func NewStyleNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StyleNameContext {
+	var p = new(StyleNameContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_styleName
+
+	return p
+}
+
+func (s *StyleNameContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *StyleNameContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *StyleNameContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *StyleNameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *StyleNameContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterStyleName(s)
+	}
+}
+
+func (s *StyleNameContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitStyleName(s)
+	}
+}
+
+func (s *StyleNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitStyleName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) StyleName() (localctx IStyleNameContext) {
+	localctx = NewStyleNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 54, DesignParserRULE_styleName)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(232)
+		p.Match(DesignParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IStyleBodyContext is an interface to support dynamic dispatch.
+type IStyleBodyContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsStyleBodyContext differentiates from other interfaces.
+	IsStyleBodyContext()
+}
+
+type StyleBodyContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyStyleBodyContext() *StyleBodyContext {
+	var p = new(StyleBodyContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_styleBody
+	return p
+}
+
+func (*StyleBodyContext) IsStyleBodyContext() {}
+
+func NewStyleBodyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StyleBodyContext {
+	var p = new(StyleBodyContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_styleBody
+
+	return p
+}
+
+func (s *StyleBodyContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *StyleBodyContext) AllConfigDecalartion() []IConfigDecalartionContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem())
+	var tst = make([]IConfigDecalartionContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IConfigDecalartionContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *StyleBodyContext) ConfigDecalartion(i int) IConfigDecalartionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigDecalartionContext)
+}
+
+func (s *StyleBodyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *StyleBodyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *StyleBodyContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterStyleBody(s)
+	}
+}
+
+func (s *StyleBodyContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitStyleBody(s)
+	}
+}
+
+func (s *StyleBodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitStyleBody(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) StyleBody() (localctx IStyleBodyContext) {
+	localctx = NewStyleBodyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 56, DesignParserRULE_styleBody)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	p.SetState(239)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for _la == DesignParserIDENTIFIER {
+		{
+			p.SetState(234)
+			p.ConfigDecalartion()
+		}
+		{
+			p.SetState(235)
+			p.Match(DesignParserT__2)
+		}
+
+		p.SetState(241)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+
+	return localctx
+}
+
+// ILibraryDecalartionContext is an interface to support dynamic dispatch.
+type ILibraryDecalartionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsLibraryDecalartionContext differentiates from other interfaces.
+	IsLibraryDecalartionContext()
+}
+
+type LibraryDecalartionContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLibraryDecalartionContext() *LibraryDecalartionContext {
+	var p = new(LibraryDecalartionContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_libraryDecalartion
+	return p
+}
+
+func (*LibraryDecalartionContext) IsLibraryDecalartionContext() {}
+
+func NewLibraryDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LibraryDecalartionContext {
+	var p = new(LibraryDecalartionContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_libraryDecalartion
+
+	return p
+}
+
+func (s *LibraryDecalartionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LibraryDecalartionContext) LIBRARAY() antlr.TerminalNode {
+	return s.GetToken(DesignParserLIBRARAY, 0)
+}
+
+func (s *LibraryDecalartionContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *LibraryDecalartionContext) LibraryBody() ILibraryBodyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryBodyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ILibraryBodyContext)
+}
+
+func (s *LibraryDecalartionContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *LibraryDecalartionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LibraryDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LibraryDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterLibraryDecalartion(s)
+	}
+}
+
+func (s *LibraryDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitLibraryDecalartion(s)
+	}
+}
+
+func (s *LibraryDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitLibraryDecalartion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) LibraryDecalartion() (localctx ILibraryDecalartionContext) {
+	localctx = NewLibraryDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 58, DesignParserRULE_libraryDecalartion)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(242)
+		p.Match(DesignParserLIBRARAY)
+	}
+	{
+		p.SetState(243)
+		p.Match(DesignParserLBRACE)
+	}
+	{
+		p.SetState(244)
+		p.LibraryBody()
+	}
+	{
+		p.SetState(245)
+		p.Match(DesignParserRBRACE)
+	}
+
+	return localctx
+}
+
+// ILibraryBodyContext is an interface to support dynamic dispatch.
+type ILibraryBodyContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsLibraryBodyContext differentiates from other interfaces.
+	IsLibraryBodyContext()
+}
+
+type LibraryBodyContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyLibraryBodyContext() *LibraryBodyContext {
+	var p = new(LibraryBodyContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_libraryBody
+	return p
+}
+
+func (*LibraryBodyContext) IsLibraryBodyContext() {}
+
+func NewLibraryBodyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LibraryBodyContext {
+	var p = new(LibraryBodyContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_libraryBody
+
+	return p
+}
+
+func (s *LibraryBodyContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *LibraryBodyContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
+}
+
+func (s *LibraryBodyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *LibraryBodyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *LibraryBodyContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterLibraryBody(s)
+	}
+}
+
+func (s *LibraryBodyContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitLibraryBody(s)
+	}
+}
+
+func (s *LibraryBodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitLibraryBody(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) LibraryBody() (localctx ILibraryBodyContext) {
+	localctx = NewLibraryBodyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 60, DesignParserRULE_libraryBody)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(247)
+		p.Match(DesignParserSTRING_LITERAL)
 	}
 
 	return localctx

@@ -7,5 +7,5 @@ import (
 func main()  {
 	//cmd.Execute()
 	app := NewDesignApp()
-	app.Start("examples/demo.design")
+	app.Start("examples/login.design")
 }

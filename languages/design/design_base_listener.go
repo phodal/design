@@ -21,146 +21,188 @@ func (s *BaseDesignListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BaseDesignListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterDesignIt is called when production designIt is entered.
-func (s *BaseDesignListener) EnterDesignIt(ctx *DesignItContext) {}
+// EnterStart is called when production start is entered.
+func (s *BaseDesignListener) EnterStart(ctx *StartContext) {}
 
-// ExitDesignIt is called when production designIt is exited.
-func (s *BaseDesignListener) ExitDesignIt(ctx *DesignItContext) {}
+// ExitStart is called when production start is exited.
+func (s *BaseDesignListener) ExitStart(ctx *StartContext) {}
 
-// EnterDeclaration is called when production declaration is entered.
-func (s *BaseDesignListener) EnterDeclaration(ctx *DeclarationContext) {}
+// EnterComment is called when production comment is entered.
+func (s *BaseDesignListener) EnterComment(ctx *CommentContext) {}
 
-// ExitDeclaration is called when production declaration is exited.
-func (s *BaseDesignListener) ExitDeclaration(ctx *DeclarationContext) {}
+// ExitComment is called when production comment is exited.
+func (s *BaseDesignListener) ExitComment(ctx *CommentContext) {}
 
-// EnterDesignSystemDeclaration is called when production designSystemDeclaration is entered.
-func (s *BaseDesignListener) EnterDesignSystemDeclaration(ctx *DesignSystemDeclarationContext) {}
+// EnterConfigDecalartion is called when production configDecalartion is entered.
+func (s *BaseDesignListener) EnterConfigDecalartion(ctx *ConfigDecalartionContext) {}
 
-// ExitDesignSystemDeclaration is called when production designSystemDeclaration is exited.
-func (s *BaseDesignListener) ExitDesignSystemDeclaration(ctx *DesignSystemDeclarationContext) {}
+// ExitConfigDecalartion is called when production configDecalartion is exited.
+func (s *BaseDesignListener) ExitConfigDecalartion(ctx *ConfigDecalartionContext) {}
 
-// EnterCommentBlockDeclaration is called when production commentBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterCommentBlockDeclaration(ctx *CommentBlockDeclarationContext) {}
+// EnterConfigKey is called when production configKey is entered.
+func (s *BaseDesignListener) EnterConfigKey(ctx *ConfigKeyContext) {}
 
-// ExitCommentBlockDeclaration is called when production commentBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitCommentBlockDeclaration(ctx *CommentBlockDeclarationContext) {}
+// ExitConfigKey is called when production configKey is exited.
+func (s *BaseDesignListener) ExitConfigKey(ctx *ConfigKeyContext) {}
 
-// EnterDesignBlockDeclaration is called when production designBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterDesignBlockDeclaration(ctx *DesignBlockDeclarationContext) {}
+// EnterConfigValue is called when production configValue is entered.
+func (s *BaseDesignListener) EnterConfigValue(ctx *ConfigValueContext) {}
 
-// ExitDesignBlockDeclaration is called when production designBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitDesignBlockDeclaration(ctx *DesignBlockDeclarationContext) {}
+// ExitConfigValue is called when production configValue is exited.
+func (s *BaseDesignListener) ExitConfigValue(ctx *ConfigValueContext) {}
 
-// EnterTemplateBlockDeclaration is called when production templateBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterTemplateBlockDeclaration(ctx *TemplateBlockDeclarationContext) {}
+// EnterDecalartions is called when production decalartions is entered.
+func (s *BaseDesignListener) EnterDecalartions(ctx *DecalartionsContext) {}
 
-// ExitTemplateBlockDeclaration is called when production templateBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitTemplateBlockDeclaration(ctx *TemplateBlockDeclarationContext) {}
+// ExitDecalartions is called when production decalartions is exited.
+func (s *BaseDesignListener) ExitDecalartions(ctx *DecalartionsContext) {}
 
-// EnterComponentBlockDeclaration is called when production componentBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterComponentBlockDeclaration(ctx *ComponentBlockDeclarationContext) {}
+// EnterFlowDecalartion is called when production flowDecalartion is entered.
+func (s *BaseDesignListener) EnterFlowDecalartion(ctx *FlowDecalartionContext) {}
 
-// ExitComponentBlockDeclaration is called when production componentBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitComponentBlockDeclaration(ctx *ComponentBlockDeclarationContext) {}
+// ExitFlowDecalartion is called when production flowDecalartion is exited.
+func (s *BaseDesignListener) ExitFlowDecalartion(ctx *FlowDecalartionContext) {}
 
-// EnterLayerBlockDeclaration is called when production layerBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterLayerBlockDeclaration(ctx *LayerBlockDeclarationContext) {}
+// EnterFlowBodyDecalartion is called when production flowBodyDecalartion is entered.
+func (s *BaseDesignListener) EnterFlowBodyDecalartion(ctx *FlowBodyDecalartionContext) {}
 
-// ExitLayerBlockDeclaration is called when production layerBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitLayerBlockDeclaration(ctx *LayerBlockDeclarationContext) {}
+// ExitFlowBodyDecalartion is called when production flowBodyDecalartion is exited.
+func (s *BaseDesignListener) ExitFlowBodyDecalartion(ctx *FlowBodyDecalartionContext) {}
 
-// EnterCodeBlockDeclaration is called when production codeBlockDeclaration is entered.
-func (s *BaseDesignListener) EnterCodeBlockDeclaration(ctx *CodeBlockDeclarationContext) {}
+// EnterSeeDecalartion is called when production seeDecalartion is entered.
+func (s *BaseDesignListener) EnterSeeDecalartion(ctx *SeeDecalartionContext) {}
 
-// ExitCodeBlockDeclaration is called when production codeBlockDeclaration is exited.
-func (s *BaseDesignListener) ExitCodeBlockDeclaration(ctx *CodeBlockDeclarationContext) {}
+// ExitSeeDecalartion is called when production seeDecalartion is exited.
+func (s *BaseDesignListener) ExitSeeDecalartion(ctx *SeeDecalartionContext) {}
 
-// EnterDesignBodyDeclaration is called when production designBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterDesignBodyDeclaration(ctx *DesignBodyDeclarationContext) {}
+// EnterDoDecalartion is called when production doDecalartion is entered.
+func (s *BaseDesignListener) EnterDoDecalartion(ctx *DoDecalartionContext) {}
 
-// ExitDesignBodyDeclaration is called when production designBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitDesignBodyDeclaration(ctx *DesignBodyDeclarationContext) {}
+// ExitDoDecalartion is called when production doDecalartion is exited.
+func (s *BaseDesignListener) ExitDoDecalartion(ctx *DoDecalartionContext) {}
 
-// EnterTemplateBodyDeclaration is called when production templateBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterTemplateBodyDeclaration(ctx *TemplateBodyDeclarationContext) {}
+// EnterReactDecalartion is called when production reactDecalartion is entered.
+func (s *BaseDesignListener) EnterReactDecalartion(ctx *ReactDecalartionContext) {}
 
-// ExitTemplateBodyDeclaration is called when production templateBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitTemplateBodyDeclaration(ctx *TemplateBodyDeclarationContext) {}
+// ExitReactDecalartion is called when production reactDecalartion is exited.
+func (s *BaseDesignListener) ExitReactDecalartion(ctx *ReactDecalartionContext) {}
 
-// EnterComponentBodyDeclaration is called when production componentBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) {}
+// EnterAnimateDecalartion is called when production animateDecalartion is entered.
+func (s *BaseDesignListener) EnterAnimateDecalartion(ctx *AnimateDecalartionContext) {}
 
-// ExitComponentBodyDeclaration is called when production componentBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) {}
+// ExitAnimateDecalartion is called when production animateDecalartion is exited.
+func (s *BaseDesignListener) ExitAnimateDecalartion(ctx *AnimateDecalartionContext) {}
 
-// EnterLayerBodyDeclaration is called when production layerBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterLayerBodyDeclaration(ctx *LayerBodyDeclarationContext) {}
+// EnterActionKey is called when production actionKey is entered.
+func (s *BaseDesignListener) EnterActionKey(ctx *ActionKeyContext) {}
 
-// ExitLayerBodyDeclaration is called when production layerBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitLayerBodyDeclaration(ctx *LayerBodyDeclarationContext) {}
+// ExitActionKey is called when production actionKey is exited.
+func (s *BaseDesignListener) ExitActionKey(ctx *ActionKeyContext) {}
 
-// EnterExpressDeclaration is called when production expressDeclaration is entered.
-func (s *BaseDesignListener) EnterExpressDeclaration(ctx *ExpressDeclarationContext) {}
+// EnterActionName is called when production actionName is entered.
+func (s *BaseDesignListener) EnterActionName(ctx *ActionNameContext) {}
 
-// ExitExpressDeclaration is called when production expressDeclaration is exited.
-func (s *BaseDesignListener) ExitExpressDeclaration(ctx *ExpressDeclarationContext) {}
+// ExitActionName is called when production actionName is exited.
+func (s *BaseDesignListener) ExitActionName(ctx *ActionNameContext) {}
 
-// EnterExpress is called when production express is entered.
-func (s *BaseDesignListener) EnterExpress(ctx *ExpressContext) {}
+// EnterComponentValue is called when production componentValue is entered.
+func (s *BaseDesignListener) EnterComponentValue(ctx *ComponentValueContext) {}
 
-// ExitExpress is called when production express is exited.
-func (s *BaseDesignListener) ExitExpress(ctx *ExpressContext) {}
+// ExitComponentValue is called when production componentValue is exited.
+func (s *BaseDesignListener) ExitComponentValue(ctx *ComponentValueContext) {}
 
-// EnterEqualExpress is called when production equalExpress is entered.
-func (s *BaseDesignListener) EnterEqualExpress(ctx *EqualExpressContext) {}
+// EnterComponentName is called when production componentName is entered.
+func (s *BaseDesignListener) EnterComponentName(ctx *ComponentNameContext) {}
 
-// ExitEqualExpress is called when production equalExpress is exited.
-func (s *BaseDesignListener) ExitEqualExpress(ctx *EqualExpressContext) {}
+// ExitComponentName is called when production componentName is exited.
+func (s *BaseDesignListener) ExitComponentName(ctx *ComponentNameContext) {}
 
-// EnterUseExpress is called when production useExpress is entered.
-func (s *BaseDesignListener) EnterUseExpress(ctx *UseExpressContext) {}
+// EnterSceneName is called when production sceneName is entered.
+func (s *BaseDesignListener) EnterSceneName(ctx *SceneNameContext) {}
 
-// ExitUseExpress is called when production useExpress is exited.
-func (s *BaseDesignListener) ExitUseExpress(ctx *UseExpressContext) {}
+// ExitSceneName is called when production sceneName is exited.
+func (s *BaseDesignListener) ExitSceneName(ctx *SceneNameContext) {}
 
-// EnterValueExpress is called when production valueExpress is entered.
-func (s *BaseDesignListener) EnterValueExpress(ctx *ValueExpressContext) {}
+// EnterAnimateName is called when production animateName is entered.
+func (s *BaseDesignListener) EnterAnimateName(ctx *AnimateNameContext) {}
 
-// ExitValueExpress is called when production valueExpress is exited.
-func (s *BaseDesignListener) ExitValueExpress(ctx *ValueExpressContext) {}
+// ExitAnimateName is called when production animateName is exited.
+func (s *BaseDesignListener) ExitAnimateName(ctx *AnimateNameContext) {}
 
-// EnterLayerExpress is called when production layerExpress is entered.
-func (s *BaseDesignListener) EnterLayerExpress(ctx *LayerExpressContext) {}
+// EnterPageDecalartion is called when production pageDecalartion is entered.
+func (s *BaseDesignListener) EnterPageDecalartion(ctx *PageDecalartionContext) {}
 
-// ExitLayerExpress is called when production layerExpress is exited.
-func (s *BaseDesignListener) ExitLayerExpress(ctx *LayerExpressContext) {}
+// ExitPageDecalartion is called when production pageDecalartion is exited.
+func (s *BaseDesignListener) ExitPageDecalartion(ctx *PageDecalartionContext) {}
 
-// EnterTemplateExpress is called when production templateExpress is entered.
-func (s *BaseDesignListener) EnterTemplateExpress(ctx *TemplateExpressContext) {}
+// EnterComponentDecalartion is called when production componentDecalartion is entered.
+func (s *BaseDesignListener) EnterComponentDecalartion(ctx *ComponentDecalartionContext) {}
 
-// ExitTemplateExpress is called when production templateExpress is exited.
-func (s *BaseDesignListener) ExitTemplateExpress(ctx *TemplateExpressContext) {}
+// ExitComponentDecalartion is called when production componentDecalartion is exited.
+func (s *BaseDesignListener) ExitComponentDecalartion(ctx *ComponentDecalartionContext) {}
 
-// EnterExpressKey is called when production expressKey is entered.
-func (s *BaseDesignListener) EnterExpressKey(ctx *ExpressKeyContext) {}
+// EnterComponentBodyDecalartion is called when production componentBodyDecalartion is entered.
+func (s *BaseDesignListener) EnterComponentBodyDecalartion(ctx *ComponentBodyDecalartionContext) {}
 
-// ExitExpressKey is called when production expressKey is exited.
-func (s *BaseDesignListener) ExitExpressKey(ctx *ExpressKeyContext) {}
+// ExitComponentBodyDecalartion is called when production componentBodyDecalartion is exited.
+func (s *BaseDesignListener) ExitComponentBodyDecalartion(ctx *ComponentBodyDecalartionContext) {}
 
-// EnterExpressValue is called when production expressValue is entered.
-func (s *BaseDesignListener) EnterExpressValue(ctx *ExpressValueContext) {}
+// EnterLayoutDecalaration is called when production layoutDecalaration is entered.
+func (s *BaseDesignListener) EnterLayoutDecalaration(ctx *LayoutDecalarationContext) {}
 
-// ExitExpressValue is called when production expressValue is exited.
-func (s *BaseDesignListener) ExitExpressValue(ctx *ExpressValueContext) {}
+// ExitLayoutDecalaration is called when production layoutDecalaration is exited.
+func (s *BaseDesignListener) ExitLayoutDecalaration(ctx *LayoutDecalarationContext) {}
 
-// EnterLayer is called when production layer is entered.
-func (s *BaseDesignListener) EnterLayer(ctx *LayerContext) {}
+// EnterLayoutBodyDecalartion is called when production layoutBodyDecalartion is entered.
+func (s *BaseDesignListener) EnterLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) {}
 
-// ExitLayer is called when production layer is exited.
-func (s *BaseDesignListener) ExitLayer(ctx *LayerContext) {}
+// ExitLayoutBodyDecalartion is called when production layoutBodyDecalartion is exited.
+func (s *BaseDesignListener) ExitLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) {}
 
-// EnterCommentDeclaration is called when production commentDeclaration is entered.
-func (s *BaseDesignListener) EnterCommentDeclaration(ctx *CommentDeclarationContext) {}
+// EnterEmptyLine is called when production emptyLine is entered.
+func (s *BaseDesignListener) EnterEmptyLine(ctx *EmptyLineContext) {}
 
-// ExitCommentDeclaration is called when production commentDeclaration is exited.
-func (s *BaseDesignListener) ExitCommentDeclaration(ctx *CommentDeclarationContext) {}
+// ExitEmptyLine is called when production emptyLine is exited.
+func (s *BaseDesignListener) ExitEmptyLine(ctx *EmptyLineContext) {}
+
+// EnterLayoutLine is called when production layoutLine is entered.
+func (s *BaseDesignListener) EnterLayoutLine(ctx *LayoutLineContext) {}
+
+// ExitLayoutLine is called when production layoutLine is exited.
+func (s *BaseDesignListener) ExitLayoutLine(ctx *LayoutLineContext) {}
+
+// EnterComponentUseDeclaration is called when production componentUseDeclaration is entered.
+func (s *BaseDesignListener) EnterComponentUseDeclaration(ctx *ComponentUseDeclarationContext) {}
+
+// ExitComponentUseDeclaration is called when production componentUseDeclaration is exited.
+func (s *BaseDesignListener) ExitComponentUseDeclaration(ctx *ComponentUseDeclarationContext) {}
+
+// EnterStyleDecalartion is called when production styleDecalartion is entered.
+func (s *BaseDesignListener) EnterStyleDecalartion(ctx *StyleDecalartionContext) {}
+
+// ExitStyleDecalartion is called when production styleDecalartion is exited.
+func (s *BaseDesignListener) ExitStyleDecalartion(ctx *StyleDecalartionContext) {}
+
+// EnterStyleName is called when production styleName is entered.
+func (s *BaseDesignListener) EnterStyleName(ctx *StyleNameContext) {}
+
+// ExitStyleName is called when production styleName is exited.
+func (s *BaseDesignListener) ExitStyleName(ctx *StyleNameContext) {}
+
+// EnterStyleBody is called when production styleBody is entered.
+func (s *BaseDesignListener) EnterStyleBody(ctx *StyleBodyContext) {}
+
+// ExitStyleBody is called when production styleBody is exited.
+func (s *BaseDesignListener) ExitStyleBody(ctx *StyleBodyContext) {}
+
+// EnterLibraryDecalartion is called when production libraryDecalartion is entered.
+func (s *BaseDesignListener) EnterLibraryDecalartion(ctx *LibraryDecalartionContext) {}
+
+// ExitLibraryDecalartion is called when production libraryDecalartion is exited.
+func (s *BaseDesignListener) ExitLibraryDecalartion(ctx *LibraryDecalartionContext) {}
+
+// EnterLibraryBody is called when production libraryBody is entered.
+func (s *BaseDesignListener) EnterLibraryBody(ctx *LibraryBodyContext) {}
+
+// ExitLibraryBody is called when production libraryBody is exited.
+func (s *BaseDesignListener) ExitLibraryBody(ctx *LibraryBodyContext) {}

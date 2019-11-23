@@ -1,89 +1,109 @@
 grammar Design;
 
-designIt: commentDeclaration* declaration declaration* EOF;
+start: (comment | configDecalartion | decalartions)* EOF;
 
-declaration
-    : designSystemDeclaration
-//    | commentBlockDeclaration
-    | designBlockDeclaration
-    | expressDeclaration
-    | templateBlockDeclaration
-    | componentBlockDeclaration
-    | layerBlockDeclaration
-    | codeBlockDeclaration
+comment: IDENTIFIER;
+
+configDecalartion: configKey COLON configValue;
+
+configKey: IDENTIFIER;
+configValue
+    : IDENTIFIER
+    | IDENTIFIER (',' IDENTIFIER)?
     ;
 
-designSystemDeclaration: DESIGN_SYSTEM ':' IDENTIFIER;
-
-// Block
-
-commentBlockDeclaration: commentDeclaration?;
-
-designBlockDeclaration  : DESIGN IDENTIFIER LBRACE designBodyDeclaration RBRACE;
-templateBlockDeclaration: TEMPLATE IDENTIFIER LBRACE templateBodyDeclaration RBRACE;
-componentBlockDeclaration: COMPONENT IDENTIFIER LBRACE componentBodyDeclaration RBRACE;
-layerBlockDeclaration: LAYER IDENTIFIER LBRACE layerBodyDeclaration RBRACE;
-codeBlockDeclaration: '```' HTML_STRING* '```';
-
-designBodyDeclaration: express*;
-templateBodyDeclaration: express*;
-componentBodyDeclaration: express*;
-layerBodyDeclaration: express*;
-
-expressDeclaration: express;
-
-express: equalExpress
-    | useExpress
-    | valueExpress
-    | templateExpress
-    | layerExpress
+decalartions
+    : configDecalartion
+    | flowDecalartion
+    | pageDecalartion
+    | styleDecalartion
+    | componentDecalartion
+    | libraryDecalartion
     ;
-
-equalExpress:    expressKey '='  expressValue;
-useExpress:      expressKey '->' expressValue;
-valueExpress:    expressKey ':'  expressValue;
-layerExpress:    LAYER IDENTIFIER ;
-templateExpress: TEMPLATE IDENTIFIER;
-
-expressKey: IDENTIFIER;
-expressValue: IDENTIFIER;
-
-layer: LAYER;
-
-commentDeclaration: '#' Space? IDENTIFIER;
-
-// Design Keywords
-
-DESIGN_SYSTEM: 'DesignSystem';
-DESIGN: 'Design' | 'design';
-PROJECT: 'Project' | 'project' | '项目';
-
-
-// Atomic Keywords
-
-Page: 'Page' | 'page' | '页面' ;              // 页面, Pages
-LAYER: 'Layer' | 'layer' | '层';              // 模板, Templates
-Function: 'Function' | 'function' | '功能' ;   // 组织, Organisms
-Library: 'Library' | 'library' |  '库';        // 份子, Molecules
-Unit: 'Unit' | 'unit' | '单元';           // 原子, Atoms
-
-// Layout
-
-TEMPLATE:  'Template' | 'template' | '模板';
-COMPONENT: 'Component' | 'component' | '组件';
-
-Position: 'position';
 
 // Flow
+flowDecalartion: FLOW IDENTIFIER LBRACE flowBodyDecalartion* RBRACE;
 
-Flow: 'Flow';
+flowBodyDecalartion
+    : seeDecalartion
+    | doDecalartion
+    | reactDecalartion
+    ;
 
-// Behavior
+seeDecalartion: SEE (IDENTIFIER | STRING_LITERAL DOT componentName);
+doDecalartion: DO LBRACK actionName RBRACK STRING_LITERAL DOT componentName ;
+reactDecalartion: REACT sceneName? COLON actionKey animateDecalartion?;
 
-Behavior: 'behavior';
+animateDecalartion: WITHTEXT ANIMATE LPAREN animateName RPAREN;
 
-// Fragment
+actionKey: GOTO_KEY componentName | SHOW_KEY STRING_LITERAL DOT componentName;
 
+actionName: IDENTIFIER;
+componentValue: IDENTIFIER;
+componentName: IDENTIFIER;
+sceneName: IDENTIFIER;
+animateName: IDENTIFIER;
+
+GOTO_KEY: 'goto' | 'GOTO' | '跳转';
+SHOW_KEY: 'show' | 'SHOW' | '展示';
+
+FLOW: 'flow' | '流' ;
+SEE: 'see' | 'SEE' | '看到';
+DO: 'do' | 'DO' | '做';
+REACT: 'react' | 'REACT' | '响应';
+
+WITHTEXT: 'with' | 'WITH' | '使用';
+ANIMATE: 'animate' | 'ANIMATE' | '动画';
+
+//PAGE
+
+pageDecalartion: PAGE IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
+componentDecalartion: COMPONENT IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
+
+componentBodyDecalartion: IDENTIFIER (COLON configValue | layoutDecalaration);
+
+layoutDecalaration: LBRACE layoutBodyDecalartion* RBRACE;
+
+layoutBodyDecalartion: '|' (emptyLine | layoutLine);
+
+emptyLine:  '-' ('|' | '-' )*;
+layoutLine: ('|' | componentUseDeclaration)*;
+
+componentUseDeclaration
+    : GridSize
+    | componentName (LPAREN (GridSize | STRING_LITERAL) RPAREN)?
+    | STRING_LITERAL
+    ;
+
+
+GridSize: Digits | POSITION;
+
+POSITION: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM';
+
+PAGE: 'page' | 'PAGE' | '页面';
+COMPONENT: 'component' | 'COMPONENT' | '组件';
+
+// STYLE
+
+styleDecalartion: STYLE styleName LBRACE styleBody RBRACE;
+
+styleName: IDENTIFIER;
+styleBody: (configDecalartion ';')*;
+
+STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
+
+// LIBRARY
+
+
+libraryDecalartion: LIBRARAY LBRACE libraryBody RBRACE;
+libraryBody: STRING_LITERAL;
+
+LIBRARAY: 'libraray' | 'LIBRARAY' | '库';
+
+
+// WORD
+
+STRING_LITERAL:     '"' (~["\\\r\n] | EscapeSequence)* '"';
 WS:                 [ \t\r\n\u000C]+ -> channel(HIDDEN);
 COMMENT:            '/*' .*? '*/'    -> channel(HIDDEN);
 LINE_COMMENT:       '//' ~[\r\n]*    -> channel(HIDDEN);
@@ -92,15 +112,44 @@ EmptyLine:          NewLine Space+ NewLine -> skip;
 Space :             [ \t];
 NewLine :           '\r\n' | '\n' | '\r';
 
+LPAREN:             '(';
+RPAREN:             ')';
 LBRACE:             '{';
 RBRACE:             '}';
-Quote: '"';
+LBRACK:             '[';
+RBRACK:             ']';
+Quote:              '"';
+SingleQuote:        '\'';
+COLON:              ':';
+DOT:                '.';
+COMMA:              ',';
 
-IDENTIFIER:        '#'? LetterOrDigit LetterOrDigit*;
+LETTER:             Letter;
+DIGITS:             Digits;
+IDENTIFIER:         Letter LetterOrDigit*;
+DIGITS_IDENTIFIER:  LetterOrDigit LetterOrDigit*;
 
-STRING_LITERAL: Letter CodeLetter*;
+CONFIG_VALUE: DECIMAL_LITERAL | Letter LetterOrDigit*;
 
-fragment COLON: ':';
+DECIMAL_LITERAL: ('0' | [1-9] (Digits? | '_'+ Digits));
+
+fragment DIGIT
+    :'0'..'9'
+    ;
+
+fragment INTEGER
+    :DIGIT+
+    ;
+
+fragment EscapeSequence
+    : '\\' [btnfr"'\\]
+    | '\\' ([0-3]? [0-7])? [0-7]
+    | '\\' 'u'+ HexDigit HexDigit HexDigit HexDigit
+    ;
+
+fragment HexDigit
+    : [0-9a-fA-F]
+    ;
 
 fragment Digits
     : [0-9] ([0-9_]* [0-9])?
@@ -111,25 +160,8 @@ fragment LetterOrDigit
     | [0-9]
     ;
 
-fragment CodeLetter
-    : [a-zA-Z$_] // these are the "java letters" below 0x7F
-    | [0-9]
-    | ~[\u0000-\u007F\uD800-\uDBFF] // covers all characters above 0x7F which are not a surrogate
-    | [\uD800-\uDBFF] [\uDC00-\uDFFF] // covers UTF-16 surrogate pairs encodings for U+10000 to U+10FFFF
-    ;
-
 fragment Letter
     : [a-zA-Z$_] // these are the "java letters" below 0x7F
     | ~[\u0000-\u007F\uD800-\uDBFF] // covers all characters above 0x7F which are not a surrogate
     | [\uD800-\uDBFF] [\uDC00-\uDFFF] // covers UTF-16 surrogate pairs encodings for U+10000 to U+10FFFF
     ;
-
-
-HTML_STRING
-   : '<' ( TAG | ~ [<>] )* '>'
-   | '</' ( TAG | ~ [<>] )* '>'
-   ;
-
-fragment TAG
-   : '<' .*? '>'
-   ;
