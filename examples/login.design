@@ -1,6 +1,5 @@
 project: DesignDSL
 feature: "design basic dsl"
-layout: "grid, flex"
 type: web
 width: 1080px
 
@@ -21,7 +20,7 @@ flow login {
 
 page HomePage {
     LayoutGrid: 12x
-    Layout: HomePage
+    LayoutId: HomePage
 }
 
 Layout HomePage {
@@ -39,7 +38,7 @@ Layout HomePage {
 }
 
 component Navigation {
-    Layout: Navigation
+    LayoutId: Navigation
 }
 
 
@@ -59,12 +58,12 @@ library FontSize {
     H2 = 16px;
     H3 = 14px;
     H4 = 12px;
-    h5 = 10px;
+    H5 = 10px;
 }
 
 library Color {
-    Primary = 4.0rem;
-    Secondary = 3.2rem;
+    Primary = 4.3rem;
+    Secondary = 3.4rem;
 }
 
 library Button {

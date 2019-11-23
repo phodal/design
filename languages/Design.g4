@@ -65,7 +65,7 @@ componentDecalartion: COMPONENT IDENTIFIER LBRACE componentBodyDecalartion* RBRA
 
 componentBodyDecalartion: IDENTIFIER COLON configValue;
 
-layoutDecalaration: LBRACE layoutBodyDecalartion RBRACE;
+layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDecalartion RBRACE;
 
 //componentBodyDecalartion
 //    : IDENTIFIER (COLON configValue | layoutDecalaration)
@@ -87,10 +87,11 @@ layoutLine: '|' componentUseDeclaration;
 componentUseDeclaration
     : DECIMAL_LITERAL
     | POSITION
-    | componentName (LPAREN (INTEGER_NUM | POSITION | IDENTIFIER) RPAREN)?
+    | componentName (LPAREN (POSITION | STRING_LITERAL | DIGITS) RPAREN)?
     | STRING_LITERAL
     ;
 
+LAYOUT: 'layout' | 'Layout' | '布局';
 POSITION: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM';
 
 PAGE: 'page' | 'PAGE' | '页面';
@@ -108,12 +109,12 @@ STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
 // LIBRARY
 
 
-libraryDecalartion: LIBRARAY IDENTIFIER LBRACE libraryBody RBRACE;
-libraryBody: express?;
+libraryDecalartion: LIBRARY IDENTIFIER LBRACE libraryBody RBRACE;
+libraryBody: express*;
 
 express: configKey '=' configValue ';';
 
-LIBRARAY: 'libraray' | 'LIBRARAY' | '库';
+LIBRARY: 'library' | 'LIBRARY' | '库';
 
 
 // WORD
@@ -144,7 +145,6 @@ LETTER:             Letter;
 IDENTIFIER:         Letter LetterOrDigit*;
 DIGITS:             Digits;
 DIGITS_IDENTIFIER:  LetterOrDigit LetterOrDigit*;
-INTEGER_NUM:        INTEGER;
 
 DECIMAL_LITERAL:    ('0' | [1-9] (Digits? | '_'+ Digits)) [lL]?;
 
