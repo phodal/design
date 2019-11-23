@@ -87,8 +87,8 @@ layoutLine: '|' componentUseDeclaration;
 componentUseDeclaration
     : DECIMAL_LITERAL
     | POSITION
-    | componentName (LPAREN (DECIMAL_LITERAL | POSITION | IDENTIFIER) RPAREN)?
-    | IDENTIFIER
+    | componentName (LPAREN (INTEGER_NUM | POSITION | IDENTIFIER) RPAREN)?
+    | STRING_LITERAL
     ;
 
 POSITION: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM';
@@ -144,7 +144,7 @@ LETTER:             Letter;
 IDENTIFIER:         Letter LetterOrDigit*;
 DIGITS:             Digits;
 DIGITS_IDENTIFIER:  LetterOrDigit LetterOrDigit*;
-
+INTEGER_NUM:        INTEGER;
 
 DECIMAL_LITERAL:    ('0' | [1-9] (Digits? | '_'+ Digits)) [lL]?;
 

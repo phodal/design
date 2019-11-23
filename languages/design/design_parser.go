@@ -16,7 +16,7 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 44, 266,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 45, 266,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
@@ -46,7 +46,7 @@ var parserATN = []uint16{
 	3, 32, 5, 32, 259, 10, 32, 3, 33, 3, 33, 3, 33, 3, 33, 3, 33, 3, 33, 2,
 	2, 34, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34,
 	36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 2, 3, 5, 2,
-	17, 17, 41, 41, 43, 43, 2, 265, 2, 71, 3, 2, 2, 2, 4, 76, 3, 2, 2, 2, 6,
+	17, 17, 41, 41, 44, 44, 2, 265, 2, 71, 3, 2, 2, 2, 4, 76, 3, 2, 2, 2, 6,
 	78, 3, 2, 2, 2, 8, 82, 3, 2, 2, 2, 10, 92, 3, 2, 2, 2, 12, 101, 3, 2, 2,
 	2, 14, 103, 3, 2, 2, 2, 16, 117, 3, 2, 2, 2, 18, 119, 3, 2, 2, 2, 20, 126,
 	3, 2, 2, 2, 22, 134, 3, 2, 2, 2, 24, 143, 3, 2, 2, 2, 26, 155, 3, 2, 2,
@@ -63,7 +63,7 @@ var parserATN = []uint16{
 	7, 37, 2, 2, 80, 81, 5, 10, 6, 2, 81, 7, 3, 2, 2, 2, 82, 83, 7, 41, 2,
 	2, 83, 9, 3, 2, 2, 2, 84, 87, 7, 41, 2, 2, 85, 86, 7, 39, 2, 2, 86, 88,
 	7, 41, 2, 2, 87, 85, 3, 2, 2, 2, 87, 88, 3, 2, 2, 2, 88, 93, 3, 2, 2, 2,
-	89, 93, 7, 22, 2, 2, 90, 93, 7, 43, 2, 2, 91, 93, 7, 44, 2, 2, 92, 84,
+	89, 93, 7, 22, 2, 2, 90, 93, 7, 43, 2, 2, 91, 93, 7, 45, 2, 2, 92, 84,
 	3, 2, 2, 2, 92, 89, 3, 2, 2, 2, 92, 90, 3, 2, 2, 2, 92, 91, 3, 2, 2, 2,
 	93, 11, 3, 2, 2, 2, 94, 102, 5, 6, 4, 2, 95, 102, 5, 14, 8, 2, 96, 102,
 	5, 38, 20, 2, 97, 102, 5, 54, 28, 2, 98, 102, 5, 40, 21, 2, 99, 102, 5,
@@ -111,10 +111,10 @@ var parserATN = []uint16{
 	2, 2, 214, 215, 3, 2, 2, 2, 215, 217, 3, 2, 2, 2, 216, 214, 3, 2, 2, 2,
 	217, 218, 7, 4, 2, 2, 218, 220, 3, 2, 2, 2, 219, 203, 3, 2, 2, 2, 219,
 	210, 3, 2, 2, 2, 220, 49, 3, 2, 2, 2, 221, 222, 7, 4, 2, 2, 222, 223, 5,
-	52, 27, 2, 223, 51, 3, 2, 2, 2, 224, 234, 7, 43, 2, 2, 225, 234, 7, 17,
+	52, 27, 2, 223, 51, 3, 2, 2, 2, 224, 234, 7, 45, 2, 2, 225, 234, 7, 17,
 	2, 2, 226, 230, 5, 32, 17, 2, 227, 228, 7, 29, 2, 2, 228, 229, 9, 2, 2,
 	2, 229, 231, 7, 30, 2, 2, 230, 227, 3, 2, 2, 2, 230, 231, 3, 2, 2, 2, 231,
-	234, 3, 2, 2, 2, 232, 234, 7, 41, 2, 2, 233, 224, 3, 2, 2, 2, 233, 225,
+	234, 3, 2, 2, 2, 232, 234, 7, 22, 2, 2, 233, 224, 3, 2, 2, 2, 233, 225,
 	3, 2, 2, 2, 233, 226, 3, 2, 2, 2, 233, 232, 3, 2, 2, 2, 234, 53, 3, 2,
 	2, 2, 235, 236, 7, 20, 2, 2, 236, 237, 5, 56, 29, 2, 237, 238, 7, 31, 2,
 	2, 238, 239, 5, 58, 30, 2, 239, 240, 7, 32, 2, 2, 240, 55, 3, 2, 2, 2,
@@ -143,7 +143,7 @@ var symbolicNames = []string{
 	"STYLE", "LIBRARAY", "STRING_LITERAL", "WS", "COMMENT", "LINE_COMMENT",
 	"EmptyLine", "Space", "NewLine", "LPAREN", "RPAREN", "LBRACE", "RBRACE",
 	"LBRACK", "RBRACK", "Quote", "SingleQuote", "COLON", "DOT", "COMMA", "LETTER",
-	"IDENTIFIER", "DIGITS", "DIGITS_IDENTIFIER", "DECIMAL_LITERAL",
+	"IDENTIFIER", "DIGITS", "DIGITS_IDENTIFIER", "INTEGER_NUM", "DECIMAL_LITERAL",
 }
 
 var ruleNames = []string{
@@ -225,7 +225,8 @@ const (
 	DesignParserIDENTIFIER        = 39
 	DesignParserDIGITS            = 40
 	DesignParserDIGITS_IDENTIFIER = 41
-	DesignParserDECIMAL_LITERAL   = 42
+	DesignParserINTEGER_NUM       = 42
+	DesignParserDECIMAL_LITERAL   = 43
 )
 
 // DesignParser rules.
@@ -3798,8 +3799,8 @@ func NewComponentUseDeclarationContext(parser antlr.Parser, parent antlr.ParserR
 
 func (s *ComponentUseDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ComponentUseDeclarationContext) DIGITS_IDENTIFIER() antlr.TerminalNode {
-	return s.GetToken(DesignParserDIGITS_IDENTIFIER, 0)
+func (s *ComponentUseDeclarationContext) DECIMAL_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserDECIMAL_LITERAL, 0)
 }
 
 func (s *ComponentUseDeclarationContext) POSITION() antlr.TerminalNode {
@@ -3824,8 +3825,16 @@ func (s *ComponentUseDeclarationContext) RPAREN() antlr.TerminalNode {
 	return s.GetToken(DesignParserRPAREN, 0)
 }
 
+func (s *ComponentUseDeclarationContext) INTEGER_NUM() antlr.TerminalNode {
+	return s.GetToken(DesignParserINTEGER_NUM, 0)
+}
+
 func (s *ComponentUseDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
+}
+
+func (s *ComponentUseDeclarationContext) STRING_LITERAL() antlr.TerminalNode {
+	return s.GetToken(DesignParserSTRING_LITERAL, 0)
 }
 
 func (s *ComponentUseDeclarationContext) GetRuleContext() antlr.RuleContext {
@@ -3881,22 +3890,23 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 
 	p.SetState(231)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext()) {
-	case 1:
+
+	switch p.GetTokenStream().LA(1) {
+	case DesignParserDECIMAL_LITERAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(222)
-			p.Match(DesignParserDIGITS_IDENTIFIER)
+			p.Match(DesignParserDECIMAL_LITERAL)
 		}
 
-	case 2:
+	case DesignParserPOSITION:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(223)
 			p.Match(DesignParserPOSITION)
 		}
 
-	case 3:
+	case DesignParserIDENTIFIER:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(224)
@@ -3915,7 +3925,7 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 				p.SetState(226)
 				_la = p.GetTokenStream().LA(1)
 
-				if !(((_la-15)&-(0x1f+1)) == 0 && ((1<<uint((_la-15)))&((1<<(DesignParserPOSITION-15))|(1<<(DesignParserIDENTIFIER-15))|(1<<(DesignParserDIGITS_IDENTIFIER-15)))) != 0) {
+				if !(((_la-15)&-(0x1f+1)) == 0 && ((1<<uint((_la-15)))&((1<<(DesignParserPOSITION-15))|(1<<(DesignParserIDENTIFIER-15))|(1<<(DesignParserINTEGER_NUM-15)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
@@ -3929,13 +3939,15 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 
 		}
 
-	case 4:
+	case DesignParserSTRING_LITERAL:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(230)
-			p.Match(DesignParserIDENTIFIER)
+			p.Match(DesignParserSTRING_LITERAL)
 		}
 
+	default:
+		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
 
 	return localctx
