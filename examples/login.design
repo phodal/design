@@ -1,0 +1,79 @@
+project: DesignDSL
+feature: design basic dsl
+layout: grid, flex
+width: 1920px
+type: web
+
+flow login {
+    See HomePage
+    DO Click 'Login'.Button
+        REACT Success: 'Login Success'.Toast with ANIMATE('bounce')
+        REACT Failure: Show 'Login Failure'.Dialog
+
+    See 'Login Failure'.Dialog
+    DO Click 'ForgotPassword'.Button
+        REACT: Goto to ForgotPasswordPage
+
+    SEE ForgotPasswordPage
+    DO Click 'RESET PASSWORD'
+        REACT: Show 'Please Check Email'.Message
+}
+
+page HomePage {
+    LayoutGrid: 10
+    Layout {
+|---|----------------|---|
+|      Navigation(RIGHT) |
+|---|----------------|---|
+| 2 | TitleComponent | 2 |
+|---|----------------|---|
+|     ImageComponent     |
+|---|----------------|---|
+| BlogList(8)  | Archives(2) |
+|---|----------------|---|
+| Footer                 |
+|------------------------|
+    }
+}
+
+component Navigation {
+Layout {
+|--------|---------|-----------------|
+| 'home' |'detail' | Button('Login') |
+|--------|---------|-----------------|
+}
+}
+
+component TitleComponent {}
+component ImageComponent {
+    Size1080
+}
+component BlogList {
+    REPEAT 8 [BlogDetail, Space8]
+}
+
+CSS Space8   { margin: 8px  0; }
+CSS Space10  { margin: 10px 0; }
+CSS Size1080 { width: 1080px; height: 960px;}
+
+library FontSize {
+    H1 = 18px;
+    H2 = 16px;
+    H3 = 14px;
+    H4 = 12px;
+    h5 = 10px;
+}
+
+library Color {
+    Primary = 4.0rem(40px);
+    Secondary = 3.2rem (32px)
+}
+
+library Button {
+    Default {
+        FontSize.H2, Color.Primary
+    }
+    Primary {
+        FontSize.H2, Color.Primary
+    }
+}
