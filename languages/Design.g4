@@ -8,8 +8,10 @@ configDecalartion: configKey COLON configValue;
 
 configKey: IDENTIFIER;
 configValue
-    : IDENTIFIER
-    | IDENTIFIER (',' IDENTIFIER)?
+    : IDENTIFIER (',' IDENTIFIER)?
+    | STRING_LITERAL
+    | DIGITS_IDENTIFIER
+    | DECIMAL_LITERAL
     ;
 
 decalartions
@@ -19,6 +21,7 @@ decalartions
     | styleDecalartion
     | componentDecalartion
     | libraryDecalartion
+    | layoutDecalaration
     ;
 
 // Flow
@@ -60,23 +63,33 @@ ANIMATE: 'animate' | 'ANIMATE' | '动画';
 pageDecalartion: PAGE IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
 componentDecalartion: COMPONENT IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
 
-componentBodyDecalartion: IDENTIFIER (COLON configValue | layoutDecalaration);
+componentBodyDecalartion: IDENTIFIER COLON configValue;
 
-layoutDecalaration: LBRACE layoutBodyDecalartion* RBRACE;
+layoutDecalaration: LBRACE layoutBodyDecalartion RBRACE;
 
-layoutBodyDecalartion: '|' (emptyLine | layoutLine);
+//componentBodyDecalartion
+//    : IDENTIFIER (COLON configValue | layoutDecalaration)
+//    | LBRACK componentName* RBRACK '->' REPEAT LPAREN DIGITS RPAREN
+//    ;
 
-emptyLine:  '-' ('|' | '-' )*;
-layoutLine: ('|' | componentUseDeclaration)*;
+REPEAT: 'repeat';
+REPEAT_TIMES: INTEGER;
 
-componentUseDeclaration
-    : GridSize
-    | componentName (LPAREN (GridSize | STRING_LITERAL) RPAREN)?
-    | STRING_LITERAL
+layoutBodyDecalartion: layoutRow*;
+
+layoutRow
+    : '-' '-'*
+    | layoutLine layoutLine*  '|'
     ;
 
+layoutLine: '|' componentUseDeclaration;
 
-GridSize: Digits | POSITION;
+componentUseDeclaration
+    : DECIMAL_LITERAL
+    | POSITION
+    | componentName (LPAREN (DECIMAL_LITERAL | POSITION | IDENTIFIER) RPAREN)?
+    | IDENTIFIER
+    ;
 
 POSITION: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM';
 
@@ -95,8 +108,10 @@ STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
 // LIBRARY
 
 
-libraryDecalartion: LIBRARAY LBRACE libraryBody RBRACE;
-libraryBody: STRING_LITERAL;
+libraryDecalartion: LIBRARAY IDENTIFIER LBRACE libraryBody RBRACE;
+libraryBody: express?;
+
+express: configKey '=' configValue ';';
 
 LIBRARAY: 'libraray' | 'LIBRARAY' | '库';
 
@@ -124,14 +139,14 @@ COLON:              ':';
 DOT:                '.';
 COMMA:              ',';
 
+
 LETTER:             Letter;
-DIGITS:             Digits;
 IDENTIFIER:         Letter LetterOrDigit*;
+DIGITS:             Digits;
 DIGITS_IDENTIFIER:  LetterOrDigit LetterOrDigit*;
 
-CONFIG_VALUE: DECIMAL_LITERAL | Letter LetterOrDigit*;
 
-DECIMAL_LITERAL: ('0' | [1-9] (Digits? | '_'+ Digits));
+DECIMAL_LITERAL:    ('0' | [1-9] (Digits? | '_'+ Digits)) [lL]?;
 
 fragment DIGIT
     :'0'..'9'

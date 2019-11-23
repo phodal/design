@@ -77,8 +77,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#layoutBodyDecalartion.
 	VisitLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#emptyLine.
-	VisitEmptyLine(ctx *EmptyLineContext) interface{}
+	// Visit a parse tree produced by DesignParser#layoutRow.
+	VisitLayoutRow(ctx *LayoutRowContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#layoutLine.
 	VisitLayoutLine(ctx *LayoutLineContext) interface{}
@@ -100,4 +100,7 @@ type DesignVisitor interface {
 
 	// Visit a parse tree produced by DesignParser#libraryBody.
 	VisitLibraryBody(ctx *LibraryBodyContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#express.
+	VisitExpress(ctx *ExpressContext) interface{}
 }

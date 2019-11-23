@@ -100,7 +100,7 @@ func (v *BaseDesignVisitor) VisitLayoutBodyDecalartion(ctx *LayoutBodyDecalartio
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitEmptyLine(ctx *EmptyLineContext) interface{} {
+func (v *BaseDesignVisitor) VisitLayoutRow(ctx *LayoutRowContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -129,5 +129,9 @@ func (v *BaseDesignVisitor) VisitLibraryDecalartion(ctx *LibraryDecalartionConte
 }
 
 func (v *BaseDesignVisitor) VisitLibraryBody(ctx *LibraryBodyContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitExpress(ctx *ExpressContext) interface{} {
 	return v.VisitChildren(ctx)
 }

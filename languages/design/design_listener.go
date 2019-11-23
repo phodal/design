@@ -77,8 +77,8 @@ type DesignListener interface {
 	// EnterLayoutBodyDecalartion is called when entering the layoutBodyDecalartion production.
 	EnterLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
 
-	// EnterEmptyLine is called when entering the emptyLine production.
-	EnterEmptyLine(c *EmptyLineContext)
+	// EnterLayoutRow is called when entering the layoutRow production.
+	EnterLayoutRow(c *LayoutRowContext)
 
 	// EnterLayoutLine is called when entering the layoutLine production.
 	EnterLayoutLine(c *LayoutLineContext)
@@ -100,6 +100,9 @@ type DesignListener interface {
 
 	// EnterLibraryBody is called when entering the libraryBody production.
 	EnterLibraryBody(c *LibraryBodyContext)
+
+	// EnterExpress is called when entering the express production.
+	EnterExpress(c *ExpressContext)
 
 	// ExitStart is called when exiting the start production.
 	ExitStart(c *StartContext)
@@ -170,8 +173,8 @@ type DesignListener interface {
 	// ExitLayoutBodyDecalartion is called when exiting the layoutBodyDecalartion production.
 	ExitLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
 
-	// ExitEmptyLine is called when exiting the emptyLine production.
-	ExitEmptyLine(c *EmptyLineContext)
+	// ExitLayoutRow is called when exiting the layoutRow production.
+	ExitLayoutRow(c *LayoutRowContext)
 
 	// ExitLayoutLine is called when exiting the layoutLine production.
 	ExitLayoutLine(c *LayoutLineContext)
@@ -193,4 +196,7 @@ type DesignListener interface {
 
 	// ExitLibraryBody is called when exiting the libraryBody production.
 	ExitLibraryBody(c *LibraryBodyContext)
+
+	// ExitExpress is called when exiting the express production.
+	ExitExpress(c *ExpressContext)
 }

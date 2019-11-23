@@ -159,11 +159,11 @@ func (s *BaseDesignListener) EnterLayoutBodyDecalartion(ctx *LayoutBodyDecalarti
 // ExitLayoutBodyDecalartion is called when production layoutBodyDecalartion is exited.
 func (s *BaseDesignListener) ExitLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) {}
 
-// EnterEmptyLine is called when production emptyLine is entered.
-func (s *BaseDesignListener) EnterEmptyLine(ctx *EmptyLineContext) {}
+// EnterLayoutRow is called when production layoutRow is entered.
+func (s *BaseDesignListener) EnterLayoutRow(ctx *LayoutRowContext) {}
 
-// ExitEmptyLine is called when production emptyLine is exited.
-func (s *BaseDesignListener) ExitEmptyLine(ctx *EmptyLineContext) {}
+// ExitLayoutRow is called when production layoutRow is exited.
+func (s *BaseDesignListener) ExitLayoutRow(ctx *LayoutRowContext) {}
 
 // EnterLayoutLine is called when production layoutLine is entered.
 func (s *BaseDesignListener) EnterLayoutLine(ctx *LayoutLineContext) {}
@@ -206,3 +206,9 @@ func (s *BaseDesignListener) EnterLibraryBody(ctx *LibraryBodyContext) {}
 
 // ExitLibraryBody is called when production libraryBody is exited.
 func (s *BaseDesignListener) ExitLibraryBody(ctx *LibraryBodyContext) {}
+
+// EnterExpress is called when production express is entered.
+func (s *BaseDesignListener) EnterExpress(ctx *ExpressContext) {}
+
+// ExitExpress is called when production express is exited.
+func (s *BaseDesignListener) ExitExpress(ctx *ExpressContext) {}

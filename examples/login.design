@@ -1,7 +1,8 @@
 project: DesignDSL
-feature: design basic dsl
-layout: grid, flex
+feature: "design basic dsl"
+layout: "grid, flex"
 type: web
+width: 1080px
 
 flow login {
     SEE HomePage
@@ -19,41 +20,39 @@ flow login {
 }
 
 page HomePage {
-//    LayoutGrid: 12
-    Layout {
-|---|----------------|---|
+    LayoutGrid: 12x
+    Layout: HomePage
+}
+
+Layout HomePage {
+--------------------------
 |      Navigation(RIGHT) |
-|---|----------------|---|
-| 2 | TitleComponent | 2 |
-|---|----------------|---|
+--------------------------
+| Empty(2) | TitleComponent | Empty(2) |
+--------------------------
 |     ImageComponent     |
-|---|----------------|---|
+--------------------------
 | BlogList(8)  | Archives(2) |
-|---|----------------|---|
+--------------------------
 | Footer                 |
-|------------------------|
-    }
+--------------------------
 }
 
 component Navigation {
-Layout {
-|--------|---------|-----------------|
-| "home" |"detail" | Button("Login") |
-|--------|---------|-----------------|
+    Layout: Navigation
 }
+
+
+Layout Navigation {
+--------------------------------------
+| "home" |"detail" | Button("Login") |
+--------------------------------------
 }
 
 component TitleComponent {}
 component ImageComponent {
-    Size: 1080
+    Size: 1080px
 }
-component BlogList {
-    REPEAT 8 [BlogDetail, Space8]
-}
-
-STYLE Space8   { margin: 8px  0; }
-STYLE Space10  { margin: 10px 0; }
-STYLE Size1080 { width: 1080px; height: 960px;}
 
 library FontSize {
     H1 = 18px;
