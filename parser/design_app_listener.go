@@ -14,6 +14,11 @@ var layouts []DLayout
 var libraries []DLibrary
 
 func NewDesignAppListener() *DesignAppListener {
+	projectConfigs = make(map[string]string)
+	components = make(map[string]DComponent)
+	flows = nil
+	layouts = nil
+	libraries = nil
 	return &DesignAppListener{}
 }
 
@@ -210,8 +215,8 @@ func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationConte
 
 	for _, express := range ctx.AllLibraryExpress() {
 		preset := &LibraryPreset{
-			Key:   "",
-			Value: "",
+			Key:         "",
+			Value:       "",
 			PresetCalls: nil,
 		}
 		preset.Key = express.(*LibraryExpressContext).PresetKey().GetText()
