@@ -69,14 +69,13 @@ ANIMATE: 'animate' | 'ANIMATE' | '动画';
 pageDecalartion: PAGE IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
 componentDecalartion: COMPONENT IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
 
-componentBodyDecalartion: IDENTIFIER COLON configValue;
+componentBodyDecalartion
+    : componentName (',' componentName)*
+    | IDENTIFIER COLON configValue
+    ;
 
 layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDecalartion RBRACE;
 
-//componentBodyDecalartion
-//    : IDENTIFIER (COLON configValue | layoutDecalaration)
-//    | LBRACK componentName* RBRACK '->' REPEAT LPAREN DIGITS RPAREN
-//    ;
 
 REPEAT: 'repeat';
 REPEAT_TIMES: INTEGER;
@@ -170,12 +169,13 @@ fragment ExponentPart
     ;
 
 
-FLOAT_LITERAL:      (Digits '.' Digits? | '.' Digits) ExponentPart? [fFdD]?
-             |       Digits (ExponentPart [fFdD]? | [fFdD])
-             ;
+FLOAT_LITERAL
+    : (Digits '.' Digits? | '.' Digits) ExponentPart? [fFdD]?
+    | Digits (ExponentPart [fFdD]? | [fFdD])
+    ;
 
 fragment INTEGER
-    :DIGIT+
+    : DIGIT+
     ;
 
 fragment EscapeSequence
@@ -190,11 +190,12 @@ fragment HexDigit
 
 fragment Digits
     : [0-9] ([0-9_]* [0-9])?
+    | ('0' .. '9') + ('.' ('0' .. '9') +)?
     ;
 
 fragment LetterOrDigit
     : Letter
-    | [0-9]
+    | Digits
     ;
 
 fragment Letter

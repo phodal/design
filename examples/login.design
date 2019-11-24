@@ -52,9 +52,14 @@ component TitleComponent {}
 component ImageComponent {
     Size: 1080px
 }
-//component BlogList {
-//    REPEAT 8 [BlogDetail, Space8]
-//}
+component BlogList {
+    BlogDetail, Space8
+    BlogDetail, Space8
+    BlogDetail, Space8
+    BlogDetail, Space8
+    BlogDetail, Space8
+    BlogDetail, Space8
+}
 
 library FontSize {
     H1 = 18px;
