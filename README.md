@@ -78,16 +78,22 @@ Library Define Examples
 
 ```
 library FontSize {
-    H1 = 18px;
-    H2 = 16px;
-    H3 = 14px;
-    H4 = 12px;
-    H5 = 10px;
+    H1 = 18px
+    H2 = 16px
+    H3 = 14px
+    H4 = 12px
+    H5 = 10px
 }
 
 library Color {
-    Primary = 4.3rem;
-    Secondary = 3.4rem;
+    Primary {
+        label = "Primary"
+        value = "#E53935"
+    }
+    Secondary {
+        label = "Blue"
+        value = "#1E88E5"
+    }
 }
 
 library Button {
