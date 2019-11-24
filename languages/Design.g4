@@ -41,11 +41,17 @@ interactionDeclaration
 
 seeDeclaration: SEE (IDENTIFIER | STRING_LITERAL DOT componentName);
 doDeclaration: DO LBRACK actionName RBRACK STRING_LITERAL DOT componentName ;
-reactDeclaration: REACT sceneName? COLON actionKey animateDeclaration?;
+reactDeclaration: REACT sceneName? COLON reactAction animateDeclaration?;
 
 animateDeclaration: WITHTEXT ANIMATE LPAREN animateName RPAREN;
 
-actionKey: GOTO_KEY componentName | SHOW_KEY STRING_LITERAL DOT componentName;
+reactAction
+    : gotoAction
+    | showAction
+    ;
+
+gotoAction: GOTO_KEY componentName;
+showAction: SHOW_KEY STRING_LITERAL DOT componentName;
 
 actionName: IDENTIFIER;
 componentValue: IDENTIFIER;

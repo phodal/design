@@ -99,11 +99,23 @@ func (s *BaseDesignListener) EnterAnimateDeclaration(ctx *AnimateDeclarationCont
 // ExitAnimateDeclaration is called when production animateDeclaration is exited.
 func (s *BaseDesignListener) ExitAnimateDeclaration(ctx *AnimateDeclarationContext) {}
 
-// EnterActionKey is called when production actionKey is entered.
-func (s *BaseDesignListener) EnterActionKey(ctx *ActionKeyContext) {}
+// EnterReactAction is called when production reactAction is entered.
+func (s *BaseDesignListener) EnterReactAction(ctx *ReactActionContext) {}
 
-// ExitActionKey is called when production actionKey is exited.
-func (s *BaseDesignListener) ExitActionKey(ctx *ActionKeyContext) {}
+// ExitReactAction is called when production reactAction is exited.
+func (s *BaseDesignListener) ExitReactAction(ctx *ReactActionContext) {}
+
+// EnterGotoAction is called when production gotoAction is entered.
+func (s *BaseDesignListener) EnterGotoAction(ctx *GotoActionContext) {}
+
+// ExitGotoAction is called when production gotoAction is exited.
+func (s *BaseDesignListener) ExitGotoAction(ctx *GotoActionContext) {}
+
+// EnterShowAction is called when production showAction is entered.
+func (s *BaseDesignListener) EnterShowAction(ctx *ShowActionContext) {}
+
+// ExitShowAction is called when production showAction is exited.
+func (s *BaseDesignListener) ExitShowAction(ctx *ShowActionContext) {}
 
 // EnterActionName is called when production actionName is entered.
 func (s *BaseDesignListener) EnterActionName(ctx *ActionNameContext) {}

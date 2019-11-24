@@ -33,6 +33,13 @@ func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 
 	var interactions []DInteraction
 	interaction := CreateInteraction()
+	interactions = buildInteractions(declarationContexts, interaction, interactions)
+
+	flow.Interactions = interactions
+	flows = append(flows, flow)
+}
+
+func buildInteractions(declarationContexts []IInteractionDeclarationContext, interaction *DInteraction, interactions []DInteraction) []DInteraction {
 	for _, context := range declarationContexts {
 		childTypes := reflect.TypeOf(context.GetChild(0)).String()
 
@@ -75,19 +82,37 @@ func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 			if reactCtx.AnimateDeclaration() != nil {
 				animateName = reactCtx.AnimateDeclaration().(*AnimateDeclarationContext).AnimateName().GetText()
 			}
+			actionName, reactComponentName, reactComponentData := buildAction(reactCtx)
+
 			reactModel := &DReact{
 				SceneName:          sceneName,
-				ReactEvent:         "",
-				ReactComponentName: "",
-				ReactComponentData: "",
+				ReactAction:        actionName,
+				ReactComponentName: reactComponentName,
+				ReactComponentData: reactComponentData,
 				AnimateName:        animateName,
 			}
 			interaction.React = append(interaction.React, *reactModel)
 		}
 	}
+	return interactions
+}
 
-	flow.Interactions = interactions
-	flows = append(flows, flow)
+func buildAction(reactCtx *ReactDeclarationContext) (string, string, string) {
+	actionName := ""
+	reactComponentName := ""
+	reactComponentData := ""
+	firstChild := reactCtx.ReactAction().GetChild(0)
+	if reflect.TypeOf(firstChild).String() == "*parser.ShowActionContext" {
+		showCtx := firstChild.(*ShowActionContext)
+		reactComponentData = showCtx.STRING_LITERAL().GetText()
+		reactComponentName = showCtx.ComponentName().GetText()
+		actionName = showCtx.SHOW_KEY().GetText()
+	} else if reflect.TypeOf(firstChild).String() == "*parser.GotoActionContext" {
+		goCtx := firstChild.(*GotoActionContext)
+		reactComponentName = goCtx.ComponentName().GetText()
+		actionName = goCtx.GOTO_KEY().GetText()
+	}
+	return actionName, reactComponentName, reactComponentData
 }
 
 func CreateInteraction() *DInteraction {

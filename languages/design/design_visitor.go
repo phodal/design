@@ -47,8 +47,14 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#animateDeclaration.
 	VisitAnimateDeclaration(ctx *AnimateDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#actionKey.
-	VisitActionKey(ctx *ActionKeyContext) interface{}
+	// Visit a parse tree produced by DesignParser#reactAction.
+	VisitReactAction(ctx *ReactActionContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#gotoAction.
+	VisitGotoAction(ctx *GotoActionContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#showAction.
+	VisitShowAction(ctx *ShowActionContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#actionName.
 	VisitActionName(ctx *ActionNameContext) interface{}

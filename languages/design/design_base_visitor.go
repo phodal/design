@@ -60,7 +60,15 @@ func (v *BaseDesignVisitor) VisitAnimateDeclaration(ctx *AnimateDeclarationConte
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitActionKey(ctx *ActionKeyContext) interface{} {
+func (v *BaseDesignVisitor) VisitReactAction(ctx *ReactActionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitGotoAction(ctx *GotoActionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitShowAction(ctx *ShowActionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

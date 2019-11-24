@@ -47,8 +47,14 @@ type DesignListener interface {
 	// EnterAnimateDeclaration is called when entering the animateDeclaration production.
 	EnterAnimateDeclaration(c *AnimateDeclarationContext)
 
-	// EnterActionKey is called when entering the actionKey production.
-	EnterActionKey(c *ActionKeyContext)
+	// EnterReactAction is called when entering the reactAction production.
+	EnterReactAction(c *ReactActionContext)
+
+	// EnterGotoAction is called when entering the gotoAction production.
+	EnterGotoAction(c *GotoActionContext)
+
+	// EnterShowAction is called when entering the showAction production.
+	EnterShowAction(c *ShowActionContext)
 
 	// EnterActionName is called when entering the actionName production.
 	EnterActionName(c *ActionNameContext)
@@ -152,8 +158,14 @@ type DesignListener interface {
 	// ExitAnimateDeclaration is called when exiting the animateDeclaration production.
 	ExitAnimateDeclaration(c *AnimateDeclarationContext)
 
-	// ExitActionKey is called when exiting the actionKey production.
-	ExitActionKey(c *ActionKeyContext)
+	// ExitReactAction is called when exiting the reactAction production.
+	ExitReactAction(c *ReactActionContext)
+
+	// ExitGotoAction is called when exiting the gotoAction production.
+	ExitGotoAction(c *GotoActionContext)
+
+	// ExitShowAction is called when exiting the showAction production.
+	ExitShowAction(c *ShowActionContext)
 
 	// ExitActionName is called when exiting the actionName production.
 	ExitActionName(c *ActionNameContext)

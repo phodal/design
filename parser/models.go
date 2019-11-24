@@ -25,7 +25,7 @@ type DDo struct {
 
 type DReact struct {
 	SceneName          string
-	ReactEvent         string
+	ReactAction        string
 	ReactComponentName string
 	AnimateName        string
 	ReactComponentData string
