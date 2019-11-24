@@ -17,6 +17,8 @@ func (j *DesignApp) Start(path string)  {
 	listener := NewDesignAppListener()
 
 	antlr.NewParseTreeWalker().Walk(listener, context)
+
+	listener.getDesignInformation()
 }
 
 func (j *DesignApp) ProcessFile(path string) *DesignParser {

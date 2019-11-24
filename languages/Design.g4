@@ -71,7 +71,7 @@ componentDeclaration: COMPONENT IDENTIFIER LBRACE componentBodyDeclaration* RBRA
 
 componentBodyDeclaration
     : componentName (',' componentName)*
-    | IDENTIFIER COLON configValue
+    | configKey COLON configValue
     ;
 
 layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDeclaration RBRACE;
