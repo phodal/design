@@ -1,22 +1,33 @@
 const {Sketch, Page, Artboard} = require('sketch-constructor');
+const fs = require('fs');
 
-// Without a path it creates an empty sketch class to work with
-const newSketch = new Sketch();
+function buildSketch(designInfo) {
+    const newSketch = new Sketch();
+    const page = new Page({
+        name: 'HomePage'
+    });
+    for (const key in designInfo.components) {
+        const artboard = new Artboard({
+            name: key
+        });
 
-// Create a new Page instance
-const page = new Page({ });
+        page.addArtboard(artboard);
+    }
+    newSketch.addPage(page);
+    // const page = new Page({});
+    // const artboard = new Artboard({});
+    // page.addArtboard(artboard);
+    //
+    // newSketch.addPage(page);
 
-// Add an artboard to the page
-const artboard = new Artboard({});
-page.addArtboard(artboard);
+    newSketch.build('output.sketch');
+}
 
-// Add the page to the Sketch instance
-newSketch.addPage( page );
 
-// You can also add a page by giving it an object, the arguments
-// are the same as that of the Page constructor
-newSketch.addPage({
-    name: 'My Page'
-});
+function readJsonFile(path) {
+    let rawdata = fs.readFileSync(path);
+    return JSON.parse(rawdata);
+}
 
-newSketch.build('output.sketch');
+designInfo = readJsonFile('output.json');
+buildSketch(designInfo);
