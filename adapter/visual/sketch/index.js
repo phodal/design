@@ -1,4 +1,4 @@
-const {Sketch, Page, Artboard, SharedStyle} = require('sketch-constructor');
+const {Sketch, Page, Text, Artboard, SharedStyle} = require('sketch-constructor');
 const fs = require('fs');
 const Swatch = require('./libs/swatch'); // custom component
 
@@ -34,7 +34,7 @@ function buildFlows(designInfo, newSketch) {
     }
 }
 
-function buildLibraryItem(libraryPresets, sketch, artboard) {
+function buildColorLibrary(libraryPresets, sketch, artboard) {
     var colors = [];
     libraryPresets.forEach((preset, i) => {
         var color = {
@@ -74,6 +74,26 @@ function buildLibraryItem(libraryPresets, sketch, artboard) {
     });
 }
 
+function buildFontSizeLibrary(libraryPresets, newSketch, artboard) {
+    artboard.frame.width = 320;
+    artboard.frame.height = libraryPresets.length * 50;
+    libraryPresets.forEach((preset, i) => {
+        var text = new Text({
+            string: preset.key + "  FontSize  "+ preset.value,
+            name: preset.key,
+            fontSize: parseInt(preset.value.replace("px", "")),
+            color: '#000',
+            frame: {
+                x: 0,
+                y: 40 * i,
+            },
+        });
+
+        artboard.addLayer(text);
+        text = null;
+    });
+}
+
 function buildLibrary(designInfo, newSketch) {
     const libraryPage = new Page({
         name: "Library"
@@ -88,7 +108,11 @@ function buildLibrary(designInfo, newSketch) {
 
         switch (library.libraryName) {
             case "Color":
-                buildLibraryItem(library.libraryPresets, newSketch, artboard);
+                buildColorLibrary(library.libraryPresets, newSketch, artboard);
+                break;
+            case "FontSize":
+                buildFontSizeLibrary(library.libraryPresets, newSketch, artboard);
+                break;
             default:
                 break;
         }
@@ -113,18 +137,18 @@ function readJsonFile(path) {
     let rawdata = fs.readFileSync(path);
     return JSON.parse(rawdata);
 }
-
-designInfo = readJsonFile('output.json');
-buildSketch(designInfo);
-
-// var data = "";
-// process.stdin.resume();
-// process.stdin.setEncoding('utf8');
 //
-// process.stdin.on('data', function (chunk) {
-//     data += chunk;
-// });
-//
-// process.stdin.on('end', function () {
-//     buildSketch(JSON.parse(data));
-// });
+// designInfo = readJsonFile('output.json');
+// buildSketch(designInfo);
+
+var data = "";
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('data', function (chunk) {
+    data += chunk;
+});
+
+process.stdin.on('end', function () {
+    buildSketch(JSON.parse(data));
+});

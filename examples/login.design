@@ -47,6 +47,11 @@ component Navigation {
     LayoutId: Navigation
 }
 
+component Dialog {
+    width: 320px
+    height: 240px
+}
+
 
 Layout Navigation {
 --------------------------------------
@@ -68,11 +73,12 @@ component BlogList {
 }
 
 library FontSize {
-    H1 = 18px
-    H2 = 16px
-    H3 = 14px
-    H4 = 12px
-    H5 = 10px
+    H1 = 32px
+    H2 = 28px
+    H3 = 24px
+    H4 = 20px
+    H5 = 18px
+    H6 = 16px
 }
 
 library Color {
