@@ -45,3 +45,25 @@ type DFlow struct {
 func CreateDComponent(componentName string) *DComponent {
 	return &DComponent{componentName, nil, nil}
 }
+
+
+type DLayout struct {
+	LayoutName string
+	LayoutRows []DLayoutRow
+}
+
+type DLayoutRow struct {
+	ComponentName string
+	LayoutInformation string
+	NormalInformation []string
+}
+
+func CreateInteraction() *DInteraction {
+	seeModel := &DSee{"", ""}
+	doModel := &DDo{"", "", ""}
+	return &DInteraction{
+		See:   *seeModel,
+		Do:    *doModel,
+		React: nil,
+	}
+}

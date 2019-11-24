@@ -117,16 +117,6 @@ func buildAction(reactCtx *ReactDeclarationContext) (string, string, string) {
 	return actionName, reactComponentName, reactComponentData
 }
 
-func CreateInteraction() *DInteraction {
-	seeModel := &DSee{"", ""}
-	doModel := &DDo{"", "", ""}
-	return &DInteraction{
-		See:   *seeModel,
-		Do:    *doModel,
-		React: nil,
-	}
-}
-
 func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationContext) {
 	componentName := ctx.IDENTIFIER().GetText()
 	component := components[componentName]
@@ -177,16 +167,6 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 	layouts = append(layouts, layout)
 }
 
-type DLayout struct {
-	LayoutName string
-	LayoutRows []DLayoutRow
-}
-
-type DLayoutRow struct {
-	ComponentName string
-	LayoutInformation string
-	NormalInformation []string
-}
 
 func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayoutRow) {
 	firstChild := declaration.GetChild(0)
