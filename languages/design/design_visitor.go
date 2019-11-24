@@ -103,4 +103,10 @@ type DesignVisitor interface {
 
 	// Visit a parse tree produced by DesignParser#express.
 	VisitExpress(ctx *ExpressContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#libraryCall.
+	VisitLibraryCall(ctx *LibraryCallContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#libraryName.
+	VisitLibraryName(ctx *LibraryNameContext) interface{}
 }

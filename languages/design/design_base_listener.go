@@ -212,3 +212,15 @@ func (s *BaseDesignListener) EnterExpress(ctx *ExpressContext) {}
 
 // ExitExpress is called when production express is exited.
 func (s *BaseDesignListener) ExitExpress(ctx *ExpressContext) {}
+
+// EnterLibraryCall is called when production libraryCall is entered.
+func (s *BaseDesignListener) EnterLibraryCall(ctx *LibraryCallContext) {}
+
+// ExitLibraryCall is called when production libraryCall is exited.
+func (s *BaseDesignListener) ExitLibraryCall(ctx *LibraryCallContext) {}
+
+// EnterLibraryName is called when production libraryName is entered.
+func (s *BaseDesignListener) EnterLibraryName(ctx *LibraryNameContext) {}
+
+// ExitLibraryName is called when production libraryName is exited.
+func (s *BaseDesignListener) ExitLibraryName(ctx *LibraryNameContext) {}

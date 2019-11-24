@@ -135,3 +135,11 @@ func (v *BaseDesignVisitor) VisitLibraryBody(ctx *LibraryBodyContext) interface{
 func (v *BaseDesignVisitor) VisitExpress(ctx *ExpressContext) interface{} {
 	return v.VisitChildren(ctx)
 }
+
+func (v *BaseDesignVisitor) VisitLibraryCall(ctx *LibraryCallContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitLibraryName(ctx *LibraryNameContext) interface{} {
+	return v.VisitChildren(ctx)
+}

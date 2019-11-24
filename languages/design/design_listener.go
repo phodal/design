@@ -104,6 +104,12 @@ type DesignListener interface {
 	// EnterExpress is called when entering the express production.
 	EnterExpress(c *ExpressContext)
 
+	// EnterLibraryCall is called when entering the libraryCall production.
+	EnterLibraryCall(c *LibraryCallContext)
+
+	// EnterLibraryName is called when entering the libraryName production.
+	EnterLibraryName(c *LibraryNameContext)
+
 	// ExitStart is called when exiting the start production.
 	ExitStart(c *StartContext)
 
@@ -199,4 +205,10 @@ type DesignListener interface {
 
 	// ExitExpress is called when exiting the express production.
 	ExitExpress(c *ExpressContext)
+
+	// ExitLibraryCall is called when exiting the libraryCall production.
+	ExitLibraryCall(c *LibraryCallContext)
+
+	// ExitLibraryName is called when exiting the libraryName production.
+	ExitLibraryName(c *LibraryNameContext)
 }

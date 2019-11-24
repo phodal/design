@@ -67,10 +67,10 @@ library Color {
 }
 
 library Button {
-    Default {
+    Default [
         FontSize.H2, Color.Primary
-    }
-    Primary {
+    ]
+    Primary [
         FontSize.H2, Color.Primary
-    }
+    ]
 }

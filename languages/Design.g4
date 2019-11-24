@@ -109,10 +109,17 @@ STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
 // LIBRARY
 
 
-libraryDecalartion: LIBRARY IDENTIFIER LBRACE libraryBody RBRACE;
+libraryDecalartion: LIBRARY libraryName LBRACE libraryBody RBRACE;
 libraryBody: express*;
 
-express: configKey '=' configValue ';';
+express
+    : configKey '=' configValue ';'
+    | IDENTIFIER LBRACK libraryCall RBRACK
+    ;
+
+libraryCall: libraryName DOT IDENTIFIER (',' libraryName DOT IDENTIFIER)*;
+
+libraryName: IDENTIFIER;
 
 LIBRARY: 'library' | 'LIBRARY' | '库';
 
