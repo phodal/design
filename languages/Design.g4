@@ -10,8 +10,14 @@ configKey: IDENTIFIER;
 configValue
     : IDENTIFIER (',' IDENTIFIER)?
     | STRING_LITERAL
-    | DIGITS_IDENTIFIER
-    | DECIMAL_LITERAL
+    | DIGITS_IDENTIFIER unit?
+    | DECIMAL_LITERAL unit?
+    | FLOAT_LITERAL unit?
+    ;
+
+unit: 'rem'
+    | 'px'
+    | 'em'
     ;
 
 decalartions
@@ -158,6 +164,15 @@ DECIMAL_LITERAL:    ('0' | [1-9] (Digits? | '_'+ Digits)) [lL]?;
 fragment DIGIT
     :'0'..'9'
     ;
+
+fragment ExponentPart
+    : [eE] [+-]? Digits
+    ;
+
+
+FLOAT_LITERAL:      (Digits '.' Digits? | '.' Digits) ExponentPart? [fFdD]?
+             |       Digits (ExponentPart [fFdD]? | [fFdD])
+             ;
 
 fragment INTEGER
     :DIGIT+

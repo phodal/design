@@ -23,6 +23,9 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#configValue.
 	VisitConfigValue(ctx *ConfigValueContext) interface{}
 
+	// Visit a parse tree produced by DesignParser#unit.
+	VisitUnit(ctx *UnitContext) interface{}
+
 	// Visit a parse tree produced by DesignParser#decalartions.
 	VisitDecalartions(ctx *DecalartionsContext) interface{}
 

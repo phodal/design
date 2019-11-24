@@ -51,6 +51,12 @@ func (s *BaseDesignListener) EnterConfigValue(ctx *ConfigValueContext) {}
 // ExitConfigValue is called when production configValue is exited.
 func (s *BaseDesignListener) ExitConfigValue(ctx *ConfigValueContext) {}
 
+// EnterUnit is called when production unit is entered.
+func (s *BaseDesignListener) EnterUnit(ctx *UnitContext) {}
+
+// ExitUnit is called when production unit is exited.
+func (s *BaseDesignListener) ExitUnit(ctx *UnitContext) {}
+
 // EnterDecalartions is called when production decalartions is entered.
 func (s *BaseDesignListener) EnterDecalartions(ctx *DecalartionsContext) {}
 

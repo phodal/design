@@ -28,6 +28,10 @@ func (v *BaseDesignVisitor) VisitConfigValue(ctx *ConfigValueContext) interface{
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseDesignVisitor) VisitUnit(ctx *UnitContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseDesignVisitor) VisitDecalartions(ctx *DecalartionsContext) interface{} {
 	return v.VisitChildren(ctx)
 }

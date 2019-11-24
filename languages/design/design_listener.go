@@ -23,6 +23,9 @@ type DesignListener interface {
 	// EnterConfigValue is called when entering the configValue production.
 	EnterConfigValue(c *ConfigValueContext)
 
+	// EnterUnit is called when entering the unit production.
+	EnterUnit(c *UnitContext)
+
 	// EnterDecalartions is called when entering the decalartions production.
 	EnterDecalartions(c *DecalartionsContext)
 
@@ -124,6 +127,9 @@ type DesignListener interface {
 
 	// ExitConfigValue is called when exiting the configValue production.
 	ExitConfigValue(c *ConfigValueContext)
+
+	// ExitUnit is called when exiting the unit production.
+	ExitUnit(c *UnitContext)
 
 	// ExitDecalartions is called when exiting the decalartions production.
 	ExitDecalartions(c *DecalartionsContext)
