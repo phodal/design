@@ -110,14 +110,20 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#libraryDeclaration.
 	VisitLibraryDeclaration(ctx *LibraryDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#libraryBody.
-	VisitLibraryBody(ctx *LibraryBodyContext) interface{}
+	// Visit a parse tree produced by DesignParser#libraryExpress.
+	VisitLibraryExpress(ctx *LibraryExpressContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#express.
-	VisitExpress(ctx *ExpressContext) interface{}
+	// Visit a parse tree produced by DesignParser#presetKey.
+	VisitPresetKey(ctx *PresetKeyContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#libraryCall.
-	VisitLibraryCall(ctx *LibraryCallContext) interface{}
+	// Visit a parse tree produced by DesignParser#presetValue.
+	VisitPresetValue(ctx *PresetValueContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#presetArray.
+	VisitPresetArray(ctx *PresetArrayContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#presetCall.
+	VisitPresetCall(ctx *PresetCallContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#libraryName.
 	VisitLibraryName(ctx *LibraryNameContext) interface{}

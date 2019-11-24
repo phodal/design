@@ -225,23 +225,35 @@ func (s *BaseDesignListener) EnterLibraryDeclaration(ctx *LibraryDeclarationCont
 // ExitLibraryDeclaration is called when production libraryDeclaration is exited.
 func (s *BaseDesignListener) ExitLibraryDeclaration(ctx *LibraryDeclarationContext) {}
 
-// EnterLibraryBody is called when production libraryBody is entered.
-func (s *BaseDesignListener) EnterLibraryBody(ctx *LibraryBodyContext) {}
+// EnterLibraryExpress is called when production libraryExpress is entered.
+func (s *BaseDesignListener) EnterLibraryExpress(ctx *LibraryExpressContext) {}
 
-// ExitLibraryBody is called when production libraryBody is exited.
-func (s *BaseDesignListener) ExitLibraryBody(ctx *LibraryBodyContext) {}
+// ExitLibraryExpress is called when production libraryExpress is exited.
+func (s *BaseDesignListener) ExitLibraryExpress(ctx *LibraryExpressContext) {}
 
-// EnterExpress is called when production express is entered.
-func (s *BaseDesignListener) EnterExpress(ctx *ExpressContext) {}
+// EnterPresetKey is called when production presetKey is entered.
+func (s *BaseDesignListener) EnterPresetKey(ctx *PresetKeyContext) {}
 
-// ExitExpress is called when production express is exited.
-func (s *BaseDesignListener) ExitExpress(ctx *ExpressContext) {}
+// ExitPresetKey is called when production presetKey is exited.
+func (s *BaseDesignListener) ExitPresetKey(ctx *PresetKeyContext) {}
 
-// EnterLibraryCall is called when production libraryCall is entered.
-func (s *BaseDesignListener) EnterLibraryCall(ctx *LibraryCallContext) {}
+// EnterPresetValue is called when production presetValue is entered.
+func (s *BaseDesignListener) EnterPresetValue(ctx *PresetValueContext) {}
 
-// ExitLibraryCall is called when production libraryCall is exited.
-func (s *BaseDesignListener) ExitLibraryCall(ctx *LibraryCallContext) {}
+// ExitPresetValue is called when production presetValue is exited.
+func (s *BaseDesignListener) ExitPresetValue(ctx *PresetValueContext) {}
+
+// EnterPresetArray is called when production presetArray is entered.
+func (s *BaseDesignListener) EnterPresetArray(ctx *PresetArrayContext) {}
+
+// ExitPresetArray is called when production presetArray is exited.
+func (s *BaseDesignListener) ExitPresetArray(ctx *PresetArrayContext) {}
+
+// EnterPresetCall is called when production presetCall is entered.
+func (s *BaseDesignListener) EnterPresetCall(ctx *PresetCallContext) {}
+
+// ExitPresetCall is called when production presetCall is exited.
+func (s *BaseDesignListener) ExitPresetCall(ctx *PresetCallContext) {}
 
 // EnterLibraryName is called when production libraryName is entered.
 func (s *BaseDesignListener) EnterLibraryName(ctx *LibraryNameContext) {}

@@ -121,15 +121,17 @@ STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
 // LIBRARY
 
 
-libraryDeclaration: LIBRARY libraryName LBRACE libraryBody RBRACE;
-libraryBody: express*;
+libraryDeclaration: LIBRARY libraryName LBRACE libraryExpress* RBRACE;
 
-express
-    : configKey '=' configValue ';'
-    | IDENTIFIER LBRACK libraryCall RBRACK
+libraryExpress
+    : presetKey '=' (presetValue |presetArray) ';'?
     ;
 
-libraryCall: libraryName DOT IDENTIFIER (',' libraryName DOT IDENTIFIER)*;
+presetKey: IDENTIFIER;
+presetValue: configValue;
+presetArray: LBRACK presetCall (',' presetCall)* RBRACK;
+
+presetCall: libraryName DOT IDENTIFIER;
 
 libraryName: IDENTIFIER;
 

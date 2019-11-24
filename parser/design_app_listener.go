@@ -11,6 +11,7 @@ var projectConfigs = make(map[string]string)
 var components = make(map[string]DComponent)
 var flows []DFlow
 var layouts []DLayout
+var libraries []DLibrary
 
 func NewDesignAppListener() *DesignAppListener {
 	return &DesignAppListener{}
@@ -160,13 +161,11 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 			parseLayoutLine(declaration, row)
 		}
 
-		//layouts = append(layouts, *layout)
 		layout.LayoutRows = append(layout.LayoutRows, *row)
 	}
 
 	layouts = append(layouts, layout)
 }
-
 
 func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayoutRow) {
 	firstChild := declaration.GetChild(0)
@@ -186,8 +185,56 @@ func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayou
 	}
 }
 
-func (s *DesignAppListener) EnterComponentUseDeclaration(ctx *ComponentUseDeclarationContext) {
-	//fmt.Println(ctx.GetText())
+type LibraryPreset struct {
+	Key         string
+	Value       string
+	PresetCalls []PresetCall
+}
+
+type PresetCall struct {
+	LibraryName   string
+	LibraryPreset string
+}
+
+type DLibrary struct {
+	LibraryName    string
+	LibraryPresets []LibraryPreset
+}
+
+func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationContext) {
+	library := &DLibrary{
+		LibraryName:    "",
+		LibraryPresets: nil,
+	}
+	library.LibraryName = ctx.LibraryName().GetText()
+
+	for _, express := range ctx.AllLibraryExpress() {
+		preset := &LibraryPreset{
+			Key:   "",
+			Value: "",
+			PresetCalls: nil,
+		}
+		preset.Key = express.(*LibraryExpressContext).PresetKey().GetText()
+		pairCtx := express.GetChild(2)
+		pairType := reflect.TypeOf(express.GetChild(2))
+		switch pairType.String() {
+		case "*parser.PresetValueContext":
+			preset.Value = pairCtx.(*PresetValueContext).GetText()
+		case "*parser.PresetArrayContext":
+			for _, call := range pairCtx.(*PresetArrayContext).AllPresetCall() {
+				presetCall := &PresetCall{
+					LibraryName:   call.(*PresetCallContext).LibraryName().GetText(),
+					LibraryPreset: call.(*PresetCallContext).IDENTIFIER().GetText(),
+				}
+
+				preset.PresetCalls = append(preset.PresetCalls, *presetCall)
+			}
+		}
+
+		library.LibraryPresets = append(library.LibraryPresets, *preset)
+	}
+
+	libraries = append(libraries, *library)
 }
 
 func (s *DesignAppListener) getDesignInformation() {
@@ -195,4 +242,5 @@ func (s *DesignAppListener) getDesignInformation() {
 	fmt.Println(components)
 	fmt.Println(flows)
 	fmt.Println(layouts)
+	fmt.Println(libraries)
 }

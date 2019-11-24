@@ -144,15 +144,23 @@ func (v *BaseDesignVisitor) VisitLibraryDeclaration(ctx *LibraryDeclarationConte
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLibraryBody(ctx *LibraryBodyContext) interface{} {
+func (v *BaseDesignVisitor) VisitLibraryExpress(ctx *LibraryExpressContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitExpress(ctx *ExpressContext) interface{} {
+func (v *BaseDesignVisitor) VisitPresetKey(ctx *PresetKeyContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLibraryCall(ctx *LibraryCallContext) interface{} {
+func (v *BaseDesignVisitor) VisitPresetValue(ctx *PresetValueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitPresetArray(ctx *PresetArrayContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitPresetCall(ctx *PresetCallContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

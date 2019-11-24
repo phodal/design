@@ -110,14 +110,20 @@ type DesignListener interface {
 	// EnterLibraryDeclaration is called when entering the libraryDeclaration production.
 	EnterLibraryDeclaration(c *LibraryDeclarationContext)
 
-	// EnterLibraryBody is called when entering the libraryBody production.
-	EnterLibraryBody(c *LibraryBodyContext)
+	// EnterLibraryExpress is called when entering the libraryExpress production.
+	EnterLibraryExpress(c *LibraryExpressContext)
 
-	// EnterExpress is called when entering the express production.
-	EnterExpress(c *ExpressContext)
+	// EnterPresetKey is called when entering the presetKey production.
+	EnterPresetKey(c *PresetKeyContext)
 
-	// EnterLibraryCall is called when entering the libraryCall production.
-	EnterLibraryCall(c *LibraryCallContext)
+	// EnterPresetValue is called when entering the presetValue production.
+	EnterPresetValue(c *PresetValueContext)
+
+	// EnterPresetArray is called when entering the presetArray production.
+	EnterPresetArray(c *PresetArrayContext)
+
+	// EnterPresetCall is called when entering the presetCall production.
+	EnterPresetCall(c *PresetCallContext)
 
 	// EnterLibraryName is called when entering the libraryName production.
 	EnterLibraryName(c *LibraryNameContext)
@@ -224,14 +230,20 @@ type DesignListener interface {
 	// ExitLibraryDeclaration is called when exiting the libraryDeclaration production.
 	ExitLibraryDeclaration(c *LibraryDeclarationContext)
 
-	// ExitLibraryBody is called when exiting the libraryBody production.
-	ExitLibraryBody(c *LibraryBodyContext)
+	// ExitLibraryExpress is called when exiting the libraryExpress production.
+	ExitLibraryExpress(c *LibraryExpressContext)
 
-	// ExitExpress is called when exiting the express production.
-	ExitExpress(c *ExpressContext)
+	// ExitPresetKey is called when exiting the presetKey production.
+	ExitPresetKey(c *PresetKeyContext)
 
-	// ExitLibraryCall is called when exiting the libraryCall production.
-	ExitLibraryCall(c *LibraryCallContext)
+	// ExitPresetValue is called when exiting the presetValue production.
+	ExitPresetValue(c *PresetValueContext)
+
+	// ExitPresetArray is called when exiting the presetArray production.
+	ExitPresetArray(c *PresetArrayContext)
+
+	// ExitPresetCall is called when exiting the presetCall production.
+	ExitPresetCall(c *PresetCallContext)
 
 	// ExitLibraryName is called when exiting the libraryName production.
 	ExitLibraryName(c *LibraryNameContext)
