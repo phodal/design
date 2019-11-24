@@ -4,12 +4,9 @@ Design as Code
 
 ## DSL
 
-```
-project: DesignDSL
-feature: "design basic dsl"
-type: web
-width: 1080px
+Task Flows / User Flows Example
 
+```flow
 flow login {
     SEE HomePage
     DO [Click] "Login".Button
@@ -24,35 +21,19 @@ flow login {
     DO [Click] "RESET PASSWORD".Button
         REACT: SHOW "Please Check Email".Message
 }
+```
 
+Elements
+ 
+```
 page HomePage {
     LayoutGrid: 12x
     LayoutId: HomePage
-}
-
-Layout HomePage {
---------------------------
-|      Navigation(RIGHT) |
---------------------------
-| Empty(2x) | TitleComponent | Empty(2x) |
---------------------------
-|     ImageComponent     |
---------------------------
-| BlogList(8x)  | Archives(2x) |
---------------------------
-| Footer                 |
---------------------------
+    Router: "/home"
 }
 
 component Navigation {
     LayoutId: Navigation
-}
-
-
-Layout Navigation {
---------------------------------------
-| "home" |"detail" | Button("Login") |
---------------------------------------
 }
 
 component TitleComponent {}
@@ -67,7 +48,35 @@ component BlogList {
     BlogDetail, Space8
     BlogDetail, Space8
 }
+```
 
+Layout Examples:
+
+```
+Layout HomePage {
+--------------------------
+|      Navigation(RIGHT) |
+--------------------------
+| Empty(2x) | TitleComponent | Empty(2x) |
+--------------------------
+|     ImageComponent     |
+--------------------------
+| BlogList(8x)  | Archives(2x) |
+--------------------------
+| Footer                 |
+--------------------------
+}
+
+Layout Navigation {
+--------------------------------------
+| "home" |"detail" | Button("Login") |
+--------------------------------------
+}
+```
+
+Library Define Examples
+
+```
 library FontSize {
     H1 = 18px;
     H2 = 16px;
