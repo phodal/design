@@ -171,17 +171,17 @@ func (s *BaseDesignListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContex
 // ExitLayoutDeclaration is called when production layoutDeclaration is exited.
 func (s *BaseDesignListener) ExitLayoutDeclaration(ctx *LayoutDeclarationContext) {}
 
-// EnterLayoutBodyDeclaration is called when production layoutBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) {}
-
-// ExitLayoutBodyDeclaration is called when production layoutBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) {}
-
 // EnterLayoutRow is called when production layoutRow is entered.
 func (s *BaseDesignListener) EnterLayoutRow(ctx *LayoutRowContext) {}
 
 // ExitLayoutRow is called when production layoutRow is exited.
 func (s *BaseDesignListener) ExitLayoutRow(ctx *LayoutRowContext) {}
+
+// EnterLayoutLines is called when production layoutLines is entered.
+func (s *BaseDesignListener) EnterLayoutLines(ctx *LayoutLinesContext) {}
+
+// ExitLayoutLines is called when production layoutLines is exited.
+func (s *BaseDesignListener) ExitLayoutLines(ctx *LayoutLinesContext) {}
 
 // EnterLayoutLine is called when production layoutLine is entered.
 func (s *BaseDesignListener) EnterLayoutLine(ctx *LayoutLineContext) {}
@@ -194,6 +194,12 @@ func (s *BaseDesignListener) EnterComponentUseDeclaration(ctx *ComponentUseDecla
 
 // ExitComponentUseDeclaration is called when production componentUseDeclaration is exited.
 func (s *BaseDesignListener) ExitComponentUseDeclaration(ctx *ComponentUseDeclarationContext) {}
+
+// EnterComponentLayoutValue is called when production componentLayoutValue is entered.
+func (s *BaseDesignListener) EnterComponentLayoutValue(ctx *ComponentLayoutValueContext) {}
+
+// ExitComponentLayoutValue is called when production componentLayoutValue is exited.
+func (s *BaseDesignListener) ExitComponentLayoutValue(ctx *ComponentLayoutValueContext) {}
 
 // EnterStyleDeclaration is called when production styleDeclaration is entered.
 func (s *BaseDesignListener) EnterStyleDeclaration(ctx *StyleDeclarationContext) {}

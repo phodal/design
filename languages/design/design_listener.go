@@ -83,17 +83,20 @@ type DesignListener interface {
 	// EnterLayoutDeclaration is called when entering the layoutDeclaration production.
 	EnterLayoutDeclaration(c *LayoutDeclarationContext)
 
-	// EnterLayoutBodyDeclaration is called when entering the layoutBodyDeclaration production.
-	EnterLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)
-
 	// EnterLayoutRow is called when entering the layoutRow production.
 	EnterLayoutRow(c *LayoutRowContext)
+
+	// EnterLayoutLines is called when entering the layoutLines production.
+	EnterLayoutLines(c *LayoutLinesContext)
 
 	// EnterLayoutLine is called when entering the layoutLine production.
 	EnterLayoutLine(c *LayoutLineContext)
 
 	// EnterComponentUseDeclaration is called when entering the componentUseDeclaration production.
 	EnterComponentUseDeclaration(c *ComponentUseDeclarationContext)
+
+	// EnterComponentLayoutValue is called when entering the componentLayoutValue production.
+	EnterComponentLayoutValue(c *ComponentLayoutValueContext)
 
 	// EnterStyleDeclaration is called when entering the styleDeclaration production.
 	EnterStyleDeclaration(c *StyleDeclarationContext)
@@ -194,17 +197,20 @@ type DesignListener interface {
 	// ExitLayoutDeclaration is called when exiting the layoutDeclaration production.
 	ExitLayoutDeclaration(c *LayoutDeclarationContext)
 
-	// ExitLayoutBodyDeclaration is called when exiting the layoutBodyDeclaration production.
-	ExitLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)
-
 	// ExitLayoutRow is called when exiting the layoutRow production.
 	ExitLayoutRow(c *LayoutRowContext)
+
+	// ExitLayoutLines is called when exiting the layoutLines production.
+	ExitLayoutLines(c *LayoutLinesContext)
 
 	// ExitLayoutLine is called when exiting the layoutLine production.
 	ExitLayoutLine(c *LayoutLineContext)
 
 	// ExitComponentUseDeclaration is called when exiting the componentUseDeclaration production.
 	ExitComponentUseDeclaration(c *ComponentUseDeclarationContext)
+
+	// ExitComponentLayoutValue is called when exiting the componentLayoutValue production.
+	ExitComponentLayoutValue(c *ComponentLayoutValueContext)
 
 	// ExitStyleDeclaration is called when exiting the styleDeclaration production.
 	ExitStyleDeclaration(c *StyleDeclarationContext)

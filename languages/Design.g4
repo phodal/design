@@ -80,27 +80,28 @@ componentBodyDeclaration
     | configKey COLON configValue
     ;
 
-layoutDeclaration: LAYOUT IDENTIFIER LBRACE layoutBodyDeclaration RBRACE;
+layoutDeclaration: LAYOUT IDENTIFIER LBRACE layoutRow* RBRACE;
 
 
 REPEAT: 'repeat';
 REPEAT_TIMES: INTEGER;
 
-layoutBodyDeclaration: layoutRow*;
-
 layoutRow
     : '-' '-'*
-    | layoutLine layoutLine*  '|'
+    | layoutLines  '|'
     ;
 
+layoutLines: layoutLine layoutLine*;
 layoutLine: '|' componentUseDeclaration;
 
 componentUseDeclaration
     : DECIMAL_LITERAL
     | POSITION
-    | componentName (LPAREN (DIGITS_IDENTIFIER | POSITION | STRING_LITERAL) RPAREN)?
+    | componentName (LPAREN componentLayoutValue RPAREN)?
     | STRING_LITERAL
     ;
+
+componentLayoutValue: DIGITS_IDENTIFIER | POSITION | STRING_LITERAL;
 
 LAYOUT: 'layout' | 'Layout' | '布局';
 POSITION: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM';

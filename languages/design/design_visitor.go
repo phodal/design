@@ -83,17 +83,20 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#layoutDeclaration.
 	VisitLayoutDeclaration(ctx *LayoutDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#layoutBodyDeclaration.
-	VisitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) interface{}
-
 	// Visit a parse tree produced by DesignParser#layoutRow.
 	VisitLayoutRow(ctx *LayoutRowContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#layoutLines.
+	VisitLayoutLines(ctx *LayoutLinesContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#layoutLine.
 	VisitLayoutLine(ctx *LayoutLineContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#componentUseDeclaration.
 	VisitComponentUseDeclaration(ctx *ComponentUseDeclarationContext) interface{}
+
+	// Visit a parse tree produced by DesignParser#componentLayoutValue.
+	VisitComponentLayoutValue(ctx *ComponentLayoutValueContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#styleDeclaration.
 	VisitStyleDeclaration(ctx *StyleDeclarationContext) interface{}

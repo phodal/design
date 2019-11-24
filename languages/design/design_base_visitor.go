@@ -108,11 +108,11 @@ func (v *BaseDesignVisitor) VisitLayoutDeclaration(ctx *LayoutDeclarationContext
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) interface{} {
+func (v *BaseDesignVisitor) VisitLayoutRow(ctx *LayoutRowContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLayoutRow(ctx *LayoutRowContext) interface{} {
+func (v *BaseDesignVisitor) VisitLayoutLines(ctx *LayoutLinesContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -121,6 +121,10 @@ func (v *BaseDesignVisitor) VisitLayoutLine(ctx *LayoutLineContext) interface{} 
 }
 
 func (v *BaseDesignVisitor) VisitComponentUseDeclaration(ctx *ComponentUseDeclarationContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseDesignVisitor) VisitComponentLayoutValue(ctx *ComponentLayoutValueContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

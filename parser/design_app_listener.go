@@ -3,12 +3,14 @@ package parser
 import (
 	. "../languages/design"
 	"fmt"
+	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"reflect"
 )
 
 var projectConfigs = make(map[string]string)
 var components = make(map[string]DComponent)
 var flows []DFlow
+var layouts []DLayout
 
 func NewDesignAppListener() *DesignAppListener {
 	return &DesignAppListener{}
@@ -153,11 +155,55 @@ func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationC
 }
 
 func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext) {
-	//fmt.Println(ctx.GetText())
+	layout := DLayout{ctx.IDENTIFIER().GetText(), nil}
+	for _, row := range ctx.AllLayoutRow() {
+		// TODO: refactor
+		if reflect.TypeOf(row.GetChild(0)).String() != "*parser.LayoutLinesContext" {
+			continue
+		}
+
+		lines := row.GetChild(0).(*LayoutLinesContext).AllLayoutLine()
+		row := &DLayoutRow{"", "", nil}
+
+		for _, line := range lines {
+			declaration := line.(*LayoutLineContext).ComponentUseDeclaration()
+			parseLayoutLine(declaration, row)
+		}
+
+		//layouts = append(layouts, *layout)
+		layout.LayoutRows = append(layout.LayoutRows, *row)
+	}
+
+	layouts = append(layouts, layout)
 }
 
-func (s *DesignAppListener) EnterLayoutRow(ctx *LayoutRowContext) {
-	//fmt.Println(ctx.GetText())
+type DLayout struct {
+	LayoutName string
+	LayoutRows []DLayoutRow
+}
+
+type DLayoutRow struct {
+	ComponentName string
+	LayoutInformation string
+	NormalInformation []string
+}
+
+func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayoutRow) {
+	firstChild := declaration.GetChild(0)
+	switch reflect.TypeOf(firstChild).String() {
+	case "*parser.ComponentNameContext":
+		childCtx := firstChild.(*ComponentNameContext)
+		componentName := childCtx.IDENTIFIER().GetText()
+		layoutValue := ""
+		if declaration.GetChildCount() > 2 {
+			layoutValue = declaration.GetChild(2).(*ComponentLayoutValueContext).GetText()
+		}
+		layout.ComponentName = componentName
+		layout.LayoutInformation = layoutValue
+	default:
+		componentValue := firstChild.(*antlr.TerminalNodeImpl).GetText()
+		layout.NormalInformation = append(layout.NormalInformation, componentValue)
+	}
 }
 
 func (s *DesignAppListener) EnterComponentUseDeclaration(ctx *ComponentUseDeclarationContext) {
@@ -168,4 +214,5 @@ func (s *DesignAppListener) getDesignInformation() {
 	fmt.Println(projectConfigs)
 	fmt.Println(components)
 	fmt.Println(flows)
+	fmt.Println(layouts)
 }
