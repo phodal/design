@@ -32,8 +32,8 @@ type DesignListener interface {
 	// EnterFlowDeclaration is called when entering the flowDeclaration production.
 	EnterFlowDeclaration(c *FlowDeclarationContext)
 
-	// EnterFlowBodyDeclaration is called when entering the flowBodyDeclaration production.
-	EnterFlowBodyDeclaration(c *FlowBodyDeclarationContext)
+	// EnterInteractionDeclaration is called when entering the interactionDeclaration production.
+	EnterInteractionDeclaration(c *InteractionDeclarationContext)
 
 	// EnterSeeDeclaration is called when entering the seeDeclaration production.
 	EnterSeeDeclaration(c *SeeDeclarationContext)
@@ -137,8 +137,8 @@ type DesignListener interface {
 	// ExitFlowDeclaration is called when exiting the flowDeclaration production.
 	ExitFlowDeclaration(c *FlowDeclarationContext)
 
-	// ExitFlowBodyDeclaration is called when exiting the flowBodyDeclaration production.
-	ExitFlowBodyDeclaration(c *FlowBodyDeclarationContext)
+	// ExitInteractionDeclaration is called when exiting the interactionDeclaration production.
+	ExitInteractionDeclaration(c *InteractionDeclarationContext)
 
 	// ExitSeeDeclaration is called when exiting the seeDeclaration production.
 	ExitSeeDeclaration(c *SeeDeclarationContext)

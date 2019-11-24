@@ -32,8 +32,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#flowDeclaration.
 	VisitFlowDeclaration(ctx *FlowDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#flowBodyDeclaration.
-	VisitFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) interface{}
+	// Visit a parse tree produced by DesignParser#interactionDeclaration.
+	VisitInteractionDeclaration(ctx *InteractionDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#seeDeclaration.
 	VisitSeeDeclaration(ctx *SeeDeclarationContext) interface{}

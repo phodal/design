@@ -176,7 +176,7 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"start", "comment", "configDeclaration", "configKey", "configValue", "unit",
-	"decalartions", "flowDeclaration", "flowBodyDeclaration", "seeDeclaration",
+	"decalartions", "flowDeclaration", "interactionDeclaration", "seeDeclaration",
 	"doDeclaration", "reactDeclaration", "animateDeclaration", "actionKey",
 	"actionName", "componentValue", "componentName", "sceneName", "animateName",
 	"pageDeclaration", "componentDeclaration", "componentBodyDeclaration",
@@ -272,7 +272,7 @@ const (
 	DesignParserRULE_unit                     = 5
 	DesignParserRULE_decalartions             = 6
 	DesignParserRULE_flowDeclaration          = 7
-	DesignParserRULE_flowBodyDeclaration      = 8
+	DesignParserRULE_interactionDeclaration   = 8
 	DesignParserRULE_seeDeclaration           = 9
 	DesignParserRULE_doDeclaration            = 10
 	DesignParserRULE_reactDeclaration         = 11
@@ -1432,27 +1432,27 @@ func (s *FlowDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *FlowDeclarationContext) AllFlowBodyDeclaration() []IFlowBodyDeclarationContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFlowBodyDeclarationContext)(nil)).Elem())
-	var tst = make([]IFlowBodyDeclarationContext, len(ts))
+func (s *FlowDeclarationContext) AllInteractionDeclaration() []IInteractionDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IInteractionDeclarationContext)(nil)).Elem())
+	var tst = make([]IInteractionDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IFlowBodyDeclarationContext)
+			tst[i] = t.(IInteractionDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *FlowDeclarationContext) FlowBodyDeclaration(i int) IFlowBodyDeclarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowBodyDeclarationContext)(nil)).Elem(), i)
+func (s *FlowDeclarationContext) InteractionDeclaration(i int) IInteractionDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IInteractionDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFlowBodyDeclarationContext)
+	return t.(IInteractionDeclarationContext)
 }
 
 func (s *FlowDeclarationContext) GetRuleContext() antlr.RuleContext {
@@ -1526,7 +1526,7 @@ func (p *DesignParser) FlowDeclaration() (localctx IFlowDeclarationContext) {
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserSEE)|(1<<DesignParserDO)|(1<<DesignParserREACT))) != 0 {
 		{
 			p.SetState(122)
-			p.FlowBodyDeclaration()
+			p.InteractionDeclaration()
 		}
 
 		p.SetState(127)
@@ -1541,45 +1541,45 @@ func (p *DesignParser) FlowDeclaration() (localctx IFlowDeclarationContext) {
 	return localctx
 }
 
-// IFlowBodyDeclarationContext is an interface to support dynamic dispatch.
-type IFlowBodyDeclarationContext interface {
+// IInteractionDeclarationContext is an interface to support dynamic dispatch.
+type IInteractionDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFlowBodyDeclarationContext differentiates from other interfaces.
-	IsFlowBodyDeclarationContext()
+	// IsInteractionDeclarationContext differentiates from other interfaces.
+	IsInteractionDeclarationContext()
 }
 
-type FlowBodyDeclarationContext struct {
+type InteractionDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFlowBodyDeclarationContext() *FlowBodyDeclarationContext {
-	var p = new(FlowBodyDeclarationContext)
+func NewEmptyInteractionDeclarationContext() *InteractionDeclarationContext {
+	var p = new(InteractionDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_flowBodyDeclaration
+	p.RuleIndex = DesignParserRULE_interactionDeclaration
 	return p
 }
 
-func (*FlowBodyDeclarationContext) IsFlowBodyDeclarationContext() {}
+func (*InteractionDeclarationContext) IsInteractionDeclarationContext() {}
 
-func NewFlowBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowBodyDeclarationContext {
-	var p = new(FlowBodyDeclarationContext)
+func NewInteractionDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *InteractionDeclarationContext {
+	var p = new(InteractionDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_flowBodyDeclaration
+	p.RuleIndex = DesignParserRULE_interactionDeclaration
 
 	return p
 }
 
-func (s *FlowBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *InteractionDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *FlowBodyDeclarationContext) SeeDeclaration() ISeeDeclarationContext {
+func (s *InteractionDeclarationContext) SeeDeclaration() ISeeDeclarationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISeeDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1589,7 +1589,7 @@ func (s *FlowBodyDeclarationContext) SeeDeclaration() ISeeDeclarationContext {
 	return t.(ISeeDeclarationContext)
 }
 
-func (s *FlowBodyDeclarationContext) DoDeclaration() IDoDeclarationContext {
+func (s *InteractionDeclarationContext) DoDeclaration() IDoDeclarationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDoDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1599,7 +1599,7 @@ func (s *FlowBodyDeclarationContext) DoDeclaration() IDoDeclarationContext {
 	return t.(IDoDeclarationContext)
 }
 
-func (s *FlowBodyDeclarationContext) ReactDeclaration() IReactDeclarationContext {
+func (s *InteractionDeclarationContext) ReactDeclaration() IReactDeclarationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReactDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1609,39 +1609,39 @@ func (s *FlowBodyDeclarationContext) ReactDeclaration() IReactDeclarationContext
 	return t.(IReactDeclarationContext)
 }
 
-func (s *FlowBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
+func (s *InteractionDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FlowBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *InteractionDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FlowBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *InteractionDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterFlowBodyDeclaration(s)
+		listenerT.EnterInteractionDeclaration(s)
 	}
 }
 
-func (s *FlowBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *InteractionDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitFlowBodyDeclaration(s)
+		listenerT.ExitInteractionDeclaration(s)
 	}
 }
 
-func (s *FlowBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *InteractionDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitFlowBodyDeclaration(s)
+		return t.VisitInteractionDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) FlowBodyDeclaration() (localctx IFlowBodyDeclarationContext) {
-	localctx = NewFlowBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, DesignParserRULE_flowBodyDeclaration)
+func (p *DesignParser) InteractionDeclaration() (localctx IInteractionDeclarationContext) {
+	localctx = NewInteractionDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 16, DesignParserRULE_interactionDeclaration)
 
 	defer func() {
 		p.ExitRule()

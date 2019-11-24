@@ -69,11 +69,11 @@ func (s *BaseDesignListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 // ExitFlowDeclaration is called when production flowDeclaration is exited.
 func (s *BaseDesignListener) ExitFlowDeclaration(ctx *FlowDeclarationContext) {}
 
-// EnterFlowBodyDeclaration is called when production flowBodyDeclaration is entered.
-func (s *BaseDesignListener) EnterFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) {}
+// EnterInteractionDeclaration is called when production interactionDeclaration is entered.
+func (s *BaseDesignListener) EnterInteractionDeclaration(ctx *InteractionDeclarationContext) {}
 
-// ExitFlowBodyDeclaration is called when production flowBodyDeclaration is exited.
-func (s *BaseDesignListener) ExitFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) {}
+// ExitInteractionDeclaration is called when production interactionDeclaration is exited.
+func (s *BaseDesignListener) ExitInteractionDeclaration(ctx *InteractionDeclarationContext) {}
 
 // EnterSeeDeclaration is called when production seeDeclaration is entered.
 func (s *BaseDesignListener) EnterSeeDeclaration(ctx *SeeDeclarationContext) {}

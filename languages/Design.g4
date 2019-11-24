@@ -31,9 +31,9 @@ decalartions
     ;
 
 // Flow
-flowDeclaration: FLOW IDENTIFIER LBRACE flowBodyDeclaration* RBRACE;
+flowDeclaration: FLOW IDENTIFIER LBRACE interactionDeclaration* RBRACE;
 
-flowBodyDeclaration
+interactionDeclaration
     : seeDeclaration
     | doDeclaration
     | reactDeclaration

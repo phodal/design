@@ -107,7 +107,7 @@ configValue
 unit
 decalartions
 flowDeclaration
-flowBodyDeclaration
+interactionDeclaration
 seeDeclaration
 doDeclaration
 reactDeclaration

@@ -7,52 +7,8 @@ import (
 )
 
 var projectConfigs = make(map[string]string)
-
-type DConfig struct {
-	Key   string
-	Value string
-}
-
-type DComponent struct {
-	Name            string `json:"name"`
-	ChildComponents []DComponent
-	Configs         map[string]string
-}
-
-type DSee struct {
-	ComponentName string
-	Data          string
-}
-
-type DDo struct {
-	ComponentName string
-	Data          string
-	UIEvent       string // event
-}
-
-type DReact struct {
-	ContextName        string
-	ReactEvent         string
-	ReactComponentName string
-	AnimateName        string
-}
-
-type DInteraction struct {
-	See   DSee
-	Do    DDo
-	React map[string]DReact
-}
-
-type DFlow struct {
-	Interactions []DInteraction
-	FlowName     string
-}
-
-func (s *DesignAppListener) createComponent(componentName string) *DComponent {
-	return &DComponent{componentName, nil, nil}
-}
-
 var components = make(map[string]DComponent)
+var flows []DFlow
 
 func NewDesignAppListener() *DesignAppListener {
 	return &DesignAppListener{}
@@ -67,14 +23,70 @@ func (s *DesignAppListener) EnterConfigDeclaration(ctx *ConfigDeclarationContext
 }
 
 func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
+	flowName := ctx.IDENTIFIER().GetText()
+	flow := *&DFlow{
+		Interactions: nil,
+		FlowName:     flowName,
+	}
 
+	declarationContexts := ctx.AllInteractionDeclaration()
+
+	var interactions []DInteraction
+	interaction := CreateInteraction()
+	for _, context := range declarationContexts {
+		childTypes := reflect.TypeOf(context.GetChild(0)).String()
+
+		switch childTypes {
+		case "*parser.SeeDeclarationContext":
+			seeCtx := context.GetChild(0).(*SeeDeclarationContext)
+			componentName := ""
+			componentData := ""
+			if seeCtx.IDENTIFIER() != nil {
+				componentName = seeCtx.IDENTIFIER().GetText()
+			} else {
+				componentName = seeCtx.ComponentName().GetText()
+				componentData = seeCtx.STRING_LITERAL().GetText()
+			}
+			seeModel := &DSee{
+				ComponentName: componentName,
+				Data:          componentData,
+			}
+
+			interactions = append(interactions, *interaction)
+			interaction = CreateInteraction()
+			interaction.See = *seeModel
+		case "*parser.DoDeclarationContext":
+			doCtx := context.GetChild(0).(*DoDeclarationContext)
+			doModel := &DDo{
+				ComponentName: doCtx.ComponentName().GetText(),
+				Data:          doCtx.STRING_LITERAL().GetText(),
+				UIEvent:       doCtx.ActionName().GetText(),
+			}
+			interaction.Do = *doModel
+		case "*parser.ReactDeclarationContext":
+
+		}
+	}
+
+	flow.Interactions = interactions
+	flows = append(flows, flow)
+}
+
+func CreateInteraction() *DInteraction {
+	seeModel := &DSee{"", ""}
+	doModel := &DDo{"", "", ""}
+	return &DInteraction{
+		See:   *seeModel,
+		Do:    *doModel,
+		React: nil,
+	}
 }
 
 func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationContext) {
 	componentName := ctx.IDENTIFIER().GetText()
 	component := components[componentName]
 	if component.Name == "" {
-		components[componentName] = *s.createComponent(componentName)
+		components[componentName] = *CreateDComponent(componentName)
 	}
 	componentConfigs := make(map[string]string)
 	declarations := ctx.AllComponentBodyDeclaration()
@@ -82,7 +94,7 @@ func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationC
 		childTypes := reflect.TypeOf(declaration.GetChild(0)).String()
 		if childTypes == "*parser.ComponentNameContext" {
 			childCtx := declaration.GetChild(0).(*ComponentNameContext)
-			childComponent := *s.createComponent(childCtx.GetText())
+			childComponent := *CreateDComponent(childCtx.GetText())
 			component.ChildComponents = append(component.ChildComponents, childComponent)
 		} else if childTypes == "*parser.ConfigKeyContext" {
 			configKey := declaration.GetChild(0).(*ConfigKeyContext).GetText()
@@ -112,4 +124,5 @@ func (s *DesignAppListener) EnterComponentUseDeclaration(ctx *ComponentUseDeclar
 func (s *DesignAppListener) getDesignInformation() {
 	fmt.Println(projectConfigs)
 	fmt.Println(components)
+	fmt.Println(flows)
 }

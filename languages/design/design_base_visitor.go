@@ -40,7 +40,7 @@ func (v *BaseDesignVisitor) VisitFlowDeclaration(ctx *FlowDeclarationContext) in
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) interface{} {
+func (v *BaseDesignVisitor) VisitInteractionDeclaration(ctx *InteractionDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
