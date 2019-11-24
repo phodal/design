@@ -39,14 +39,15 @@ func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 	declarationContexts := ctx.AllInteractionDeclaration()
 
 	var interactions []DInteraction
-	interaction := CreateInteraction()
-	interactions = buildInteractions(declarationContexts, interaction, interactions)
+	interactions = buildInteractions(declarationContexts, interactions)
 
 	flow.Interactions = interactions
 	flows = append(flows, flow)
 }
 
-func buildInteractions(declarationContexts []IInteractionDeclarationContext, interaction *DInteraction, interactions []DInteraction) []DInteraction {
+func buildInteractions(declarationContexts []IInteractionDeclarationContext, interactions []DInteraction) []DInteraction {
+	interaction := CreateInteraction()
+
 	for _, context := range declarationContexts {
 		childTypes := reflect.TypeOf(context.GetChild(0)).String()
 
@@ -101,6 +102,8 @@ func buildInteractions(declarationContexts []IInteractionDeclarationContext, int
 			interaction.React = append(interaction.React, *reactModel)
 		}
 	}
+
+	interactions = append(interactions, *interaction)
 	return interactions
 }
 

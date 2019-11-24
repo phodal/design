@@ -3,19 +3,25 @@ feature: "design basic dsl"
 type: web
 width: 1080px
 
-flow login {
-    SEE HomePage
-    DO [Click] "Login".Button
+flow 登录 {
+    SEE 首页
+    DO [Click] "登录".Button
         REACT Success: SHOW "Login Success".Toast with ANIMATE(bounce)
         REACT Failure: SHOW "Login Failure".Dialog
 
-    SEE "Login Failure".Dialog
-    DO [Click] "ForgotPassword".Button
+    SEE "登录失败".窗口
+    DO [Click] "忘记密码".Button
         REACT: GOTO ForgotPasswordPage
 
-    SEE ForgotPasswordPage
-    DO [Click] "RESET PASSWORD".Button
+    SEE 忘记密码面
+    DO [Click] "重置密码".Button
         REACT: SHOW "Please Check Email".Message
+}
+
+flow 登出 {
+    SEE 个人信息面
+    DO [Click] "登出".按钮
+    REACT Success: SHOW "登出成功".Toast with ANIMATE(bounce)
 }
 
 page HomePage {
