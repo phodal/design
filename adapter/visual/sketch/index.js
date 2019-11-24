@@ -30,11 +30,14 @@ function buildSketch(designInfo) {
     newSketch.build('output.sketch');
 }
 
+var data = "";
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
 
-function readJsonFile(path) {
-    let rawdata = fs.readFileSync(path);
-    return JSON.parse(rawdata);
-}
+process.stdin.on('data', function (chunk) {
+    data += chunk;
+});
 
-designInfo = readJsonFile('output.json');
-buildSketch(designInfo);
+process.stdin.on('end', function () {
+    buildSketch(JSON.parse(data));
+});
