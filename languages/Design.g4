@@ -8,11 +8,11 @@ configDecalartion: configKey COLON configValue;
 
 configKey: IDENTIFIER;
 configValue
-    : IDENTIFIER (',' IDENTIFIER)?
-    | STRING_LITERAL
-    | DIGITS_IDENTIFIER unit?
+    : DIGITS_IDENTIFIER unit?
     | DECIMAL_LITERAL unit?
     | FLOAT_LITERAL unit?
+    | IDENTIFIER (',' IDENTIFIER)?
+    | STRING_LITERAL
     ;
 
 unit: 'rem'
@@ -93,7 +93,7 @@ layoutLine: '|' componentUseDeclaration;
 componentUseDeclaration
     : DECIMAL_LITERAL
     | POSITION
-    | componentName (LPAREN (POSITION | STRING_LITERAL | DIGITS) RPAREN)?
+    | componentName (LPAREN (DIGITS_IDENTIFIER | POSITION | STRING_LITERAL) RPAREN)?
     | STRING_LITERAL
     ;
 

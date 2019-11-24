@@ -27,11 +27,11 @@ Layout HomePage {
 --------------------------
 |      Navigation(RIGHT) |
 --------------------------
-| Empty(2) | TitleComponent | Empty(2) |
+| Empty(2x) | TitleComponent | Empty(2x) |
 --------------------------
 |     ImageComponent     |
 --------------------------
-| BlogList(8)  | Archives(2) |
+| BlogList(8x)  | Archives(2x) |
 --------------------------
 | Footer                 |
 --------------------------
@@ -52,6 +52,9 @@ component TitleComponent {}
 component ImageComponent {
     Size: 1080px
 }
+//component BlogList {
+//    REPEAT 8 [BlogDetail, Space8]
+//}
 
 library FontSize {
     H1 = 18px;
