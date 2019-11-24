@@ -174,14 +174,14 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"start", "comment", "configDecalartion", "configKey", "configValue", "unit",
-	"decalartions", "flowDecalartion", "flowBodyDecalartion", "seeDecalartion",
-	"doDecalartion", "reactDecalartion", "animateDecalartion", "actionKey",
+	"start", "comment", "configDeclaration", "configKey", "configValue", "unit",
+	"decalartions", "flowDeclaration", "flowBodyDeclaration", "seeDeclaration",
+	"doDeclaration", "reactDeclaration", "animateDeclaration", "actionKey",
 	"actionName", "componentValue", "componentName", "sceneName", "animateName",
-	"pageDecalartion", "componentDecalartion", "componentBodyDecalartion",
-	"layoutDecalaration", "layoutBodyDecalartion", "layoutRow", "layoutLine",
-	"componentUseDeclaration", "styleDecalartion", "styleName", "styleBody",
-	"libraryDecalartion", "libraryBody", "express", "libraryCall", "libraryName",
+	"pageDeclaration", "componentDeclaration", "componentBodyDeclaration",
+	"layoutDecalaration", "layoutBodyDeclaration", "layoutRow", "layoutLine",
+	"componentUseDeclaration", "styleDeclaration", "styleName", "styleBody",
+	"libraryDeclaration", "libraryBody", "express", "libraryCall", "libraryName",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -265,35 +265,35 @@ const (
 const (
 	DesignParserRULE_start                    = 0
 	DesignParserRULE_comment                  = 1
-	DesignParserRULE_configDecalartion        = 2
+	DesignParserRULE_configDeclaration        = 2
 	DesignParserRULE_configKey                = 3
 	DesignParserRULE_configValue              = 4
 	DesignParserRULE_unit                     = 5
 	DesignParserRULE_decalartions             = 6
-	DesignParserRULE_flowDecalartion          = 7
-	DesignParserRULE_flowBodyDecalartion      = 8
-	DesignParserRULE_seeDecalartion           = 9
-	DesignParserRULE_doDecalartion            = 10
-	DesignParserRULE_reactDecalartion         = 11
-	DesignParserRULE_animateDecalartion       = 12
+	DesignParserRULE_flowDeclaration          = 7
+	DesignParserRULE_flowBodyDeclaration      = 8
+	DesignParserRULE_seeDeclaration           = 9
+	DesignParserRULE_doDeclaration            = 10
+	DesignParserRULE_reactDeclaration         = 11
+	DesignParserRULE_animateDeclaration       = 12
 	DesignParserRULE_actionKey                = 13
 	DesignParserRULE_actionName               = 14
 	DesignParserRULE_componentValue           = 15
 	DesignParserRULE_componentName            = 16
 	DesignParserRULE_sceneName                = 17
 	DesignParserRULE_animateName              = 18
-	DesignParserRULE_pageDecalartion          = 19
-	DesignParserRULE_componentDecalartion     = 20
-	DesignParserRULE_componentBodyDecalartion = 21
+	DesignParserRULE_pageDeclaration          = 19
+	DesignParserRULE_componentDeclaration     = 20
+	DesignParserRULE_componentBodyDeclaration = 21
 	DesignParserRULE_layoutDecalaration       = 22
-	DesignParserRULE_layoutBodyDecalartion    = 23
+	DesignParserRULE_layoutBodyDeclaration    = 23
 	DesignParserRULE_layoutRow                = 24
 	DesignParserRULE_layoutLine               = 25
 	DesignParserRULE_componentUseDeclaration  = 26
-	DesignParserRULE_styleDecalartion         = 27
+	DesignParserRULE_styleDeclaration         = 27
 	DesignParserRULE_styleName                = 28
 	DesignParserRULE_styleBody                = 29
-	DesignParserRULE_libraryDecalartion       = 30
+	DesignParserRULE_libraryDeclaration       = 30
 	DesignParserRULE_libraryBody              = 31
 	DesignParserRULE_express                  = 32
 	DesignParserRULE_libraryCall              = 33
@@ -365,27 +365,27 @@ func (s *StartContext) Comment(i int) ICommentContext {
 	return t.(ICommentContext)
 }
 
-func (s *StartContext) AllConfigDecalartion() []IConfigDecalartionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem())
-	var tst = make([]IConfigDecalartionContext, len(ts))
+func (s *StartContext) AllConfigDeclaration() []IConfigDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDeclarationContext)(nil)).Elem())
+	var tst = make([]IConfigDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IConfigDecalartionContext)
+			tst[i] = t.(IConfigDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *StartContext) ConfigDecalartion(i int) IConfigDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), i)
+func (s *StartContext) ConfigDeclaration(i int) IConfigDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IConfigDecalartionContext)
+	return t.(IConfigDeclarationContext)
 }
 
 func (s *StartContext) AllDecalartions() []IDecalartionsContext {
@@ -480,7 +480,7 @@ func (p *DesignParser) Start() (localctx IStartContext) {
 		case 2:
 			{
 				p.SetState(71)
-				p.ConfigDecalartion()
+				p.ConfigDeclaration()
 			}
 
 		case 3:
@@ -604,45 +604,45 @@ func (p *DesignParser) Comment() (localctx ICommentContext) {
 	return localctx
 }
 
-// IConfigDecalartionContext is an interface to support dynamic dispatch.
-type IConfigDecalartionContext interface {
+// IConfigDeclarationContext is an interface to support dynamic dispatch.
+type IConfigDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsConfigDecalartionContext differentiates from other interfaces.
-	IsConfigDecalartionContext()
+	// IsConfigDeclarationContext differentiates from other interfaces.
+	IsConfigDeclarationContext()
 }
 
-type ConfigDecalartionContext struct {
+type ConfigDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyConfigDecalartionContext() *ConfigDecalartionContext {
-	var p = new(ConfigDecalartionContext)
+func NewEmptyConfigDeclarationContext() *ConfigDeclarationContext {
+	var p = new(ConfigDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_configDecalartion
+	p.RuleIndex = DesignParserRULE_configDeclaration
 	return p
 }
 
-func (*ConfigDecalartionContext) IsConfigDecalartionContext() {}
+func (*ConfigDeclarationContext) IsConfigDeclarationContext() {}
 
-func NewConfigDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigDecalartionContext {
-	var p = new(ConfigDecalartionContext)
+func NewConfigDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigDeclarationContext {
+	var p = new(ConfigDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_configDecalartion
+	p.RuleIndex = DesignParserRULE_configDeclaration
 
 	return p
 }
 
-func (s *ConfigDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *ConfigDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ConfigDecalartionContext) ConfigKey() IConfigKeyContext {
+func (s *ConfigDeclarationContext) ConfigKey() IConfigKeyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigKeyContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -652,11 +652,11 @@ func (s *ConfigDecalartionContext) ConfigKey() IConfigKeyContext {
 	return t.(IConfigKeyContext)
 }
 
-func (s *ConfigDecalartionContext) COLON() antlr.TerminalNode {
+func (s *ConfigDeclarationContext) COLON() antlr.TerminalNode {
 	return s.GetToken(DesignParserCOLON, 0)
 }
 
-func (s *ConfigDecalartionContext) ConfigValue() IConfigValueContext {
+func (s *ConfigDeclarationContext) ConfigValue() IConfigValueContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigValueContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -666,39 +666,39 @@ func (s *ConfigDecalartionContext) ConfigValue() IConfigValueContext {
 	return t.(IConfigValueContext)
 }
 
-func (s *ConfigDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *ConfigDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ConfigDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ConfigDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ConfigDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ConfigDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterConfigDecalartion(s)
+		listenerT.EnterConfigDeclaration(s)
 	}
 }
 
-func (s *ConfigDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ConfigDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitConfigDecalartion(s)
+		listenerT.ExitConfigDeclaration(s)
 	}
 }
 
-func (s *ConfigDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ConfigDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitConfigDecalartion(s)
+		return t.VisitConfigDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ConfigDecalartion() (localctx IConfigDecalartionContext) {
-	localctx = NewConfigDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, DesignParserRULE_configDecalartion)
+func (p *DesignParser) ConfigDeclaration() (localctx IConfigDeclarationContext) {
+	localctx = NewConfigDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, DesignParserRULE_configDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -1197,64 +1197,64 @@ func NewDecalartionsContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 
 func (s *DecalartionsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *DecalartionsContext) ConfigDecalartion() IConfigDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) ConfigDeclaration() IConfigDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IConfigDecalartionContext)
+	return t.(IConfigDeclarationContext)
 }
 
-func (s *DecalartionsContext) FlowDecalartion() IFlowDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) FlowDeclaration() IFlowDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFlowDecalartionContext)
+	return t.(IFlowDeclarationContext)
 }
 
-func (s *DecalartionsContext) PageDecalartion() IPageDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPageDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) PageDeclaration() IPageDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPageDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IPageDecalartionContext)
+	return t.(IPageDeclarationContext)
 }
 
-func (s *DecalartionsContext) StyleDecalartion() IStyleDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) StyleDeclaration() IStyleDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IStyleDecalartionContext)
+	return t.(IStyleDeclarationContext)
 }
 
-func (s *DecalartionsContext) ComponentDecalartion() IComponentDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) ComponentDeclaration() IComponentDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IComponentDecalartionContext)
+	return t.(IComponentDeclarationContext)
 }
 
-func (s *DecalartionsContext) LibraryDecalartion() ILibraryDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryDecalartionContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) LibraryDeclaration() ILibraryDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ILibraryDecalartionContext)
+	return t.(ILibraryDeclarationContext)
 }
 
 func (s *DecalartionsContext) LayoutDecalaration() ILayoutDecalarationContext {
@@ -1325,42 +1325,42 @@ func (p *DesignParser) Decalartions() (localctx IDecalartionsContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(110)
-			p.ConfigDecalartion()
+			p.ConfigDeclaration()
 		}
 
 	case DesignParserFLOW:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(111)
-			p.FlowDecalartion()
+			p.FlowDeclaration()
 		}
 
 	case DesignParserPAGE:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(112)
-			p.PageDecalartion()
+			p.PageDeclaration()
 		}
 
 	case DesignParserSTYLE:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(113)
-			p.StyleDecalartion()
+			p.StyleDeclaration()
 		}
 
 	case DesignParserCOMPONENT:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(114)
-			p.ComponentDecalartion()
+			p.ComponentDeclaration()
 		}
 
 	case DesignParserLIBRARY:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(115)
-			p.LibraryDecalartion()
+			p.LibraryDeclaration()
 		}
 
 	case DesignParserLAYOUT:
@@ -1377,116 +1377,116 @@ func (p *DesignParser) Decalartions() (localctx IDecalartionsContext) {
 	return localctx
 }
 
-// IFlowDecalartionContext is an interface to support dynamic dispatch.
-type IFlowDecalartionContext interface {
+// IFlowDeclarationContext is an interface to support dynamic dispatch.
+type IFlowDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFlowDecalartionContext differentiates from other interfaces.
-	IsFlowDecalartionContext()
+	// IsFlowDeclarationContext differentiates from other interfaces.
+	IsFlowDeclarationContext()
 }
 
-type FlowDecalartionContext struct {
+type FlowDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFlowDecalartionContext() *FlowDecalartionContext {
-	var p = new(FlowDecalartionContext)
+func NewEmptyFlowDeclarationContext() *FlowDeclarationContext {
+	var p = new(FlowDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_flowDecalartion
+	p.RuleIndex = DesignParserRULE_flowDeclaration
 	return p
 }
 
-func (*FlowDecalartionContext) IsFlowDecalartionContext() {}
+func (*FlowDeclarationContext) IsFlowDeclarationContext() {}
 
-func NewFlowDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowDecalartionContext {
-	var p = new(FlowDecalartionContext)
+func NewFlowDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowDeclarationContext {
+	var p = new(FlowDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_flowDecalartion
+	p.RuleIndex = DesignParserRULE_flowDeclaration
 
 	return p
 }
 
-func (s *FlowDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *FlowDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *FlowDecalartionContext) FLOW() antlr.TerminalNode {
+func (s *FlowDeclarationContext) FLOW() antlr.TerminalNode {
 	return s.GetToken(DesignParserFLOW, 0)
 }
 
-func (s *FlowDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+func (s *FlowDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *FlowDecalartionContext) LBRACE() antlr.TerminalNode {
+func (s *FlowDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *FlowDecalartionContext) RBRACE() antlr.TerminalNode {
+func (s *FlowDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *FlowDecalartionContext) AllFlowBodyDecalartion() []IFlowBodyDecalartionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFlowBodyDecalartionContext)(nil)).Elem())
-	var tst = make([]IFlowBodyDecalartionContext, len(ts))
+func (s *FlowDeclarationContext) AllFlowBodyDeclaration() []IFlowBodyDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFlowBodyDeclarationContext)(nil)).Elem())
+	var tst = make([]IFlowBodyDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IFlowBodyDecalartionContext)
+			tst[i] = t.(IFlowBodyDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *FlowDecalartionContext) FlowBodyDecalartion(i int) IFlowBodyDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowBodyDecalartionContext)(nil)).Elem(), i)
+func (s *FlowDeclarationContext) FlowBodyDeclaration(i int) IFlowBodyDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFlowBodyDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFlowBodyDecalartionContext)
+	return t.(IFlowBodyDeclarationContext)
 }
 
-func (s *FlowDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *FlowDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FlowDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *FlowDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FlowDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *FlowDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterFlowDecalartion(s)
+		listenerT.EnterFlowDeclaration(s)
 	}
 }
 
-func (s *FlowDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *FlowDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitFlowDecalartion(s)
+		listenerT.ExitFlowDeclaration(s)
 	}
 }
 
-func (s *FlowDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *FlowDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitFlowDecalartion(s)
+		return t.VisitFlowDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) FlowDecalartion() (localctx IFlowDecalartionContext) {
-	localctx = NewFlowDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, DesignParserRULE_flowDecalartion)
+func (p *DesignParser) FlowDeclaration() (localctx IFlowDeclarationContext) {
+	localctx = NewFlowDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 14, DesignParserRULE_flowDeclaration)
 	var _la int
 
 	defer func() {
@@ -1525,7 +1525,7 @@ func (p *DesignParser) FlowDecalartion() (localctx IFlowDecalartionContext) {
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserSEE)|(1<<DesignParserDO)|(1<<DesignParserREACT))) != 0 {
 		{
 			p.SetState(122)
-			p.FlowBodyDecalartion()
+			p.FlowBodyDeclaration()
 		}
 
 		p.SetState(127)
@@ -1540,107 +1540,107 @@ func (p *DesignParser) FlowDecalartion() (localctx IFlowDecalartionContext) {
 	return localctx
 }
 
-// IFlowBodyDecalartionContext is an interface to support dynamic dispatch.
-type IFlowBodyDecalartionContext interface {
+// IFlowBodyDeclarationContext is an interface to support dynamic dispatch.
+type IFlowBodyDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFlowBodyDecalartionContext differentiates from other interfaces.
-	IsFlowBodyDecalartionContext()
+	// IsFlowBodyDeclarationContext differentiates from other interfaces.
+	IsFlowBodyDeclarationContext()
 }
 
-type FlowBodyDecalartionContext struct {
+type FlowBodyDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFlowBodyDecalartionContext() *FlowBodyDecalartionContext {
-	var p = new(FlowBodyDecalartionContext)
+func NewEmptyFlowBodyDeclarationContext() *FlowBodyDeclarationContext {
+	var p = new(FlowBodyDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_flowBodyDecalartion
+	p.RuleIndex = DesignParserRULE_flowBodyDeclaration
 	return p
 }
 
-func (*FlowBodyDecalartionContext) IsFlowBodyDecalartionContext() {}
+func (*FlowBodyDeclarationContext) IsFlowBodyDeclarationContext() {}
 
-func NewFlowBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowBodyDecalartionContext {
-	var p = new(FlowBodyDecalartionContext)
+func NewFlowBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FlowBodyDeclarationContext {
+	var p = new(FlowBodyDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_flowBodyDecalartion
+	p.RuleIndex = DesignParserRULE_flowBodyDeclaration
 
 	return p
 }
 
-func (s *FlowBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *FlowBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *FlowBodyDecalartionContext) SeeDecalartion() ISeeDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISeeDecalartionContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ISeeDecalartionContext)
-}
-
-func (s *FlowBodyDecalartionContext) DoDecalartion() IDoDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDoDecalartionContext)(nil)).Elem(), 0)
+func (s *FlowBodyDeclarationContext) SeeDeclaration() ISeeDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISeeDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IDoDecalartionContext)
+	return t.(ISeeDeclarationContext)
 }
 
-func (s *FlowBodyDecalartionContext) ReactDecalartion() IReactDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReactDecalartionContext)(nil)).Elem(), 0)
+func (s *FlowBodyDeclarationContext) DoDeclaration() IDoDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDoDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IReactDecalartionContext)
+	return t.(IDoDeclarationContext)
 }
 
-func (s *FlowBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *FlowBodyDeclarationContext) ReactDeclaration() IReactDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReactDeclarationContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IReactDeclarationContext)
+}
+
+func (s *FlowBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FlowBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *FlowBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FlowBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *FlowBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterFlowBodyDecalartion(s)
+		listenerT.EnterFlowBodyDeclaration(s)
 	}
 }
 
-func (s *FlowBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *FlowBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitFlowBodyDecalartion(s)
+		listenerT.ExitFlowBodyDeclaration(s)
 	}
 }
 
-func (s *FlowBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *FlowBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitFlowBodyDecalartion(s)
+		return t.VisitFlowBodyDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) FlowBodyDecalartion() (localctx IFlowBodyDecalartionContext) {
-	localctx = NewFlowBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, DesignParserRULE_flowBodyDecalartion)
+func (p *DesignParser) FlowBodyDeclaration() (localctx IFlowBodyDeclarationContext) {
+	localctx = NewFlowBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 16, DesignParserRULE_flowBodyDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -1666,21 +1666,21 @@ func (p *DesignParser) FlowBodyDecalartion() (localctx IFlowBodyDecalartionConte
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(130)
-			p.SeeDecalartion()
+			p.SeeDeclaration()
 		}
 
 	case DesignParserDO:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(131)
-			p.DoDecalartion()
+			p.DoDeclaration()
 		}
 
 	case DesignParserREACT:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(132)
-			p.ReactDecalartion()
+			p.ReactDeclaration()
 		}
 
 	default:
@@ -1690,61 +1690,61 @@ func (p *DesignParser) FlowBodyDecalartion() (localctx IFlowBodyDecalartionConte
 	return localctx
 }
 
-// ISeeDecalartionContext is an interface to support dynamic dispatch.
-type ISeeDecalartionContext interface {
+// ISeeDeclarationContext is an interface to support dynamic dispatch.
+type ISeeDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsSeeDecalartionContext differentiates from other interfaces.
-	IsSeeDecalartionContext()
+	// IsSeeDeclarationContext differentiates from other interfaces.
+	IsSeeDeclarationContext()
 }
 
-type SeeDecalartionContext struct {
+type SeeDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptySeeDecalartionContext() *SeeDecalartionContext {
-	var p = new(SeeDecalartionContext)
+func NewEmptySeeDeclarationContext() *SeeDeclarationContext {
+	var p = new(SeeDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_seeDecalartion
+	p.RuleIndex = DesignParserRULE_seeDeclaration
 	return p
 }
 
-func (*SeeDecalartionContext) IsSeeDecalartionContext() {}
+func (*SeeDeclarationContext) IsSeeDeclarationContext() {}
 
-func NewSeeDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SeeDecalartionContext {
-	var p = new(SeeDecalartionContext)
+func NewSeeDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SeeDeclarationContext {
+	var p = new(SeeDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_seeDecalartion
+	p.RuleIndex = DesignParserRULE_seeDeclaration
 
 	return p
 }
 
-func (s *SeeDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *SeeDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *SeeDecalartionContext) SEE() antlr.TerminalNode {
+func (s *SeeDeclarationContext) SEE() antlr.TerminalNode {
 	return s.GetToken(DesignParserSEE, 0)
 }
 
-func (s *SeeDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+func (s *SeeDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *SeeDecalartionContext) STRING_LITERAL() antlr.TerminalNode {
+func (s *SeeDeclarationContext) STRING_LITERAL() antlr.TerminalNode {
 	return s.GetToken(DesignParserSTRING_LITERAL, 0)
 }
 
-func (s *SeeDecalartionContext) DOT() antlr.TerminalNode {
+func (s *SeeDeclarationContext) DOT() antlr.TerminalNode {
 	return s.GetToken(DesignParserDOT, 0)
 }
 
-func (s *SeeDecalartionContext) ComponentName() IComponentNameContext {
+func (s *SeeDeclarationContext) ComponentName() IComponentNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1754,39 +1754,39 @@ func (s *SeeDecalartionContext) ComponentName() IComponentNameContext {
 	return t.(IComponentNameContext)
 }
 
-func (s *SeeDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *SeeDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *SeeDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *SeeDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *SeeDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *SeeDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterSeeDecalartion(s)
+		listenerT.EnterSeeDeclaration(s)
 	}
 }
 
-func (s *SeeDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *SeeDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitSeeDecalartion(s)
+		listenerT.ExitSeeDeclaration(s)
 	}
 }
 
-func (s *SeeDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *SeeDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitSeeDecalartion(s)
+		return t.VisitSeeDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) SeeDecalartion() (localctx ISeeDecalartionContext) {
-	localctx = NewSeeDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, DesignParserRULE_seeDecalartion)
+func (p *DesignParser) SeeDeclaration() (localctx ISeeDeclarationContext) {
+	localctx = NewSeeDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 18, DesignParserRULE_seeDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -1840,53 +1840,53 @@ func (p *DesignParser) SeeDecalartion() (localctx ISeeDecalartionContext) {
 	return localctx
 }
 
-// IDoDecalartionContext is an interface to support dynamic dispatch.
-type IDoDecalartionContext interface {
+// IDoDeclarationContext is an interface to support dynamic dispatch.
+type IDoDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsDoDecalartionContext differentiates from other interfaces.
-	IsDoDecalartionContext()
+	// IsDoDeclarationContext differentiates from other interfaces.
+	IsDoDeclarationContext()
 }
 
-type DoDecalartionContext struct {
+type DoDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyDoDecalartionContext() *DoDecalartionContext {
-	var p = new(DoDecalartionContext)
+func NewEmptyDoDeclarationContext() *DoDeclarationContext {
+	var p = new(DoDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_doDecalartion
+	p.RuleIndex = DesignParserRULE_doDeclaration
 	return p
 }
 
-func (*DoDecalartionContext) IsDoDecalartionContext() {}
+func (*DoDeclarationContext) IsDoDeclarationContext() {}
 
-func NewDoDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DoDecalartionContext {
-	var p = new(DoDecalartionContext)
+func NewDoDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DoDeclarationContext {
+	var p = new(DoDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_doDecalartion
+	p.RuleIndex = DesignParserRULE_doDeclaration
 
 	return p
 }
 
-func (s *DoDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *DoDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *DoDecalartionContext) DO() antlr.TerminalNode {
+func (s *DoDeclarationContext) DO() antlr.TerminalNode {
 	return s.GetToken(DesignParserDO, 0)
 }
 
-func (s *DoDecalartionContext) LBRACK() antlr.TerminalNode {
+func (s *DoDeclarationContext) LBRACK() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACK, 0)
 }
 
-func (s *DoDecalartionContext) ActionName() IActionNameContext {
+func (s *DoDeclarationContext) ActionName() IActionNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IActionNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1896,19 +1896,19 @@ func (s *DoDecalartionContext) ActionName() IActionNameContext {
 	return t.(IActionNameContext)
 }
 
-func (s *DoDecalartionContext) RBRACK() antlr.TerminalNode {
+func (s *DoDeclarationContext) RBRACK() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACK, 0)
 }
 
-func (s *DoDecalartionContext) STRING_LITERAL() antlr.TerminalNode {
+func (s *DoDeclarationContext) STRING_LITERAL() antlr.TerminalNode {
 	return s.GetToken(DesignParserSTRING_LITERAL, 0)
 }
 
-func (s *DoDecalartionContext) DOT() antlr.TerminalNode {
+func (s *DoDeclarationContext) DOT() antlr.TerminalNode {
 	return s.GetToken(DesignParserDOT, 0)
 }
 
-func (s *DoDecalartionContext) ComponentName() IComponentNameContext {
+func (s *DoDeclarationContext) ComponentName() IComponentNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1918,39 +1918,39 @@ func (s *DoDecalartionContext) ComponentName() IComponentNameContext {
 	return t.(IComponentNameContext)
 }
 
-func (s *DoDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *DoDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *DoDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *DoDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *DoDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *DoDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterDoDecalartion(s)
+		listenerT.EnterDoDeclaration(s)
 	}
 }
 
-func (s *DoDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *DoDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitDoDecalartion(s)
+		listenerT.ExitDoDeclaration(s)
 	}
 }
 
-func (s *DoDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *DoDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitDoDecalartion(s)
+		return t.VisitDoDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) DoDecalartion() (localctx IDoDecalartionContext) {
-	localctx = NewDoDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, DesignParserRULE_doDecalartion)
+func (p *DesignParser) DoDeclaration() (localctx IDoDeclarationContext) {
+	localctx = NewDoDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 20, DesignParserRULE_doDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -2001,53 +2001,53 @@ func (p *DesignParser) DoDecalartion() (localctx IDoDecalartionContext) {
 	return localctx
 }
 
-// IReactDecalartionContext is an interface to support dynamic dispatch.
-type IReactDecalartionContext interface {
+// IReactDeclarationContext is an interface to support dynamic dispatch.
+type IReactDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsReactDecalartionContext differentiates from other interfaces.
-	IsReactDecalartionContext()
+	// IsReactDeclarationContext differentiates from other interfaces.
+	IsReactDeclarationContext()
 }
 
-type ReactDecalartionContext struct {
+type ReactDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyReactDecalartionContext() *ReactDecalartionContext {
-	var p = new(ReactDecalartionContext)
+func NewEmptyReactDeclarationContext() *ReactDeclarationContext {
+	var p = new(ReactDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_reactDecalartion
+	p.RuleIndex = DesignParserRULE_reactDeclaration
 	return p
 }
 
-func (*ReactDecalartionContext) IsReactDecalartionContext() {}
+func (*ReactDeclarationContext) IsReactDeclarationContext() {}
 
-func NewReactDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ReactDecalartionContext {
-	var p = new(ReactDecalartionContext)
+func NewReactDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ReactDeclarationContext {
+	var p = new(ReactDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_reactDecalartion
+	p.RuleIndex = DesignParserRULE_reactDeclaration
 
 	return p
 }
 
-func (s *ReactDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *ReactDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ReactDecalartionContext) REACT() antlr.TerminalNode {
+func (s *ReactDeclarationContext) REACT() antlr.TerminalNode {
 	return s.GetToken(DesignParserREACT, 0)
 }
 
-func (s *ReactDecalartionContext) COLON() antlr.TerminalNode {
+func (s *ReactDeclarationContext) COLON() antlr.TerminalNode {
 	return s.GetToken(DesignParserCOLON, 0)
 }
 
-func (s *ReactDecalartionContext) ActionKey() IActionKeyContext {
+func (s *ReactDeclarationContext) ActionKey() IActionKeyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IActionKeyContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -2057,7 +2057,7 @@ func (s *ReactDecalartionContext) ActionKey() IActionKeyContext {
 	return t.(IActionKeyContext)
 }
 
-func (s *ReactDecalartionContext) SceneName() ISceneNameContext {
+func (s *ReactDeclarationContext) SceneName() ISceneNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISceneNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -2067,49 +2067,49 @@ func (s *ReactDecalartionContext) SceneName() ISceneNameContext {
 	return t.(ISceneNameContext)
 }
 
-func (s *ReactDecalartionContext) AnimateDecalartion() IAnimateDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAnimateDecalartionContext)(nil)).Elem(), 0)
+func (s *ReactDeclarationContext) AnimateDeclaration() IAnimateDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAnimateDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IAnimateDecalartionContext)
+	return t.(IAnimateDeclarationContext)
 }
 
-func (s *ReactDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *ReactDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ReactDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ReactDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ReactDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ReactDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterReactDecalartion(s)
+		listenerT.EnterReactDeclaration(s)
 	}
 }
 
-func (s *ReactDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ReactDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitReactDecalartion(s)
+		listenerT.ExitReactDeclaration(s)
 	}
 }
 
-func (s *ReactDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ReactDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitReactDecalartion(s)
+		return t.VisitReactDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ReactDecalartion() (localctx IReactDecalartionContext) {
-	localctx = NewReactDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, DesignParserRULE_reactDecalartion)
+func (p *DesignParser) ReactDeclaration() (localctx IReactDeclarationContext) {
+	localctx = NewReactDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 22, DesignParserRULE_reactDeclaration)
 	var _la int
 
 	defer func() {
@@ -2159,7 +2159,7 @@ func (p *DesignParser) ReactDecalartion() (localctx IReactDecalartionContext) {
 	if _la == DesignParserWITHTEXT {
 		{
 			p.SetState(156)
-			p.AnimateDecalartion()
+			p.AnimateDeclaration()
 		}
 
 	}
@@ -2167,57 +2167,57 @@ func (p *DesignParser) ReactDecalartion() (localctx IReactDecalartionContext) {
 	return localctx
 }
 
-// IAnimateDecalartionContext is an interface to support dynamic dispatch.
-type IAnimateDecalartionContext interface {
+// IAnimateDeclarationContext is an interface to support dynamic dispatch.
+type IAnimateDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsAnimateDecalartionContext differentiates from other interfaces.
-	IsAnimateDecalartionContext()
+	// IsAnimateDeclarationContext differentiates from other interfaces.
+	IsAnimateDeclarationContext()
 }
 
-type AnimateDecalartionContext struct {
+type AnimateDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyAnimateDecalartionContext() *AnimateDecalartionContext {
-	var p = new(AnimateDecalartionContext)
+func NewEmptyAnimateDeclarationContext() *AnimateDeclarationContext {
+	var p = new(AnimateDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_animateDecalartion
+	p.RuleIndex = DesignParserRULE_animateDeclaration
 	return p
 }
 
-func (*AnimateDecalartionContext) IsAnimateDecalartionContext() {}
+func (*AnimateDeclarationContext) IsAnimateDeclarationContext() {}
 
-func NewAnimateDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AnimateDecalartionContext {
-	var p = new(AnimateDecalartionContext)
+func NewAnimateDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AnimateDeclarationContext {
+	var p = new(AnimateDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_animateDecalartion
+	p.RuleIndex = DesignParserRULE_animateDeclaration
 
 	return p
 }
 
-func (s *AnimateDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *AnimateDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *AnimateDecalartionContext) WITHTEXT() antlr.TerminalNode {
+func (s *AnimateDeclarationContext) WITHTEXT() antlr.TerminalNode {
 	return s.GetToken(DesignParserWITHTEXT, 0)
 }
 
-func (s *AnimateDecalartionContext) ANIMATE() antlr.TerminalNode {
+func (s *AnimateDeclarationContext) ANIMATE() antlr.TerminalNode {
 	return s.GetToken(DesignParserANIMATE, 0)
 }
 
-func (s *AnimateDecalartionContext) LPAREN() antlr.TerminalNode {
+func (s *AnimateDeclarationContext) LPAREN() antlr.TerminalNode {
 	return s.GetToken(DesignParserLPAREN, 0)
 }
 
-func (s *AnimateDecalartionContext) AnimateName() IAnimateNameContext {
+func (s *AnimateDeclarationContext) AnimateName() IAnimateNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAnimateNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -2227,43 +2227,43 @@ func (s *AnimateDecalartionContext) AnimateName() IAnimateNameContext {
 	return t.(IAnimateNameContext)
 }
 
-func (s *AnimateDecalartionContext) RPAREN() antlr.TerminalNode {
+func (s *AnimateDeclarationContext) RPAREN() antlr.TerminalNode {
 	return s.GetToken(DesignParserRPAREN, 0)
 }
 
-func (s *AnimateDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *AnimateDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *AnimateDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *AnimateDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *AnimateDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *AnimateDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterAnimateDecalartion(s)
+		listenerT.EnterAnimateDeclaration(s)
 	}
 }
 
-func (s *AnimateDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *AnimateDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitAnimateDecalartion(s)
+		listenerT.ExitAnimateDeclaration(s)
 	}
 }
 
-func (s *AnimateDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *AnimateDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitAnimateDecalartion(s)
+		return t.VisitAnimateDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) AnimateDecalartion() (localctx IAnimateDecalartionContext) {
-	localctx = NewAnimateDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, DesignParserRULE_animateDecalartion)
+func (p *DesignParser) AnimateDeclaration() (localctx IAnimateDeclarationContext) {
+	localctx = NewAnimateDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 24, DesignParserRULE_animateDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -2966,116 +2966,116 @@ func (p *DesignParser) AnimateName() (localctx IAnimateNameContext) {
 	return localctx
 }
 
-// IPageDecalartionContext is an interface to support dynamic dispatch.
-type IPageDecalartionContext interface {
+// IPageDeclarationContext is an interface to support dynamic dispatch.
+type IPageDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsPageDecalartionContext differentiates from other interfaces.
-	IsPageDecalartionContext()
+	// IsPageDeclarationContext differentiates from other interfaces.
+	IsPageDeclarationContext()
 }
 
-type PageDecalartionContext struct {
+type PageDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyPageDecalartionContext() *PageDecalartionContext {
-	var p = new(PageDecalartionContext)
+func NewEmptyPageDeclarationContext() *PageDeclarationContext {
+	var p = new(PageDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_pageDecalartion
+	p.RuleIndex = DesignParserRULE_pageDeclaration
 	return p
 }
 
-func (*PageDecalartionContext) IsPageDecalartionContext() {}
+func (*PageDeclarationContext) IsPageDeclarationContext() {}
 
-func NewPageDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PageDecalartionContext {
-	var p = new(PageDecalartionContext)
+func NewPageDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PageDeclarationContext {
+	var p = new(PageDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_pageDecalartion
+	p.RuleIndex = DesignParserRULE_pageDeclaration
 
 	return p
 }
 
-func (s *PageDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *PageDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *PageDecalartionContext) PAGE() antlr.TerminalNode {
+func (s *PageDeclarationContext) PAGE() antlr.TerminalNode {
 	return s.GetToken(DesignParserPAGE, 0)
 }
 
-func (s *PageDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+func (s *PageDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *PageDecalartionContext) LBRACE() antlr.TerminalNode {
+func (s *PageDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *PageDecalartionContext) RBRACE() antlr.TerminalNode {
+func (s *PageDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *PageDecalartionContext) AllComponentBodyDecalartion() []IComponentBodyDecalartionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem())
-	var tst = make([]IComponentBodyDecalartionContext, len(ts))
+func (s *PageDeclarationContext) AllComponentBodyDeclaration() []IComponentBodyDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDeclarationContext)(nil)).Elem())
+	var tst = make([]IComponentBodyDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IComponentBodyDecalartionContext)
+			tst[i] = t.(IComponentBodyDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *PageDecalartionContext) ComponentBodyDecalartion(i int) IComponentBodyDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem(), i)
+func (s *PageDeclarationContext) ComponentBodyDeclaration(i int) IComponentBodyDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IComponentBodyDecalartionContext)
+	return t.(IComponentBodyDeclarationContext)
 }
 
-func (s *PageDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *PageDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *PageDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *PageDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *PageDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *PageDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterPageDecalartion(s)
+		listenerT.EnterPageDeclaration(s)
 	}
 }
 
-func (s *PageDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *PageDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitPageDecalartion(s)
+		listenerT.ExitPageDeclaration(s)
 	}
 }
 
-func (s *PageDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *PageDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitPageDecalartion(s)
+		return t.VisitPageDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) PageDecalartion() (localctx IPageDecalartionContext) {
-	localctx = NewPageDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, DesignParserRULE_pageDecalartion)
+func (p *DesignParser) PageDeclaration() (localctx IPageDeclarationContext) {
+	localctx = NewPageDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, DesignParserRULE_pageDeclaration)
 	var _la int
 
 	defer func() {
@@ -3114,7 +3114,7 @@ func (p *DesignParser) PageDecalartion() (localctx IPageDecalartionContext) {
 	for _la == DesignParserIDENTIFIER {
 		{
 			p.SetState(186)
-			p.ComponentBodyDecalartion()
+			p.ComponentBodyDeclaration()
 		}
 
 		p.SetState(191)
@@ -3129,116 +3129,116 @@ func (p *DesignParser) PageDecalartion() (localctx IPageDecalartionContext) {
 	return localctx
 }
 
-// IComponentDecalartionContext is an interface to support dynamic dispatch.
-type IComponentDecalartionContext interface {
+// IComponentDeclarationContext is an interface to support dynamic dispatch.
+type IComponentDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsComponentDecalartionContext differentiates from other interfaces.
-	IsComponentDecalartionContext()
+	// IsComponentDeclarationContext differentiates from other interfaces.
+	IsComponentDeclarationContext()
 }
 
-type ComponentDecalartionContext struct {
+type ComponentDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyComponentDecalartionContext() *ComponentDecalartionContext {
-	var p = new(ComponentDecalartionContext)
+func NewEmptyComponentDeclarationContext() *ComponentDeclarationContext {
+	var p = new(ComponentDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_componentDecalartion
+	p.RuleIndex = DesignParserRULE_componentDeclaration
 	return p
 }
 
-func (*ComponentDecalartionContext) IsComponentDecalartionContext() {}
+func (*ComponentDeclarationContext) IsComponentDeclarationContext() {}
 
-func NewComponentDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentDecalartionContext {
-	var p = new(ComponentDecalartionContext)
+func NewComponentDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentDeclarationContext {
+	var p = new(ComponentDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_componentDecalartion
+	p.RuleIndex = DesignParserRULE_componentDeclaration
 
 	return p
 }
 
-func (s *ComponentDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *ComponentDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ComponentDecalartionContext) COMPONENT() antlr.TerminalNode {
+func (s *ComponentDeclarationContext) COMPONENT() antlr.TerminalNode {
 	return s.GetToken(DesignParserCOMPONENT, 0)
 }
 
-func (s *ComponentDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+func (s *ComponentDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *ComponentDecalartionContext) LBRACE() antlr.TerminalNode {
+func (s *ComponentDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *ComponentDecalartionContext) RBRACE() antlr.TerminalNode {
+func (s *ComponentDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *ComponentDecalartionContext) AllComponentBodyDecalartion() []IComponentBodyDecalartionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem())
-	var tst = make([]IComponentBodyDecalartionContext, len(ts))
+func (s *ComponentDeclarationContext) AllComponentBodyDeclaration() []IComponentBodyDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentBodyDeclarationContext)(nil)).Elem())
+	var tst = make([]IComponentBodyDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IComponentBodyDecalartionContext)
+			tst[i] = t.(IComponentBodyDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *ComponentDecalartionContext) ComponentBodyDecalartion(i int) IComponentBodyDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDecalartionContext)(nil)).Elem(), i)
+func (s *ComponentDeclarationContext) ComponentBodyDeclaration(i int) IComponentBodyDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentBodyDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IComponentBodyDecalartionContext)
+	return t.(IComponentBodyDeclarationContext)
 }
 
-func (s *ComponentDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *ComponentDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ComponentDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ComponentDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ComponentDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ComponentDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterComponentDecalartion(s)
+		listenerT.EnterComponentDeclaration(s)
 	}
 }
 
-func (s *ComponentDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ComponentDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitComponentDecalartion(s)
+		listenerT.ExitComponentDeclaration(s)
 	}
 }
 
-func (s *ComponentDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ComponentDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitComponentDecalartion(s)
+		return t.VisitComponentDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ComponentDecalartion() (localctx IComponentDecalartionContext) {
-	localctx = NewComponentDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, DesignParserRULE_componentDecalartion)
+func (p *DesignParser) ComponentDeclaration() (localctx IComponentDeclarationContext) {
+	localctx = NewComponentDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 40, DesignParserRULE_componentDeclaration)
 	var _la int
 
 	defer func() {
@@ -3277,7 +3277,7 @@ func (p *DesignParser) ComponentDecalartion() (localctx IComponentDecalartionCon
 	for _la == DesignParserIDENTIFIER {
 		{
 			p.SetState(197)
-			p.ComponentBodyDecalartion()
+			p.ComponentBodyDeclaration()
 		}
 
 		p.SetState(202)
@@ -3292,45 +3292,45 @@ func (p *DesignParser) ComponentDecalartion() (localctx IComponentDecalartionCon
 	return localctx
 }
 
-// IComponentBodyDecalartionContext is an interface to support dynamic dispatch.
-type IComponentBodyDecalartionContext interface {
+// IComponentBodyDeclarationContext is an interface to support dynamic dispatch.
+type IComponentBodyDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsComponentBodyDecalartionContext differentiates from other interfaces.
-	IsComponentBodyDecalartionContext()
+	// IsComponentBodyDeclarationContext differentiates from other interfaces.
+	IsComponentBodyDeclarationContext()
 }
 
-type ComponentBodyDecalartionContext struct {
+type ComponentBodyDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyComponentBodyDecalartionContext() *ComponentBodyDecalartionContext {
-	var p = new(ComponentBodyDecalartionContext)
+func NewEmptyComponentBodyDeclarationContext() *ComponentBodyDeclarationContext {
+	var p = new(ComponentBodyDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_componentBodyDecalartion
+	p.RuleIndex = DesignParserRULE_componentBodyDeclaration
 	return p
 }
 
-func (*ComponentBodyDecalartionContext) IsComponentBodyDecalartionContext() {}
+func (*ComponentBodyDeclarationContext) IsComponentBodyDeclarationContext() {}
 
-func NewComponentBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentBodyDecalartionContext {
-	var p = new(ComponentBodyDecalartionContext)
+func NewComponentBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ComponentBodyDeclarationContext {
+	var p = new(ComponentBodyDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_componentBodyDecalartion
+	p.RuleIndex = DesignParserRULE_componentBodyDeclaration
 
 	return p
 }
 
-func (s *ComponentBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *ComponentBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ComponentBodyDecalartionContext) AllComponentName() []IComponentNameContext {
+func (s *ComponentBodyDeclarationContext) AllComponentName() []IComponentNameContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IComponentNameContext)(nil)).Elem())
 	var tst = make([]IComponentNameContext, len(ts))
 
@@ -3343,7 +3343,7 @@ func (s *ComponentBodyDecalartionContext) AllComponentName() []IComponentNameCon
 	return tst
 }
 
-func (s *ComponentBodyDecalartionContext) ComponentName(i int) IComponentNameContext {
+func (s *ComponentBodyDeclarationContext) ComponentName(i int) IComponentNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComponentNameContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -3353,23 +3353,23 @@ func (s *ComponentBodyDecalartionContext) ComponentName(i int) IComponentNameCon
 	return t.(IComponentNameContext)
 }
 
-func (s *ComponentBodyDecalartionContext) AllCOMMA() []antlr.TerminalNode {
+func (s *ComponentBodyDeclarationContext) AllCOMMA() []antlr.TerminalNode {
 	return s.GetTokens(DesignParserCOMMA)
 }
 
-func (s *ComponentBodyDecalartionContext) COMMA(i int) antlr.TerminalNode {
+func (s *ComponentBodyDeclarationContext) COMMA(i int) antlr.TerminalNode {
 	return s.GetToken(DesignParserCOMMA, i)
 }
 
-func (s *ComponentBodyDecalartionContext) IDENTIFIER() antlr.TerminalNode {
+func (s *ComponentBodyDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *ComponentBodyDecalartionContext) COLON() antlr.TerminalNode {
+func (s *ComponentBodyDeclarationContext) COLON() antlr.TerminalNode {
 	return s.GetToken(DesignParserCOLON, 0)
 }
 
-func (s *ComponentBodyDecalartionContext) ConfigValue() IConfigValueContext {
+func (s *ComponentBodyDeclarationContext) ConfigValue() IConfigValueContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigValueContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -3379,39 +3379,39 @@ func (s *ComponentBodyDecalartionContext) ConfigValue() IConfigValueContext {
 	return t.(IConfigValueContext)
 }
 
-func (s *ComponentBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *ComponentBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ComponentBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ComponentBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ComponentBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ComponentBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterComponentBodyDecalartion(s)
+		listenerT.EnterComponentBodyDeclaration(s)
 	}
 }
 
-func (s *ComponentBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ComponentBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitComponentBodyDecalartion(s)
+		listenerT.ExitComponentBodyDeclaration(s)
 	}
 }
 
-func (s *ComponentBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ComponentBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitComponentBodyDecalartion(s)
+		return t.VisitComponentBodyDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) ComponentBodyDecalartion() (localctx IComponentBodyDecalartionContext) {
-	localctx = NewComponentBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, DesignParserRULE_componentBodyDecalartion)
+func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclarationContext) {
+	localctx = NewComponentBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 42, DesignParserRULE_componentBodyDeclaration)
 	var _la int
 
 	defer func() {
@@ -3528,14 +3528,14 @@ func (s *LayoutDecalarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *LayoutDecalarationContext) LayoutBodyDecalartion() ILayoutBodyDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutBodyDecalartionContext)(nil)).Elem(), 0)
+func (s *LayoutDecalarationContext) LayoutBodyDeclaration() ILayoutBodyDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutBodyDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ILayoutBodyDecalartionContext)
+	return t.(ILayoutBodyDeclarationContext)
 }
 
 func (s *LayoutDecalarationContext) RBRACE() antlr.TerminalNode {
@@ -3607,7 +3607,7 @@ func (p *DesignParser) LayoutDecalaration() (localctx ILayoutDecalarationContext
 	}
 	{
 		p.SetState(221)
-		p.LayoutBodyDecalartion()
+		p.LayoutBodyDeclaration()
 	}
 	{
 		p.SetState(222)
@@ -3617,45 +3617,45 @@ func (p *DesignParser) LayoutDecalaration() (localctx ILayoutDecalarationContext
 	return localctx
 }
 
-// ILayoutBodyDecalartionContext is an interface to support dynamic dispatch.
-type ILayoutBodyDecalartionContext interface {
+// ILayoutBodyDeclarationContext is an interface to support dynamic dispatch.
+type ILayoutBodyDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsLayoutBodyDecalartionContext differentiates from other interfaces.
-	IsLayoutBodyDecalartionContext()
+	// IsLayoutBodyDeclarationContext differentiates from other interfaces.
+	IsLayoutBodyDeclarationContext()
 }
 
-type LayoutBodyDecalartionContext struct {
+type LayoutBodyDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyLayoutBodyDecalartionContext() *LayoutBodyDecalartionContext {
-	var p = new(LayoutBodyDecalartionContext)
+func NewEmptyLayoutBodyDeclarationContext() *LayoutBodyDeclarationContext {
+	var p = new(LayoutBodyDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layoutBodyDecalartion
+	p.RuleIndex = DesignParserRULE_layoutBodyDeclaration
 	return p
 }
 
-func (*LayoutBodyDecalartionContext) IsLayoutBodyDecalartionContext() {}
+func (*LayoutBodyDeclarationContext) IsLayoutBodyDeclarationContext() {}
 
-func NewLayoutBodyDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutBodyDecalartionContext {
-	var p = new(LayoutBodyDecalartionContext)
+func NewLayoutBodyDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutBodyDeclarationContext {
+	var p = new(LayoutBodyDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layoutBodyDecalartion
+	p.RuleIndex = DesignParserRULE_layoutBodyDeclaration
 
 	return p
 }
 
-func (s *LayoutBodyDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *LayoutBodyDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LayoutBodyDecalartionContext) AllLayoutRow() []ILayoutRowContext {
+func (s *LayoutBodyDeclarationContext) AllLayoutRow() []ILayoutRowContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ILayoutRowContext)(nil)).Elem())
 	var tst = make([]ILayoutRowContext, len(ts))
 
@@ -3668,7 +3668,7 @@ func (s *LayoutBodyDecalartionContext) AllLayoutRow() []ILayoutRowContext {
 	return tst
 }
 
-func (s *LayoutBodyDecalartionContext) LayoutRow(i int) ILayoutRowContext {
+func (s *LayoutBodyDeclarationContext) LayoutRow(i int) ILayoutRowContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutRowContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -3678,39 +3678,39 @@ func (s *LayoutBodyDecalartionContext) LayoutRow(i int) ILayoutRowContext {
 	return t.(ILayoutRowContext)
 }
 
-func (s *LayoutBodyDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *LayoutBodyDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LayoutBodyDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *LayoutBodyDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LayoutBodyDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *LayoutBodyDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayoutBodyDecalartion(s)
+		listenerT.EnterLayoutBodyDeclaration(s)
 	}
 }
 
-func (s *LayoutBodyDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *LayoutBodyDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayoutBodyDecalartion(s)
+		listenerT.ExitLayoutBodyDeclaration(s)
 	}
 }
 
-func (s *LayoutBodyDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *LayoutBodyDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitLayoutBodyDecalartion(s)
+		return t.VisitLayoutBodyDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) LayoutBodyDecalartion() (localctx ILayoutBodyDecalartionContext) {
-	localctx = NewLayoutBodyDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, DesignParserRULE_layoutBodyDecalartion)
+func (p *DesignParser) LayoutBodyDeclaration() (localctx ILayoutBodyDeclarationContext) {
+	localctx = NewLayoutBodyDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 46, DesignParserRULE_layoutBodyDeclaration)
 	var _la int
 
 	defer func() {
@@ -4221,49 +4221,49 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 	return localctx
 }
 
-// IStyleDecalartionContext is an interface to support dynamic dispatch.
-type IStyleDecalartionContext interface {
+// IStyleDeclarationContext is an interface to support dynamic dispatch.
+type IStyleDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsStyleDecalartionContext differentiates from other interfaces.
-	IsStyleDecalartionContext()
+	// IsStyleDeclarationContext differentiates from other interfaces.
+	IsStyleDeclarationContext()
 }
 
-type StyleDecalartionContext struct {
+type StyleDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyStyleDecalartionContext() *StyleDecalartionContext {
-	var p = new(StyleDecalartionContext)
+func NewEmptyStyleDeclarationContext() *StyleDeclarationContext {
+	var p = new(StyleDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_styleDecalartion
+	p.RuleIndex = DesignParserRULE_styleDeclaration
 	return p
 }
 
-func (*StyleDecalartionContext) IsStyleDecalartionContext() {}
+func (*StyleDeclarationContext) IsStyleDeclarationContext() {}
 
-func NewStyleDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StyleDecalartionContext {
-	var p = new(StyleDecalartionContext)
+func NewStyleDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StyleDeclarationContext {
+	var p = new(StyleDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_styleDecalartion
+	p.RuleIndex = DesignParserRULE_styleDeclaration
 
 	return p
 }
 
-func (s *StyleDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *StyleDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *StyleDecalartionContext) STYLE() antlr.TerminalNode {
+func (s *StyleDeclarationContext) STYLE() antlr.TerminalNode {
 	return s.GetToken(DesignParserSTYLE, 0)
 }
 
-func (s *StyleDecalartionContext) StyleName() IStyleNameContext {
+func (s *StyleDeclarationContext) StyleName() IStyleNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4273,11 +4273,11 @@ func (s *StyleDecalartionContext) StyleName() IStyleNameContext {
 	return t.(IStyleNameContext)
 }
 
-func (s *StyleDecalartionContext) LBRACE() antlr.TerminalNode {
+func (s *StyleDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *StyleDecalartionContext) StyleBody() IStyleBodyContext {
+func (s *StyleDeclarationContext) StyleBody() IStyleBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStyleBodyContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4287,43 +4287,43 @@ func (s *StyleDecalartionContext) StyleBody() IStyleBodyContext {
 	return t.(IStyleBodyContext)
 }
 
-func (s *StyleDecalartionContext) RBRACE() antlr.TerminalNode {
+func (s *StyleDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *StyleDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *StyleDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *StyleDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *StyleDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *StyleDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *StyleDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterStyleDecalartion(s)
+		listenerT.EnterStyleDeclaration(s)
 	}
 }
 
-func (s *StyleDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *StyleDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitStyleDecalartion(s)
+		listenerT.ExitStyleDeclaration(s)
 	}
 }
 
-func (s *StyleDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *StyleDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitStyleDecalartion(s)
+		return t.VisitStyleDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) StyleDecalartion() (localctx IStyleDecalartionContext) {
-	localctx = NewStyleDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 54, DesignParserRULE_styleDecalartion)
+func (p *DesignParser) StyleDeclaration() (localctx IStyleDeclarationContext) {
+	localctx = NewStyleDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 54, DesignParserRULE_styleDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -4505,27 +4505,27 @@ func NewStyleBodyContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 
 func (s *StyleBodyContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *StyleBodyContext) AllConfigDecalartion() []IConfigDecalartionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem())
-	var tst = make([]IConfigDecalartionContext, len(ts))
+func (s *StyleBodyContext) AllConfigDeclaration() []IConfigDeclarationContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigDeclarationContext)(nil)).Elem())
+	var tst = make([]IConfigDeclarationContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IConfigDecalartionContext)
+			tst[i] = t.(IConfigDeclarationContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *StyleBodyContext) ConfigDecalartion(i int) IConfigDecalartionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDecalartionContext)(nil)).Elem(), i)
+func (s *StyleBodyContext) ConfigDeclaration(i int) IConfigDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigDeclarationContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IConfigDecalartionContext)
+	return t.(IConfigDeclarationContext)
 }
 
 func (s *StyleBodyContext) GetRuleContext() antlr.RuleContext {
@@ -4587,7 +4587,7 @@ func (p *DesignParser) StyleBody() (localctx IStyleBodyContext) {
 	for _la == DesignParserIDENTIFIER {
 		{
 			p.SetState(270)
-			p.ConfigDecalartion()
+			p.ConfigDeclaration()
 		}
 		{
 			p.SetState(271)
@@ -4602,49 +4602,49 @@ func (p *DesignParser) StyleBody() (localctx IStyleBodyContext) {
 	return localctx
 }
 
-// ILibraryDecalartionContext is an interface to support dynamic dispatch.
-type ILibraryDecalartionContext interface {
+// ILibraryDeclarationContext is an interface to support dynamic dispatch.
+type ILibraryDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsLibraryDecalartionContext differentiates from other interfaces.
-	IsLibraryDecalartionContext()
+	// IsLibraryDeclarationContext differentiates from other interfaces.
+	IsLibraryDeclarationContext()
 }
 
-type LibraryDecalartionContext struct {
+type LibraryDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyLibraryDecalartionContext() *LibraryDecalartionContext {
-	var p = new(LibraryDecalartionContext)
+func NewEmptyLibraryDeclarationContext() *LibraryDeclarationContext {
+	var p = new(LibraryDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_libraryDecalartion
+	p.RuleIndex = DesignParserRULE_libraryDeclaration
 	return p
 }
 
-func (*LibraryDecalartionContext) IsLibraryDecalartionContext() {}
+func (*LibraryDeclarationContext) IsLibraryDeclarationContext() {}
 
-func NewLibraryDecalartionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LibraryDecalartionContext {
-	var p = new(LibraryDecalartionContext)
+func NewLibraryDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LibraryDeclarationContext {
+	var p = new(LibraryDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_libraryDecalartion
+	p.RuleIndex = DesignParserRULE_libraryDeclaration
 
 	return p
 }
 
-func (s *LibraryDecalartionContext) GetParser() antlr.Parser { return s.parser }
+func (s *LibraryDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LibraryDecalartionContext) LIBRARY() antlr.TerminalNode {
+func (s *LibraryDeclarationContext) LIBRARY() antlr.TerminalNode {
 	return s.GetToken(DesignParserLIBRARY, 0)
 }
 
-func (s *LibraryDecalartionContext) LibraryName() ILibraryNameContext {
+func (s *LibraryDeclarationContext) LibraryName() ILibraryNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4654,11 +4654,11 @@ func (s *LibraryDecalartionContext) LibraryName() ILibraryNameContext {
 	return t.(ILibraryNameContext)
 }
 
-func (s *LibraryDecalartionContext) LBRACE() antlr.TerminalNode {
+func (s *LibraryDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *LibraryDecalartionContext) LibraryBody() ILibraryBodyContext {
+func (s *LibraryDeclarationContext) LibraryBody() ILibraryBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryBodyContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4668,43 +4668,43 @@ func (s *LibraryDecalartionContext) LibraryBody() ILibraryBodyContext {
 	return t.(ILibraryBodyContext)
 }
 
-func (s *LibraryDecalartionContext) RBRACE() antlr.TerminalNode {
+func (s *LibraryDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *LibraryDecalartionContext) GetRuleContext() antlr.RuleContext {
+func (s *LibraryDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LibraryDecalartionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *LibraryDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LibraryDecalartionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *LibraryDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLibraryDecalartion(s)
+		listenerT.EnterLibraryDeclaration(s)
 	}
 }
 
-func (s *LibraryDecalartionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *LibraryDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLibraryDecalartion(s)
+		listenerT.ExitLibraryDeclaration(s)
 	}
 }
 
-func (s *LibraryDecalartionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *LibraryDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitLibraryDecalartion(s)
+		return t.VisitLibraryDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) LibraryDecalartion() (localctx ILibraryDecalartionContext) {
-	localctx = NewLibraryDecalartionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 60, DesignParserRULE_libraryDecalartion)
+func (p *DesignParser) LibraryDeclaration() (localctx ILibraryDeclarationContext) {
+	localctx = NewLibraryDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 60, DesignParserRULE_libraryDeclaration)
 
 	defer func() {
 		p.ExitRule()

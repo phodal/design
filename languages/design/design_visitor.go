@@ -14,8 +14,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#comment.
 	VisitComment(ctx *CommentContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#configDecalartion.
-	VisitConfigDecalartion(ctx *ConfigDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#configDeclaration.
+	VisitConfigDeclaration(ctx *ConfigDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#configKey.
 	VisitConfigKey(ctx *ConfigKeyContext) interface{}
@@ -29,23 +29,23 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#decalartions.
 	VisitDecalartions(ctx *DecalartionsContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#flowDecalartion.
-	VisitFlowDecalartion(ctx *FlowDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#flowDeclaration.
+	VisitFlowDeclaration(ctx *FlowDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#flowBodyDecalartion.
-	VisitFlowBodyDecalartion(ctx *FlowBodyDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#flowBodyDeclaration.
+	VisitFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#seeDecalartion.
-	VisitSeeDecalartion(ctx *SeeDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#seeDeclaration.
+	VisitSeeDeclaration(ctx *SeeDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#doDecalartion.
-	VisitDoDecalartion(ctx *DoDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#doDeclaration.
+	VisitDoDeclaration(ctx *DoDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#reactDecalartion.
-	VisitReactDecalartion(ctx *ReactDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#reactDeclaration.
+	VisitReactDeclaration(ctx *ReactDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#animateDecalartion.
-	VisitAnimateDecalartion(ctx *AnimateDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#animateDeclaration.
+	VisitAnimateDeclaration(ctx *AnimateDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#actionKey.
 	VisitActionKey(ctx *ActionKeyContext) interface{}
@@ -65,20 +65,20 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#animateName.
 	VisitAnimateName(ctx *AnimateNameContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#pageDecalartion.
-	VisitPageDecalartion(ctx *PageDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#pageDeclaration.
+	VisitPageDeclaration(ctx *PageDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#componentDecalartion.
-	VisitComponentDecalartion(ctx *ComponentDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#componentDeclaration.
+	VisitComponentDeclaration(ctx *ComponentDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#componentBodyDecalartion.
-	VisitComponentBodyDecalartion(ctx *ComponentBodyDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#componentBodyDeclaration.
+	VisitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#layoutDecalaration.
 	VisitLayoutDecalaration(ctx *LayoutDecalarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#layoutBodyDecalartion.
-	VisitLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#layoutBodyDeclaration.
+	VisitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#layoutRow.
 	VisitLayoutRow(ctx *LayoutRowContext) interface{}
@@ -89,8 +89,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#componentUseDeclaration.
 	VisitComponentUseDeclaration(ctx *ComponentUseDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#styleDecalartion.
-	VisitStyleDecalartion(ctx *StyleDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#styleDeclaration.
+	VisitStyleDeclaration(ctx *StyleDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#styleName.
 	VisitStyleName(ctx *StyleNameContext) interface{}
@@ -98,8 +98,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#styleBody.
 	VisitStyleBody(ctx *StyleBodyContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#libraryDecalartion.
-	VisitLibraryDecalartion(ctx *LibraryDecalartionContext) interface{}
+	// Visit a parse tree produced by DesignParser#libraryDeclaration.
+	VisitLibraryDeclaration(ctx *LibraryDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#libraryBody.
 	VisitLibraryBody(ctx *LibraryBodyContext) interface{}

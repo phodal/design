@@ -14,8 +14,8 @@ type DesignListener interface {
 	// EnterComment is called when entering the comment production.
 	EnterComment(c *CommentContext)
 
-	// EnterConfigDecalartion is called when entering the configDecalartion production.
-	EnterConfigDecalartion(c *ConfigDecalartionContext)
+	// EnterConfigDeclaration is called when entering the configDeclaration production.
+	EnterConfigDeclaration(c *ConfigDeclarationContext)
 
 	// EnterConfigKey is called when entering the configKey production.
 	EnterConfigKey(c *ConfigKeyContext)
@@ -29,23 +29,23 @@ type DesignListener interface {
 	// EnterDecalartions is called when entering the decalartions production.
 	EnterDecalartions(c *DecalartionsContext)
 
-	// EnterFlowDecalartion is called when entering the flowDecalartion production.
-	EnterFlowDecalartion(c *FlowDecalartionContext)
+	// EnterFlowDeclaration is called when entering the flowDeclaration production.
+	EnterFlowDeclaration(c *FlowDeclarationContext)
 
-	// EnterFlowBodyDecalartion is called when entering the flowBodyDecalartion production.
-	EnterFlowBodyDecalartion(c *FlowBodyDecalartionContext)
+	// EnterFlowBodyDeclaration is called when entering the flowBodyDeclaration production.
+	EnterFlowBodyDeclaration(c *FlowBodyDeclarationContext)
 
-	// EnterSeeDecalartion is called when entering the seeDecalartion production.
-	EnterSeeDecalartion(c *SeeDecalartionContext)
+	// EnterSeeDeclaration is called when entering the seeDeclaration production.
+	EnterSeeDeclaration(c *SeeDeclarationContext)
 
-	// EnterDoDecalartion is called when entering the doDecalartion production.
-	EnterDoDecalartion(c *DoDecalartionContext)
+	// EnterDoDeclaration is called when entering the doDeclaration production.
+	EnterDoDeclaration(c *DoDeclarationContext)
 
-	// EnterReactDecalartion is called when entering the reactDecalartion production.
-	EnterReactDecalartion(c *ReactDecalartionContext)
+	// EnterReactDeclaration is called when entering the reactDeclaration production.
+	EnterReactDeclaration(c *ReactDeclarationContext)
 
-	// EnterAnimateDecalartion is called when entering the animateDecalartion production.
-	EnterAnimateDecalartion(c *AnimateDecalartionContext)
+	// EnterAnimateDeclaration is called when entering the animateDeclaration production.
+	EnterAnimateDeclaration(c *AnimateDeclarationContext)
 
 	// EnterActionKey is called when entering the actionKey production.
 	EnterActionKey(c *ActionKeyContext)
@@ -65,20 +65,20 @@ type DesignListener interface {
 	// EnterAnimateName is called when entering the animateName production.
 	EnterAnimateName(c *AnimateNameContext)
 
-	// EnterPageDecalartion is called when entering the pageDecalartion production.
-	EnterPageDecalartion(c *PageDecalartionContext)
+	// EnterPageDeclaration is called when entering the pageDeclaration production.
+	EnterPageDeclaration(c *PageDeclarationContext)
 
-	// EnterComponentDecalartion is called when entering the componentDecalartion production.
-	EnterComponentDecalartion(c *ComponentDecalartionContext)
+	// EnterComponentDeclaration is called when entering the componentDeclaration production.
+	EnterComponentDeclaration(c *ComponentDeclarationContext)
 
-	// EnterComponentBodyDecalartion is called when entering the componentBodyDecalartion production.
-	EnterComponentBodyDecalartion(c *ComponentBodyDecalartionContext)
+	// EnterComponentBodyDeclaration is called when entering the componentBodyDeclaration production.
+	EnterComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
 
 	// EnterLayoutDecalaration is called when entering the layoutDecalaration production.
 	EnterLayoutDecalaration(c *LayoutDecalarationContext)
 
-	// EnterLayoutBodyDecalartion is called when entering the layoutBodyDecalartion production.
-	EnterLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
+	// EnterLayoutBodyDeclaration is called when entering the layoutBodyDeclaration production.
+	EnterLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)
 
 	// EnterLayoutRow is called when entering the layoutRow production.
 	EnterLayoutRow(c *LayoutRowContext)
@@ -89,8 +89,8 @@ type DesignListener interface {
 	// EnterComponentUseDeclaration is called when entering the componentUseDeclaration production.
 	EnterComponentUseDeclaration(c *ComponentUseDeclarationContext)
 
-	// EnterStyleDecalartion is called when entering the styleDecalartion production.
-	EnterStyleDecalartion(c *StyleDecalartionContext)
+	// EnterStyleDeclaration is called when entering the styleDeclaration production.
+	EnterStyleDeclaration(c *StyleDeclarationContext)
 
 	// EnterStyleName is called when entering the styleName production.
 	EnterStyleName(c *StyleNameContext)
@@ -98,8 +98,8 @@ type DesignListener interface {
 	// EnterStyleBody is called when entering the styleBody production.
 	EnterStyleBody(c *StyleBodyContext)
 
-	// EnterLibraryDecalartion is called when entering the libraryDecalartion production.
-	EnterLibraryDecalartion(c *LibraryDecalartionContext)
+	// EnterLibraryDeclaration is called when entering the libraryDeclaration production.
+	EnterLibraryDeclaration(c *LibraryDeclarationContext)
 
 	// EnterLibraryBody is called when entering the libraryBody production.
 	EnterLibraryBody(c *LibraryBodyContext)
@@ -119,8 +119,8 @@ type DesignListener interface {
 	// ExitComment is called when exiting the comment production.
 	ExitComment(c *CommentContext)
 
-	// ExitConfigDecalartion is called when exiting the configDecalartion production.
-	ExitConfigDecalartion(c *ConfigDecalartionContext)
+	// ExitConfigDeclaration is called when exiting the configDeclaration production.
+	ExitConfigDeclaration(c *ConfigDeclarationContext)
 
 	// ExitConfigKey is called when exiting the configKey production.
 	ExitConfigKey(c *ConfigKeyContext)
@@ -134,23 +134,23 @@ type DesignListener interface {
 	// ExitDecalartions is called when exiting the decalartions production.
 	ExitDecalartions(c *DecalartionsContext)
 
-	// ExitFlowDecalartion is called when exiting the flowDecalartion production.
-	ExitFlowDecalartion(c *FlowDecalartionContext)
+	// ExitFlowDeclaration is called when exiting the flowDeclaration production.
+	ExitFlowDeclaration(c *FlowDeclarationContext)
 
-	// ExitFlowBodyDecalartion is called when exiting the flowBodyDecalartion production.
-	ExitFlowBodyDecalartion(c *FlowBodyDecalartionContext)
+	// ExitFlowBodyDeclaration is called when exiting the flowBodyDeclaration production.
+	ExitFlowBodyDeclaration(c *FlowBodyDeclarationContext)
 
-	// ExitSeeDecalartion is called when exiting the seeDecalartion production.
-	ExitSeeDecalartion(c *SeeDecalartionContext)
+	// ExitSeeDeclaration is called when exiting the seeDeclaration production.
+	ExitSeeDeclaration(c *SeeDeclarationContext)
 
-	// ExitDoDecalartion is called when exiting the doDecalartion production.
-	ExitDoDecalartion(c *DoDecalartionContext)
+	// ExitDoDeclaration is called when exiting the doDeclaration production.
+	ExitDoDeclaration(c *DoDeclarationContext)
 
-	// ExitReactDecalartion is called when exiting the reactDecalartion production.
-	ExitReactDecalartion(c *ReactDecalartionContext)
+	// ExitReactDeclaration is called when exiting the reactDeclaration production.
+	ExitReactDeclaration(c *ReactDeclarationContext)
 
-	// ExitAnimateDecalartion is called when exiting the animateDecalartion production.
-	ExitAnimateDecalartion(c *AnimateDecalartionContext)
+	// ExitAnimateDeclaration is called when exiting the animateDeclaration production.
+	ExitAnimateDeclaration(c *AnimateDeclarationContext)
 
 	// ExitActionKey is called when exiting the actionKey production.
 	ExitActionKey(c *ActionKeyContext)
@@ -170,20 +170,20 @@ type DesignListener interface {
 	// ExitAnimateName is called when exiting the animateName production.
 	ExitAnimateName(c *AnimateNameContext)
 
-	// ExitPageDecalartion is called when exiting the pageDecalartion production.
-	ExitPageDecalartion(c *PageDecalartionContext)
+	// ExitPageDeclaration is called when exiting the pageDeclaration production.
+	ExitPageDeclaration(c *PageDeclarationContext)
 
-	// ExitComponentDecalartion is called when exiting the componentDecalartion production.
-	ExitComponentDecalartion(c *ComponentDecalartionContext)
+	// ExitComponentDeclaration is called when exiting the componentDeclaration production.
+	ExitComponentDeclaration(c *ComponentDeclarationContext)
 
-	// ExitComponentBodyDecalartion is called when exiting the componentBodyDecalartion production.
-	ExitComponentBodyDecalartion(c *ComponentBodyDecalartionContext)
+	// ExitComponentBodyDeclaration is called when exiting the componentBodyDeclaration production.
+	ExitComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
 
 	// ExitLayoutDecalaration is called when exiting the layoutDecalaration production.
 	ExitLayoutDecalaration(c *LayoutDecalarationContext)
 
-	// ExitLayoutBodyDecalartion is called when exiting the layoutBodyDecalartion production.
-	ExitLayoutBodyDecalartion(c *LayoutBodyDecalartionContext)
+	// ExitLayoutBodyDeclaration is called when exiting the layoutBodyDeclaration production.
+	ExitLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)
 
 	// ExitLayoutRow is called when exiting the layoutRow production.
 	ExitLayoutRow(c *LayoutRowContext)
@@ -194,8 +194,8 @@ type DesignListener interface {
 	// ExitComponentUseDeclaration is called when exiting the componentUseDeclaration production.
 	ExitComponentUseDeclaration(c *ComponentUseDeclarationContext)
 
-	// ExitStyleDecalartion is called when exiting the styleDecalartion production.
-	ExitStyleDecalartion(c *StyleDecalartionContext)
+	// ExitStyleDeclaration is called when exiting the styleDeclaration production.
+	ExitStyleDeclaration(c *StyleDeclarationContext)
 
 	// ExitStyleName is called when exiting the styleName production.
 	ExitStyleName(c *StyleNameContext)
@@ -203,8 +203,8 @@ type DesignListener interface {
 	// ExitStyleBody is called when exiting the styleBody production.
 	ExitStyleBody(c *StyleBodyContext)
 
-	// ExitLibraryDecalartion is called when exiting the libraryDecalartion production.
-	ExitLibraryDecalartion(c *LibraryDecalartionContext)
+	// ExitLibraryDeclaration is called when exiting the libraryDeclaration production.
+	ExitLibraryDeclaration(c *LibraryDeclarationContext)
 
 	// ExitLibraryBody is called when exiting the libraryBody production.
 	ExitLibraryBody(c *LibraryBodyContext)

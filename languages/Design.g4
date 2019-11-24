@@ -1,10 +1,10 @@
 grammar Design;
 
-start: (comment | configDecalartion | decalartions)* EOF;
+start: (comment | configDeclaration | decalartions)* EOF;
 
 comment: IDENTIFIER;
 
-configDecalartion: configKey COLON configValue;
+configDeclaration: configKey COLON configValue;
 
 configKey: IDENTIFIER;
 configValue
@@ -21,29 +21,29 @@ unit: 'rem'
     ;
 
 decalartions
-    : configDecalartion
-    | flowDecalartion
-    | pageDecalartion
-    | styleDecalartion
-    | componentDecalartion
-    | libraryDecalartion
+    : configDeclaration
+    | flowDeclaration
+    | pageDeclaration
+    | styleDeclaration
+    | componentDeclaration
+    | libraryDeclaration
     | layoutDecalaration
     ;
 
 // Flow
-flowDecalartion: FLOW IDENTIFIER LBRACE flowBodyDecalartion* RBRACE;
+flowDeclaration: FLOW IDENTIFIER LBRACE flowBodyDeclaration* RBRACE;
 
-flowBodyDecalartion
-    : seeDecalartion
-    | doDecalartion
-    | reactDecalartion
+flowBodyDeclaration
+    : seeDeclaration
+    | doDeclaration
+    | reactDeclaration
     ;
 
-seeDecalartion: SEE (IDENTIFIER | STRING_LITERAL DOT componentName);
-doDecalartion: DO LBRACK actionName RBRACK STRING_LITERAL DOT componentName ;
-reactDecalartion: REACT sceneName? COLON actionKey animateDecalartion?;
+seeDeclaration: SEE (IDENTIFIER | STRING_LITERAL DOT componentName);
+doDeclaration: DO LBRACK actionName RBRACK STRING_LITERAL DOT componentName ;
+reactDeclaration: REACT sceneName? COLON actionKey animateDeclaration?;
 
-animateDecalartion: WITHTEXT ANIMATE LPAREN animateName RPAREN;
+animateDeclaration: WITHTEXT ANIMATE LPAREN animateName RPAREN;
 
 actionKey: GOTO_KEY componentName | SHOW_KEY STRING_LITERAL DOT componentName;
 
@@ -66,21 +66,21 @@ ANIMATE: 'animate' | 'ANIMATE' | '动画';
 
 //PAGE
 
-pageDecalartion: PAGE IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
-componentDecalartion: COMPONENT IDENTIFIER LBRACE componentBodyDecalartion* RBRACE;
+pageDeclaration: PAGE IDENTIFIER LBRACE componentBodyDeclaration* RBRACE;
+componentDeclaration: COMPONENT IDENTIFIER LBRACE componentBodyDeclaration* RBRACE;
 
-componentBodyDecalartion
+componentBodyDeclaration
     : componentName (',' componentName)*
     | IDENTIFIER COLON configValue
     ;
 
-layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDecalartion RBRACE;
+layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDeclaration RBRACE;
 
 
 REPEAT: 'repeat';
 REPEAT_TIMES: INTEGER;
 
-layoutBodyDecalartion: layoutRow*;
+layoutBodyDeclaration: layoutRow*;
 
 layoutRow
     : '-' '-'*
@@ -104,17 +104,17 @@ COMPONENT: 'component' | 'COMPONENT' | '组件';
 
 // STYLE
 
-styleDecalartion: STYLE styleName LBRACE styleBody RBRACE;
+styleDeclaration: STYLE styleName LBRACE styleBody RBRACE;
 
 styleName: IDENTIFIER;
-styleBody: (configDecalartion ';')*;
+styleBody: (configDeclaration ';')*;
 
 STYLE: 'style' | 'STYLE' | 'CSS' | 'css';
 
 // LIBRARY
 
 
-libraryDecalartion: LIBRARY libraryName LBRACE libraryBody RBRACE;
+libraryDeclaration: LIBRARY libraryName LBRACE libraryBody RBRACE;
 libraryBody: express*;
 
 express

@@ -2,6 +2,7 @@ package parser
 
 import (
 	. "../languages/design"
+	"fmt"
 )
 
 func NewDesignAppListener() *DesignAppListener {
@@ -13,8 +14,8 @@ type DesignAppListener struct {
 }
 
 
-func (s *DesignAppListener) EnterConfigDecalartion(ctx *ConfigDecalartionContext) {
-	//fmt.Println(ctx.ConfigKey().GetText(), ctx.ConfigValue().GetText())
+func (s *DesignAppListener) EnterConfigDeclaration(ctx *ConfigDeclarationContext) {
+	fmt.Println(ctx.ConfigKey().GetText(), ctx.ConfigValue().GetText())
 }
 
 func (s *DesignAppListener) EnterComponentName(ctx *ComponentNameContext) {

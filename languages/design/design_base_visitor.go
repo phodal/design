@@ -16,7 +16,7 @@ func (v *BaseDesignVisitor) VisitComment(ctx *CommentContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitConfigDecalartion(ctx *ConfigDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitConfigDeclaration(ctx *ConfigDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -36,27 +36,27 @@ func (v *BaseDesignVisitor) VisitDecalartions(ctx *DecalartionsContext) interfac
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitFlowDecalartion(ctx *FlowDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitFlowDeclaration(ctx *FlowDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitFlowBodyDecalartion(ctx *FlowBodyDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitFlowBodyDeclaration(ctx *FlowBodyDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitSeeDecalartion(ctx *SeeDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitSeeDeclaration(ctx *SeeDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitDoDecalartion(ctx *DoDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitDoDeclaration(ctx *DoDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitReactDecalartion(ctx *ReactDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitReactDeclaration(ctx *ReactDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitAnimateDecalartion(ctx *AnimateDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitAnimateDeclaration(ctx *AnimateDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -84,15 +84,15 @@ func (v *BaseDesignVisitor) VisitAnimateName(ctx *AnimateNameContext) interface{
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitPageDecalartion(ctx *PageDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitPageDeclaration(ctx *PageDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitComponentDecalartion(ctx *ComponentDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitComponentDeclaration(ctx *ComponentDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitComponentBodyDecalartion(ctx *ComponentBodyDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -100,7 +100,7 @@ func (v *BaseDesignVisitor) VisitLayoutDecalaration(ctx *LayoutDecalarationConte
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLayoutBodyDecalartion(ctx *LayoutBodyDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -116,7 +116,7 @@ func (v *BaseDesignVisitor) VisitComponentUseDeclaration(ctx *ComponentUseDeclar
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitStyleDecalartion(ctx *StyleDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitStyleDeclaration(ctx *StyleDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -128,7 +128,7 @@ func (v *BaseDesignVisitor) VisitStyleBody(ctx *StyleBodyContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLibraryDecalartion(ctx *LibraryDecalartionContext) interface{} {
+func (v *BaseDesignVisitor) VisitLibraryDeclaration(ctx *LibraryDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
