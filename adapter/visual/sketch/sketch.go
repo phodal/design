@@ -1,5 +1,0 @@
-package sketch
-
-func Parse()  {
-	
-}
