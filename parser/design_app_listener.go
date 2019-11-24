@@ -2,7 +2,6 @@ package parser
 
 import (
 	. "../languages/design"
-	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"reflect"
 )
@@ -190,22 +189,6 @@ func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayou
 	}
 }
 
-type LibraryPreset struct {
-	Key         string
-	Value       string
-	PresetCalls []PresetCall
-}
-
-type PresetCall struct {
-	LibraryName   string
-	LibraryPreset string
-}
-
-type DLibrary struct {
-	LibraryName    string
-	LibraryPresets []LibraryPreset
-}
-
 func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationContext) {
 	library := &DLibrary{
 		LibraryName:    "",
@@ -242,10 +225,14 @@ func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationConte
 	libraries = append(libraries, *library)
 }
 
-func (s *DesignAppListener) getDesignInformation() {
-	fmt.Println(projectConfigs)
-	fmt.Println(components)
-	fmt.Println(flows)
-	fmt.Println(layouts)
-	fmt.Println(libraries)
+func (s *DesignAppListener) getDesignInformation() *DesignInformation {
+	information := &DesignInformation{
+		ProjectConfigs: projectConfigs,
+		Flows:          flows,
+		Components:     components,
+		Layouts:        layouts,
+		Libraries:      libraries,
+	}
+
+	return information
 }
