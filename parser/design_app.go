@@ -22,7 +22,7 @@ func (j *DesignApp) Start(path string) []byte {
 
 	information := listener.getDesignInformation()
 
-	content, err := json.Marshal(information)
+	content, err := json.MarshalIndent(information, "", "\t")
 	if err != nil {
 		fmt.Println("error:", err)
 	}
