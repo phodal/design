@@ -3,13 +3,13 @@ feature: "design basic dsl"
 type: web
 width: 1080px
 
-flow 登录 {
+flow 登录ddalba {
     SEE 首页
     DO [Click] "登录".Button
         REACT Success: SHOW "Login Success".Toast with ANIMATE(bounce)
         REACT Failure: SHOW "Login Failure".Dialog
 
-    SEE "登录失败".窗口
+    SEE "登录失败".窗口2
     DO [Click] "忘记密码".Button
         REACT: GOTO ForgotPasswordPage
 
@@ -76,8 +76,14 @@ library FontSize {
 }
 
 library Color {
-    Primary = 4.3rem
-    Secondary = 3.4rem
+    Primary {
+        label = "Primary"
+        value = "#E53935"
+    }
+    Secondary {
+        label = "Blue"
+        value = "#1E88E5"
+    }
 }
 
 library Button {

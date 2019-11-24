@@ -74,10 +74,16 @@ func CreateInteraction() *DInteraction {
 	}
 }
 
+type DProperty struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
+
 type LibraryPreset struct {
-	Key         string       `json:"key"`
-	Value       string       `json:"value"`
-	PresetCalls []PresetCall `json:"presetCalls"`
+	Key           string       `json:"key"`
+	Value         string       `json:"value"`
+	PresetCalls   []PresetCall `json:"presetCalls"`
+	SubProperties []DProperty  `json:"subProperties"`
 }
 
 type PresetCall struct {

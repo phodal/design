@@ -4,6 +4,7 @@ import (
 	. "../languages/design"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"reflect"
+	"strings"
 )
 
 var projectConfigs = make(map[string]string)
@@ -61,6 +62,7 @@ func buildInteractions(declarationContexts []IInteractionDeclarationContext, int
 			} else {
 				componentName = seeCtx.ComponentName().GetText()
 				componentData = seeCtx.STRING_LITERAL().GetText()
+				componentData  = RemoveQuote(componentData)
 			}
 			seeModel := &DSee{
 				ComponentName: componentName,
@@ -143,6 +145,8 @@ func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationC
 			configKey := declaration.GetChild(0).(*ConfigKeyContext).GetText()
 			configValue := declaration.GetChild(2).(*ConfigValueContext).GetText()
 
+			configValue  = RemoveQuote(configValue)
+
 			componentConfigs[configKey] = configValue
 		}
 
@@ -204,6 +208,7 @@ func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationConte
 			Key:         "",
 			Value:       "",
 			PresetCalls: nil,
+			SubProperties: nil,
 		}
 		preset.Key = express.(*LibraryExpressContext).PresetKey().GetText()
 		pairCtx := express.GetChild(2)
@@ -220,12 +225,26 @@ func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationConte
 
 				preset.PresetCalls = append(preset.PresetCalls, *presetCall)
 			}
+		case "*parser.KeyValueContext":
+			for _, keyValue := range express.(*LibraryExpressContext).AllKeyValue() {
+				key := keyValue.(*KeyValueContext).PresetKey().GetText()
+				value := keyValue.(*KeyValueContext).PresetValue().GetText()
+
+				value = RemoveQuote(value)
+
+				preset.SubProperties = append(preset.SubProperties, *&DProperty{key, value})
+			}
+
 		}
 
 		library.LibraryPresets = append(library.LibraryPresets, *preset)
 	}
 
 	libraries = append(libraries, *library)
+}
+
+func RemoveQuote(value string) string {
+	return strings.ReplaceAll(value, "\"", "")
 }
 
 func (s *DesignAppListener) getDesignInformation() *DesignInformation {

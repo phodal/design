@@ -16,7 +16,7 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 49, 340,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 49, 358,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
@@ -24,142 +24,151 @@ var parserATN = []uint16{
 	4, 24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 4, 27, 9, 27, 4, 28, 9, 28, 4,
 	29, 9, 29, 4, 30, 9, 30, 4, 31, 9, 31, 4, 32, 9, 32, 4, 33, 9, 33, 4, 34,
 	9, 34, 4, 35, 9, 35, 4, 36, 9, 36, 4, 37, 9, 37, 4, 38, 9, 38, 4, 39, 9,
-	39, 4, 40, 9, 40, 4, 41, 9, 41, 3, 2, 3, 2, 3, 2, 7, 2, 86, 10, 2, 12,
-	2, 14, 2, 89, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3,
-	5, 3, 5, 3, 6, 3, 6, 5, 6, 103, 10, 6, 3, 6, 3, 6, 5, 6, 107, 10, 6, 3,
-	6, 3, 6, 5, 6, 111, 10, 6, 3, 6, 3, 6, 3, 6, 5, 6, 116, 10, 6, 3, 6, 5,
-	6, 119, 10, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 5,
-	8, 130, 10, 8, 3, 9, 3, 9, 3, 9, 3, 9, 7, 9, 136, 10, 9, 12, 9, 14, 9,
-	139, 11, 9, 3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 5, 10, 146, 10, 10, 3, 11,
-	3, 11, 3, 11, 3, 11, 3, 11, 5, 11, 153, 10, 11, 3, 12, 3, 12, 3, 12, 3,
-	12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 5, 13, 165, 10, 13, 3, 13,
-	3, 13, 3, 13, 5, 13, 170, 10, 13, 3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 3,
-	14, 3, 15, 3, 15, 5, 15, 180, 10, 15, 3, 16, 3, 16, 3, 16, 3, 17, 3, 17,
-	3, 17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 19, 3, 19, 3, 20, 3, 20, 3, 21, 3,
-	21, 3, 22, 3, 22, 3, 23, 3, 23, 3, 23, 3, 23, 7, 23, 204, 10, 23, 12, 23,
-	14, 23, 207, 11, 23, 3, 23, 3, 23, 3, 24, 3, 24, 3, 24, 3, 24, 7, 24, 215,
-	10, 24, 12, 24, 14, 24, 218, 11, 24, 3, 24, 3, 24, 3, 25, 3, 25, 3, 25,
-	7, 25, 225, 10, 25, 12, 25, 14, 25, 228, 11, 25, 3, 25, 3, 25, 3, 25, 3,
-	25, 5, 25, 234, 10, 25, 3, 26, 3, 26, 3, 26, 3, 26, 7, 26, 240, 10, 26,
-	12, 26, 14, 26, 243, 11, 26, 3, 26, 3, 26, 3, 27, 3, 27, 7, 27, 249, 10,
-	27, 12, 27, 14, 27, 252, 11, 27, 3, 27, 3, 27, 3, 27, 5, 27, 257, 10, 27,
-	3, 28, 3, 28, 7, 28, 261, 10, 28, 12, 28, 14, 28, 264, 11, 28, 3, 29, 3,
-	29, 3, 29, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 5, 30, 276,
-	10, 30, 3, 30, 5, 30, 279, 10, 30, 3, 31, 3, 31, 3, 32, 3, 32, 3, 32, 3,
-	32, 3, 32, 3, 32, 3, 33, 3, 33, 3, 34, 3, 34, 3, 34, 7, 34, 294, 10, 34,
-	12, 34, 14, 34, 297, 11, 34, 3, 35, 3, 35, 3, 35, 3, 35, 7, 35, 303, 10,
-	35, 12, 35, 14, 35, 306, 11, 35, 3, 35, 3, 35, 3, 36, 3, 36, 3, 36, 3,
-	36, 5, 36, 314, 10, 36, 3, 36, 5, 36, 317, 10, 36, 3, 37, 3, 37, 3, 38,
-	3, 38, 3, 39, 3, 39, 3, 39, 3, 39, 7, 39, 327, 10, 39, 12, 39, 14, 39,
-	330, 11, 39, 3, 39, 3, 39, 3, 40, 3, 40, 3, 40, 3, 40, 3, 41, 3, 41, 3,
-	41, 2, 2, 42, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32,
-	34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68,
-	70, 72, 74, 76, 78, 80, 2, 4, 3, 2, 3, 5, 5, 2, 21, 21, 26, 26, 47, 47,
-	2, 340, 2, 87, 3, 2, 2, 2, 4, 92, 3, 2, 2, 2, 6, 94, 3, 2, 2, 2, 8, 98,
-	3, 2, 2, 2, 10, 118, 3, 2, 2, 2, 12, 120, 3, 2, 2, 2, 14, 129, 3, 2, 2,
-	2, 16, 131, 3, 2, 2, 2, 18, 145, 3, 2, 2, 2, 20, 147, 3, 2, 2, 2, 22, 154,
-	3, 2, 2, 2, 24, 162, 3, 2, 2, 2, 26, 171, 3, 2, 2, 2, 28, 179, 3, 2, 2,
-	2, 30, 181, 3, 2, 2, 2, 32, 184, 3, 2, 2, 2, 34, 189, 3, 2, 2, 2, 36, 191,
-	3, 2, 2, 2, 38, 193, 3, 2, 2, 2, 40, 195, 3, 2, 2, 2, 42, 197, 3, 2, 2,
-	2, 44, 199, 3, 2, 2, 2, 46, 210, 3, 2, 2, 2, 48, 233, 3, 2, 2, 2, 50, 235,
-	3, 2, 2, 2, 52, 256, 3, 2, 2, 2, 54, 258, 3, 2, 2, 2, 56, 265, 3, 2, 2,
-	2, 58, 278, 3, 2, 2, 2, 60, 280, 3, 2, 2, 2, 62, 282, 3, 2, 2, 2, 64, 288,
-	3, 2, 2, 2, 66, 295, 3, 2, 2, 2, 68, 298, 3, 2, 2, 2, 70, 309, 3, 2, 2,
-	2, 72, 318, 3, 2, 2, 2, 74, 320, 3, 2, 2, 2, 76, 322, 3, 2, 2, 2, 78, 333,
-	3, 2, 2, 2, 80, 337, 3, 2, 2, 2, 82, 86, 5, 4, 3, 2, 83, 86, 5, 6, 4, 2,
-	84, 86, 5, 14, 8, 2, 85, 82, 3, 2, 2, 2, 85, 83, 3, 2, 2, 2, 85, 84, 3,
-	2, 2, 2, 86, 89, 3, 2, 2, 2, 87, 85, 3, 2, 2, 2, 87, 88, 3, 2, 2, 2, 88,
-	90, 3, 2, 2, 2, 89, 87, 3, 2, 2, 2, 90, 91, 7, 2, 2, 3, 91, 3, 3, 2, 2,
-	2, 92, 93, 7, 45, 2, 2, 93, 5, 3, 2, 2, 2, 94, 95, 5, 8, 5, 2, 95, 96,
-	7, 41, 2, 2, 96, 97, 5, 10, 6, 2, 97, 7, 3, 2, 2, 2, 98, 99, 7, 45, 2,
-	2, 99, 9, 3, 2, 2, 2, 100, 102, 7, 47, 2, 2, 101, 103, 5, 12, 7, 2, 102,
-	101, 3, 2, 2, 2, 102, 103, 3, 2, 2, 2, 103, 119, 3, 2, 2, 2, 104, 106,
-	7, 48, 2, 2, 105, 107, 5, 12, 7, 2, 106, 105, 3, 2, 2, 2, 106, 107, 3,
-	2, 2, 2, 107, 119, 3, 2, 2, 2, 108, 110, 7, 49, 2, 2, 109, 111, 5, 12,
-	7, 2, 110, 109, 3, 2, 2, 2, 110, 111, 3, 2, 2, 2, 111, 119, 3, 2, 2, 2,
-	112, 115, 7, 45, 2, 2, 113, 114, 7, 43, 2, 2, 114, 116, 7, 45, 2, 2, 115,
-	113, 3, 2, 2, 2, 115, 116, 3, 2, 2, 2, 116, 119, 3, 2, 2, 2, 117, 119,
-	7, 26, 2, 2, 118, 100, 3, 2, 2, 2, 118, 104, 3, 2, 2, 2, 118, 108, 3, 2,
-	2, 2, 118, 112, 3, 2, 2, 2, 118, 117, 3, 2, 2, 2, 119, 11, 3, 2, 2, 2,
-	120, 121, 9, 2, 2, 2, 121, 13, 3, 2, 2, 2, 122, 130, 5, 6, 4, 2, 123, 130,
-	5, 16, 9, 2, 124, 130, 5, 44, 23, 2, 125, 130, 5, 62, 32, 2, 126, 130,
-	5, 46, 24, 2, 127, 130, 5, 68, 35, 2, 128, 130, 5, 50, 26, 2, 129, 122,
-	3, 2, 2, 2, 129, 123, 3, 2, 2, 2, 129, 124, 3, 2, 2, 2, 129, 125, 3, 2,
-	2, 2, 129, 126, 3, 2, 2, 2, 129, 127, 3, 2, 2, 2, 129, 128, 3, 2, 2, 2,
-	130, 15, 3, 2, 2, 2, 131, 132, 7, 12, 2, 2, 132, 133, 7, 45, 2, 2, 133,
-	137, 7, 35, 2, 2, 134, 136, 5, 18, 10, 2, 135, 134, 3, 2, 2, 2, 136, 139,
-	3, 2, 2, 2, 137, 135, 3, 2, 2, 2, 137, 138, 3, 2, 2, 2, 138, 140, 3, 2,
-	2, 2, 139, 137, 3, 2, 2, 2, 140, 141, 7, 36, 2, 2, 141, 17, 3, 2, 2, 2,
-	142, 146, 5, 20, 11, 2, 143, 146, 5, 22, 12, 2, 144, 146, 5, 24, 13, 2,
-	145, 142, 3, 2, 2, 2, 145, 143, 3, 2, 2, 2, 145, 144, 3, 2, 2, 2, 146,
-	19, 3, 2, 2, 2, 147, 152, 7, 13, 2, 2, 148, 153, 7, 45, 2, 2, 149, 150,
-	7, 26, 2, 2, 150, 151, 7, 42, 2, 2, 151, 153, 5, 38, 20, 2, 152, 148, 3,
-	2, 2, 2, 152, 149, 3, 2, 2, 2, 153, 21, 3, 2, 2, 2, 154, 155, 7, 14, 2,
-	2, 155, 156, 7, 37, 2, 2, 156, 157, 5, 34, 18, 2, 157, 158, 7, 38, 2, 2,
-	158, 159, 7, 26, 2, 2, 159, 160, 7, 42, 2, 2, 160, 161, 5, 38, 20, 2, 161,
-	23, 3, 2, 2, 2, 162, 164, 7, 15, 2, 2, 163, 165, 5, 40, 21, 2, 164, 163,
-	3, 2, 2, 2, 164, 165, 3, 2, 2, 2, 165, 166, 3, 2, 2, 2, 166, 167, 7, 41,
-	2, 2, 167, 169, 5, 28, 15, 2, 168, 170, 5, 26, 14, 2, 169, 168, 3, 2, 2,
-	2, 169, 170, 3, 2, 2, 2, 170, 25, 3, 2, 2, 2, 171, 172, 7, 16, 2, 2, 172,
-	173, 7, 17, 2, 2, 173, 174, 7, 33, 2, 2, 174, 175, 5, 42, 22, 2, 175, 176,
-	7, 34, 2, 2, 176, 27, 3, 2, 2, 2, 177, 180, 5, 30, 16, 2, 178, 180, 5,
-	32, 17, 2, 179, 177, 3, 2, 2, 2, 179, 178, 3, 2, 2, 2, 180, 29, 3, 2, 2,
-	2, 181, 182, 7, 10, 2, 2, 182, 183, 5, 38, 20, 2, 183, 31, 3, 2, 2, 2,
-	184, 185, 7, 11, 2, 2, 185, 186, 7, 26, 2, 2, 186, 187, 7, 42, 2, 2, 187,
-	188, 5, 38, 20, 2, 188, 33, 3, 2, 2, 2, 189, 190, 7, 45, 2, 2, 190, 35,
-	3, 2, 2, 2, 191, 192, 7, 45, 2, 2, 192, 37, 3, 2, 2, 2, 193, 194, 7, 45,
-	2, 2, 194, 39, 3, 2, 2, 2, 195, 196, 7, 45, 2, 2, 196, 41, 3, 2, 2, 2,
-	197, 198, 7, 45, 2, 2, 198, 43, 3, 2, 2, 2, 199, 200, 7, 22, 2, 2, 200,
-	201, 7, 45, 2, 2, 201, 205, 7, 35, 2, 2, 202, 204, 5, 48, 25, 2, 203, 202,
-	3, 2, 2, 2, 204, 207, 3, 2, 2, 2, 205, 203, 3, 2, 2, 2, 205, 206, 3, 2,
-	2, 2, 206, 208, 3, 2, 2, 2, 207, 205, 3, 2, 2, 2, 208, 209, 7, 36, 2, 2,
-	209, 45, 3, 2, 2, 2, 210, 211, 7, 23, 2, 2, 211, 212, 7, 45, 2, 2, 212,
-	216, 7, 35, 2, 2, 213, 215, 5, 48, 25, 2, 214, 213, 3, 2, 2, 2, 215, 218,
-	3, 2, 2, 2, 216, 214, 3, 2, 2, 2, 216, 217, 3, 2, 2, 2, 217, 219, 3, 2,
-	2, 2, 218, 216, 3, 2, 2, 2, 219, 220, 7, 36, 2, 2, 220, 47, 3, 2, 2, 2,
-	221, 226, 5, 38, 20, 2, 222, 223, 7, 43, 2, 2, 223, 225, 5, 38, 20, 2,
-	224, 222, 3, 2, 2, 2, 225, 228, 3, 2, 2, 2, 226, 224, 3, 2, 2, 2, 226,
-	227, 3, 2, 2, 2, 227, 234, 3, 2, 2, 2, 228, 226, 3, 2, 2, 2, 229, 230,
-	5, 8, 5, 2, 230, 231, 7, 41, 2, 2, 231, 232, 5, 10, 6, 2, 232, 234, 3,
-	2, 2, 2, 233, 221, 3, 2, 2, 2, 233, 229, 3, 2, 2, 2, 234, 49, 3, 2, 2,
-	2, 235, 236, 7, 20, 2, 2, 236, 237, 7, 45, 2, 2, 237, 241, 7, 35, 2, 2,
-	238, 240, 5, 52, 27, 2, 239, 238, 3, 2, 2, 2, 240, 243, 3, 2, 2, 2, 241,
-	239, 3, 2, 2, 2, 241, 242, 3, 2, 2, 2, 242, 244, 3, 2, 2, 2, 243, 241,
-	3, 2, 2, 2, 244, 245, 7, 36, 2, 2, 245, 51, 3, 2, 2, 2, 246, 250, 7, 6,
-	2, 2, 247, 249, 7, 6, 2, 2, 248, 247, 3, 2, 2, 2, 249, 252, 3, 2, 2, 2,
-	250, 248, 3, 2, 2, 2, 250, 251, 3, 2, 2, 2, 251, 257, 3, 2, 2, 2, 252,
-	250, 3, 2, 2, 2, 253, 254, 5, 54, 28, 2, 254, 255, 7, 7, 2, 2, 255, 257,
-	3, 2, 2, 2, 256, 246, 3, 2, 2, 2, 256, 253, 3, 2, 2, 2, 257, 53, 3, 2,
-	2, 2, 258, 262, 5, 56, 29, 2, 259, 261, 5, 56, 29, 2, 260, 259, 3, 2, 2,
-	2, 261, 264, 3, 2, 2, 2, 262, 260, 3, 2, 2, 2, 262, 263, 3, 2, 2, 2, 263,
-	55, 3, 2, 2, 2, 264, 262, 3, 2, 2, 2, 265, 266, 7, 7, 2, 2, 266, 267, 5,
-	58, 30, 2, 267, 57, 3, 2, 2, 2, 268, 279, 7, 48, 2, 2, 269, 279, 7, 21,
-	2, 2, 270, 275, 5, 38, 20, 2, 271, 272, 7, 33, 2, 2, 272, 273, 5, 60, 31,
-	2, 273, 274, 7, 34, 2, 2, 274, 276, 3, 2, 2, 2, 275, 271, 3, 2, 2, 2, 275,
-	276, 3, 2, 2, 2, 276, 279, 3, 2, 2, 2, 277, 279, 7, 26, 2, 2, 278, 268,
-	3, 2, 2, 2, 278, 269, 3, 2, 2, 2, 278, 270, 3, 2, 2, 2, 278, 277, 3, 2,
-	2, 2, 279, 59, 3, 2, 2, 2, 280, 281, 9, 3, 2, 2, 281, 61, 3, 2, 2, 2, 282,
-	283, 7, 24, 2, 2, 283, 284, 5, 64, 33, 2, 284, 285, 7, 35, 2, 2, 285, 286,
-	5, 66, 34, 2, 286, 287, 7, 36, 2, 2, 287, 63, 3, 2, 2, 2, 288, 289, 7,
-	45, 2, 2, 289, 65, 3, 2, 2, 2, 290, 291, 5, 6, 4, 2, 291, 292, 7, 8, 2,
-	2, 292, 294, 3, 2, 2, 2, 293, 290, 3, 2, 2, 2, 294, 297, 3, 2, 2, 2, 295,
-	293, 3, 2, 2, 2, 295, 296, 3, 2, 2, 2, 296, 67, 3, 2, 2, 2, 297, 295, 3,
-	2, 2, 2, 298, 299, 7, 25, 2, 2, 299, 300, 5, 80, 41, 2, 300, 304, 7, 35,
-	2, 2, 301, 303, 5, 70, 36, 2, 302, 301, 3, 2, 2, 2, 303, 306, 3, 2, 2,
-	2, 304, 302, 3, 2, 2, 2, 304, 305, 3, 2, 2, 2, 305, 307, 3, 2, 2, 2, 306,
-	304, 3, 2, 2, 2, 307, 308, 7, 36, 2, 2, 308, 69, 3, 2, 2, 2, 309, 310,
-	5, 72, 37, 2, 310, 313, 7, 9, 2, 2, 311, 314, 5, 74, 38, 2, 312, 314, 5,
-	76, 39, 2, 313, 311, 3, 2, 2, 2, 313, 312, 3, 2, 2, 2, 314, 316, 3, 2,
-	2, 2, 315, 317, 7, 8, 2, 2, 316, 315, 3, 2, 2, 2, 316, 317, 3, 2, 2, 2,
-	317, 71, 3, 2, 2, 2, 318, 319, 7, 45, 2, 2, 319, 73, 3, 2, 2, 2, 320, 321,
-	5, 10, 6, 2, 321, 75, 3, 2, 2, 2, 322, 323, 7, 37, 2, 2, 323, 328, 5, 78,
-	40, 2, 324, 325, 7, 43, 2, 2, 325, 327, 5, 78, 40, 2, 326, 324, 3, 2, 2,
-	2, 327, 330, 3, 2, 2, 2, 328, 326, 3, 2, 2, 2, 328, 329, 3, 2, 2, 2, 329,
-	331, 3, 2, 2, 2, 330, 328, 3, 2, 2, 2, 331, 332, 7, 38, 2, 2, 332, 77,
-	3, 2, 2, 2, 333, 334, 5, 80, 41, 2, 334, 335, 7, 42, 2, 2, 335, 336, 7,
-	45, 2, 2, 336, 79, 3, 2, 2, 2, 337, 338, 7, 45, 2, 2, 338, 81, 3, 2, 2,
-	2, 31, 85, 87, 102, 106, 110, 115, 118, 129, 137, 145, 152, 164, 169, 179,
-	205, 216, 226, 233, 241, 250, 256, 262, 275, 278, 295, 304, 313, 316, 328,
+	39, 4, 40, 9, 40, 4, 41, 9, 41, 4, 42, 9, 42, 3, 2, 3, 2, 3, 2, 7, 2, 88,
+	10, 2, 12, 2, 14, 2, 91, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 4, 3, 4, 3,
+	4, 3, 4, 3, 5, 3, 5, 3, 6, 3, 6, 5, 6, 105, 10, 6, 3, 6, 3, 6, 5, 6, 109,
+	10, 6, 3, 6, 3, 6, 5, 6, 113, 10, 6, 3, 6, 3, 6, 3, 6, 5, 6, 118, 10, 6,
+	3, 6, 5, 6, 121, 10, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8, 3, 8,
+	3, 8, 5, 8, 132, 10, 8, 3, 9, 3, 9, 3, 9, 3, 9, 7, 9, 138, 10, 9, 12, 9,
+	14, 9, 141, 11, 9, 3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 5, 10, 148, 10, 10,
+	3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 5, 11, 155, 10, 11, 3, 12, 3, 12, 3,
+	12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 5, 13, 167, 10, 13,
+	3, 13, 3, 13, 3, 13, 5, 13, 172, 10, 13, 3, 14, 3, 14, 3, 14, 3, 14, 3,
+	14, 3, 14, 3, 15, 3, 15, 5, 15, 182, 10, 15, 3, 16, 3, 16, 3, 16, 3, 17,
+	3, 17, 3, 17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 19, 3, 19, 3, 20, 3, 20, 3,
+	21, 3, 21, 3, 22, 3, 22, 3, 23, 3, 23, 3, 23, 3, 23, 7, 23, 206, 10, 23,
+	12, 23, 14, 23, 209, 11, 23, 3, 23, 3, 23, 3, 24, 3, 24, 3, 24, 3, 24,
+	7, 24, 217, 10, 24, 12, 24, 14, 24, 220, 11, 24, 3, 24, 3, 24, 3, 25, 3,
+	25, 3, 25, 7, 25, 227, 10, 25, 12, 25, 14, 25, 230, 11, 25, 3, 25, 3, 25,
+	3, 25, 3, 25, 5, 25, 236, 10, 25, 3, 26, 3, 26, 3, 26, 3, 26, 7, 26, 242,
+	10, 26, 12, 26, 14, 26, 245, 11, 26, 3, 26, 3, 26, 3, 27, 3, 27, 7, 27,
+	251, 10, 27, 12, 27, 14, 27, 254, 11, 27, 3, 27, 3, 27, 3, 27, 5, 27, 259,
+	10, 27, 3, 28, 3, 28, 7, 28, 263, 10, 28, 12, 28, 14, 28, 266, 11, 28,
+	3, 29, 3, 29, 3, 29, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 3, 30, 5,
+	30, 278, 10, 30, 3, 30, 5, 30, 281, 10, 30, 3, 31, 3, 31, 3, 32, 3, 32,
+	3, 32, 3, 32, 3, 32, 3, 32, 3, 33, 3, 33, 3, 34, 3, 34, 3, 34, 7, 34, 296,
+	10, 34, 12, 34, 14, 34, 299, 11, 34, 3, 35, 3, 35, 3, 35, 3, 35, 7, 35,
+	305, 10, 35, 12, 35, 14, 35, 308, 11, 35, 3, 35, 3, 35, 3, 36, 3, 36, 3,
+	36, 3, 36, 5, 36, 316, 10, 36, 3, 36, 5, 36, 319, 10, 36, 3, 36, 3, 36,
+	3, 36, 7, 36, 324, 10, 36, 12, 36, 14, 36, 327, 11, 36, 3, 36, 3, 36, 5,
+	36, 331, 10, 36, 3, 37, 3, 37, 3, 37, 3, 37, 3, 38, 3, 38, 3, 39, 3, 39,
+	3, 40, 3, 40, 3, 40, 3, 40, 7, 40, 345, 10, 40, 12, 40, 14, 40, 348, 11,
+	40, 3, 40, 3, 40, 3, 41, 3, 41, 3, 41, 3, 41, 3, 42, 3, 42, 3, 42, 2, 2,
+	43, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36,
+	38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72,
+	74, 76, 78, 80, 82, 2, 4, 3, 2, 3, 5, 5, 2, 21, 21, 26, 26, 47, 47, 2,
+	359, 2, 89, 3, 2, 2, 2, 4, 94, 3, 2, 2, 2, 6, 96, 3, 2, 2, 2, 8, 100, 3,
+	2, 2, 2, 10, 120, 3, 2, 2, 2, 12, 122, 3, 2, 2, 2, 14, 131, 3, 2, 2, 2,
+	16, 133, 3, 2, 2, 2, 18, 147, 3, 2, 2, 2, 20, 149, 3, 2, 2, 2, 22, 156,
+	3, 2, 2, 2, 24, 164, 3, 2, 2, 2, 26, 173, 3, 2, 2, 2, 28, 181, 3, 2, 2,
+	2, 30, 183, 3, 2, 2, 2, 32, 186, 3, 2, 2, 2, 34, 191, 3, 2, 2, 2, 36, 193,
+	3, 2, 2, 2, 38, 195, 3, 2, 2, 2, 40, 197, 3, 2, 2, 2, 42, 199, 3, 2, 2,
+	2, 44, 201, 3, 2, 2, 2, 46, 212, 3, 2, 2, 2, 48, 235, 3, 2, 2, 2, 50, 237,
+	3, 2, 2, 2, 52, 258, 3, 2, 2, 2, 54, 260, 3, 2, 2, 2, 56, 267, 3, 2, 2,
+	2, 58, 280, 3, 2, 2, 2, 60, 282, 3, 2, 2, 2, 62, 284, 3, 2, 2, 2, 64, 290,
+	3, 2, 2, 2, 66, 297, 3, 2, 2, 2, 68, 300, 3, 2, 2, 2, 70, 330, 3, 2, 2,
+	2, 72, 332, 3, 2, 2, 2, 74, 336, 3, 2, 2, 2, 76, 338, 3, 2, 2, 2, 78, 340,
+	3, 2, 2, 2, 80, 351, 3, 2, 2, 2, 82, 355, 3, 2, 2, 2, 84, 88, 5, 4, 3,
+	2, 85, 88, 5, 6, 4, 2, 86, 88, 5, 14, 8, 2, 87, 84, 3, 2, 2, 2, 87, 85,
+	3, 2, 2, 2, 87, 86, 3, 2, 2, 2, 88, 91, 3, 2, 2, 2, 89, 87, 3, 2, 2, 2,
+	89, 90, 3, 2, 2, 2, 90, 92, 3, 2, 2, 2, 91, 89, 3, 2, 2, 2, 92, 93, 7,
+	2, 2, 3, 93, 3, 3, 2, 2, 2, 94, 95, 7, 45, 2, 2, 95, 5, 3, 2, 2, 2, 96,
+	97, 5, 8, 5, 2, 97, 98, 7, 41, 2, 2, 98, 99, 5, 10, 6, 2, 99, 7, 3, 2,
+	2, 2, 100, 101, 7, 45, 2, 2, 101, 9, 3, 2, 2, 2, 102, 104, 7, 47, 2, 2,
+	103, 105, 5, 12, 7, 2, 104, 103, 3, 2, 2, 2, 104, 105, 3, 2, 2, 2, 105,
+	121, 3, 2, 2, 2, 106, 108, 7, 48, 2, 2, 107, 109, 5, 12, 7, 2, 108, 107,
+	3, 2, 2, 2, 108, 109, 3, 2, 2, 2, 109, 121, 3, 2, 2, 2, 110, 112, 7, 49,
+	2, 2, 111, 113, 5, 12, 7, 2, 112, 111, 3, 2, 2, 2, 112, 113, 3, 2, 2, 2,
+	113, 121, 3, 2, 2, 2, 114, 117, 7, 45, 2, 2, 115, 116, 7, 43, 2, 2, 116,
+	118, 7, 45, 2, 2, 117, 115, 3, 2, 2, 2, 117, 118, 3, 2, 2, 2, 118, 121,
+	3, 2, 2, 2, 119, 121, 7, 26, 2, 2, 120, 102, 3, 2, 2, 2, 120, 106, 3, 2,
+	2, 2, 120, 110, 3, 2, 2, 2, 120, 114, 3, 2, 2, 2, 120, 119, 3, 2, 2, 2,
+	121, 11, 3, 2, 2, 2, 122, 123, 9, 2, 2, 2, 123, 13, 3, 2, 2, 2, 124, 132,
+	5, 6, 4, 2, 125, 132, 5, 16, 9, 2, 126, 132, 5, 44, 23, 2, 127, 132, 5,
+	62, 32, 2, 128, 132, 5, 46, 24, 2, 129, 132, 5, 68, 35, 2, 130, 132, 5,
+	50, 26, 2, 131, 124, 3, 2, 2, 2, 131, 125, 3, 2, 2, 2, 131, 126, 3, 2,
+	2, 2, 131, 127, 3, 2, 2, 2, 131, 128, 3, 2, 2, 2, 131, 129, 3, 2, 2, 2,
+	131, 130, 3, 2, 2, 2, 132, 15, 3, 2, 2, 2, 133, 134, 7, 12, 2, 2, 134,
+	135, 7, 45, 2, 2, 135, 139, 7, 35, 2, 2, 136, 138, 5, 18, 10, 2, 137, 136,
+	3, 2, 2, 2, 138, 141, 3, 2, 2, 2, 139, 137, 3, 2, 2, 2, 139, 140, 3, 2,
+	2, 2, 140, 142, 3, 2, 2, 2, 141, 139, 3, 2, 2, 2, 142, 143, 7, 36, 2, 2,
+	143, 17, 3, 2, 2, 2, 144, 148, 5, 20, 11, 2, 145, 148, 5, 22, 12, 2, 146,
+	148, 5, 24, 13, 2, 147, 144, 3, 2, 2, 2, 147, 145, 3, 2, 2, 2, 147, 146,
+	3, 2, 2, 2, 148, 19, 3, 2, 2, 2, 149, 154, 7, 13, 2, 2, 150, 155, 7, 45,
+	2, 2, 151, 152, 7, 26, 2, 2, 152, 153, 7, 42, 2, 2, 153, 155, 5, 38, 20,
+	2, 154, 150, 3, 2, 2, 2, 154, 151, 3, 2, 2, 2, 155, 21, 3, 2, 2, 2, 156,
+	157, 7, 14, 2, 2, 157, 158, 7, 37, 2, 2, 158, 159, 5, 34, 18, 2, 159, 160,
+	7, 38, 2, 2, 160, 161, 7, 26, 2, 2, 161, 162, 7, 42, 2, 2, 162, 163, 5,
+	38, 20, 2, 163, 23, 3, 2, 2, 2, 164, 166, 7, 15, 2, 2, 165, 167, 5, 40,
+	21, 2, 166, 165, 3, 2, 2, 2, 166, 167, 3, 2, 2, 2, 167, 168, 3, 2, 2, 2,
+	168, 169, 7, 41, 2, 2, 169, 171, 5, 28, 15, 2, 170, 172, 5, 26, 14, 2,
+	171, 170, 3, 2, 2, 2, 171, 172, 3, 2, 2, 2, 172, 25, 3, 2, 2, 2, 173, 174,
+	7, 16, 2, 2, 174, 175, 7, 17, 2, 2, 175, 176, 7, 33, 2, 2, 176, 177, 5,
+	42, 22, 2, 177, 178, 7, 34, 2, 2, 178, 27, 3, 2, 2, 2, 179, 182, 5, 30,
+	16, 2, 180, 182, 5, 32, 17, 2, 181, 179, 3, 2, 2, 2, 181, 180, 3, 2, 2,
+	2, 182, 29, 3, 2, 2, 2, 183, 184, 7, 10, 2, 2, 184, 185, 5, 38, 20, 2,
+	185, 31, 3, 2, 2, 2, 186, 187, 7, 11, 2, 2, 187, 188, 7, 26, 2, 2, 188,
+	189, 7, 42, 2, 2, 189, 190, 5, 38, 20, 2, 190, 33, 3, 2, 2, 2, 191, 192,
+	7, 45, 2, 2, 192, 35, 3, 2, 2, 2, 193, 194, 7, 45, 2, 2, 194, 37, 3, 2,
+	2, 2, 195, 196, 7, 45, 2, 2, 196, 39, 3, 2, 2, 2, 197, 198, 7, 45, 2, 2,
+	198, 41, 3, 2, 2, 2, 199, 200, 7, 45, 2, 2, 200, 43, 3, 2, 2, 2, 201, 202,
+	7, 22, 2, 2, 202, 203, 7, 45, 2, 2, 203, 207, 7, 35, 2, 2, 204, 206, 5,
+	48, 25, 2, 205, 204, 3, 2, 2, 2, 206, 209, 3, 2, 2, 2, 207, 205, 3, 2,
+	2, 2, 207, 208, 3, 2, 2, 2, 208, 210, 3, 2, 2, 2, 209, 207, 3, 2, 2, 2,
+	210, 211, 7, 36, 2, 2, 211, 45, 3, 2, 2, 2, 212, 213, 7, 23, 2, 2, 213,
+	214, 7, 45, 2, 2, 214, 218, 7, 35, 2, 2, 215, 217, 5, 48, 25, 2, 216, 215,
+	3, 2, 2, 2, 217, 220, 3, 2, 2, 2, 218, 216, 3, 2, 2, 2, 218, 219, 3, 2,
+	2, 2, 219, 221, 3, 2, 2, 2, 220, 218, 3, 2, 2, 2, 221, 222, 7, 36, 2, 2,
+	222, 47, 3, 2, 2, 2, 223, 228, 5, 38, 20, 2, 224, 225, 7, 43, 2, 2, 225,
+	227, 5, 38, 20, 2, 226, 224, 3, 2, 2, 2, 227, 230, 3, 2, 2, 2, 228, 226,
+	3, 2, 2, 2, 228, 229, 3, 2, 2, 2, 229, 236, 3, 2, 2, 2, 230, 228, 3, 2,
+	2, 2, 231, 232, 5, 8, 5, 2, 232, 233, 7, 41, 2, 2, 233, 234, 5, 10, 6,
+	2, 234, 236, 3, 2, 2, 2, 235, 223, 3, 2, 2, 2, 235, 231, 3, 2, 2, 2, 236,
+	49, 3, 2, 2, 2, 237, 238, 7, 20, 2, 2, 238, 239, 7, 45, 2, 2, 239, 243,
+	7, 35, 2, 2, 240, 242, 5, 52, 27, 2, 241, 240, 3, 2, 2, 2, 242, 245, 3,
+	2, 2, 2, 243, 241, 3, 2, 2, 2, 243, 244, 3, 2, 2, 2, 244, 246, 3, 2, 2,
+	2, 245, 243, 3, 2, 2, 2, 246, 247, 7, 36, 2, 2, 247, 51, 3, 2, 2, 2, 248,
+	252, 7, 6, 2, 2, 249, 251, 7, 6, 2, 2, 250, 249, 3, 2, 2, 2, 251, 254,
+	3, 2, 2, 2, 252, 250, 3, 2, 2, 2, 252, 253, 3, 2, 2, 2, 253, 259, 3, 2,
+	2, 2, 254, 252, 3, 2, 2, 2, 255, 256, 5, 54, 28, 2, 256, 257, 7, 7, 2,
+	2, 257, 259, 3, 2, 2, 2, 258, 248, 3, 2, 2, 2, 258, 255, 3, 2, 2, 2, 259,
+	53, 3, 2, 2, 2, 260, 264, 5, 56, 29, 2, 261, 263, 5, 56, 29, 2, 262, 261,
+	3, 2, 2, 2, 263, 266, 3, 2, 2, 2, 264, 262, 3, 2, 2, 2, 264, 265, 3, 2,
+	2, 2, 265, 55, 3, 2, 2, 2, 266, 264, 3, 2, 2, 2, 267, 268, 7, 7, 2, 2,
+	268, 269, 5, 58, 30, 2, 269, 57, 3, 2, 2, 2, 270, 281, 7, 48, 2, 2, 271,
+	281, 7, 21, 2, 2, 272, 277, 5, 38, 20, 2, 273, 274, 7, 33, 2, 2, 274, 275,
+	5, 60, 31, 2, 275, 276, 7, 34, 2, 2, 276, 278, 3, 2, 2, 2, 277, 273, 3,
+	2, 2, 2, 277, 278, 3, 2, 2, 2, 278, 281, 3, 2, 2, 2, 279, 281, 7, 26, 2,
+	2, 280, 270, 3, 2, 2, 2, 280, 271, 3, 2, 2, 2, 280, 272, 3, 2, 2, 2, 280,
+	279, 3, 2, 2, 2, 281, 59, 3, 2, 2, 2, 282, 283, 9, 3, 2, 2, 283, 61, 3,
+	2, 2, 2, 284, 285, 7, 24, 2, 2, 285, 286, 5, 64, 33, 2, 286, 287, 7, 35,
+	2, 2, 287, 288, 5, 66, 34, 2, 288, 289, 7, 36, 2, 2, 289, 63, 3, 2, 2,
+	2, 290, 291, 7, 45, 2, 2, 291, 65, 3, 2, 2, 2, 292, 293, 5, 6, 4, 2, 293,
+	294, 7, 8, 2, 2, 294, 296, 3, 2, 2, 2, 295, 292, 3, 2, 2, 2, 296, 299,
+	3, 2, 2, 2, 297, 295, 3, 2, 2, 2, 297, 298, 3, 2, 2, 2, 298, 67, 3, 2,
+	2, 2, 299, 297, 3, 2, 2, 2, 300, 301, 7, 25, 2, 2, 301, 302, 5, 82, 42,
+	2, 302, 306, 7, 35, 2, 2, 303, 305, 5, 70, 36, 2, 304, 303, 3, 2, 2, 2,
+	305, 308, 3, 2, 2, 2, 306, 304, 3, 2, 2, 2, 306, 307, 3, 2, 2, 2, 307,
+	309, 3, 2, 2, 2, 308, 306, 3, 2, 2, 2, 309, 310, 7, 36, 2, 2, 310, 69,
+	3, 2, 2, 2, 311, 312, 5, 74, 38, 2, 312, 315, 7, 9, 2, 2, 313, 316, 5,
+	76, 39, 2, 314, 316, 5, 78, 40, 2, 315, 313, 3, 2, 2, 2, 315, 314, 3, 2,
+	2, 2, 316, 318, 3, 2, 2, 2, 317, 319, 7, 8, 2, 2, 318, 317, 3, 2, 2, 2,
+	318, 319, 3, 2, 2, 2, 319, 331, 3, 2, 2, 2, 320, 321, 5, 74, 38, 2, 321,
+	325, 7, 35, 2, 2, 322, 324, 5, 72, 37, 2, 323, 322, 3, 2, 2, 2, 324, 327,
+	3, 2, 2, 2, 325, 323, 3, 2, 2, 2, 325, 326, 3, 2, 2, 2, 326, 328, 3, 2,
+	2, 2, 327, 325, 3, 2, 2, 2, 328, 329, 7, 36, 2, 2, 329, 331, 3, 2, 2, 2,
+	330, 311, 3, 2, 2, 2, 330, 320, 3, 2, 2, 2, 331, 71, 3, 2, 2, 2, 332, 333,
+	5, 74, 38, 2, 333, 334, 7, 9, 2, 2, 334, 335, 5, 76, 39, 2, 335, 73, 3,
+	2, 2, 2, 336, 337, 7, 45, 2, 2, 337, 75, 3, 2, 2, 2, 338, 339, 5, 10, 6,
+	2, 339, 77, 3, 2, 2, 2, 340, 341, 7, 37, 2, 2, 341, 346, 5, 80, 41, 2,
+	342, 343, 7, 43, 2, 2, 343, 345, 5, 80, 41, 2, 344, 342, 3, 2, 2, 2, 345,
+	348, 3, 2, 2, 2, 346, 344, 3, 2, 2, 2, 346, 347, 3, 2, 2, 2, 347, 349,
+	3, 2, 2, 2, 348, 346, 3, 2, 2, 2, 349, 350, 7, 38, 2, 2, 350, 79, 3, 2,
+	2, 2, 351, 352, 5, 82, 42, 2, 352, 353, 7, 42, 2, 2, 353, 354, 7, 45, 2,
+	2, 354, 81, 3, 2, 2, 2, 355, 356, 7, 45, 2, 2, 356, 83, 3, 2, 2, 2, 33,
+	87, 89, 104, 108, 112, 117, 120, 131, 139, 147, 154, 166, 171, 181, 207,
+	218, 228, 235, 243, 252, 258, 264, 277, 280, 297, 306, 315, 318, 325, 330,
+	346,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
@@ -188,8 +197,8 @@ var ruleNames = []string{
 	"sceneName", "animateName", "pageDeclaration", "componentDeclaration",
 	"componentBodyDeclaration", "layoutDeclaration", "layoutRow", "layoutLines",
 	"layoutLine", "componentUseDeclaration", "componentLayoutValue", "styleDeclaration",
-	"styleName", "styleBody", "libraryDeclaration", "libraryExpress", "presetKey",
-	"presetValue", "presetArray", "presetCall", "libraryName",
+	"styleName", "styleBody", "libraryDeclaration", "libraryExpress", "keyValue",
+	"presetKey", "presetValue", "presetArray", "presetCall", "libraryName",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -306,11 +315,12 @@ const (
 	DesignParserRULE_styleBody                = 32
 	DesignParserRULE_libraryDeclaration       = 33
 	DesignParserRULE_libraryExpress           = 34
-	DesignParserRULE_presetKey                = 35
-	DesignParserRULE_presetValue              = 36
-	DesignParserRULE_presetArray              = 37
-	DesignParserRULE_presetCall               = 38
-	DesignParserRULE_libraryName              = 39
+	DesignParserRULE_keyValue                 = 35
+	DesignParserRULE_presetKey                = 36
+	DesignParserRULE_presetValue              = 37
+	DesignParserRULE_presetArray              = 38
+	DesignParserRULE_presetCall               = 39
+	DesignParserRULE_libraryName              = 40
 )
 
 // IStartContext is an interface to support dynamic dispatch.
@@ -476,40 +486,40 @@ func (p *DesignParser) Start() (localctx IStartContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(85)
+	p.SetState(87)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserFLOW)|(1<<DesignParserLAYOUT)|(1<<DesignParserPAGE)|(1<<DesignParserCOMPONENT)|(1<<DesignParserSTYLE)|(1<<DesignParserLIBRARY))) != 0) || _la == DesignParserIDENTIFIER {
-		p.SetState(83)
+		p.SetState(85)
 		p.GetErrorHandler().Sync(p)
 		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext()) {
 		case 1:
 			{
-				p.SetState(80)
+				p.SetState(82)
 				p.Comment()
 			}
 
 		case 2:
 			{
-				p.SetState(81)
+				p.SetState(83)
 				p.ConfigDeclaration()
 			}
 
 		case 3:
 			{
-				p.SetState(82)
+				p.SetState(84)
 				p.Decalartions()
 			}
 
 		}
 
-		p.SetState(87)
+		p.SetState(89)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(88)
+		p.SetState(90)
 		p.Match(DesignParserEOF)
 	}
 
@@ -610,7 +620,7 @@ func (p *DesignParser) Comment() (localctx ICommentContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(90)
+		p.SetState(92)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -731,15 +741,15 @@ func (p *DesignParser) ConfigDeclaration() (localctx IConfigDeclarationContext) 
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(92)
+		p.SetState(94)
 		p.ConfigKey()
 	}
 	{
-		p.SetState(93)
+		p.SetState(95)
 		p.Match(DesignParserCOLON)
 	}
 	{
-		p.SetState(94)
+		p.SetState(96)
 		p.ConfigValue()
 	}
 
@@ -840,7 +850,7 @@ func (p *DesignParser) ConfigKey() (localctx IConfigKeyContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(96)
+		p.SetState(98)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -974,23 +984,23 @@ func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
 		}
 	}()
 
-	p.SetState(116)
+	p.SetState(118)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserDIGITS_IDENTIFIER:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(98)
+			p.SetState(100)
 			p.Match(DesignParserDIGITS_IDENTIFIER)
 		}
-		p.SetState(100)
+		p.SetState(102)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__0)|(1<<DesignParserT__1)|(1<<DesignParserT__2))) != 0 {
 			{
-				p.SetState(99)
+				p.SetState(101)
 				p.Unit()
 			}
 
@@ -999,16 +1009,16 @@ func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
 	case DesignParserDECIMAL_LITERAL:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(102)
+			p.SetState(104)
 			p.Match(DesignParserDECIMAL_LITERAL)
 		}
-		p.SetState(104)
+		p.SetState(106)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__0)|(1<<DesignParserT__1)|(1<<DesignParserT__2))) != 0 {
 			{
-				p.SetState(103)
+				p.SetState(105)
 				p.Unit()
 			}
 
@@ -1017,16 +1027,16 @@ func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
 	case DesignParserFLOAT_LITERAL:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(106)
+			p.SetState(108)
 			p.Match(DesignParserFLOAT_LITERAL)
 		}
-		p.SetState(108)
+		p.SetState(110)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__0)|(1<<DesignParserT__1)|(1<<DesignParserT__2))) != 0 {
 			{
-				p.SetState(107)
+				p.SetState(109)
 				p.Unit()
 			}
 
@@ -1035,20 +1045,20 @@ func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
 	case DesignParserIDENTIFIER:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(110)
+			p.SetState(112)
 			p.Match(DesignParserIDENTIFIER)
 		}
-		p.SetState(113)
+		p.SetState(115)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == DesignParserCOMMA {
 			{
-				p.SetState(111)
+				p.SetState(113)
 				p.Match(DesignParserCOMMA)
 			}
 			{
-				p.SetState(112)
+				p.SetState(114)
 				p.Match(DesignParserIDENTIFIER)
 			}
 
@@ -1057,7 +1067,7 @@ func (p *DesignParser) ConfigValue() (localctx IConfigValueContext) {
 	case DesignParserSTRING_LITERAL:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(115)
+			p.SetState(117)
 			p.Match(DesignParserSTRING_LITERAL)
 		}
 
@@ -1158,7 +1168,7 @@ func (p *DesignParser) Unit() (localctx IUnitContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(118)
+		p.SetState(120)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserT__0)|(1<<DesignParserT__1)|(1<<DesignParserT__2))) != 0) {
@@ -1330,56 +1340,56 @@ func (p *DesignParser) Decalartions() (localctx IDecalartionsContext) {
 		}
 	}()
 
-	p.SetState(127)
+	p.SetState(129)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserIDENTIFIER:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(120)
+			p.SetState(122)
 			p.ConfigDeclaration()
 		}
 
 	case DesignParserFLOW:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(121)
+			p.SetState(123)
 			p.FlowDeclaration()
 		}
 
 	case DesignParserPAGE:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(122)
+			p.SetState(124)
 			p.PageDeclaration()
 		}
 
 	case DesignParserSTYLE:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(123)
+			p.SetState(125)
 			p.StyleDeclaration()
 		}
 
 	case DesignParserCOMPONENT:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(124)
+			p.SetState(126)
 			p.ComponentDeclaration()
 		}
 
 	case DesignParserLIBRARY:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(125)
+			p.SetState(127)
 			p.LibraryDeclaration()
 		}
 
 	case DesignParserLAYOUT:
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(126)
+			p.SetState(128)
 			p.LayoutDeclaration()
 		}
 
@@ -1520,33 +1530,33 @@ func (p *DesignParser) FlowDeclaration() (localctx IFlowDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(129)
+		p.SetState(131)
 		p.Match(DesignParserFLOW)
 	}
 	{
-		p.SetState(130)
+		p.SetState(132)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(131)
+		p.SetState(133)
 		p.Match(DesignParserLBRACE)
 	}
-	p.SetState(135)
+	p.SetState(137)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DesignParserSEE)|(1<<DesignParserDO)|(1<<DesignParserREACT))) != 0 {
 		{
-			p.SetState(132)
+			p.SetState(134)
 			p.InteractionDeclaration()
 		}
 
-		p.SetState(137)
+		p.SetState(139)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(138)
+		p.SetState(140)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -1671,28 +1681,28 @@ func (p *DesignParser) InteractionDeclaration() (localctx IInteractionDeclaratio
 		}
 	}()
 
-	p.SetState(143)
+	p.SetState(145)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserSEE:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(140)
+			p.SetState(142)
 			p.SeeDeclaration()
 		}
 
 	case DesignParserDO:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(141)
+			p.SetState(143)
 			p.DoDeclaration()
 		}
 
 	case DesignParserREACT:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(142)
+			p.SetState(144)
 			p.ReactDeclaration()
 		}
 
@@ -1819,30 +1829,30 @@ func (p *DesignParser) SeeDeclaration() (localctx ISeeDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(145)
+		p.SetState(147)
 		p.Match(DesignParserSEE)
 	}
-	p.SetState(150)
+	p.SetState(152)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserIDENTIFIER:
 		{
-			p.SetState(146)
+			p.SetState(148)
 			p.Match(DesignParserIDENTIFIER)
 		}
 
 	case DesignParserSTRING_LITERAL:
 		{
-			p.SetState(147)
+			p.SetState(149)
 			p.Match(DesignParserSTRING_LITERAL)
 		}
 		{
-			p.SetState(148)
+			p.SetState(150)
 			p.Match(DesignParserDOT)
 		}
 		{
-			p.SetState(149)
+			p.SetState(151)
 			p.ComponentName()
 		}
 
@@ -1983,31 +1993,31 @@ func (p *DesignParser) DoDeclaration() (localctx IDoDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(152)
+		p.SetState(154)
 		p.Match(DesignParserDO)
 	}
 	{
-		p.SetState(153)
+		p.SetState(155)
 		p.Match(DesignParserLBRACK)
 	}
 	{
-		p.SetState(154)
+		p.SetState(156)
 		p.ActionName()
 	}
 	{
-		p.SetState(155)
+		p.SetState(157)
 		p.Match(DesignParserRBRACK)
 	}
 	{
-		p.SetState(156)
+		p.SetState(158)
 		p.Match(DesignParserSTRING_LITERAL)
 	}
 	{
-		p.SetState(157)
+		p.SetState(159)
 		p.Match(DesignParserDOT)
 	}
 	{
-		p.SetState(158)
+		p.SetState(160)
 		p.ComponentName()
 	}
 
@@ -2143,35 +2153,35 @@ func (p *DesignParser) ReactDeclaration() (localctx IReactDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(160)
+		p.SetState(162)
 		p.Match(DesignParserREACT)
 	}
-	p.SetState(162)
+	p.SetState(164)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(161)
+			p.SetState(163)
 			p.SceneName()
 		}
 
 	}
 	{
-		p.SetState(164)
+		p.SetState(166)
 		p.Match(DesignParserCOLON)
 	}
 	{
-		p.SetState(165)
+		p.SetState(167)
 		p.ReactAction()
 	}
-	p.SetState(167)
+	p.SetState(169)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == DesignParserWITHTEXT {
 		{
-			p.SetState(166)
+			p.SetState(168)
 			p.AnimateDeclaration()
 		}
 
@@ -2296,23 +2306,23 @@ func (p *DesignParser) AnimateDeclaration() (localctx IAnimateDeclarationContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(169)
+		p.SetState(171)
 		p.Match(DesignParserWITHTEXT)
 	}
 	{
-		p.SetState(170)
+		p.SetState(172)
 		p.Match(DesignParserANIMATE)
 	}
 	{
-		p.SetState(171)
+		p.SetState(173)
 		p.Match(DesignParserLPAREN)
 	}
 	{
-		p.SetState(172)
+		p.SetState(174)
 		p.AnimateName()
 	}
 	{
-		p.SetState(173)
+		p.SetState(175)
 		p.Match(DesignParserRPAREN)
 	}
 
@@ -2427,21 +2437,21 @@ func (p *DesignParser) ReactAction() (localctx IReactActionContext) {
 		}
 	}()
 
-	p.SetState(177)
+	p.SetState(179)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserGOTO_KEY:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(175)
+			p.SetState(177)
 			p.GotoAction()
 		}
 
 	case DesignParserSHOW_KEY:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(176)
+			p.SetState(178)
 			p.ShowAction()
 		}
 
@@ -2556,11 +2566,11 @@ func (p *DesignParser) GotoAction() (localctx IGotoActionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(179)
+		p.SetState(181)
 		p.Match(DesignParserGOTO_KEY)
 	}
 	{
-		p.SetState(180)
+		p.SetState(182)
 		p.ComponentName()
 	}
 
@@ -2679,19 +2689,19 @@ func (p *DesignParser) ShowAction() (localctx IShowActionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(182)
+		p.SetState(184)
 		p.Match(DesignParserSHOW_KEY)
 	}
 	{
-		p.SetState(183)
+		p.SetState(185)
 		p.Match(DesignParserSTRING_LITERAL)
 	}
 	{
-		p.SetState(184)
+		p.SetState(186)
 		p.Match(DesignParserDOT)
 	}
 	{
-		p.SetState(185)
+		p.SetState(187)
 		p.ComponentName()
 	}
 
@@ -2792,7 +2802,7 @@ func (p *DesignParser) ActionName() (localctx IActionNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(187)
+		p.SetState(189)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -2893,7 +2903,7 @@ func (p *DesignParser) ComponentValue() (localctx IComponentValueContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(189)
+		p.SetState(191)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -2994,7 +3004,7 @@ func (p *DesignParser) ComponentName() (localctx IComponentNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(191)
+		p.SetState(193)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -3095,7 +3105,7 @@ func (p *DesignParser) SceneName() (localctx ISceneNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(193)
+		p.SetState(195)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -3196,7 +3206,7 @@ func (p *DesignParser) AnimateName() (localctx IAnimateNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(195)
+		p.SetState(197)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -3333,33 +3343,33 @@ func (p *DesignParser) PageDeclaration() (localctx IPageDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(197)
+		p.SetState(199)
 		p.Match(DesignParserPAGE)
 	}
 	{
-		p.SetState(198)
+		p.SetState(200)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(199)
+		p.SetState(201)
 		p.Match(DesignParserLBRACE)
 	}
-	p.SetState(203)
+	p.SetState(205)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(200)
+			p.SetState(202)
 			p.ComponentBodyDeclaration()
 		}
 
-		p.SetState(205)
+		p.SetState(207)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(206)
+		p.SetState(208)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -3496,33 +3506,33 @@ func (p *DesignParser) ComponentDeclaration() (localctx IComponentDeclarationCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(208)
+		p.SetState(210)
 		p.Match(DesignParserCOMPONENT)
 	}
 	{
-		p.SetState(209)
+		p.SetState(211)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(210)
+		p.SetState(212)
 		p.Match(DesignParserLBRACE)
 	}
-	p.SetState(214)
+	p.SetState(216)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(211)
+			p.SetState(213)
 			p.ComponentBodyDeclaration()
 		}
 
-		p.SetState(216)
+		p.SetState(218)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(217)
+		p.SetState(219)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -3673,30 +3683,30 @@ func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclar
 		}
 	}()
 
-	p.SetState(231)
+	p.SetState(233)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 17, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(219)
+			p.SetState(221)
 			p.ComponentName()
 		}
-		p.SetState(224)
+		p.SetState(226)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == DesignParserCOMMA {
 			{
-				p.SetState(220)
+				p.SetState(222)
 				p.Match(DesignParserCOMMA)
 			}
 			{
-				p.SetState(221)
+				p.SetState(223)
 				p.ComponentName()
 			}
 
-			p.SetState(226)
+			p.SetState(228)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
@@ -3704,15 +3714,15 @@ func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclar
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(227)
+			p.SetState(229)
 			p.ConfigKey()
 		}
 		{
-			p.SetState(228)
+			p.SetState(230)
 			p.Match(DesignParserCOLON)
 		}
 		{
-			p.SetState(229)
+			p.SetState(231)
 			p.ConfigValue()
 		}
 
@@ -3851,33 +3861,33 @@ func (p *DesignParser) LayoutDeclaration() (localctx ILayoutDeclarationContext) 
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(233)
+		p.SetState(235)
 		p.Match(DesignParserLAYOUT)
 	}
 	{
-		p.SetState(234)
+		p.SetState(236)
 		p.Match(DesignParserIDENTIFIER)
 	}
 	{
-		p.SetState(235)
+		p.SetState(237)
 		p.Match(DesignParserLBRACE)
 	}
-	p.SetState(239)
+	p.SetState(241)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserT__3 || _la == DesignParserT__4 {
 		{
-			p.SetState(236)
+			p.SetState(238)
 			p.LayoutRow()
 		}
 
-		p.SetState(241)
+		p.SetState(243)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(242)
+		p.SetState(244)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -3984,29 +3994,29 @@ func (p *DesignParser) LayoutRow() (localctx ILayoutRowContext) {
 
 	var _alt int
 
-	p.SetState(254)
+	p.SetState(256)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserT__3:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(244)
+			p.SetState(246)
 			p.Match(DesignParserT__3)
 		}
-		p.SetState(248)
+		p.SetState(250)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 19, p.GetParserRuleContext())
 
 		for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 			if _alt == 1 {
 				{
-					p.SetState(245)
+					p.SetState(247)
 					p.Match(DesignParserT__3)
 				}
 
 			}
-			p.SetState(250)
+			p.SetState(252)
 			p.GetErrorHandler().Sync(p)
 			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 19, p.GetParserRuleContext())
 		}
@@ -4014,11 +4024,11 @@ func (p *DesignParser) LayoutRow() (localctx ILayoutRowContext) {
 	case DesignParserT__4:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(251)
+			p.SetState(253)
 			p.LayoutLines()
 		}
 		{
-			p.SetState(252)
+			p.SetState(254)
 			p.Match(DesignParserT__4)
 		}
 
@@ -4144,22 +4154,22 @@ func (p *DesignParser) LayoutLines() (localctx ILayoutLinesContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(256)
+		p.SetState(258)
 		p.LayoutLine()
 	}
-	p.SetState(260)
+	p.SetState(262)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 21, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(257)
+				p.SetState(259)
 				p.LayoutLine()
 			}
 
 		}
-		p.SetState(262)
+		p.SetState(264)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 21, p.GetParserRuleContext())
 	}
@@ -4267,11 +4277,11 @@ func (p *DesignParser) LayoutLine() (localctx ILayoutLineContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(263)
+		p.SetState(265)
 		p.Match(DesignParserT__4)
 	}
 	{
-		p.SetState(264)
+		p.SetState(266)
 		p.ComponentUseDeclaration()
 	}
 
@@ -4407,45 +4417,45 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 		}
 	}()
 
-	p.SetState(276)
+	p.SetState(278)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case DesignParserDECIMAL_LITERAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(266)
+			p.SetState(268)
 			p.Match(DesignParserDECIMAL_LITERAL)
 		}
 
 	case DesignParserPOSITION:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(267)
+			p.SetState(269)
 			p.Match(DesignParserPOSITION)
 		}
 
 	case DesignParserIDENTIFIER:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(268)
+			p.SetState(270)
 			p.ComponentName()
 		}
-		p.SetState(273)
+		p.SetState(275)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == DesignParserLPAREN {
 			{
-				p.SetState(269)
+				p.SetState(271)
 				p.Match(DesignParserLPAREN)
 			}
 			{
-				p.SetState(270)
+				p.SetState(272)
 				p.ComponentLayoutValue()
 			}
 			{
-				p.SetState(271)
+				p.SetState(273)
 				p.Match(DesignParserRPAREN)
 			}
 
@@ -4454,7 +4464,7 @@ func (p *DesignParser) ComponentUseDeclaration() (localctx IComponentUseDeclarat
 	case DesignParserSTRING_LITERAL:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(275)
+			p.SetState(277)
 			p.Match(DesignParserSTRING_LITERAL)
 		}
 
@@ -4568,7 +4578,7 @@ func (p *DesignParser) ComponentLayoutValue() (localctx IComponentLayoutValueCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(278)
+		p.SetState(280)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(((_la-19)&-(0x1f+1)) == 0 && ((1<<uint((_la-19)))&((1<<(DesignParserPOSITION-19))|(1<<(DesignParserSTRING_LITERAL-19))|(1<<(DesignParserDIGITS_IDENTIFIER-19)))) != 0) {
@@ -4704,23 +4714,23 @@ func (p *DesignParser) StyleDeclaration() (localctx IStyleDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(280)
+		p.SetState(282)
 		p.Match(DesignParserSTYLE)
 	}
 	{
-		p.SetState(281)
+		p.SetState(283)
 		p.StyleName()
 	}
 	{
-		p.SetState(282)
+		p.SetState(284)
 		p.Match(DesignParserLBRACE)
 	}
 	{
-		p.SetState(283)
+		p.SetState(285)
 		p.StyleBody()
 	}
 	{
-		p.SetState(284)
+		p.SetState(286)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -4821,7 +4831,7 @@ func (p *DesignParser) StyleName() (localctx IStyleNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(286)
+		p.SetState(288)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -4941,21 +4951,21 @@ func (p *DesignParser) StyleBody() (localctx IStyleBodyContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(293)
+	p.SetState(295)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(288)
+			p.SetState(290)
 			p.ConfigDeclaration()
 		}
 		{
-			p.SetState(289)
+			p.SetState(291)
 			p.Match(DesignParserT__5)
 		}
 
-		p.SetState(295)
+		p.SetState(297)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -5099,33 +5109,33 @@ func (p *DesignParser) LibraryDeclaration() (localctx ILibraryDeclarationContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(296)
+		p.SetState(298)
 		p.Match(DesignParserLIBRARY)
 	}
 	{
-		p.SetState(297)
+		p.SetState(299)
 		p.LibraryName()
 	}
 	{
-		p.SetState(298)
+		p.SetState(300)
 		p.Match(DesignParserLBRACE)
 	}
-	p.SetState(302)
+	p.SetState(304)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserIDENTIFIER {
 		{
-			p.SetState(299)
+			p.SetState(301)
 			p.LibraryExpress()
 		}
 
-		p.SetState(304)
+		p.SetState(306)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(305)
+		p.SetState(307)
 		p.Match(DesignParserRBRACE)
 	}
 
@@ -5200,6 +5210,37 @@ func (s *LibraryExpressContext) PresetArray() IPresetArrayContext {
 	return t.(IPresetArrayContext)
 }
 
+func (s *LibraryExpressContext) LBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserLBRACE, 0)
+}
+
+func (s *LibraryExpressContext) RBRACE() antlr.TerminalNode {
+	return s.GetToken(DesignParserRBRACE, 0)
+}
+
+func (s *LibraryExpressContext) AllKeyValue() []IKeyValueContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IKeyValueContext)(nil)).Elem())
+	var tst = make([]IKeyValueContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IKeyValueContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *LibraryExpressContext) KeyValue(i int) IKeyValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IKeyValueContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IKeyValueContext)
+}
+
 func (s *LibraryExpressContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -5251,44 +5292,204 @@ func (p *DesignParser) LibraryExpress() (localctx ILibraryExpressContext) {
 		}
 	}()
 
+	p.SetState(328)
+	p.GetErrorHandler().Sync(p)
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 29, p.GetParserRuleContext()) {
+	case 1:
+		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(309)
+			p.PresetKey()
+		}
+		{
+			p.SetState(310)
+			p.Match(DesignParserT__6)
+		}
+		p.SetState(313)
+		p.GetErrorHandler().Sync(p)
+
+		switch p.GetTokenStream().LA(1) {
+		case DesignParserSTRING_LITERAL, DesignParserIDENTIFIER, DesignParserDIGITS_IDENTIFIER, DesignParserDECIMAL_LITERAL, DesignParserFLOAT_LITERAL:
+			{
+				p.SetState(311)
+				p.PresetValue()
+			}
+
+		case DesignParserLBRACK:
+			{
+				p.SetState(312)
+				p.PresetArray()
+			}
+
+		default:
+			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+		}
+		p.SetState(316)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == DesignParserT__5 {
+			{
+				p.SetState(315)
+				p.Match(DesignParserT__5)
+			}
+
+		}
+
+	case 2:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(318)
+			p.PresetKey()
+		}
+		{
+			p.SetState(319)
+			p.Match(DesignParserLBRACE)
+		}
+		p.SetState(323)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == DesignParserIDENTIFIER {
+			{
+				p.SetState(320)
+				p.KeyValue()
+			}
+
+			p.SetState(325)
+			p.GetErrorHandler().Sync(p)
+			_la = p.GetTokenStream().LA(1)
+		}
+		{
+			p.SetState(326)
+			p.Match(DesignParserRBRACE)
+		}
+
+	}
+
+	return localctx
+}
+
+// IKeyValueContext is an interface to support dynamic dispatch.
+type IKeyValueContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsKeyValueContext differentiates from other interfaces.
+	IsKeyValueContext()
+}
+
+type KeyValueContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyKeyValueContext() *KeyValueContext {
+	var p = new(KeyValueContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = DesignParserRULE_keyValue
+	return p
+}
+
+func (*KeyValueContext) IsKeyValueContext() {}
+
+func NewKeyValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *KeyValueContext {
+	var p = new(KeyValueContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DesignParserRULE_keyValue
+
+	return p
+}
+
+func (s *KeyValueContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *KeyValueContext) PresetKey() IPresetKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPresetKeyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IPresetKeyContext)
+}
+
+func (s *KeyValueContext) PresetValue() IPresetValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPresetValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IPresetValueContext)
+}
+
+func (s *KeyValueContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *KeyValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *KeyValueContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.EnterKeyValue(s)
+	}
+}
+
+func (s *KeyValueContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DesignListener); ok {
+		listenerT.ExitKeyValue(s)
+	}
+}
+
+func (s *KeyValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DesignVisitor:
+		return t.VisitKeyValue(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DesignParser) KeyValue() (localctx IKeyValueContext) {
+	localctx = NewKeyValueContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 70, DesignParserRULE_keyValue)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(307)
+		p.SetState(330)
 		p.PresetKey()
 	}
 	{
-		p.SetState(308)
+		p.SetState(331)
 		p.Match(DesignParserT__6)
 	}
-	p.SetState(311)
-	p.GetErrorHandler().Sync(p)
-
-	switch p.GetTokenStream().LA(1) {
-	case DesignParserSTRING_LITERAL, DesignParserIDENTIFIER, DesignParserDIGITS_IDENTIFIER, DesignParserDECIMAL_LITERAL, DesignParserFLOAT_LITERAL:
-		{
-			p.SetState(309)
-			p.PresetValue()
-		}
-
-	case DesignParserLBRACK:
-		{
-			p.SetState(310)
-			p.PresetArray()
-		}
-
-	default:
-		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
-	}
-	p.SetState(314)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == DesignParserT__5 {
-		{
-			p.SetState(313)
-			p.Match(DesignParserT__5)
-		}
-
+	{
+		p.SetState(332)
+		p.PresetValue()
 	}
 
 	return localctx
@@ -5368,7 +5569,7 @@ func (s *PresetKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *DesignParser) PresetKey() (localctx IPresetKeyContext) {
 	localctx = NewPresetKeyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 70, DesignParserRULE_presetKey)
+	p.EnterRule(localctx, 72, DesignParserRULE_presetKey)
 
 	defer func() {
 		p.ExitRule()
@@ -5388,7 +5589,7 @@ func (p *DesignParser) PresetKey() (localctx IPresetKeyContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(316)
+		p.SetState(334)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -5475,7 +5676,7 @@ func (s *PresetValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 
 func (p *DesignParser) PresetValue() (localctx IPresetValueContext) {
 	localctx = NewPresetValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 72, DesignParserRULE_presetValue)
+	p.EnterRule(localctx, 74, DesignParserRULE_presetValue)
 
 	defer func() {
 		p.ExitRule()
@@ -5495,7 +5696,7 @@ func (p *DesignParser) PresetValue() (localctx IPresetValueContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(318)
+		p.SetState(336)
 		p.ConfigValue()
 	}
 
@@ -5611,7 +5812,7 @@ func (s *PresetArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 
 func (p *DesignParser) PresetArray() (localctx IPresetArrayContext) {
 	localctx = NewPresetArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 74, DesignParserRULE_presetArray)
+	p.EnterRule(localctx, 76, DesignParserRULE_presetArray)
 	var _la int
 
 	defer func() {
@@ -5632,33 +5833,33 @@ func (p *DesignParser) PresetArray() (localctx IPresetArrayContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(320)
+		p.SetState(338)
 		p.Match(DesignParserLBRACK)
 	}
 	{
-		p.SetState(321)
+		p.SetState(339)
 		p.PresetCall()
 	}
-	p.SetState(326)
+	p.SetState(344)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == DesignParserCOMMA {
 		{
-			p.SetState(322)
+			p.SetState(340)
 			p.Match(DesignParserCOMMA)
 		}
 		{
-			p.SetState(323)
+			p.SetState(341)
 			p.PresetCall()
 		}
 
-		p.SetState(328)
+		p.SetState(346)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(329)
+		p.SetState(347)
 		p.Match(DesignParserRBRACK)
 	}
 
@@ -5753,7 +5954,7 @@ func (s *PresetCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *DesignParser) PresetCall() (localctx IPresetCallContext) {
 	localctx = NewPresetCallContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 76, DesignParserRULE_presetCall)
+	p.EnterRule(localctx, 78, DesignParserRULE_presetCall)
 
 	defer func() {
 		p.ExitRule()
@@ -5773,15 +5974,15 @@ func (p *DesignParser) PresetCall() (localctx IPresetCallContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(331)
+		p.SetState(349)
 		p.LibraryName()
 	}
 	{
-		p.SetState(332)
+		p.SetState(350)
 		p.Match(DesignParserDOT)
 	}
 	{
-		p.SetState(333)
+		p.SetState(351)
 		p.Match(DesignParserIDENTIFIER)
 	}
 
@@ -5862,7 +6063,7 @@ func (s *LibraryNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 
 func (p *DesignParser) LibraryName() (localctx ILibraryNameContext) {
 	localctx = NewLibraryNameContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 78, DesignParserRULE_libraryName)
+	p.EnterRule(localctx, 80, DesignParserRULE_libraryName)
 
 	defer func() {
 		p.ExitRule()
@@ -5882,7 +6083,7 @@ func (p *DesignParser) LibraryName() (localctx ILibraryNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(335)
+		p.SetState(353)
 		p.Match(DesignParserIDENTIFIER)
 	}
 

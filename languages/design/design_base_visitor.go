@@ -148,6 +148,10 @@ func (v *BaseDesignVisitor) VisitLibraryExpress(ctx *LibraryExpressContext) inte
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseDesignVisitor) VisitKeyValue(ctx *KeyValueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseDesignVisitor) VisitPresetKey(ctx *PresetKeyContext) interface{} {
 	return v.VisitChildren(ctx)
 }

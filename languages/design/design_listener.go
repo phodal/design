@@ -113,6 +113,9 @@ type DesignListener interface {
 	// EnterLibraryExpress is called when entering the libraryExpress production.
 	EnterLibraryExpress(c *LibraryExpressContext)
 
+	// EnterKeyValue is called when entering the keyValue production.
+	EnterKeyValue(c *KeyValueContext)
+
 	// EnterPresetKey is called when entering the presetKey production.
 	EnterPresetKey(c *PresetKeyContext)
 
@@ -232,6 +235,9 @@ type DesignListener interface {
 
 	// ExitLibraryExpress is called when exiting the libraryExpress production.
 	ExitLibraryExpress(c *LibraryExpressContext)
+
+	// ExitKeyValue is called when exiting the keyValue production.
+	ExitKeyValue(c *KeyValueContext)
 
 	// ExitPresetKey is called when exiting the presetKey production.
 	ExitPresetKey(c *PresetKeyContext)

@@ -113,6 +113,9 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#libraryExpress.
 	VisitLibraryExpress(ctx *LibraryExpressContext) interface{}
 
+	// Visit a parse tree produced by DesignParser#keyValue.
+	VisitKeyValue(ctx *KeyValueContext) interface{}
+
 	// Visit a parse tree produced by DesignParser#presetKey.
 	VisitPresetKey(ctx *PresetKeyContext) interface{}
 

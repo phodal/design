@@ -231,6 +231,12 @@ func (s *BaseDesignListener) EnterLibraryExpress(ctx *LibraryExpressContext) {}
 // ExitLibraryExpress is called when production libraryExpress is exited.
 func (s *BaseDesignListener) ExitLibraryExpress(ctx *LibraryExpressContext) {}
 
+// EnterKeyValue is called when production keyValue is entered.
+func (s *BaseDesignListener) EnterKeyValue(ctx *KeyValueContext) {}
+
+// ExitKeyValue is called when production keyValue is exited.
+func (s *BaseDesignListener) ExitKeyValue(ctx *KeyValueContext) {}
+
 // EnterPresetKey is called when production presetKey is entered.
 func (s *BaseDesignListener) EnterPresetKey(ctx *PresetKeyContext) {}
 
