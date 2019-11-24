@@ -52,7 +52,9 @@ func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 				Data:          componentData,
 			}
 
-			interactions = append(interactions, *interaction)
+			if interaction.See.ComponentName != "" {
+				interactions = append(interactions, *interaction)
+			}
 			interaction = CreateInteraction()
 			interaction.See = *seeModel
 		case "*parser.DoDeclarationContext":
@@ -64,7 +66,23 @@ func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
 			}
 			interaction.Do = *doModel
 		case "*parser.ReactDeclarationContext":
-
+			reactCtx := context.GetChild(0).(*ReactDeclarationContext)
+			sceneName := ""
+			if reactCtx.SceneName() != nil {
+				sceneName = reactCtx.SceneName().GetText()
+			}
+			animateName := ""
+			if reactCtx.AnimateDeclaration() != nil {
+				animateName = reactCtx.AnimateDeclaration().(*AnimateDeclarationContext).AnimateName().GetText()
+			}
+			reactModel := &DReact{
+				SceneName:          sceneName,
+				ReactEvent:         "",
+				ReactComponentName: "",
+				ReactComponentData: "",
+				AnimateName:        animateName,
+			}
+			interaction.React = append(interaction.React, *reactModel)
 		}
 	}
 

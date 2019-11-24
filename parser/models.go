@@ -18,22 +18,23 @@ type DSee struct {
 }
 
 type DDo struct {
+	UIEvent       string
 	ComponentName string
 	Data          string
-	UIEvent       string // event
 }
 
 type DReact struct {
-	ContextName        string
+	SceneName          string
 	ReactEvent         string
 	ReactComponentName string
 	AnimateName        string
+	ReactComponentData string
 }
 
 type DInteraction struct {
 	See   DSee
 	Do    DDo
-	React map[string]DReact
+	React []DReact
 }
 
 type DFlow struct {
