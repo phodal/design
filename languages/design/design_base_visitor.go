@@ -96,7 +96,7 @@ func (v *BaseDesignVisitor) VisitComponentBodyDeclaration(ctx *ComponentBodyDecl
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseDesignVisitor) VisitLayoutDecalaration(ctx *LayoutDecalarationContext) interface{} {
+func (v *BaseDesignVisitor) VisitLayoutDeclaration(ctx *LayoutDeclarationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

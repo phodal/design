@@ -33,6 +33,10 @@ func (s *DesignAppListener) EnterConfigDeclaration(ctx *ConfigDeclarationContext
 	projectConfigs[ctx.ConfigKey().GetText()] = ctx.ConfigValue().GetText()
 }
 
+func (s *DesignAppListener) EnterFlowDeclaration(ctx *FlowDeclarationContext) {
+
+}
+
 func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationContext) {
 	componentName := ctx.IDENTIFIER().GetText()
 	component := components[componentName]
@@ -64,7 +68,7 @@ func (s *DesignAppListener) createComponent(componentName string) *DComponent {
 	return &DComponent{componentName, nil, nil}
 }
 
-func (s *DesignAppListener) EnterLayoutDecalaration(ctx *LayoutDecalarationContext) {
+func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext) {
 	//fmt.Println(ctx.GetText())
 }
 

@@ -153,11 +153,11 @@ func (s *BaseDesignListener) EnterComponentBodyDeclaration(ctx *ComponentBodyDec
 // ExitComponentBodyDeclaration is called when production componentBodyDeclaration is exited.
 func (s *BaseDesignListener) ExitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) {}
 
-// EnterLayoutDecalaration is called when production layoutDecalaration is entered.
-func (s *BaseDesignListener) EnterLayoutDecalaration(ctx *LayoutDecalarationContext) {}
+// EnterLayoutDeclaration is called when production layoutDeclaration is entered.
+func (s *BaseDesignListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext) {}
 
-// ExitLayoutDecalaration is called when production layoutDecalaration is exited.
-func (s *BaseDesignListener) ExitLayoutDecalaration(ctx *LayoutDecalarationContext) {}
+// ExitLayoutDeclaration is called when production layoutDeclaration is exited.
+func (s *BaseDesignListener) ExitLayoutDeclaration(ctx *LayoutDeclarationContext) {}
 
 // EnterLayoutBodyDeclaration is called when production layoutBodyDeclaration is entered.
 func (s *BaseDesignListener) EnterLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) {}

@@ -74,8 +74,8 @@ type DesignVisitor interface {
 	// Visit a parse tree produced by DesignParser#componentBodyDeclaration.
 	VisitComponentBodyDeclaration(ctx *ComponentBodyDeclarationContext) interface{}
 
-	// Visit a parse tree produced by DesignParser#layoutDecalaration.
-	VisitLayoutDecalaration(ctx *LayoutDecalarationContext) interface{}
+	// Visit a parse tree produced by DesignParser#layoutDeclaration.
+	VisitLayoutDeclaration(ctx *LayoutDeclarationContext) interface{}
 
 	// Visit a parse tree produced by DesignParser#layoutBodyDeclaration.
 	VisitLayoutBodyDeclaration(ctx *LayoutBodyDeclarationContext) interface{}

@@ -74,8 +74,8 @@ type DesignListener interface {
 	// EnterComponentBodyDeclaration is called when entering the componentBodyDeclaration production.
 	EnterComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
 
-	// EnterLayoutDecalaration is called when entering the layoutDecalaration production.
-	EnterLayoutDecalaration(c *LayoutDecalarationContext)
+	// EnterLayoutDeclaration is called when entering the layoutDeclaration production.
+	EnterLayoutDeclaration(c *LayoutDeclarationContext)
 
 	// EnterLayoutBodyDeclaration is called when entering the layoutBodyDeclaration production.
 	EnterLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)
@@ -179,8 +179,8 @@ type DesignListener interface {
 	// ExitComponentBodyDeclaration is called when exiting the componentBodyDeclaration production.
 	ExitComponentBodyDeclaration(c *ComponentBodyDeclarationContext)
 
-	// ExitLayoutDecalaration is called when exiting the layoutDecalaration production.
-	ExitLayoutDecalaration(c *LayoutDecalarationContext)
+	// ExitLayoutDeclaration is called when exiting the layoutDeclaration production.
+	ExitLayoutDeclaration(c *LayoutDeclarationContext)
 
 	// ExitLayoutBodyDeclaration is called when exiting the layoutBodyDeclaration production.
 	ExitLayoutBodyDeclaration(c *LayoutBodyDeclarationContext)

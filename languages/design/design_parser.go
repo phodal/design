@@ -180,7 +180,7 @@ var ruleNames = []string{
 	"doDeclaration", "reactDeclaration", "animateDeclaration", "actionKey",
 	"actionName", "componentValue", "componentName", "sceneName", "animateName",
 	"pageDeclaration", "componentDeclaration", "componentBodyDeclaration",
-	"layoutDecalaration", "layoutBodyDeclaration", "layoutRow", "layoutLine",
+	"layoutDeclaration", "layoutBodyDeclaration", "layoutRow", "layoutLine",
 	"componentUseDeclaration", "styleDeclaration", "styleName", "styleBody",
 	"libraryDeclaration", "libraryBody", "express", "libraryCall", "libraryName",
 }
@@ -286,7 +286,7 @@ const (
 	DesignParserRULE_pageDeclaration          = 19
 	DesignParserRULE_componentDeclaration     = 20
 	DesignParserRULE_componentBodyDeclaration = 21
-	DesignParserRULE_layoutDecalaration       = 22
+	DesignParserRULE_layoutDeclaration        = 22
 	DesignParserRULE_layoutBodyDeclaration    = 23
 	DesignParserRULE_layoutRow                = 24
 	DesignParserRULE_layoutLine               = 25
@@ -1258,14 +1258,14 @@ func (s *DecalartionsContext) LibraryDeclaration() ILibraryDeclarationContext {
 	return t.(ILibraryDeclarationContext)
 }
 
-func (s *DecalartionsContext) LayoutDecalaration() ILayoutDecalarationContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutDecalarationContext)(nil)).Elem(), 0)
+func (s *DecalartionsContext) LayoutDeclaration() ILayoutDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ILayoutDecalarationContext)
+	return t.(ILayoutDeclarationContext)
 }
 
 func (s *DecalartionsContext) GetRuleContext() antlr.RuleContext {
@@ -1368,7 +1368,7 @@ func (p *DesignParser) Decalartions() (localctx IDecalartionsContext) {
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(116)
-			p.LayoutDecalaration()
+			p.LayoutDeclaration()
 		}
 
 	default:
@@ -3485,57 +3485,57 @@ func (p *DesignParser) ComponentBodyDeclaration() (localctx IComponentBodyDeclar
 	return localctx
 }
 
-// ILayoutDecalarationContext is an interface to support dynamic dispatch.
-type ILayoutDecalarationContext interface {
+// ILayoutDeclarationContext is an interface to support dynamic dispatch.
+type ILayoutDeclarationContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsLayoutDecalarationContext differentiates from other interfaces.
-	IsLayoutDecalarationContext()
+	// IsLayoutDeclarationContext differentiates from other interfaces.
+	IsLayoutDeclarationContext()
 }
 
-type LayoutDecalarationContext struct {
+type LayoutDeclarationContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyLayoutDecalarationContext() *LayoutDecalarationContext {
-	var p = new(LayoutDecalarationContext)
+func NewEmptyLayoutDeclarationContext() *LayoutDeclarationContext {
+	var p = new(LayoutDeclarationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DesignParserRULE_layoutDecalaration
+	p.RuleIndex = DesignParserRULE_layoutDeclaration
 	return p
 }
 
-func (*LayoutDecalarationContext) IsLayoutDecalarationContext() {}
+func (*LayoutDeclarationContext) IsLayoutDeclarationContext() {}
 
-func NewLayoutDecalarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutDecalarationContext {
-	var p = new(LayoutDecalarationContext)
+func NewLayoutDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LayoutDeclarationContext {
+	var p = new(LayoutDeclarationContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DesignParserRULE_layoutDecalaration
+	p.RuleIndex = DesignParserRULE_layoutDeclaration
 
 	return p
 }
 
-func (s *LayoutDecalarationContext) GetParser() antlr.Parser { return s.parser }
+func (s *LayoutDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LayoutDecalarationContext) LAYOUT() antlr.TerminalNode {
+func (s *LayoutDeclarationContext) LAYOUT() antlr.TerminalNode {
 	return s.GetToken(DesignParserLAYOUT, 0)
 }
 
-func (s *LayoutDecalarationContext) IDENTIFIER() antlr.TerminalNode {
+func (s *LayoutDeclarationContext) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(DesignParserIDENTIFIER, 0)
 }
 
-func (s *LayoutDecalarationContext) LBRACE() antlr.TerminalNode {
+func (s *LayoutDeclarationContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserLBRACE, 0)
 }
 
-func (s *LayoutDecalarationContext) LayoutBodyDeclaration() ILayoutBodyDeclarationContext {
+func (s *LayoutDeclarationContext) LayoutBodyDeclaration() ILayoutBodyDeclarationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILayoutBodyDeclarationContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -3545,43 +3545,43 @@ func (s *LayoutDecalarationContext) LayoutBodyDeclaration() ILayoutBodyDeclarati
 	return t.(ILayoutBodyDeclarationContext)
 }
 
-func (s *LayoutDecalarationContext) RBRACE() antlr.TerminalNode {
+func (s *LayoutDeclarationContext) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DesignParserRBRACE, 0)
 }
 
-func (s *LayoutDecalarationContext) GetRuleContext() antlr.RuleContext {
+func (s *LayoutDeclarationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LayoutDecalarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *LayoutDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LayoutDecalarationContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *LayoutDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.EnterLayoutDecalaration(s)
+		listenerT.EnterLayoutDeclaration(s)
 	}
 }
 
-func (s *LayoutDecalarationContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *LayoutDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DesignListener); ok {
-		listenerT.ExitLayoutDecalaration(s)
+		listenerT.ExitLayoutDeclaration(s)
 	}
 }
 
-func (s *LayoutDecalarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *LayoutDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case DesignVisitor:
-		return t.VisitLayoutDecalaration(s)
+		return t.VisitLayoutDeclaration(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *DesignParser) LayoutDecalaration() (localctx ILayoutDecalarationContext) {
-	localctx = NewLayoutDecalarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, DesignParserRULE_layoutDecalaration)
+func (p *DesignParser) LayoutDeclaration() (localctx ILayoutDeclarationContext) {
+	localctx = NewLayoutDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 44, DesignParserRULE_layoutDeclaration)
 
 	defer func() {
 		p.ExitRule()

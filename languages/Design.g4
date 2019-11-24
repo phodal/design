@@ -27,7 +27,7 @@ decalartions
     | styleDeclaration
     | componentDeclaration
     | libraryDeclaration
-    | layoutDecalaration
+    | layoutDeclaration
     ;
 
 // Flow
@@ -74,7 +74,7 @@ componentBodyDeclaration
     | configKey COLON configValue
     ;
 
-layoutDecalaration: LAYOUT IDENTIFIER LBRACE layoutBodyDeclaration RBRACE;
+layoutDeclaration: LAYOUT IDENTIFIER LBRACE layoutBodyDeclaration RBRACE;
 
 
 REPEAT: 'repeat';
