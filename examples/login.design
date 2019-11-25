@@ -90,6 +90,10 @@ library Color {
         label = "Blue"
         value = "#1E88E5"
     }
+    Third {
+        label = "Third"
+        value = "#000000"
+    }
 }
 
 library Button {

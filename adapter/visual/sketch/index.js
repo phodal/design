@@ -51,16 +51,16 @@ function buildColorLibrary(libraryPresets, sketch, artboard) {
         });
         colors.push(color)
     });
-    artboard.frame.width = colors.length * 220 + 20;
-    artboard.frame.height = 190;
+    artboard.frame.width = 220;
+    artboard.frame.height = colors.length * 190 + 20;
 
     colors.forEach((color, i) => {
         let swatch = new Swatch(Object.assign({}, color, {
             frame: {
-                x: i * 220 + 20,
-                y: 20,
+                x: 10,
+                y: i * 220 + 20,
                 width: 200,
-                height: 170
+                height: 60
             }
         }));
         let layerStyle = SharedStyle.LayerStyle({
@@ -79,7 +79,7 @@ function buildFontSizeLibrary(libraryPresets, newSketch, artboard) {
     artboard.frame.height = libraryPresets.length * 50;
     libraryPresets.forEach((preset, i) => {
         var text = new Text({
-            string: preset.key + "  FontSize  "+ preset.value,
+            string: preset.key + "  FontSize  " + preset.value,
             name: preset.key,
             fontSize: parseInt(preset.value.replace("px", "")),
             color: '#000',
@@ -137,9 +137,9 @@ function readJsonFile(path) {
     let rawdata = fs.readFileSync(path);
     return JSON.parse(rawdata);
 }
-//
-// designInfo = readJsonFile('output.json');
-// buildSketch(designInfo);
+    //
+    // designInfo = readJsonFile('output.json');
+    // buildSketch(designInfo);
 
 var data = "";
 process.stdin.resume();
