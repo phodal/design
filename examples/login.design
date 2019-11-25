@@ -9,7 +9,7 @@ flow 登录ddalba {
         REACT Success: SHOW "Login Success".Toast with ANIMATE(bounce)
         REACT Failure: SHOW "Login Failure".Dialog
 
-    SEE "登录失败".窗口2
+    SEE "登录失败".窗口
     DO [Click] "忘记密码".Button
         REACT: GOTO ForgotPasswordPage
 
@@ -61,7 +61,20 @@ Layout Navigation {
 
 component TitleComponent {}
 component ImageComponent {
-    Size: 1080px
+    width: 1080px
+    height: 320px
+}
+component Toast {
+    width: 320px
+    height: 120px
+}
+component 窗口 {
+    width: 320px
+    height: 120px
+}
+component Message {
+    width: 320px
+    height: 120px
 }
 component BlogList {
     BlogDetail, Space8

@@ -2,6 +2,8 @@ const {Sketch, Page, Text, Artboard, SharedStyle} = require('sketch-constructor'
 const fs = require('fs');
 const Swatch = require('./libs/swatch'); // custom component
 
+let components = [];
+
 function buildFlows(designInfo, newSketch) {
     for (const flow of designInfo.flows) {
         const page = new Page({
@@ -14,10 +16,10 @@ function buildFlows(designInfo, newSketch) {
 
         var index = 1;
         for (const interaction of flow.interactions) {
-            let componentName = interaction.see.componentName.replace(/\"/g, "");
-            let componentData = interaction.see.data.replace(/\"/g, "");
+            let seeComponentName = interaction.see.componentName.replace(/\"/g, "");
+            let seeComponentData = interaction.see.data.replace(/\"/g, "");
             const artboard = new Artboard({
-                name: componentData + componentName,
+                name: seeComponentData + seeComponentName,
                 frame: {
                     width: '320px',
                     height: '480px',
@@ -25,9 +27,37 @@ function buildFlows(designInfo, newSketch) {
                 },
             });
 
+            page.addArtboard(artboard);
             index++;
 
-            page.addArtboard(artboard);
+            reactIndex = 0;
+            for (const react of interaction.react) {
+                let componentName = react.reactComponentName.replace(/\"/g, "");
+                let componentData = react.reactComponentData.replace(/\"/g, "");
+                const artboard1 = new Artboard({
+                    name: componentData + componentName,
+                    frame: {
+                        width: '320px',
+                        height: '480px',
+                        x: 360 * index + 'px',
+                        y: 360 * reactIndex + 'px'
+                    },
+                });
+
+                if (components[componentName]) {
+                    if (components[componentName].width) {
+                        artboard1.frame.width  = components[componentName].width
+                    }
+                    if (components[componentName].height) {
+                        artboard1.frame.height  = components[componentName].height
+                    }
+                }
+
+                page.addArtboard(artboard1);
+                reactIndex++;
+            }
+
+            index++;
         }
 
         newSketch.addPage(page);
@@ -124,9 +154,16 @@ function buildLibrary(designInfo, newSketch) {
     newSketch.addPage(libraryPage);
 }
 
+function buildComponents(designInfo) {
+    for (const component in designInfo.components) {
+        components[component] = designInfo.components[component].configs
+    }
+}
+
 function buildSketch(designInfo) {
     const newSketch = new Sketch();
 
+    buildComponents(designInfo);
     buildFlows(designInfo, newSketch);
     buildLibrary(designInfo, newSketch);
 
@@ -137,9 +174,9 @@ function readJsonFile(path) {
     let rawdata = fs.readFileSync(path);
     return JSON.parse(rawdata);
 }
-    //
-    // designInfo = readJsonFile('output.json');
-    // buildSketch(designInfo);
+
+// designInfo = readJsonFile('output.json');
+// buildSketch(designInfo);
 
 var data = "";
 process.stdin.resume();

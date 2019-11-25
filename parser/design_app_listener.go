@@ -62,7 +62,7 @@ func buildInteractions(declarationContexts []IInteractionDeclarationContext, int
 			} else {
 				componentName = seeCtx.ComponentName().GetText()
 				componentData = seeCtx.STRING_LITERAL().GetText()
-				componentData  = RemoveQuote(componentData)
+				componentData = RemoveQuote(componentData)
 			}
 			seeModel := &DSee{
 				ComponentName: componentName,
@@ -137,19 +137,21 @@ func (s *DesignAppListener) EnterComponentDeclaration(ctx *ComponentDeclarationC
 	declarations := ctx.AllComponentBodyDeclaration()
 	for _, declaration := range declarations {
 		childTypes := reflect.TypeOf(declaration.GetChild(0)).String()
-		if childTypes == "*parser.ComponentNameContext" {
+
+		switch childTypes {
+
+		case "*parser.ComponentNameContext":
 			childCtx := declaration.GetChild(0).(*ComponentNameContext)
 			childComponent := *CreateDComponent(childCtx.GetText())
 			component.ChildComponents = append(component.ChildComponents, childComponent)
-		} else if childTypes == "*parser.ConfigKeyContext" {
+		case "*parser.ConfigKeyContext":
 			configKey := declaration.GetChild(0).(*ConfigKeyContext).GetText()
 			configValue := declaration.GetChild(2).(*ConfigValueContext).GetText()
 
-			configValue  = RemoveQuote(configValue)
+			configValue = RemoveQuote(configValue)
 
 			componentConfigs[configKey] = configValue
 		}
-
 	}
 
 	component.Configs = componentConfigs
@@ -209,9 +211,9 @@ func (s *DesignAppListener) EnterLibraryDeclaration(ctx *LibraryDeclarationConte
 
 	for _, express := range ctx.AllLibraryExpress() {
 		preset := &LibraryPreset{
-			Key:         "",
-			Value:       "",
-			PresetCalls: nil,
+			Key:           "",
+			Value:         "",
+			PresetCalls:   nil,
 			SubProperties: nil,
 		}
 		preset.Key = express.(*LibraryExpressContext).PresetKey().GetText()

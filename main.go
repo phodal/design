@@ -3,6 +3,7 @@ package main
 import (
 	. "./parser"
 	"io/ioutil"
+	"os"
 )
 
 func main()  {
@@ -12,5 +13,5 @@ func main()  {
 
 	_ = ioutil.WriteFile("output.json", bytes, 0644)
 
-	//_, _ = os.Stdout.Write(bytes)
+	_, _ = os.Stdout.Write(bytes)
 }
