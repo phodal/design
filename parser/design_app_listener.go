@@ -165,7 +165,7 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 		}
 
 		lines := row.GetChild(0).(*LayoutLinesContext).AllLayoutLine()
-		row := &DLayoutRow{"", "", nil}
+		row := &DLayoutRow{"", "", ""}
 
 		for _, line := range lines {
 			declaration := line.(*LayoutLineContext).ComponentUseDeclaration()
@@ -178,7 +178,7 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 	layouts = append(layouts, layout)
 }
 
-func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayoutRow) {
+func parseLayoutLine(declaration IComponentUseDeclarationContext, row *DLayoutRow) {
 	firstChild := declaration.GetChild(0)
 	switch reflect.TypeOf(firstChild).String() {
 	case "*parser.ComponentNameContext":
@@ -188,11 +188,12 @@ func parseLayoutLine(declaration IComponentUseDeclarationContext, layout *DLayou
 		if declaration.GetChildCount() > 2 {
 			layoutValue = declaration.GetChild(2).(*ComponentLayoutValueContext).GetText()
 		}
-		layout.ComponentName = componentName
-		layout.LayoutInformation = layoutValue
+		row.ComponentName = componentName
+		row.LayoutInformation = RemoveQuote(layoutValue)
 	default:
 		componentValue := firstChild.(*antlr.TerminalNodeImpl).GetText()
-		layout.NormalInformation = append(layout.NormalInformation, componentValue)
+		row.ComponentName = "value"
+		row.NormalInformation = RemoveQuote(componentValue)
 	}
 }
 

@@ -59,9 +59,9 @@ type DLayout struct {
 }
 
 type DLayoutRow struct {
-	ComponentName     string   `json:"componentName"`
-	LayoutInformation string   `json:"layoutInformation"`
-	NormalInformation []string `json:"normalInformation"`
+	ComponentName     string `json:"componentName"`
+	LayoutInformation string `json:"layoutInformation"`
+	NormalInformation string `json:"normalInformation"`
 }
 
 func CreateInteraction() *DInteraction {
