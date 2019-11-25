@@ -31,6 +31,10 @@ function buildFlows(designInfo, newSketch) {
             index++;
 
             reactIndex = 0;
+            let lastFrame = {
+                x: 0,
+                y: 0
+            };
             for (const react of interaction.react) {
                 let componentName = react.reactComponentName.replace(/\"/g, "");
                 let componentData = react.reactComponentData.replace(/\"/g, "");
@@ -40,16 +44,19 @@ function buildFlows(designInfo, newSketch) {
                         width: '320px',
                         height: '480px',
                         x: 360 * index + 'px',
-                        y: 360 * reactIndex + 'px'
+                        y: lastFrame.y + reactIndex * 20 + 'px'
                     },
                 });
+                lastFrame = {
+                    y: artboard1.frame.height
+                };
 
                 if (components[componentName]) {
                     if (components[componentName].width) {
-                        artboard1.frame.width  = components[componentName].width
+                        artboard1.frame.width = components[componentName].width
                     }
                     if (components[componentName].height) {
-                        artboard1.frame.height  = components[componentName].height
+                        artboard1.frame.height = components[componentName].height
                     }
                 }
 
