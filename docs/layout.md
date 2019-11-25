@@ -32,3 +32,6 @@ More Examples:
 ```
 
 [Online Editor Engine](https://github.com/IjzerenHein/visualformat-editor)
+
+## [muuri](https://github.com/haltu/muuri)
+

@@ -27,6 +27,11 @@ flow 登出 {
 page HomePage {
     LayoutGrid: 12x
     LayoutId: HomePage
+    Router: "/home"
+}
+
+page ForgotPasswordPage {
+    Router: "/profile/reset-password/"
 }
 
 Layout HomePage {
