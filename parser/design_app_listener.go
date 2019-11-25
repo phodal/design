@@ -165,11 +165,14 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 		}
 
 		lines := row.GetChild(0).(*LayoutLinesContext).AllLayoutLine()
-		row := &DLayoutRow{"", "", ""}
+		row := &DLayoutRow{nil}
 
 		for _, line := range lines {
+			cell := &DLayoutCell{"", "", ""}
 			declaration := line.(*LayoutLineContext).ComponentUseDeclaration()
-			parseLayoutLine(declaration, row)
+			parseLayoutLine(declaration, cell)
+
+			row.DLayoutCells = append(row.DLayoutCells, *cell)
 		}
 
 		layout.LayoutRows = append(layout.LayoutRows, *row)
@@ -178,7 +181,7 @@ func (s *DesignAppListener) EnterLayoutDeclaration(ctx *LayoutDeclarationContext
 	layouts = append(layouts, layout)
 }
 
-func parseLayoutLine(declaration IComponentUseDeclarationContext, row *DLayoutRow) {
+func parseLayoutLine(declaration IComponentUseDeclarationContext, row *DLayoutCell) {
 	firstChild := declaration.GetChild(0)
 	switch reflect.TypeOf(firstChild).String() {
 	case "*parser.ComponentNameContext":

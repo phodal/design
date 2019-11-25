@@ -59,6 +59,10 @@ type DLayout struct {
 }
 
 type DLayoutRow struct {
+	DLayoutCells []DLayoutCell
+}
+
+type DLayoutCell struct {
 	ComponentName     string `json:"componentName"`
 	LayoutInformation string `json:"layoutInformation"`
 	NormalInformation string `json:"normalInformation"`
