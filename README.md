@@ -2,6 +2,24 @@
 
 Design as Code
 
+## Flow 
+
+```
+DSL -> DSL Parser -> DSL Json ---pipe---> Node.js -> Sketch
+```
+
+## Setup
+
+install Go & Node.js 
+
+cd `adapter/visual/sketch` and run `npm install`
+
+then
+
+```
+./script/run.sh 
+```
+
 ## DSL
 
 Task Flows / User Flows Example
