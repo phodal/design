@@ -1,7 +1,12 @@
 const ns = require('node-sketch');
 
 ns.read('design.sketch').then(sketch => {
-    console.log(sketch.pages)
+    for (const page of sketch.pages) {
+        for (const layer of page.layers) {
+            console.log(layer.name);
+            console.log(layer.frame.width);
+        }
+    }
     // sketch.document           // document data
     // sketch.meta               // meta data
     // sketch.user               // user data
