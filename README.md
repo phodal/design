@@ -125,6 +125,8 @@ library Button {
 ```
 
 
+Refs: [AutoLayout.js](https://github.com/IjzerenHein/autolayout.js), [Apple's Auto Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html), [Visual Format Language]((https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html))
+
 License
 ---
 
