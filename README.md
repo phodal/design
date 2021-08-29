@@ -1,8 +1,8 @@
-# design
+# Design
 
 Design as Code
 
-## Flow 
+## UI Flow
 
 ```
 DSL -> DSL Parser -> DSL Json ---pipe---> Node.js -> Sketch
@@ -126,6 +126,8 @@ library Button {
 
 
 Refs: [AutoLayout.js](https://github.com/IjzerenHein/autolayout.js), [Apple's Auto Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html), [Visual Format Language]((https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html))
+
+[图形双向编辑](https://github.com/ravichugh/sketch-n-sketch)
 
 License
 ---
